@@ -1,0 +1,6 @@
+{
+  "name": "The Golden Thread",
+  "description": "An interactive 3D fairytale exploration atlas uncovering shared narrative motifs across world cultures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

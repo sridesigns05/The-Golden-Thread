@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-midnight: #0B1424;
+  --color-forest: #19372F;
+  --color-gold: #D6B36B;
+  --color-gold-light: #E7CCA0;
+  --color-gold-dark: #A98336;
+  --color-parchment: #F1E5CC;
+  --color-parchment-light: #F9F3E6;
+  --color-ivory: #FFF7E8;
+}
+
+/* Custom parchment paper texture & illumination accents */
+.parchment-card {
+  background-color: #F1E5CC;
+  color: #19372F;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(214, 179, 107, 0.4);
+}
+
+.dark-parchment-card {
+  background: linear-gradient(145deg, rgba(16, 29, 51, 0.95), rgba(11, 20, 36, 0.98));
+  border: 1px solid rgba(214, 179, 107, 0.25);
+  box-shadow: 0 16px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px -10px rgba(214, 179, 107, 0.15);
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(214, 179, 107, 0.4);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(11, 20, 36, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(214, 179, 107, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(214, 179, 107, 0.6);
+}
