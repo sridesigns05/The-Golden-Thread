@@ -20,7 +20,7 @@ export const TraditionsModal: React.FC<TraditionsModalProps> = ({ onClose, onSel
               Comparative Atlas Catalog
             </div>
             <h2 className="text-2xl font-serif font-bold text-[#19372F]">
-              The Four Cultural Traditions
+              The 15 World Cultural Traditions
             </h2>
           </div>
 

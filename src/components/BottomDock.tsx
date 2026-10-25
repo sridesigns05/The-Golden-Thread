@@ -11,6 +11,8 @@ interface BottomDockProps {
   onOpenJournal: () => void;
   onReset: () => void;
   guidanceText?: string;
+  highlightedStoryIds?: StoryId[];
+  onClearLens?: () => void;
 }
 
 export const BottomDock: React.FC<BottomDockProps> = ({
@@ -19,7 +21,9 @@ export const BottomDock: React.FC<BottomDockProps> = ({
   connectionsCount,
   onOpenJournal,
   onReset,
-  guidanceText
+  guidanceText,
+  highlightedStoryIds = [],
+  onClearLens
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -56,6 +60,8 @@ export const BottomDock: React.FC<BottomDockProps> = ({
             <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
               {STORIES.map((story) => {
                 const isSelected = story.id === selectedStoryId;
+                const isHighlighted = highlightedStoryIds.includes(story.id);
+
                 return (
                   <button
                     key={story.id}
@@ -64,13 +70,15 @@ export const BottomDock: React.FC<BottomDockProps> = ({
                       onSelectStory(story.id);
                     }}
                     className={`px-3 py-2 rounded-lg text-left transition-all duration-150 whitespace-nowrap shrink-0 border cursor-pointer ${
-                      isSelected
+                      isHighlighted
+                        ? 'bg-gradient-to-r from-[#D6B36B] to-[#F1E5CC] text-[#19372F] border-2 border-[#FFF7E8] shadow-[0_0_15px_rgba(214,179,107,0.7)] animate-pulse font-bold'
+                        : isSelected
                         ? 'bg-[#19372F] border-[#D6B36B] text-[#FFF7E8] shadow-sm'
                         : 'bg-[#101D33]/80 hover:bg-[#162744] border-[#D6B36B]/20 text-[#F1E5CC]'
                     }`}
                   >
-                    <div className="text-[10px] uppercase tracking-wider text-[#D6B36B] font-sans">
-                      {story.country}
+                    <div className={`text-[10px] uppercase tracking-wider font-sans ${isHighlighted ? 'text-[#19372F] font-bold' : 'text-[#D6B36B]'}`}>
+                      {isHighlighted ? '✦ Weave Thread' : story.country}
                     </div>
                     <div className="text-xs font-serif font-semibold">
                       {story.title}
@@ -109,9 +117,23 @@ export const BottomDock: React.FC<BottomDockProps> = ({
 
           {/* Contextual Guidance Line */}
           {guidanceText && (
-            <div className="mt-2.5 pt-2 border-t border-[#D6B36B]/15 text-[11px] font-sans text-[#F1E5CC]/60 flex items-center gap-2">
-              <span className="text-[#D6B36B]">✦</span>
-              <span className="truncate">{guidanceText}</span>
+            <div className="mt-2.5 pt-2 border-t border-[#D6B36B]/15 text-[11px] font-sans text-[#F1E5CC]/75 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 truncate">
+                <span className="text-[#D6B36B]">✦</span>
+                <span className="truncate">{guidanceText}</span>
+              </div>
+              {highlightedStoryIds.length > 0 && onClearLens && (
+                <button
+                  onClick={() => {
+                    playGentleClick();
+                    onClearLens();
+                  }}
+                  className="shrink-0 px-2.5 py-0.5 rounded-full bg-[#D6B36B]/25 hover:bg-[#D6B36B]/40 text-[#D6B36B] hover:text-[#FFF7E8] text-[10px] font-sans font-medium border border-[#D6B36B]/40 transition-colors flex items-center gap-1 cursor-pointer"
+                >
+                  <RotateCcw className="w-2.5 h-2.5" />
+                  <span>Clear Lens</span>
+                </button>
+              )}
             </div>
           )}
         </div>
