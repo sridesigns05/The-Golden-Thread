@@ -214,7 +214,7 @@ export const ModeSelectModal: React.FC<ModeSelectModalProps> = ({
               </span>
               <button
                 onClick={handleConfirmSoloQuest}
-                className="px-6 py-2.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-sm sm:text-base transition-all shadow-[0_0_20px_rgba(214,179,107,0.4)] flex items-center gap-2 cursor-pointer hover:scale-[1.02]"
+                className="btn btn-gold"
               >
                 <span>Continue</span>
                 <ArrowRight className="w-4 h-4" />

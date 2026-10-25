@@ -11,16 +11,20 @@ interface SharedJourneyModalProps {
   onClose: () => void;
   onStartAsJoiner: (journey: SharedJourneyData, startStoryId: StoryId) => void;
   onSaveCreatedJourney: (journey: SharedJourneyData) => void;
+  onViewPassport: (journey: SharedJourneyData) => void;
 }
 
 export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
   initialJourneyData,
   onClose,
   onStartAsJoiner,
-  onSaveCreatedJourney
+  onSaveCreatedJourney,
+  onViewPassport
 }) => {
   // If initialJourneyData exists and is not yet completed by joiner, show Joiner Accept Flow
   const isJoinerFlow = !!initialJourneyData && !initialJourneyData.isComplete;
+  // A link opened after the journey was finished shows the result instead of the invitation form
+  const isCompletedView = !!initialJourneyData && !!initialJourneyData.isComplete;
 
   // Creator state
   const [creatorStoryId, setCreatorStoryId] = useState<StoryId>('cinderella');
@@ -28,6 +32,11 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
   const [creatorNote, setCreatorNote] = useState('');
   const [createdJourney, setCreatedJourney] = useState<SharedJourneyData | null>(null);
   const [hasCopied, setHasCopied] = useState(false);
+  const [noteOnPassport, setNoteOnPassport] = useState(false);
+  const [createError, setCreateError] = useState<string | null>(null);
+  const [creating, setCreating] = useState(false);
+  const [reply, setReply] = useState<SharedJourneyData | null>(null);
+  const [replyStatus, setReplyStatus] = useState<string | null>(null);
 
   // Joiner state
   const [joinerStoryId, setJoinerStoryId] = useState<StoryId>('kongjwi');
@@ -35,28 +44,55 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
 
   const handleCreateJourney = async () => {
     playCelestialChime();
+    setCreating(true);
+    setCreateError(null);
     const journeyId = `thread_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 6)}`;
+    const typedNote = creatorNote.trim();
     const newJourney: SharedJourneyData = {
       id: journeyId,
       creatorStoryId,
       creatorName: creatorName.trim() || 'A Fellow Traveler',
-      creatorNote: creatorNote.trim() || 'I invite you to weave a golden thread across cultures to meet my tale.',
+      creatorNote: typedNote || 'I invite you to weave a golden thread across cultures to meet my tale.',
+      // The message is printed on a Passport only if the author wrote one and allowed it
+      creatorNoteOnPassport: noteOnPassport && typedNote.length > 0,
       createdAt: Date.now()
     };
 
-    // Save to local & API
+    // The link only works if the server has saved the journey, so a failed save is not hidden
     try {
-      await fetch('/api/journeys', {
+      const res = await fetch('/api/journeys', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newJourney)
+        body: JSON.stringify({ ...newJourney, creatorNote: typedNote })
       });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
     } catch {
-      // Local fallback
+      setCreateError('The journey could not be saved on the server, so a link would not work for your friend. Check that the app server is running, then try again.');
+      setCreating(false);
+      return;
     }
 
+    setCreating(false);
     setCreatedJourney(newJourney);
     onSaveCreatedJourney(newJourney);
+  };
+
+  const handleCheckReply = async () => {
+    if (!createdJourney) return;
+    setReplyStatus('Checking…');
+    try {
+      const res = await fetch(`/api/journeys/${createdJourney.id}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const latest = (await res.json()) as SharedJourneyData;
+      if (latest.isComplete) {
+        setReply(latest);
+        setReplyStatus(null);
+      } else {
+        setReplyStatus('No one has finished this journey yet.');
+      }
+    } catch {
+      setReplyStatus('Could not reach the server to check.');
+    }
   };
 
   const getShareUrl = (id: string) => {
@@ -64,12 +100,15 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
     return `${window.location.origin}${window.location.pathname}?journey=${id}`;
   };
 
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     if (!createdJourney) return;
-    const url = getShareUrl(createdJourney.id);
-    navigator.clipboard.writeText(url);
-    setHasCopied(true);
-    setTimeout(() => setHasCopied(false), 2500);
+    try {
+      await navigator.clipboard.writeText(getShareUrl(createdJourney.id));
+      setHasCopied(true);
+      setTimeout(() => setHasCopied(false), 2500);
+    } catch {
+      setReplyStatus('Could not copy automatically. Select the link above and copy it.');
+    }
   };
 
   const handleConfirmJoinerStart = () => {
@@ -110,7 +149,31 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {isJoinerFlow ? (
+        {isCompletedView && initialJourneyData ? (
+          /* ================= A FINISHED JOURNEY, OPENED FROM ITS LINK ================= */
+          <div className="text-center py-2">
+            <div className="w-14 h-14 rounded-full bg-[#D6B36B]/20 border border-[#D6B36B] flex items-center justify-center text-[#D6B36B] mx-auto mb-3">
+              <Heart className="w-7 h-7 fill-[#D6B36B]" />
+            </div>
+            <span className="text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#D6B36B]">
+              Journey Completed
+            </span>
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#FFF7E8] mt-1">Two Stories Met</h3>
+            <p className="text-xs sm:text-sm font-serif text-[#F1E5CC]/85 mt-2 max-w-md mx-auto">
+              A traveler began at{' '}
+              <strong className="text-[#FFF7E8]">{STORIES.find((s) => s.id === initialJourneyData.joinerStoryId)?.title}</strong>{' '}
+              and reached{' '}
+              <strong className="text-[#FFF7E8]">{STORIES.find((s) => s.id === initialJourneyData.creatorStoryId)?.title}</strong>.
+            </p>
+            <div className="flex justify-center gap-3 mt-5">
+              <button onClick={() => onViewPassport(initialJourneyData)} className="btn btn-gold">
+                <Sparkles className="w-4 h-4" />
+                <span>View Passport</span>
+              </button>
+              <button onClick={onClose} className="btn btn-dark">Close</button>
+            </div>
+          </div>
+        ) : isJoinerFlow ? (
           /* ================= PLAYER B: JOINING A SHARED JOURNEY ================= */
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -172,7 +235,7 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
 
             <button
               onClick={handleConfirmJoinerStart}
-              className="w-full mt-3 py-2.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-sm transition-all shadow-[0_0_20px_rgba(214,179,107,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+              className="btn btn-gold"
             >
               <span>Begin Your Journey Toward {STORIES.find((s) => s.id === initialJourneyData.creatorStoryId)?.title}</span>
               <ArrowRight className="w-4 h-4" />
@@ -207,17 +270,34 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
               />
               <button
                 onClick={handleCopyLink}
-                className="px-3 py-1.5 rounded-md bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] text-xs font-sans font-bold flex items-center gap-1 shrink-0 cursor-pointer transition-all"
+                className="btn btn-gold"
               >
                 {hasCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{hasCopied ? 'Copied!' : 'Copy Link'}</span>
               </button>
             </div>
 
+            {reply && (
+              <div className="mb-4 p-3 rounded-xl bg-[#142033] border border-[#D6B36B]/50 text-xs font-serif text-[#F1E5CC]">
+                A traveler started at{' '}
+                <strong className="text-[#FFF7E8]">{STORIES.find((s) => s.id === reply.joinerStoryId)?.title}</strong> and reached your story.
+                <div className="mt-2">
+                  <button onClick={() => onViewPassport(reply)} className="btn btn-gold">
+                    <Sparkles className="w-4 h-4" />
+                    <span>View Passport</span>
+                  </button>
+                </div>
+              </div>
+            )}
+            {replyStatus && <p className="text-[11px] font-sans text-[#F1E5CC]/75 mb-3">{replyStatus}</p>}
+
             <div className="flex justify-center gap-3">
+              <button onClick={handleCheckReply} className="btn btn-dark">
+                Check for a Reply
+              </button>
               <button
                 onClick={onClose}
-                className="px-5 py-2 rounded-full bg-[#142033] hover:bg-[#1C2C47] text-[#FFF7E8] font-sans text-xs border border-[#D6B36B]/50 transition-all cursor-pointer"
+                className="btn btn-dark"
               >
                 Return to Atlas
               </button>
@@ -287,12 +367,29 @@ export const SharedJourneyModal: React.FC<SharedJourneyModalProps> = ({
               />
             </div>
 
+            <label className="flex items-start gap-2 mt-3 text-xs font-sans text-[#F1E5CC]/90 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={noteOnPassport}
+                onChange={(e) => setNoteOnPassport(e.target.checked)}
+                className="mt-0.5 accent-[#D6B36B]"
+              />
+              <span>Allow my message to be printed on the Friendship Passport (it can be saved and shared as an image)</span>
+            </label>
+
+            {createError && (
+              <div className="mt-3 p-2.5 rounded bg-red-950/60 border border-red-500/50 text-red-200 text-xs font-sans">
+                {createError}
+              </div>
+            )}
+
             <button
               onClick={handleCreateJourney}
-              className="w-full mt-5 py-2.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-sm transition-all shadow-[0_0_20px_rgba(214,179,107,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+              disabled={creating}
+              className="btn btn-gold mt-4"
             >
               <Link2 className="w-4 h-4" />
-              <span>Create Shareable Journey Link</span>
+              <span>{creating ? 'Saving…' : 'Create Shareable Journey Link'}</span>
             </button>
           </div>
         )}

@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "entries": {
+    "sedna": {
+      "sources": {
+        "query": "Sedna Nuliajuk Inuit sea mother | Sedna Inuit sea goddess Britannica",
+        "fetchedAt": "2026-10-25T06:58:08+00:00",
+        "results": [
+          {
+            "title": "Sedna, Goddess of the Sea | Religion and Philosophy",
+            "link": "https://www.ebsco.com/research-starters/religion-and-philosophy/sedna-goddess-sea/",
+            "snippet": "Sedna is the revered goddess of the sea in Inuit mythology, known for her deep connection to marine life and her dualistic nature.",
+            "domain": "ebsco.com",
+            "story": "sedna"
+          },
+          {
+            "title": "Mythologies of the Indigenous peoples of the Americas",
+            "link": "https://www.britannica.com/art/mythologies-of-the-Indigenous-peoples-of-the-Americas/Oral-literatures",
+            "snippet": "In the region from Greenland to the Mackenzie River, Sedna is the highest spirit and controls the sea mammals; the Moon is a male deity who lives incestuously ...",
+            "domain": "britannica.com",
+            "story": "sedna"
+          }
+        ]
+      }
+    },
+    "lib-500-rumpelstiltskin": {
+      "sources": {
+        "query": "\"Rumpelstiltskin\" folktale The Name of the Supernatural Helper",
+        "fetchedAt": "2026-10-25T07:10:41+00:00",
+        "results": [
+          {
+            "title": "Name of the Helper",
+            "link": "https://sites.pitt.edu/~dash/type0500.html",
+            "snippet": "Ashliman's folktexts, a library of folktales, folklore, fairy tales, and mythology. Rumpelstiltskin. Germany. Once upon a time there was a miller who was poor, ...",
+            "domain": "sites.pitt.edu"
+          }
+        ]
+      }
+    },
+    "cinderella": {
+      "sources": {
+        "query": "\"Cinderella\" Perrault Cendrillon | Cinderella ATU 510 folktale Ashliman",
+        "fetchedAt": "2026-10-25T06:57:25+00:00",
+        "results": [
+          {
+            "title": "Perrault: Cinderella; or, The Little Glass Slipper",
+            "link": "https://sites.pitt.edu/~dash/perrault06.html",
+            "snippet": "Only the younger sister, who was not so rude and uncivil as the older one, called her Cinderella. ... Lang's source: Charles Perrault, \"Cendrillon, ou la ...",
+            "domain": "sites.pitt.edu",
+            "story": "cinderella"
+          },
+          {
+            "title": "Cinderella",
+            "link": "https://sites.pitt.edu/~dash/type0510a.html",
+            "snippet": "Ashliman's folktexts, a library of folktales, folklore, fairy tales, and mythology. Rhodopis. Strabo. A pyramid at Memphis is called \"Tomb of the Courtesan,\" ...",
+            "domain": "sites.pitt.edu",
+            "story": "cinderella"
+          },
+          {
+            "title": "ATU 510A - Cinderella | Fairy Tales at CU Boulder",
+            "link": "https://www.colorado.edu/projects/fairy-tales/atu-510a-cinderella",
+            "snippet": "Tale SummaryAn abusive stepmother and two stepdaughters are invited to a royal ball, leaving their daughter and sister whom they call Cinderella, or Cindertail, ...",
+            "domain": "colorado.edu",
+            "story": "cinderella"
+          },
+          {
+            "title": "Library Research Guide for Folklore and Mythology",
+            "link": "https://guides.library.harvard.edu/folk_and_myth/indices",
+            "snippet": "The story is tale-type 510 (ATU 510) or “The Persecuted Heroine”. This tale type has two variant types, ATU 510A “Cinderella” tale-type and ATU ...",
+            "domain": "guides.library.harvard.edu",
+            "story": "cinderella"
+          },
+          {
+            "title": "Literature & Film (HUMN 2333): Cinderella",
+            "link": "https://guides.library.tulsacc.edu/HUMN2333/Cinderella",
+            "snippet": "\"The Aarne–Thompson–Uther Index (ATU Index) is a catalogue of folktale types used in folklore studies. ... Ashliman. Has most of Grimm's Fairy Tales and ...",
+            "domain": "guides.library.tulsacc.edu",
+            "story": "cinderella"
+          },
+          {
+            "title": "Cinderella in Old Norse Literature - Apollo",
+            "link": "https://www.repository.cam.ac.uk/items/410380fc-3d50-4ee7-a000-881105afdcc5",
+            "snippet": "Although ATU 510A, 'Cinderella', is known to have ancient origins, it was widely thought that the ash-name did not become a feature of the tale type until ...",
+            "domain": "repository.cam.ac.uk",
+            "story": "cinderella"
+          }
+        ]
+      }
+    }
+  }
+}

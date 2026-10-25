@@ -42,7 +42,7 @@ def test_library_file_is_consistent_and_metadata_only():
 def test_perrault_duplicate_is_dropped_not_listed_twice():
     assert not any("Little Glass Slipper" in t.title for t in library.tales())
     dropped = json.load(open(DATA_DIR / "library.json", encoding="utf-8"))["droppedAsDuplicates"]
-    assert dropped == [{"title": "Cinderella; or, The Little Glass Slipper", "atuType": "510A", "duplicateOf": "cendrillon"}]
+    assert dropped == [{"title": "Cinderella; or, The Little Glass Slipper", "atuType": "510A", "duplicateOf": "cinderella"}]
     links = json.load(open(DATA_DIR / "library_links.json", encoding="utf-8"))["links"]
     assert set(links.values()) <= {s.id for s in catalog.stories()}
 
@@ -62,13 +62,13 @@ def test_stories_endpoint_is_curated_only():
     stories = get("/api/stories")
     assert len(stories) == 15 and all(s["tier"] == "curated" for s in stories)
     assert not any(s["id"].startswith("lib-") for s in stories)
-    assert get("/api/stories/ye-xian")["tier"] == "curated"
+    assert get("/api/stories/yexian")["tier"] == "curated"
     assert client.get("/api/stories/lib-510a-ashey-pelt").status_code == 404
 
 
 def test_motif_view_timeline_and_highlights_exclude_library():
     curated = {s.id for s in catalog.stories()}
-    v = get(f"/api/motifs/{LOST}", story="cendrillon", all="true")
+    v = get(f"/api/motifs/{LOST}", story="cinderella", all="true")
     assert set(v["highlightIds"]) <= curated and {t["id"] for t in v["timeline"]} <= curated
     for g in (v["sameType"], v["differentType"]):
         for r in g["library"]:
@@ -78,7 +78,7 @@ def test_motif_view_timeline_and_highlights_exclude_library():
 
 # ---- curated results are untouched ----------------------------------------------------------
 def test_library_never_changes_or_displaces_curated_results():
-    for story, motif in (("cendrillon", LOST), ("cendrillon", "supernatural-assistance"), ("vasilisa", "supernatural-assistance")):
+    for story, motif in (("cinderella", LOST), ("cinderella", "supernatural-assistance"), ("vasilisa", "supernatural-assistance")):
         on = get(f"/api/motifs/{motif}", story=story)
         off = get(f"/api/motifs/{motif}", story=story, library="false")
         for g in ("sameType", "differentType"):
@@ -88,24 +88,24 @@ def test_library_never_changes_or_displaces_curated_results():
 
 
 def test_acceptance_still_holds_with_library_on():
-    v = get(f"/api/motifs/{LOST}", story="cendrillon")
+    v = get(f"/api/motifs/{LOST}", story="cinderella")
     assert [r["story"]["id"] for r in v["sameType"]["results"]][:3] and {
         r["story"]["id"] for r in v["sameType"]["results"]
-    } == {"ye-xian", "kongjwi-patjwi", "tam-cam"}
-    assert [r["story"]["id"] for r in v["differentType"]["results"]] == ["shakuntala"]
-    assert v["differentType"]["libraryTotal"] == 0  # Shakuntala-type links never pull in Cinderella variants
+    } == {"yexian", "kongjwi", "tam-cam"}
+    assert [r["story"]["id"] for r in v["differentType"]["results"]] == ["rhodopis", "shakuntala"]
+    assert v["differentType"]["libraryTotal"] == 0  # thematic links never pull in Cinderella variants
 
 
 def test_library_lists_are_capped_with_see_all():
-    v = get(f"/api/motifs/{LOST}", story="cendrillon")
+    v = get(f"/api/motifs/{LOST}", story="cinderella")
     same = v["sameType"]
     assert len(same["library"]) == 5 and same["libraryTotal"] == 20  # 510A tales minus the Perrault duplicate
-    full = get(f"/api/motifs/{LOST}", story="cendrillon", all="true")["sameType"]
+    full = get(f"/api/motifs/{LOST}", story="cinderella", all="true")["sameType"]
     assert len(full["library"]) == 20 == full["libraryTotal"]
 
 
 def test_library_results_are_labelled_type_level_and_classified_by_rule():
-    v = get(f"/api/motifs/{LOST}", story="cendrillon")
+    v = get(f"/api/motifs/{LOST}", story="cinderella")
     for r in v["sameType"]["library"]:
         assert r["connectionType"] == "cinderella-parallel" and r["sameExactType"] is True
         assert r["why"]["kind"] == "tale-type" and "type level" in r["why"]["text"]
@@ -118,8 +118,9 @@ def test_library_results_are_labelled_type_level_and_classified_by_rule():
 def test_library_motif_view_without_viewer_and_counts():
     counts = {m["id"]: m["libraryCount"] for m in get("/api/motifs")}
     assert counts[LOST] == 20 and counts["trickster"] == 0
-    v = get("/api/motifs/theft-of-fire-or-light")
+    v = get("/api/motifs/trickster")
     assert v["sameType"] is None and v["motif"]["libraryCount"] == 0
+    assert client.get("/api/motifs/theft-of-fire-or-light").status_code == 404  # no story in the set uses it
 
 
 def test_library_tale_cannot_be_the_viewed_story():
@@ -131,7 +132,7 @@ def test_search_includes_library_in_a_separate_list():
     r = get("/api/search", q="grimm")
     assert r["stories"] == [] and any(h["tale"]["title"] == "Cinderella (Grimm)" for h in r["library"])
     r = get("/api/search", q="cinderella")
-    assert r["stories"][0]["story"]["id"] == "cendrillon"
+    assert r["stories"][0]["story"]["id"] == "cinderella"
     assert not any("Little Glass Slipper" in h["tale"]["title"] for h in r["library"])
     assert all(h["tale"]["tier"] == "library" for h in r["library"])
 
@@ -179,7 +180,7 @@ def test_library_detail_and_404():
 
 # ---- compare --------------------------------------------------------------------------------
 def test_compare_curated_with_library_tale():
-    c = get("/api/compare", a="cendrillon", b="lib-510a-ashey-pelt", motif=LOST)
+    c = get("/api/compare", a="cinderella", b="lib-510a-ashey-pelt", motif=LOST)
     assert c["a"]["tier"] == "curated" and c["b"]["tier"] == "library"
     assert c["connectionType"] == "cinderella-parallel" and c["difference"] is None
     assert c["inA"]["howItAppears"] and c["inB"]["kind"] == "tale-type" and "type level" in c["inB"]["text"]
@@ -197,15 +198,15 @@ def test_compare_library_with_shakuntala_is_thematic_and_symmetric():
 def test_compare_two_library_tales_and_errors():
     c = get("/api/compare", a="lib-510a-ashey-pelt", b="lib-510a-cinderella-grimm", motif=LOST)
     assert c["connectionType"] == "cinderella-parallel" and c["difference"] is None
-    assert client.get("/api/compare", params={"a": "lib-510a-ashey-pelt", "b": "ye-xian", "motif": "trickster"}).status_code == 400
+    assert client.get("/api/compare", params={"a": "lib-510a-ashey-pelt", "b": "yexian", "motif": "trickster"}).status_code == 400
     assert client.get("/api/compare", params={"a": "lib-510a-ashey-pelt", "b": "lib-nope", "motif": LOST}).status_code == 404
     # a library tale linked to a different motif only is rejected for a motif it lacks
     other = next(t for t in library.tales() if t.motifs and LOST not in t.motifs)
-    assert client.get("/api/compare", params={"a": "ye-xian", "b": other.id, "motif": LOST}).status_code == 400
+    assert client.get("/api/compare", params={"a": "yexian", "b": other.id, "motif": LOST}).status_code == 400
 
 
 def test_curated_compare_is_unchanged():
-    c = get("/api/compare", a="ye-xian", b="cendrillon", motif=LOST)
+    c = get("/api/compare", a="yexian", b="cinderella", motif=LOST)
     assert c["a"]["tier"] == "curated" and c["b"]["tier"] == "curated" and c["difference"]["draft"] is True
 
 

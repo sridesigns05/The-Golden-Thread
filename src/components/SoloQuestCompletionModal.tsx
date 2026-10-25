@@ -11,13 +11,15 @@ interface SoloQuestCompletionModalProps {
   onPlayAgain: () => void;
   onExploreFreely: () => void;
   onOpenJournal: () => void;
+  onViewPassport: () => void;
 }
 
 export const SoloQuestCompletionModal: React.FC<SoloQuestCompletionModalProps> = ({
   questState,
   onPlayAgain,
   onExploreFreely,
-  onOpenJournal
+  onOpenJournal,
+  onViewPassport
 }) => {
   const startStory = STORIES.find((s) => s.id === questState.startStoryId);
   const targetStory = STORIES.find((s) => s.id === questState.targetStoryId);
@@ -100,7 +102,7 @@ export const SoloQuestCompletionModal: React.FC<SoloQuestCompletionModalProps> =
           <div className="flex flex-col sm:flex-row gap-3 w-full justify-center">
             <button
               onClick={onPlayAgain}
-              className="px-5 py-2.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-sm transition-all shadow-[0_0_20px_rgba(214,179,107,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+              className="btn btn-gold"
             >
               <RotateCcw className="w-4 h-4" />
               <span>Embark on New Quest</span>
@@ -108,7 +110,7 @@ export const SoloQuestCompletionModal: React.FC<SoloQuestCompletionModalProps> =
 
             <button
               onClick={onExploreFreely}
-              className="px-5 py-2.5 rounded-full bg-[#142033] hover:bg-[#1C2C47] text-[#FFF7E8] font-sans text-xs border border-[#D6B36B]/50 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="btn btn-dark"
             >
               <Compass className="w-4 h-4 text-[#D6B36B]" />
               <span>Explore Atlas Freely</span>
@@ -116,12 +118,19 @@ export const SoloQuestCompletionModal: React.FC<SoloQuestCompletionModalProps> =
 
             <button
               onClick={onOpenJournal}
-              className="px-5 py-2.5 rounded-full bg-[#142033] hover:bg-[#1C2C47] text-[#FFF7E8] font-sans text-xs border border-[#D6B36B]/50 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="btn btn-dark"
             >
               <BookOpen className="w-4 h-4 text-[#D6B36B]" />
               <span>Open Journal</span>
             </button>
           </div>
+
+          <button
+            onClick={onViewPassport}
+            className="mt-4 text-xs font-sans font-semibold text-[#D6B36B] hover:text-[#FFF7E8] underline underline-offset-4 cursor-pointer"
+          >
+            View Your Passport
+          </button>
         </div>
       </motion.div>
     </div>

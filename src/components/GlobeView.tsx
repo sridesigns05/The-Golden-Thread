@@ -96,24 +96,17 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     isTransitioningCameraRef.current = true;
   }, [focusedStoryId]);
 
-  // When stories are illuminated via Motif Lens, smoothly focus on the active region without zooming too close
+  // When stories are illuminated via Motif Lens, zoom out a little for context but keep looking at the
+  // same spot. (Re-centring on an average of the stories sent the globe somewhere else.)
   useEffect(() => {
-    if (highlightedStoryIds.length > 0) {
-      const allActive = STORIES.filter(
-        (s) => s.id === selectedStoryId || highlightedStoryIds.includes(s.id)
-      );
-      if (allActive.length > 0) {
-        const avgLat = allActive.reduce((acc, s) => acc + s.coordinates.lat, 0) / allActive.length;
-        const avgLng = allActive.reduce((acc, s) => acc + s.coordinates.lng, 0) / allActive.length;
-        const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - avgLat) * (Math.PI / 180)));
-        const theta = (avgLng + 180) * (Math.PI / 180);
-        // Radius 6.8 gives clear situational awareness of both continents without zooming too close
-        _targetCamPos.setFromSphericalCoords(6.8, phi, theta);
-        cameraTargetPosRef.current = _targetCamPos.clone();
-        isTransitioningCameraRef.current = true;
-      }
-    }
-  }, [highlightedStoryIds, selectedStoryId]);
+    if (highlightedStoryIds.length === 0 || !cameraRef.current) return;
+    const base =
+      isTransitioningCameraRef.current && cameraTargetPosRef.current
+        ? cameraTargetPosRef.current
+        : cameraRef.current.position;
+    cameraTargetPosRef.current = base.clone().normalize().multiplyScalar(6.8);
+    isTransitioningCameraRef.current = true;
+  }, [highlightedStoryIds]);
 
   // When a Golden Thread connection is active, smoothly frame the arc midpoint
   useEffect(() => {
@@ -122,12 +115,19 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     const storyB = STORIES.find((s) => s.id === activeConnection.to);
     if (!storyA || !storyB) return;
 
-    const latMid = (storyA.coordinates.lat + storyB.coordinates.lat) / 2;
-    const lngMid = (storyA.coordinates.lng + storyB.coordinates.lng) / 2;
-    const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - latMid) * (Math.PI / 180)));
-    const theta = (lngMid + 180) * (Math.PI / 180);
-    _targetCamPos.setFromSphericalCoords(5.8, phi, theta);
-    cameraTargetPosRef.current = _targetCamPos.clone();
+    // Midpoint on the sphere (average of the two unit vectors), so a pair that straddles the
+    // date line is framed on the near side instead of the opposite side of the globe.
+    const toVec = (lat: number, lng: number) =>
+      new THREE.Vector3().setFromSphericalCoords(
+        1,
+        (90 - lat) * (Math.PI / 180),
+        (lng + 180) * (Math.PI / 180)
+      );
+    const mid = toVec(storyA.coordinates.lat, storyA.coordinates.lng).add(
+      toVec(storyB.coordinates.lat, storyB.coordinates.lng)
+    );
+    if (mid.lengthSq() < 1e-6) mid.copy(toVec(storyA.coordinates.lat, storyA.coordinates.lng));
+    cameraTargetPosRef.current = mid.normalize().multiplyScalar(5.8);
     isTransitioningCameraRef.current = true;
   }, [activeConnection]);
 
@@ -294,7 +294,8 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
         _vec3.copy(camera.position);
         sphericalRef.current.radius = _vec3.length();
         sphericalRef.current.phi = Math.acos(Math.max(-1, Math.min(1, _vec3.y / sphericalRef.current.radius)));
-        sphericalRef.current.theta = Math.atan2(_vec3.z, _vec3.x);
+        // three.js spherical coords: x = r sin(phi) sin(theta), z = r sin(phi) cos(theta)
+        sphericalRef.current.theta = Math.atan2(_vec3.x, _vec3.z);
 
         if (camera.position.distanceTo(cameraTargetPosRef.current) < 0.04) {
           isTransitioningCameraRef.current = false;

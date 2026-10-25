@@ -166,11 +166,12 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             playGentleClick();
             onOpenSearch();
           }}
-          className="p-2 rounded-lg bg-[#101D33] hover:bg-[#192C4D] text-[#D6B36B] border border-[#D6B36B]/30 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-[#D6B36B]"
+          className="h-11 px-5 sm:px-6 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] border-2 border-[#FFF7E8]/60 shadow-[0_0_22px_rgba(214,179,107,0.65)] text-sm sm:text-base font-sans font-bold transition-all cursor-pointer flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-[#FFF7E8]"
           title="Search 15 Playable Tales & Folklore Archive"
           aria-label="Search Tales"
         >
-          <Search className="w-4 h-4" />
+          <Search className="w-5 h-5" />
+          <span>Search</span>
         </button>
 
         {/* Audio & Music Control Button */}

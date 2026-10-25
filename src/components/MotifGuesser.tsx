@@ -23,24 +23,22 @@ export const MotifGuesser: React.FC<MotifGuesserProps> = ({
     message: alreadySolvedMotif ? 'Golden connection revealed across the celestial atlas.' : ''
   });
 
-  // Curate 3 options for the challenge:
-  // Must include valid cross-story motifs for this story, plus a distractor or unique motif
-  const getCuratedOptions = (storyId: string): MotifId[] => {
-    switch (storyId) {
-      case 'cinderella':
-        return ['supernatural-assistance', 'lost-object-recognition', 'memory-and-forgetting'];
-      case 'kongjwi':
-        return ['lost-object-recognition', 'supernatural-assistance', 'love-and-duty'];
-      case 'yexian':
-        return ['lost-object-recognition', 'supernatural-assistance', 'separation-and-reunion'];
-      case 'shakuntala':
-        return ['lost-object-recognition', 'transformation', 'unjust-treatment'];
-      default:
-        return ['lost-object-recognition', 'supernatural-assistance', 'unjust-treatment'];
-    }
+  // Three options per story, computed from the data: one motif that really links this story to others
+  // in the atlas, plus two motifs the story does not have. The choice is stable for a given story.
+  const getCuratedOptions = (target: StoryData): MotifId[] => {
+    const hash = (text: string) => [...text].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
+    const linking = target.motifs
+      .filter((m) => getRelatedStoriesForMotif(target.id, m).length > 0)
+      .sort();
+    const correct = linking.length > 0 ? linking[hash(target.id) % linking.length] : target.motifs[0];
+    const decoys = (Object.keys(MOTIFS_CATALOG) as MotifId[])
+      .filter((m) => !target.motifs.includes(m))
+      .sort((x, y) => hash(target.id + x) - hash(target.id + y))
+      .slice(0, 2);
+    return [correct, ...decoys].sort((x, y) => hash(target.id + y) - hash(target.id + x));
   };
 
-  const options = getCuratedOptions(story.id);
+  const options = getCuratedOptions(story);
 
   const handleSelectOption = (motifId: MotifId) => {
     playGentleClick();

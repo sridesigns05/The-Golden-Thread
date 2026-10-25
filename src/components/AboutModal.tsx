@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Sparkles, BookOpen, Compass, Award } from 'lucide-react';
 import { playGentleClick } from '../utils/audio';
+import { CATALOG_META } from '../data/catalogMeta';
 
 interface AboutModalProps {
   onClose: () => void;
@@ -59,9 +60,11 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose }) => {
             </h3>
             <ul className="list-disc list-inside space-y-1.5 text-xs text-[#19372F]/90">
               <li>
-                <strong>Cinderella-Type Folktales:</strong> Charles Perrault’s <em>Cendrillon</em> (France),
-                <em>Kongjwi and Patjwi</em> (Korea), and <em>Ye Xian</em> (China) are widely recognized variants
-                within the international ATU 510A folktale cycle.
+                <strong>Cinderella-type tales:</strong> Perrault’s <em>Cendrillon</em> (France) is classed as
+                ATU 510A. <em>Kongjwi and Patjwi</em> (Korea), <em>Ye Xian</em> (China) and <em>Tam and Cam</em>
+                (Vietnam) are often grouped with it, but this atlas has not yet confirmed their tale-type numbers
+                in a scholarly index, so those pairings are marked unconfirmed. <em>Rhodopis</em> (Strabo) is an
+                ancient analogue and is not treated as the same tale type here.
               </li>
               <li>
                 <strong>Classical Sanskrit Drama:</strong> Kalidasa’s <em>Abhijñānaśākuntalam</em> (India) is a
@@ -77,9 +80,26 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose }) => {
             </ul>
           </div>
 
+          <div className="p-4 rounded-lg bg-[#FAF5EA] border border-[#D6B36B]/40 space-y-2">
+            <h3 className="font-serif font-bold text-base text-[#19372F]">Limits of this atlas</h3>
+            <ul className="list-disc list-inside space-y-1.5 text-xs text-[#19372F]/90">
+              <li>{CATALOG_META.dateRule}</li>
+              <li>{CATALOG_META.similarityRule}</li>
+              <li>Coverage is uneven and skews toward traditions with more published scholarship in English.</li>
+              {CATALOG_META.limitations.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            {CATALOG_META.libraryAttribution && (
+              <p className="text-[11px] text-[#19372F]/70 pt-1">{CATALOG_META.libraryAttribution}</p>
+            )}
+          </div>
+
           <div className="text-xs font-sans text-[#19372F]/70 border-t border-[#D6B36B]/20 pt-4 flex items-center justify-between">
-            <span>Built with React, Three.js, and TypeScript</span>
-            <span>Zero 404s · Curated Local Folklore Data</span>
+            <span>Built with React, Three.js, FastAPI and SerpApi</span>
+            <span>
+              Data: {CATALOG_META.dataSource === 'backend' ? 'live from the backend' : 'bundled snapshot (backend not reached)'}
+            </span>
           </div>
         </div>
 

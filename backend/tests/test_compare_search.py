@@ -16,63 +16,74 @@ def compare(a, b, motif=LOST):
 
 
 def search(q, **params):
-    r = client.get("/api/search", params={"q": q, **params})
+    r = client.get("/api/search", params={"q": q, "tiers": "curated", **params})
     assert r.status_code == 200, r.text
     return r.json()
 
 
 # ---- /api/compare ---------------------------------------------------------------------------
 def test_compare_assembles_from_stored_entries():
-    c = compare("ye-xian", "cendrillon").json()
+    c = compare("yexian", "cinderella").json()
     stored = {s.id: s for s in catalog.stories()}
-    assert c["a"]["id"] == "ye-xian" and c["b"]["id"] == "cendrillon"
-    assert c["inA"]["howItAppears"] == next(e for e in stored["ye-xian"].motifEntries if e.motif == LOST).howItAppears
-    assert c["inB"]["howItAppears"] == next(e for e in stored["cendrillon"].motifEntries if e.motif == LOST).howItAppears
-    assert c["connectionType"] == "cinderella-parallel" and c["typeConfirmed"] is True
-    assert set(c["sharedMotifs"]) == {"unjust-treatment", "supernatural-assistance", LOST, "reversal-of-fortune"}
+    assert c["a"]["id"] == "yexian" and c["b"]["id"] == "cinderella"
+    assert c["inA"]["howItAppears"] == next(e for e in stored["yexian"].motifEntries if e.motif == LOST).howItAppears
+    assert c["inB"]["howItAppears"] == next(e for e in stored["cinderella"].motifEntries if e.motif == LOST).howItAppears
+    assert c["inA"]["evidence"]["url"].startswith("http")
+    assert c["connectionType"] == "cinderella-parallel"
+    assert set(c["sharedMotifs"]) == {
+        "unjust-treatment", "supernatural-assistance", LOST, "transformation", "reversal-of-fortune"
+    }
     assert "similarity" in c["caveats"]
 
 
 def test_compare_is_order_symmetric_in_content():
-    ab, ba = compare("ye-xian", "cendrillon").json(), compare("cendrillon", "ye-xian").json()
+    ab, ba = compare("yexian", "cinderella").json(), compare("cinderella", "yexian").json()
     assert ab["connectionType"] == ba["connectionType"] and ab["sharedMotifs"] == ba["sharedMotifs"]
     assert ab["inA"] == ba["inB"] and ab["difference"] == ba["difference"]
 
 
 def test_shakuntala_pairs_are_thematic_never_cinderella():
-    for other in ("cendrillon", "ye-xian", "kongjwi-patjwi", "tam-cam"):
-        c = compare("shakuntala", other).json()
-        assert c["connectionType"] == "thematic-parallel"
+    for other in ("cinderella", "yexian", "kongjwi", "tam-cam", "rhodopis"):
+        assert compare("shakuntala", other).json()["connectionType"] == "thematic-parallel"
+
+
+def test_rhodopis_and_one_hand_girl_pair_as_thematic_with_cinderella():
+    assert compare("cinderella", "rhodopis").json()["connectionType"] == "thematic-parallel"
+    c = compare("cinderella", "one-hand-girl", "unjust-treatment").json()
+    assert c["connectionType"] == "thematic-parallel"
 
 
 def test_unconfirmed_type_is_flagged():
-    assert compare("cendrillon", "kongjwi-patjwi").json()["typeConfirmed"] is False
-    assert compare("cendrillon", "tam-cam").json()["typeConfirmed"] is False
+    assert compare("cinderella", "yexian").json()["typeConfirmed"] is False  # Ye Xian's 510A is unconfirmed
+    assert compare("cinderella", "kongjwi").json()["typeConfirmed"] is False
+    assert compare("cinderella", "tam-cam").json()["typeConfirmed"] is False
+    assert compare("cinderella", "rhodopis").json()["typeConfirmed"] is True  # no uncertain type on either side
 
 
 def test_vasilisa_shares_motifs_but_is_a_different_type():
-    c = compare("cendrillon", "vasilisa", "supernatural-assistance").json()
+    c = compare("cinderella", "vasilisa", "supernatural-assistance").json()
     assert c["connectionType"] == "thematic-parallel"
     assert "unjust-treatment" in c["sharedMotifs"]
 
 
 def test_difference_is_a_marked_draft_or_absent():
-    d = compare("cendrillon", "ye-xian").json()["difference"]
+    d = compare("cinderella", "yexian").json()["difference"]
     assert d["draft"] is True and d["verified"] is False and "stored howItAppears" in d["basis"]
-    assert compare("cendrillon", "ye-xian", "unjust-treatment").json()["difference"] is None  # no line drafted
+    other = compare("cinderella", "yexian", "unjust-treatment").json()["difference"]
+    assert other and other["draft"] is True  # every pair with two sourced entries has a line
 
 
-def test_no_difference_when_an_entry_needs_a_source():
-    c = compare("cendrillon", "kongjwi-patjwi").json()
+def test_no_difference_for_entries_that_rest_on_wikipedia_only():
+    c = compare("cinderella", "kongjwi").json()
     assert c["inB"]["draft"] is True and c["difference"] is None
 
 
 def test_compare_errors():
-    assert compare("ye-xian", "ye-xian").status_code == 400
-    assert compare("ye-xian", "nope").status_code == 404
-    assert compare("ye-xian", "cendrillon", "nope").status_code == 404
-    assert compare("ye-xian", "cendrillon", "trickster").status_code == 400  # neither story has it
-    assert compare("shakuntala", "cendrillon", "unjust-treatment").status_code == 400
+    assert compare("yexian", "yexian").status_code == 400
+    assert compare("yexian", "nope").status_code == 404
+    assert compare("yexian", "cinderella", "nope").status_code == 404
+    assert compare("yexian", "cinderella", "trickster").status_code == 400  # neither story has it
+    assert compare("shakuntala", "cinderella", "unjust-treatment").status_code == 400
 
 
 def test_every_pair_sharing_a_motif_can_be_compared():
@@ -84,12 +95,13 @@ def test_every_pair_sharing_a_motif_can_be_compared():
                 r = compare(a.id, b.id, m)
                 assert r.status_code == 200, (a.id, b.id, m)
                 count += 1
-    assert count > 50
+    assert count > 100
 
 
 # ---- draft difference lines -----------------------------------------------------------------
 def test_difference_lines_reference_real_pairs_and_avoid_transmission_language():
     stories = {s.id: s for s in catalog.stories()}
+    assert catalog.differences()
     for key, text in catalog.differences().items():
         a, b, motif = key.split("|")
         assert a < b and a in stories and b in stories and motif in stories[a].motifs and motif in stories[b].motifs
@@ -104,10 +116,11 @@ def story_ids(result):
 
 
 def test_search_finds_by_title_and_frontend_name():
-    assert story_ids(search("cendrillon"))[0] == "cendrillon"
-    assert story_ids(search("Cinderella"))[0] == "cendrillon"  # frontend id; source titles also mention it
-    assert story_ids(search("ye xian"))[0] == "ye-xian"
-    assert story_ids(search("ye-xian"))[0] == "ye-xian"
+    assert story_ids(search("cendrillon"))[0] == "cinderella"
+    assert story_ids(search("Cinderella"))[0] == "cinderella"
+    assert story_ids(search("perrault"))[0] == "cinderella"
+    assert story_ids(search("ye xian"))[0] == "yexian"
+    assert story_ids(search("fisherman jinni"))[0] == "fisherman-and-the-jinni"
 
 
 def test_search_is_accent_and_case_insensitive():
@@ -116,8 +129,9 @@ def test_search_is_accent_and_case_insensitive():
 
 
 def test_search_by_region_and_tale_type():
-    assert "tam-cam" in story_ids(search("vietnam"))
-    assert set(story_ids(search("510A"))) >= {"ye-xian", "cendrillon", "tam-cam"}
+    assert story_ids(search("vietnam")) == ["tam-cam"]
+    assert story_ids(search("inuit"))[0] == "sedna"
+    assert set(story_ids(search("510A"))) >= {"cinderella", "yexian", "tam-cam"}
     assert "vasilisa" not in story_ids(search("510A"))
 
 
@@ -141,5 +155,5 @@ def test_search_no_match_and_blank_query():
 
 
 def test_search_all_tokens_must_match():
-    assert story_ids(search("raven maori")) == []
-    assert story_ids(search("raven light"))[0] == "raven-light"
+    assert story_ids(search("anansi inuit")) == []
+    assert story_ids(search("sedna inuit"))[0] == "sedna"

@@ -75,20 +75,21 @@ export const STORY_AUDIO_MAP: Record<StoryId | 'atlas', { url: string; title: st
     title: 'Swahili Sacred Baobab Sanctuary',
     mood: 'Gentle Coastal Mbira Harmony'
   },
-  mufaro: {
-    url: '/audio/mufaro.wav',
-    title: 'Great Zimbabwe Granite Spires & Sunrise',
-    mood: 'Golden Dawn Shona Hymn'
-  },
   'popol-vuh-twins': {
     url: '/audio/popol-vuh-twins.wav',
     title: 'Highland Maya Obsidian Underworld',
     mood: 'Archaic Maya Obsidian Atmosphere'
   },
-  'baba-abdalla': {
-    url: '/audio/baba-abdalla.wav',
-    title: 'Baghdad Nocturnal Dervish Incense',
-    mood: 'Nocturnal Bayati Incense Drone'
+  // No dedicated tracks yet for these two; they use the atlas theme.
+  'tam-cam': {
+    url: '/audio/atlas.wav',
+    title: 'Celestial Spheres & Stardust Harmony',
+    mood: 'Ambient Lydian Harmony (A=216Hz)'
+  },
+  'fisherman-and-the-jinni': {
+    url: '/audio/atlas.wav',
+    title: 'Celestial Spheres & Stardust Harmony',
+    mood: 'Ambient Lydian Harmony (A=216Hz)'
   }
 };
 

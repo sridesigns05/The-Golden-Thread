@@ -9,7 +9,9 @@ import {
   SharedJourneyData
 } from './types';
 import { STORIES } from './data/stories';
-import { getComparison, getRelatedStoriesForMotif } from './data/comparisons';
+import { PassportModal } from './components/PassportModal';
+import type { PassportData } from './types/passport';
+import { getComparison, getRelatedStoriesForMotif, totalThreads } from './data/comparisons';
 import {
   findShortestPath,
   getReachableDestinationForSolo,
@@ -54,7 +56,6 @@ import { SharedJourneyModal } from './components/SharedJourneyModal';
 import { SharedJourneyReflectionModal } from './components/SharedJourneyReflectionModal';
 import { DualSearchModal } from './components/DualSearchModal';
 
-const STORAGE_KEY_CONNECTIONS = 'golden_thread_connections_v2';
 const STORAGE_KEY_JOURNEYS = 'golden_thread_local_journeys_v2';
 
 export default function App() {
@@ -82,15 +83,8 @@ export default function App() {
   } | null>(null);
 
   // Saved Connections in Journal
-  const [connections, setConnections] = useState<GoldenThreadConnection[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_CONNECTIONS);
-      if (saved) return JSON.parse(saved);
-    } catch {
-      // Ignore
-    }
-    return [];
-  });
+  // Threads start empty on every page load: a fresh atlas each time, nothing carried over from older sessions.
+  const [connections, setConnections] = useState<GoldenThreadConnection[]>([]);
 
   // Destination Reveal State (Shown BEFORE starting storybook opens)
   const [destinationRevealData, setDestinationRevealData] = useState<{
@@ -116,6 +110,8 @@ export default function App() {
     isComplete: false
   });
   const [isSoloQuestVictoryOpen, setIsSoloQuestVictoryOpen] = useState(false);
+  // The Golden Thread Passport shown over a finished journey
+  const [passportData, setPassportData] = useState<PassportData | null>(null);
 
   // Multiplayer Shared Journey State
   const [activeSharedJourney, setActiveSharedJourney] = useState<SharedJourneyData | null>(null);
@@ -180,14 +176,14 @@ export default function App() {
     }
   }, []);
 
-  // Save connections in localStorage
+  // Remove threads that earlier versions saved in the browser
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY_CONNECTIONS, JSON.stringify(connections));
+      ['golden_thread_connections_v2', 'golden_thread_connections_v3'].forEach((k) => localStorage.removeItem(k));
     } catch {
       // Ignore
     }
-  }, [connections]);
+  }, []);
 
   // Sync atmospheric story soundscape when selected story changes
   useEffect(() => {
@@ -202,7 +198,7 @@ export default function App() {
   useEffect(() => {
     if (
       gameMode === 'free-exploration' &&
-      connections.length >= 3 &&
+      connections.length >= totalThreads() &&
       !hasShownCompletionOnce &&
       !currentComparison
     ) {
@@ -335,32 +331,77 @@ export default function App() {
     }
   }, []);
 
-  // Complete Shared Journey Reflection
+  // Complete Shared Journey Reflection. Resolves true when the server saved the finished journey.
   const handleCompleteSharedReflection = useCallback(
-    async (reflectionText: string, joinerName: string) => {
-      if (!activeSharedJourney) return;
+    async (reflectionText: string, joinerName: string, printOnPassport: boolean): Promise<boolean> => {
+      if (!activeSharedJourney) return false;
       const completed: SharedJourneyData = {
         ...activeSharedJourney,
         joinerReflection: reflectionText,
+        joinerReflectionOnPassport: printOnPassport,
         joinerName,
         isComplete: true,
         completedAt: Date.now()
       };
 
+      let saved = false;
       try {
-        await fetch(`/api/journeys/${activeSharedJourney.id}/complete`, {
+        const res = await fetch(`/api/journeys/${activeSharedJourney.id}/complete`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(completed)
         });
+        // 409 means it was already saved (for example by a double click)
+        saved = res.ok || res.status === 409;
       } catch {
-        // Fallback local
+        saved = false;
       }
 
       setActiveSharedJourney(completed);
+      return saved;
     },
     [activeSharedJourney]
   );
+
+  // Passport for a finished solo quest, built from the quest that was just played
+  const openSoloPassport = useCallback(() => {
+    const visited = questState.visitedStoryIds.filter((id, i, all) => all.indexOf(id) === i);
+    setPassportData({
+      variant: 'solo',
+      startId: questState.startStoryId,
+      destinationId: questState.targetStoryId,
+      visitedIds: visited,
+      threadsWoven: connections.length,
+      moves: questState.movesTaken,
+      shortestMoves: questState.minHops
+    });
+  }, [questState, connections.length]);
+
+  // Passport for a finished shared journey. Only messages whose authors allowed it are printed, and a
+  // journey link is offered only when the server really has the journey saved.
+  const openSharedPassport = useCallback(async (journey: SharedJourneyData) => {
+    if (!journey.joinerStoryId) return;
+    const messages: Array<{ from: 'first' | 'second'; text: string }> = [];
+    if (journey.creatorNoteOnPassport && journey.creatorNote?.trim()) messages.push({ from: 'first', text: journey.creatorNote });
+    if (journey.joinerReflectionOnPassport && journey.joinerReflection?.trim()) messages.push({ from: 'second', text: journey.joinerReflection });
+
+    let shareUrl: string | undefined;
+    try {
+      const res = await fetch(`/api/journeys/${journey.id}`);
+      if (res.ok) shareUrl = `${window.location.origin}${window.location.pathname}?journey=${journey.id}`;
+    } catch {
+      shareUrl = undefined;
+    }
+
+    setPassportData({
+      variant: 'shared',
+      playerAStoryId: journey.creatorStoryId,
+      playerBStoryId: journey.joinerStoryId,
+      motifs: journey.motifsDiscovered ?? [],
+      messages,
+      shareUrl
+    });
+  }, []);
 
   // When a story marker or quick selector is clicked
   const handleSelectStory = useCallback(
@@ -417,6 +458,15 @@ export default function App() {
           // Progress Tracking in Shared Journey Mode (Player B reaches Player A's story)
           if (gameMode === 'shared-journey' && activeSharedJourney) {
             setSharedJourneyMoves((m) => m + 1);
+            setActiveSharedJourney((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    pathTaken: [...(prev.pathTaken ?? (prev.joinerStoryId ? [prev.joinerStoryId] : [])), storyId],
+                    motifsDiscovered: [...new Set([...(prev.motifsDiscovered ?? []), comp.sharedMotif])]
+                  }
+                : prev
+            );
             const isDestinationReached = storyId === activeSharedJourney.creatorStoryId;
             if (isDestinationReached) {
               setTimeout(() => {
@@ -424,6 +474,13 @@ export default function App() {
               }, 800);
             }
           }
+
+          // The story just reached becomes the current one; the lens is spent, so the next move
+          // starts from this story's own book and cannot be counted twice.
+          setSelectedStoryId(storyId);
+          setFocusedStoryId(storyId);
+          setActiveMotif(null);
+          setHighlightedStoryIds([]);
 
           // Open concise side-by-side comparison
           setCurrentComparison({
@@ -544,11 +601,6 @@ export default function App() {
       isComplete: false
     });
     setDestinationRevealData(null);
-    try {
-      localStorage.removeItem(STORAGE_KEY_CONNECTIONS);
-    } catch {
-      // Ignore
-    }
   }, []);
 
   const currentSelectedStory = STORIES.find((s) => s.id === selectedStoryId) || null;
@@ -614,6 +666,15 @@ export default function App() {
           questState={questState}
           onOpenStory={(id) => handleSelectStory(id)}
           onRequestHint={handleRequestSoloHint}
+          guide={
+            currentComparison
+              ? { step: 4, text: 'Read how the two tales compare, then collect the thread to move on.' }
+              : activeMotif && highlightedStoryIds.length > 0
+              ? { step: 3, text: 'Glowing beacons share your chosen motif. Click one to travel there.' }
+              : isStoryModalOpen
+              ? { step: 2, text: 'Read the tale, then choose a motif thread to follow.' }
+              : { step: 1, text: 'Click the glowing beacon of your current story to open its book.' }
+          }
           onAbortQuest={() => {
             setGameMode('free-exploration');
             setQuestState((prev) => ({ ...prev, isActive: false }));
@@ -624,46 +685,44 @@ export default function App() {
       {/* Shared Journey Persistent Compact HUD */}
       {gameMode === 'shared-journey' && activeSharedJourney && !isSharedReflectionOpen && (
         <div className="fixed top-18 sm:top-20 left-1/2 -translate-x-1/2 z-30 pointer-events-auto w-full max-w-[92vw] sm:max-w-[720px]">
-          <div className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl bg-[#0B1424]/95 border border-[#D6B36B] shadow-[0_4px_30px_rgba(214,179,107,0.35)] backdrop-blur-md flex items-center justify-between gap-2 sm:gap-4 text-xs font-sans">
+          <div className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl bg-[#0B1424]/95 border border-[#D6B36B] shadow-[0_4px_30px_rgba(214,179,107,0.35)] backdrop-blur-md flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-2 gap-y-2 sm:gap-4 text-xs font-sans">
             {/* Destination Goal */}
-            <div className="flex items-center gap-2 min-w-0">
+            <div className="flex items-center gap-2 flex-1 basis-0 min-w-[42%] sm:min-w-0">
               <div className="w-7 h-7 rounded-full bg-[#D6B36B]/20 border border-[#D6B36B] flex items-center justify-center text-[#D6B36B] shrink-0">
                 <Heart className="w-3.5 h-3.5 fill-[#D6B36B] text-[#D6B36B]" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-[10px] uppercase font-semibold text-[#D6B36B] tracking-wider truncate">
                   Destination
                 </div>
-                <div className="font-serif font-bold text-xs sm:text-sm text-[#FFF7E8] truncate">
-                  {STORIES.find((s) => s.id === activeSharedJourney.creatorStoryId)?.title}{' '}
-                  <span className="text-[#D6B36B]/80 font-sans text-[11px]">
-                    ({STORIES.find((s) => s.id === activeSharedJourney.creatorStoryId)?.country})
-                  </span>
+                <div className="font-serif font-bold text-xs sm:text-sm text-[#FFF7E8] leading-tight line-clamp-2">
+                  {STORIES.find((s) => s.id === activeSharedJourney.creatorStoryId)?.title}
+                </div>
+                <div className="text-[#D6B36B]/80 font-sans text-[11px] truncate">
+                  {STORIES.find((s) => s.id === activeSharedJourney.creatorStoryId)?.country}
                 </div>
               </div>
             </div>
 
             {/* Current Story Location */}
-            <div className="flex items-center gap-2 min-w-0 border-l border-[#D6B36B]/30 pl-2 sm:pl-3">
+            <div className="flex items-center gap-2 flex-1 basis-0 min-w-[42%] sm:min-w-0 border-l border-[#D6B36B]/30 pl-2 sm:pl-3">
               <div className="w-7 h-7 rounded-full bg-[#19372F] border border-[#D6B36B]/50 flex items-center justify-center text-[#D6B36B] shrink-0">
                 <Compass className="w-3.5 h-3.5" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-[10px] uppercase font-semibold text-[#D6B36B]/90 tracking-wider truncate">
                   Current Story
                 </div>
                 <button
                   onClick={() => selectedStoryId && handleSelectStory(selectedStoryId)}
-                  className="font-serif font-bold text-xs sm:text-sm text-[#FFF7E8] hover:text-[#D6B36B] transition-colors truncate flex items-center gap-1 cursor-pointer text-left"
+                  className="block w-full font-serif font-bold text-xs sm:text-sm text-[#FFF7E8] hover:text-[#D6B36B] transition-colors leading-tight line-clamp-2 cursor-pointer text-left"
                   title="Inspect current storybook"
                 >
-                  <span className="truncate">
-                    {STORIES.find((s) => s.id === (selectedStoryId || activeSharedJourney.joinerStoryId))?.title}
-                  </span>
-                  <span className="text-[#D6B36B]/80 font-sans text-[11px] hidden sm:inline">
-                    ({STORIES.find((s) => s.id === (selectedStoryId || activeSharedJourney.joinerStoryId))?.country})
-                  </span>
+                  {STORIES.find((s) => s.id === (selectedStoryId || activeSharedJourney.joinerStoryId))?.title}
                 </button>
+                <div className="text-[#D6B36B]/80 font-sans text-[11px] truncate">
+                  {STORIES.find((s) => s.id === (selectedStoryId || activeSharedJourney.joinerStoryId))?.country}
+                </div>
               </div>
             </div>
 
@@ -677,7 +736,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setIsSharedJourneyModalOpen(true)}
-                className="px-2.5 py-1 rounded bg-[#D6B36B]/20 hover:bg-[#D6B36B]/40 text-[#D6B36B] text-[11px] font-sans font-semibold cursor-pointer border border-[#D6B36B]/40"
+                className="btn btn-soft"
               >
                 Lore Note
               </button>
@@ -728,7 +787,7 @@ export default function App() {
             </span>
             <button
               onClick={handleClearLens}
-              className="ml-1 sm:ml-2 px-2.5 py-1 rounded-full bg-[#D6B36B]/20 hover:bg-[#D6B36B]/40 text-[#D6B36B] hover:text-[#FFF7E8] text-[11px] font-sans font-medium border border-[#D6B36B]/50 transition-all cursor-pointer flex items-center gap-1"
+              className="btn btn-soft"
             >
               <RotateCcw className="w-3 h-3" />
               <span>Clear Lens</span>
@@ -799,6 +858,8 @@ export default function App() {
             if (mode === 'solo-quest' && startId) {
               handlePrepareSoloQuest(startId);
             } else if (mode === 'shared-journey') {
+              // A new invitation starts clean; a journey viewed earlier must not reappear in its place
+              setActiveSharedJourney(null);
               setGameMode('shared-journey');
               setIsModeSelectOpen(false);
               setIsSharedJourneyModalOpen(true);
@@ -845,6 +906,7 @@ export default function App() {
             setIsSoloQuestVictoryOpen(false);
             setIsJournalOpen(true);
           }}
+          onViewPassport={openSoloPassport}
         />
       )}
 
@@ -855,6 +917,7 @@ export default function App() {
           onClose={() => setIsSharedJourneyModalOpen(false)}
           onStartAsJoiner={handlePrepareSharedJourney}
           onSaveCreatedJourney={handleSaveCreatedJourney}
+          onViewPassport={openSharedPassport}
         />
       )}
 
@@ -863,6 +926,7 @@ export default function App() {
         <SharedJourneyReflectionModal
           journey={activeSharedJourney}
           onCompleteReflection={handleCompleteSharedReflection}
+          onViewPassport={() => openSharedPassport(activeSharedJourney)}
           onClose={() => {
             setIsSharedReflectionOpen(false);
             setGameMode('free-exploration');
@@ -945,6 +1009,9 @@ export default function App() {
 
       {/* About & Methodology Modal */}
       {isAboutOpen && <AboutModal onClose={() => setIsAboutOpen(false)} />}
+
+      {/* Golden Thread Passport (above every other overlay) */}
+      {passportData && <PassportModal data={passportData} onClose={() => setPassportData(null)} />}
 
       {/* Fairytale Illustration Asset Audit Modal */}
       {isAuditOpen && (

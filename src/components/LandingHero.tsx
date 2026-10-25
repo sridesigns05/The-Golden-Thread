@@ -77,7 +77,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onOpenAtlas }) => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={handleStart}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-semibold text-lg tracking-wider transition-all duration-200 shadow-lg hover:shadow-[#D6B36B]/20 flex items-center justify-center gap-2 cursor-pointer"
+            className="btn btn-gold"
           >
             <Compass className="w-5 h-5 text-[#0B1424]" />
             <span>Open the Atlas</span>

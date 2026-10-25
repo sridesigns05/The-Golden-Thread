@@ -1,20 +1,18 @@
-import { STORIES } from '../data/stories';
-import { COMPARISONS } from '../data/comparisons';
-import type { StoryData, ComparisonDetail, MotifId, StoryId } from '../types';
-import type { ApiStory, ApiComparison, EvidenceSource } from '../types/api';
+import type { MotifId, StoryId } from '../types';
+import type { LibraryHit, SearchResult } from '../types/catalog';
+import { apiFetch } from './adapter';
 
-// Backend client. Every call falls back to the bundled mock data (or an empty evidence list),
-// so the app keeps working when the backend is down. Nothing here modifies existing files.
+// Calls the app makes after startup. Each one fails soft: the UI keeps working, with an empty
+// result, if the backend is unreachable. (Story, motif and comparison data are loaded once at
+// startup by ./adapter.)
 
-const BASE_URL: string = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
 const TIMEOUT_MS = 4000;
 
-async function getJson<T>(path: string, params?: Record<string, string>): Promise<T> {
-  const qs = params ? `?${new URLSearchParams(params)}` : '';
+async function getJson<T>(path: string, params: Record<string, string>): Promise<T> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(`${BASE_URL}${path}${qs}`, { signal: ctrl.signal });
+    const res = await apiFetch(`${path}?${new URLSearchParams(params)}`, { signal: ctrl.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${path}`);
     return (await res.json()) as T;
   } finally {
@@ -22,57 +20,133 @@ async function getJson<T>(path: string, params?: Record<string, string>): Promis
   }
 }
 
-export interface Loaded<T> {
-  data: T;
-  fromBackend: boolean;
-}
-
-export async function loadStories(): Promise<Loaded<StoryData[] | ApiStory[]>> {
-  try {
-    return { data: await getJson<ApiStory[]>('/api/legacy/stories'), fromBackend: true };
-  } catch {
-    return { data: STORIES, fromBackend: false };
-  }
-}
-
-export async function loadComparison(
-  a: StoryId,
-  b: StoryId,
-  motif: MotifId
-): Promise<Loaded<ComparisonDetail | ApiComparison | undefined>> {
-  try {
-    return { data: await getJson<ApiComparison>('/api/legacy/comparison', { a, b, motif }), fromBackend: true };
-  } catch {
-    const local = COMPARISONS.find(
-      (c) =>
-        c.sharedMotif === motif &&
-        ((c.storyAId === a && c.storyBId === b) || (c.storyAId === b && c.storyBId === a))
-    );
-    return { data: local, fromBackend: false };
-  }
-}
-
-export interface EvidenceResult extends EvidenceSource {
+export interface EvidenceItem {
+  title: string;
+  url: string;
   snippet: string;
+  domain: string;
   story?: StoryId;
 }
 
 export interface Evidence {
   source: 'live' | 'cache' | 'none';
-  results: EvidenceResult[];
+  fetchedAt: string | null;
+  query: string | null;
+  results: EvidenceItem[];
 }
 
+const NO_EVIDENCE: Evidence = { source: 'none', fetchedAt: null, query: null, results: [] };
+
+// Sources for a comparison: reputable-domain search results for each of the two stories.
 export async function loadEvidence(a: StoryId, b: StoryId, motif: MotifId): Promise<Evidence> {
   try {
-    const r = await getJson<{ source: Evidence['source']; results: Array<{ title: string; link: string; snippet: string; domain: string; story?: StoryId }> }>(
-      '/api/evidence',
-      { a, b, motif }
-    );
+    const r = await getJson<{
+      source: Evidence['source'];
+      fetchedAt: string | null;
+      query: string | null;
+      results: Array<{ title: string; link: string; snippet: string; domain: string; story?: StoryId }>;
+    }>('/api/evidence', { a, b, motif });
     return {
       source: r.source,
-      results: r.results.map(({ title, link, snippet, domain, story }) => ({ title, url: link, snippet, domain, story })),
+      fetchedAt: r.fetchedAt,
+      query: r.query,
+      results: r.results.map(({ title, link, snippet, domain, story }) => ({ title, url: link, snippet, domain, story }))
     };
   } catch {
-    return { source: 'none', results: [] };
+    return NO_EVIDENCE;
+  }
+}
+
+// Search the metadata-only library of other folktales (titles, provenance and tale types; never text).
+// Returns null when the backend could not be reached, so "no match" and "no backend" look different.
+export async function searchLibrary(q: string, limit = 12): Promise<LibraryHit[] | null> {
+  const query = q.trim();
+  if (!query) return [];
+  try {
+    const r = await getJson<SearchResult>('/api/search', { q: query, tiers: 'library', limit: String(limit) });
+    return r.library;
+  } catch {
+    return null;
+  }
+}
+
+// ---- Myth card (search bar) -------------------------------------------------------------------
+// One tale's dataset record, a search for that specific myth, and a short AI summary of the sources.
+export interface MythCardData {
+  record: {
+    id: string;
+    tier: 'curated' | 'library';
+    title: string;
+    originalTitle: string | null;
+    place: string | null;
+    tradition: string | null;
+    atuType: string | null;
+    atuName: string | null;
+    provenance: string | null;
+    citation: string | null;
+    summary: string | null;
+  };
+  sources: { source: 'live' | 'cache' | 'none'; fetchedAt: string | null; query: string | null; results: EvidenceItem[] };
+  summary:
+    | { available: true; text: string; model: string; sourcesUsed: string[] }
+    | { available: false; reason: string };
+  // Thompson motifs the ATU index lists for the tale's TYPE (not read from this tale's text)
+  typeMotifs: {
+    atuType: string;
+    total: number;
+    shown: number;
+    motifs: Array<{ id: string; name: string | null }>;
+    note: string;
+  } | null;
+  similar: {
+    basis: string;
+    typeNote?: string | null;
+    sameTypeTotal: number;
+    sameType: SimilarTale[];
+    atlas: Array<SimilarTale & { reason: string; typeConfirmed: boolean }>;
+    nearbyTypes: Array<{
+      atuType: string;
+      atuName: string | null;
+      why: string;
+      sharedMotifs: Array<{ id: string; name: string | null }>;
+      examples: SimilarTale[];
+    }>;
+  } | null;
+}
+
+export interface SimilarTale {
+  id: string;
+  title: string;
+  place: string | null;
+  tier: 'curated' | 'library';
+  atuType?: string | null;
+}
+
+// The card runs a web search and a model call on the server, so it gets a longer wait than other calls.
+const CARD_TIMEOUT_MS = 45000;
+
+export async function loadMythCard(id: string): Promise<MythCardData | null> {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), CARD_TIMEOUT_MS);
+  try {
+    const res = await apiFetch(`/api/myth-card?${new URLSearchParams({ id })}`, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const r = await res.json();
+    return {
+      record: r.record,
+      sources: {
+        ...r.sources,
+        results: (r.sources.results as Array<{ title: string; link: string; snippet: string; domain: string }>).map(
+          ({ title, link, snippet, domain }) => ({ title, url: link, snippet, domain })
+        )
+      },
+      summary: r.summary,
+      typeMotifs: r.typeMotifs ?? null,
+      similar: r.similar ?? null
+    };
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
   }
 }

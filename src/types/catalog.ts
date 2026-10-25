@@ -14,6 +14,10 @@ export interface ThompsonRef {
 export interface CatalogMotif {
   id: string;
   label: string;
+  name: string; // short display name
+  description: string; // one-line definition of the pattern
+  significance: string; // how the pattern varies between tales
+
   thompsonIds: string[];
   thompson: ThompsonRef[];
   thompsonNote: string;
@@ -36,6 +40,8 @@ export interface CatalogStorySummary {
   tier: 'curated';
   id: string;
   title: string;
+  originalTitle: string | null;
+  kind: string; // short label such as "Literary fairy tale"
   region: string;
   culturalTradition: string;
   lat: number;
@@ -202,4 +208,41 @@ export interface Comparison {
   inB: CatalogMotifEntry | TypeBasis;
   difference: Difference | null; // null when no draft line exists, an entry needs a source, or a side is a library tale
   caveats: Record<string, string>;
+}
+
+// GET /api/bootstrap: everything the app needs at startup, in one response.
+export interface PairComparison {
+  a: string;
+  b: string;
+  motif: string;
+  connectionType: 'cinderella-parallel' | 'same-tale-type' | 'thematic-parallel';
+  typeConfirmed: boolean;
+  sharedMotifs: string[];
+  difference: Difference | null;
+}
+
+export interface BootstrapMeta {
+  status: string;
+  coordsNote: string;
+  dateRule: string;
+  thompsonRule: string;
+  pairTypeRule: string;
+  similarityRule: string;
+}
+
+export interface LibraryMeta {
+  attribution: string;
+  license: string;
+  taleCount: number;
+  linkedToMotifs: number;
+  limitations: string[];
+}
+
+export interface Bootstrap {
+  meta: BootstrapMeta;
+  library: LibraryMeta;
+  motifs: CatalogMotif[];
+  stories: CatalogStory[];
+  comparisons: PairComparison[];
+  related: Record<string, Record<string, string[]>>; // story id -> motif id -> ranked related story ids
 }

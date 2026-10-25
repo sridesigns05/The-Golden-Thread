@@ -1,0 +1,4135 @@
+{
+ "_source": "trilogy repo (github.com/j-hagedorn/trilogy): data/atu_seq.csv (motifs listed per tale type) and data/tmi.csv (motif names)",
+ "_note": "Motifs are those the ATU index lists for the TALE TYPE, not read from any one tale. 'related' means two types list similar motifs (idf-weighted overlap, at least 2 shared); it is not evidence of borrowing.",
+ "types": {
+  "1": {
+   "total": 4,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K371.1",
+     "name": "Trickster Throws Fish Off The Wagon"
+    },
+    {
+     "id": "K1026",
+     "name": "Dupe Imitates Trickster's Thefts And Is Caught"
+    },
+    {
+     "id": "K341.2",
+     "name": "Thief Shams Death And Steals"
+    },
+    {
+     "id": "K341.2.1",
+     "name": "Animal Feigns Death Repeatedly And Then Entices Owner From Goods"
+    }
+   ],
+   "related": []
+  },
+  "101": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "K231.1.3",
+     "name": "The Dog Refuses To Help The Wolf"
+    }
+   ],
+   "related": []
+  },
+  "103": {
+   "total": 3,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "B262",
+     "name": "War Between Domestic And Wild Animals"
+    },
+    {
+     "id": "K2323",
+     "name": "The Cowardly Duelers"
+    },
+    {
+     "id": "K2324",
+     "name": "Hiding From The Strange Animal"
+    }
+   ],
+   "related": []
+  },
+  "1030": {
+   "total": 1,
+   "group": "Partnership Between Man And Ogre 1030-1059",
+   "motifs": [
+    {
+     "id": "K171.1",
+     "name": "Deceptive Crop Division: Above The Ground, Below The Ground"
+    }
+   ],
+   "related": []
+  },
+  "105": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "J1662",
+     "name": "The Cat's Only Trick"
+    }
+   ],
+   "related": []
+  },
+  "112": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "J211.2",
+     "name": "Town Mouse And Country Mouse"
+    }
+   ],
+   "related": []
+  },
+  "1137": {
+   "total": 8,
+   "group": "Man Kills (Injures) Ogre 1115-1144",
+   "motifs": [
+    {
+     "id": "G100",
+     "name": "Giant Ogre"
+    },
+    {
+     "id": "K1010",
+     "name": "Deception Through False Doctoring"
+    },
+    {
+     "id": "K1011",
+     "name": "Eye-Remedy"
+    },
+    {
+     "id": "K521.1",
+     "name": "Escape By Dressing In Animal (Bird, Human) Skin"
+    },
+    {
+     "id": "K603",
+     "name": "Escape Under Ram's Belly"
+    },
+    {
+     "id": "D1612.2.1",
+     "name": "Magic Ring Compels Would-Be Fugitive To Keep Calling Out, \"Here I Am\""
+    },
+    {
+     "id": "F512.1.1",
+     "name": "Person With One Eye In Center Of Forehead"
+    },
+    {
+     "id": "F531.1.1.1",
+     "name": "Giant With One Eye In Middle Of Forehead"
+    }
+   ],
+   "related": []
+  },
+  "113A": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "B342",
+     "name": "Cat Leaves House When Report Is Made Of Death Of One Of His Companions"
+    }
+   ],
+   "related": []
+  },
+  "1157": {
+   "total": 2,
+   "group": "Man Outwits The Devil 1155-1169",
+   "motifs": [
+    {
+     "id": "K1057",
+     "name": "Gun As Tobacco Pipe"
+    },
+    {
+     "id": "J2131.4.1",
+     "name": "Looking Through The Gun Barrel"
+    }
+   ],
+   "related": []
+  },
+  "1161": {
+   "total": 1,
+   "group": "Man Outwits The Devil 1155-1169",
+   "motifs": [
+    {
+     "id": "K1728",
+     "name": "The Bear Trainer And His Bear"
+    }
+   ],
+   "related": []
+  },
+  "1174": {
+   "total": 1,
+   "group": "Souls Saved From The Devil 1170-1199",
+   "motifs": [
+    {
+     "id": "H1021.1",
+     "name": "Task: Making A Rope Of Sand"
+    }
+   ],
+   "related": []
+  },
+  "1175": {
+   "total": 1,
+   "group": "Souls Saved From The Devil 1170-1199",
+   "motifs": [
+    {
+     "id": "H1023.4",
+     "name": "Task: Straightening A Curly Hair"
+    }
+   ],
+   "related": []
+  },
+  "1176": {
+   "total": 3,
+   "group": "Souls Saved From The Devil 1170-1199",
+   "motifs": [
+    {
+     "id": "H1023.13",
+     "name": "Task: Catching A Man's Broken Wind"
+    },
+    {
+     "id": "H1021.4",
+     "name": "Task: Making A Knot Of Spilled Brandy"
+    },
+    {
+     "id": "H1023.12",
+     "name": "Task: Catching A Noise"
+    }
+   ],
+   "related": []
+  },
+  "1191": {
+   "total": 2,
+   "group": "Souls Saved From The Devil 1170-1199",
+   "motifs": [
+    {
+     "id": "S241.1",
+     "name": "Unwitting Bargain With Devil Evaded By Driving Dog Over Bridge First"
+    },
+    {
+     "id": "J1169.4",
+     "name": "The Ass Beheaded"
+    }
+   ],
+   "related": []
+  },
+  "1215": {
+   "total": 2,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "J1041.2",
+     "name": "Miller, His Son, And The Ass: Trying To Please Everyone"
+    },
+    {
+     "id": "J1041",
+     "name": "Impossibility Of Pleasing Everyone"
+    }
+   ],
+   "related": []
+  },
+  "122E": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "K553.2",
+     "name": "Wait For The Fat Goat"
+    }
+   ],
+   "related": []
+  },
+  "122F": {
+   "total": 1,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "K553",
+     "name": "\"Wait Till I Get Fat"
+    }
+   ],
+   "related": []
+  },
+  "124": {
+   "total": 2,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "J2133.7",
+     "name": "Intruding Wolf Falls Down Chimney And Kills Himself"
+    },
+    {
+     "id": "K891.1",
+     "name": "Intruding Wolf Tricked Into Jumping Down Chimney And Killing Himself"
+    }
+   ],
+   "related": []
+  },
+  "1287": {
+   "total": 2,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "J2031",
+     "name": "Counting Wrong By Not Counting Oneself"
+    },
+    {
+     "id": "J2031.1",
+     "name": "Numskulls Count Selves By Sticking Their Noses In The Sand"
+    }
+   ],
+   "related": []
+  },
+  "1288A": {
+   "total": 1,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "J2022",
+     "name": "Numskull Cannot Find Ass He Is Sitting On"
+    }
+   ],
+   "related": []
+  },
+  "130": {
+   "total": 4,
+   "group": "Wild Animals And Domestic Animals 100-149",
+   "motifs": [
+    {
+     "id": "B296",
+     "name": "Animals Go A-Journeying"
+    },
+    {
+     "id": "N776",
+     "name": "Light Seen From Tree Lodging Place At Night Leads To Adventures"
+    },
+    {
+     "id": "K335.1.4",
+     "name": "Animals Climb On One Another's Backs And Cry Out; Frighten Robbers"
+    },
+    {
+     "id": "K1161",
+     "name": "Animals Hidden In Various Parts Of A House Attack Owner With Their Characteristic Powers And Kill Him When He Enters"
+    }
+   ],
+   "related": []
+  },
+  "1317": {
+   "total": 1,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "J1761.10",
+     "name": "Blind Men And Elephant"
+    }
+   ],
+   "related": []
+  },
+  "1335A": {
+   "total": 1,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "J1791.2",
+     "name": "Rescuing The Moon"
+    }
+   ],
+   "related": []
+  },
+  "1343": {
+   "total": 1,
+   "group": "Stories About A Fool 1200-1349",
+   "motifs": [
+    {
+     "id": "N334.2",
+     "name": "Hanging In Game Or Jest Accidentally Proves Fatal"
+    }
+   ],
+   "related": []
+  },
+  "1351": {
+   "total": 2,
+   "group": "Stories About Married Couples 1350-1439",
+   "motifs": [
+    {
+     "id": "H1194.0.1",
+     "name": "Task: Causing Silent Person To Speak"
+    },
+    {
+     "id": "J2511",
+     "name": "The Silence Wager"
+    }
+   ],
+   "related": []
+  },
+  "1353": {
+   "total": 2,
+   "group": "Stories About Married Couples 1350-1439",
+   "motifs": [
+    {
+     "id": "G303.10.5",
+     "name": "Where The Devil Can't Reach, He Sends An Old Woman"
+    },
+    {
+     "id": "K1085",
+     "name": "Woman Makes Trouble Between Man And Wife: The Hair From His Beard"
+    }
+   ],
+   "related": []
+  },
+  "1362": {
+   "total": 1,
+   "group": "Stories About Married Couples 1350-1439",
+   "motifs": [
+    {
+     "id": "J1532.1",
+     "name": "The Snow-Child"
+    }
+   ],
+   "related": []
+  },
+  "1377": {
+   "total": 1,
+   "group": "Stories About Married Couples 1350-1439",
+   "motifs": [
+    {
+     "id": "K1511",
+     "name": "The Husband Locked Out"
+    }
+   ],
+   "related": []
+  },
+  "1381": {
+   "total": 1,
+   "group": "The Foolish Wife And Her Husband 1380-1404",
+   "motifs": [
+    {
+     "id": "J1151.1.1",
+     "name": "Talkative Wife Discredited"
+    }
+   ],
+   "related": []
+  },
+  "1381D": {
+   "total": 1,
+   "group": "The Foolish Wife And Her Husband 1380-1404",
+   "motifs": [
+    {
+     "id": "J2353",
+     "name": "The Wife Multiplies The Secret"
+    }
+   ],
+   "related": []
+  },
+  "1383": {
+   "total": 2,
+   "group": "The Foolish Wife And Her Husband 1380-1404",
+   "motifs": [
+    {
+     "id": "J2012.2",
+     "name": "Woman's Garments Cut Off: Does Not Know Herself"
+    },
+    {
+     "id": "J2012.3",
+     "name": "Woman In Tar And Feathers Does Not Know Herself"
+    }
+   ],
+   "related": []
+  },
+  "1408": {
+   "total": 5,
+   "group": "The Foolish Man And His Wife 1405-1429",
+   "motifs": [
+    {
+     "id": "J2176.1",
+     "name": "Fool Tries To Dry Up Spilt Wine With Meal"
+    },
+    {
+     "id": "J2132.2",
+     "name": "Numskull Ties The Rope To His Leg As The Cow Grazes On The Roof"
+    },
+    {
+     "id": "J2465.4",
+     "name": "Washing The Child"
+    },
+    {
+     "id": "J1881.1.3",
+     "name": "Three-Legged Pot Sent To Walk Home"
+    },
+    {
+     "id": "J2431",
+     "name": "A Man Undertakes To Do His Wife's Work"
+    }
+   ],
+   "related": []
+  },
+  "1415": {
+   "total": 1,
+   "group": "The Foolish Man And His Wife 1405-1429",
+   "motifs": [
+    {
+     "id": "J2081.1",
+     "name": "Foolish Bargain: Horse For Cow, Cow For Hog, Etc Finally Nothing Left"
+    }
+   ],
+   "related": []
+  },
+  "1422": {
+   "total": 1,
+   "group": "The Foolish Man And His Wife 1405-1429",
+   "motifs": [
+    {
+     "id": "J1154.1",
+     "name": "Parrot Unable To Tell Husband Details As To Wife's Infidelity"
+    }
+   ],
+   "related": []
+  },
+  "1423": {
+   "total": 1,
+   "group": "The Foolish Man And His Wife 1405-1429",
+   "motifs": [
+    {
+     "id": "K1518",
+     "name": "The Enchanted Pear Tree"
+    }
+   ],
+   "related": []
+  },
+  "1430": {
+   "total": 7,
+   "group": "The Foolish Couple 1430-1439",
+   "motifs": [
+    {
+     "id": "J2060",
+     "name": "Absurd Plans"
+    },
+    {
+     "id": "J2060.1",
+     "name": "Quarrel And Fight Over Details Of Air-Castles"
+    },
+    {
+     "id": "J2061",
+     "name": "Air-Castle Shattered By Lack Of Forethought"
+    },
+    {
+     "id": "J2061.1",
+     "name": "Air-Castle: The Jar Of Honey To Be Sold"
+    },
+    {
+     "id": "J2061.1.1",
+     "name": "Air-Castle: Basket Of Glassware To Be Sold"
+    },
+    {
+     "id": "J2061.1.2",
+     "name": "Air-Castle: Basket Of Eggs To Be Sold"
+    },
+    {
+     "id": "J2061.2",
+     "name": "Air-Castle: Pail Of Milk To Be Sold"
+    }
+   ],
+   "related": []
+  },
+  "1451": {
+   "total": 1,
+   "group": "Looking For A Wife 1450-1474",
+   "motifs": [
+    {
+     "id": "H381.1",
+     "name": "Bride Test: Making Dress From Wasted Flax"
+    }
+   ],
+   "related": []
+  },
+  "15": {
+   "total": 2,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K372",
+     "name": "Playing Godfather"
+    },
+    {
+     "id": "K401.1",
+     "name": "Dupe's Food Eaten And Then Blame Fastened On Him"
+    }
+   ],
+   "related": []
+  },
+  "150": {
+   "total": 4,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "J21.14",
+     "name": "\"Never Try To Reach The Unattainable\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21.12",
+     "name": "\"Rue Not A Thing That Is Past\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21.13",
+     "name": "\"Never Believe What Is Beyond Belief\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "K604",
+     "name": "The Three Teachings Of The Bird (Fox)"
+    }
+   ],
+   "related": []
+  },
+  "154": {
+   "total": 4,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "C25",
+     "name": "\"Bear's Food"
+    },
+    {
+     "id": "K235",
+     "name": "Creditor Killed Or Driven Away"
+    },
+    {
+     "id": "J2351.1",
+     "name": "Fox Holds Conversation With His Members, Attracts Attention, And Is Caught"
+    },
+    {
+     "id": "U242.1",
+     "name": "The Hare's Last Will"
+    }
+   ],
+   "related": []
+  },
+  "1540": {
+   "total": 2,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J2326",
+     "name": "The Student From Paradise"
+    },
+    {
+     "id": "K341.9.1",
+     "name": "Thief Persuades Owner To Take His Place So He Can Go And Catch Thief: Really Steals Owner's Horse"
+    }
+   ],
+   "related": []
+  },
+  "1548": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "K112.2",
+     "name": "\"Soup Stone\" Sold"
+    }
+   ],
+   "related": []
+  },
+  "155": {
+   "total": 2,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "W154.2.1",
+     "name": "Rescued Animal Threatens Rescuer"
+    },
+    {
+     "id": "J1172.3",
+     "name": "Ungrateful Animal Returned To Captivity"
+    }
+   ],
+   "related": []
+  },
+  "1558": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J1561.3",
+     "name": "Welcome To The Clothes"
+    }
+   ],
+   "related": []
+  },
+  "156": {
+   "total": 2,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "B381",
+     "name": "Thorn Removed From Lion's Paw (Androcles And The Lion)"
+    },
+    {
+     "id": "B382",
+     "name": "Animal Grateful For Removal Of Bone Lodged In Its Throat"
+    }
+   ],
+   "related": []
+  },
+  "1562A": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J1269.12",
+     "name": "Youth Announces Fire In Imitation Of Priest's Metaphorical Language"
+    }
+   ],
+   "related": []
+  },
+  "1586": {
+   "total": 4,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J1193.1",
+     "name": "Killing The Fly On The Judge's Nose"
+    },
+    {
+     "id": "N333.2",
+     "name": "Man Accidentally Killed By Bear Trying To Chase Away Flies"
+    },
+    {
+     "id": "J1833",
+     "name": "Numskull Thinks The Bishop's Snoring Is His Death Rattle"
+    },
+    {
+     "id": "J1833.1",
+     "name": "Numskull Shoots Grasshopper Which Lighted On The Shoulder Of His Friend And Kills Friend"
+    }
+   ],
+   "related": []
+  },
+  "1592": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J1531.2",
+     "name": "The Iron-Eating Mice"
+    }
+   ],
+   "related": []
+  },
+  "1592B": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J1531.3",
+     "name": "The Pot Has A Child And Dies"
+    }
+   ],
+   "related": []
+  },
+  "160": {
+   "total": 4,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "B361",
+     "name": "Animals Grateful For Rescue From Pit"
+    },
+    {
+     "id": "B512",
+     "name": "Medicine Shown By Animal"
+    },
+    {
+     "id": "B522.1",
+     "name": "Serpent Shows Condemned Man How To Save Prince's Life"
+    },
+    {
+     "id": "B522.2",
+     "name": "Kite Steals Jewels And Thus Saves Condemned Man"
+    }
+   ],
+   "related": []
+  },
+  "1620": {
+   "total": 2,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "J2312",
+     "name": "Naked Person Made To Believe That He Is Clothed"
+    },
+    {
+     "id": "K445",
+     "name": "The Emperor's New Clothes"
+    }
+   ],
+   "related": []
+  },
+  "1626": {
+   "total": 1,
+   "group": "The Clever Man 1525-1639",
+   "motifs": [
+    {
+     "id": "K444",
+     "name": "Dream Bread: The Most Wonderful Dream"
+    }
+   ],
+   "related": []
+  },
+  "1641": {
+   "total": 6,
+   "group": "Lucky Accidents 1640-1674",
+   "motifs": [
+    {
+     "id": "K1956",
+     "name": "Sham Wise Man"
+    },
+    {
+     "id": "N611.1",
+     "name": "Criminal Accidentally Detected: \"That Is The First\" -- Sham Wise Man"
+    },
+    {
+     "id": "N688",
+     "name": "What Is In The Dish: \"Poor Crab\""
+    },
+    {
+     "id": "K1956.1",
+     "name": "Sham Wise Man Gives A Purgative And Helps Find A Lost Horse"
+    },
+    {
+     "id": "K1956.2",
+     "name": "Sham Wise Man Hides Something And Is Rewarded For Finding It"
+    },
+    {
+     "id": "K1961.1.3",
+     "name": "Sham Parson: The Sawed Pulpit"
+    }
+   ],
+   "related": []
+  },
+  "1641C": {
+   "total": 1,
+   "group": "Lucky Accidents 1640-1674",
+   "motifs": [
+    {
+     "id": "K1961.1.2",
+     "name": "Sham Parson Repeats Same Expression Over And Over Or Says A Few Words Of Latin"
+    }
+   ],
+   "related": []
+  },
+  "1645": {
+   "total": 1,
+   "group": "Lucky Accidents 1640-1674",
+   "motifs": [
+    {
+     "id": "N531.1",
+     "name": "Dream Of Treasure On The Bridge"
+    }
+   ],
+   "related": []
+  },
+  "1645B": {
+   "total": 1,
+   "group": "Lucky Accidents 1640-1674",
+   "motifs": [
+    {
+     "id": "X31",
+     "name": "The Dream Of Marking The Treasure"
+    }
+   ],
+   "related": []
+  },
+  "1655": {
+   "total": 2,
+   "group": "Lucky Accidents 1640-1674",
+   "motifs": [
+    {
+     "id": "K251.1",
+     "name": "The Eaten Grain And The Cock As Damages"
+    },
+    {
+     "id": "K526",
+     "name": "Captor's Bag Filled With Animals Or Objects While Captives Escape"
+    }
+   ],
+   "related": []
+  },
+  "1675": {
+   "total": 2,
+   "group": "The Stupid Man 1675-1724",
+   "motifs": [
+    {
+     "id": "K491",
+     "name": "Trickster Paid To Educate An Ass"
+    },
+    {
+     "id": "J1882.2",
+     "name": "The Ass As Mayor"
+    }
+   ],
+   "related": []
+  },
+  "1676": {
+   "total": 3,
+   "group": "The Stupid Man 1675-1724",
+   "motifs": [
+    {
+     "id": "K1682.1",
+     "name": "\"Big 'Fraid And Little 'Fraid"
+    },
+    {
+     "id": "N384.10",
+     "name": "Man Playing Ghost Killed"
+    },
+    {
+     "id": "N384.11",
+     "name": "Joker Playing Dead Killed"
+    }
+   ],
+   "related": []
+  },
+  "1678": {
+   "total": 1,
+   "group": "The Stupid Man 1675-1724",
+   "motifs": [
+    {
+     "id": "T371",
+     "name": "The Boy Who Had Never Seen A Woman: The Satans"
+    }
+   ],
+   "related": []
+  },
+  "1696": {
+   "total": 2,
+   "group": "The Stupid Man 1675-1724",
+   "motifs": [
+    {
+     "id": "J2461",
+     "name": "What Should I Have Done (Said)? The Mother Teaches The Boy (The Man His Wife) What He Should Say (Do) In This Or That Circumstance"
+    },
+    {
+     "id": "J2461.2",
+     "name": "Literal Following Of Instructions About Greetings"
+    }
+   ],
+   "related": []
+  },
+  "173": {
+   "total": 1,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "A1321",
+     "name": "Men And Animals Readjust Span Of Life"
+    }
+   ],
+   "related": []
+  },
+  "1730": {
+   "total": 2,
+   "group": "The Clergyman Is Tricked 1725-1774",
+   "motifs": [
+    {
+     "id": "K1218.1",
+     "name": "The Entrapped Suitors"
+    },
+    {
+     "id": "K1218.2",
+     "name": "Suitor Locked In Pigsty"
+    }
+   ],
+   "related": []
+  },
+  "1741": {
+   "total": 1,
+   "group": "The Clergyman Is Tricked 1725-1774",
+   "motifs": [
+    {
+     "id": "K2137",
+     "name": "The Priest's Guest And The Eaten Chickens"
+    }
+   ],
+   "related": []
+  },
+  "175": {
+   "total": 2,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "K741",
+     "name": "Capture By Tarbaby"
+    },
+    {
+     "id": "K581.2",
+     "name": "Briar-Patch Punishment For Rabbit"
+    }
+   ],
+   "related": []
+  },
+  "178A": {
+   "total": 2,
+   "group": "Wild Animals And Humans 150-199",
+   "motifs": [
+    {
+     "id": "B331.2",
+     "name": "Llewellyn And His Dog"
+    },
+    {
+     "id": "B331.2.1",
+     "name": "Woman Slays Faithful Mongoose Which Has Saved Her Child"
+    }
+   ],
+   "related": []
+  },
+  "1791": {
+   "total": 1,
+   "group": "Clergyman And Sexton 1775-1799",
+   "motifs": [
+    {
+     "id": "X424",
+     "name": "The Devil In The Cemetery"
+    }
+   ],
+   "related": []
+  },
+  "1889B": {
+   "total": 1,
+   "group": "Tall Tales 1875-1965",
+   "motifs": [
+    {
+     "id": "X1124.2",
+     "name": "Hunter Turns Animal Inside Out"
+    }
+   ],
+   "related": []
+  },
+  "1965": {
+   "total": 1,
+   "group": "Tall Tales 1875-1965",
+   "motifs": [
+    {
+     "id": "X1791",
+     "name": "Lie: Deaf, Dumb, Blind, And Lame Men Catch Hare"
+    }
+   ],
+   "related": []
+  },
+  "2": {
+   "total": 1,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K1021",
+     "name": "The Tail Fisher"
+    }
+   ],
+   "related": []
+  },
+  "2015": {
+   "total": 1,
+   "group": "Chains Based On Numbers, Objects, Animals, Or Names 2000-2020",
+   "motifs": [
+    {
+     "id": "Z39.1",
+     "name": "The Goat Who Would Not Go Home"
+    }
+   ],
+   "related": []
+  },
+  "2022": {
+   "total": 2,
+   "group": "Chains Involving A Death (With Animal Actors) 2021-2024",
+   "motifs": [
+    {
+     "id": "Z32.2",
+     "name": "The Death Of The Little Hen"
+    },
+    {
+     "id": "Z32.2.1",
+     "name": "The Death Of The Little Hen Described With Unusual Words"
+    }
+   ],
+   "related": []
+  },
+  "2025": {
+   "total": 1,
+   "group": "Chains Involving Eating 2025-2028",
+   "motifs": [
+    {
+     "id": "Z33.1",
+     "name": "The Fleeing Pancake"
+    }
+   ],
+   "related": []
+  },
+  "2030": {
+   "total": 10,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "Z41.1",
+     "name": "Woman Has Meat (Liver) Stolen By Bird"
+    },
+    {
+     "id": "Z41",
+     "name": "The Old Woman And Her Pig"
+    },
+    {
+     "id": "Z41.3",
+     "name": "Conflict Between Fowl And Thistle"
+    },
+    {
+     "id": "Z41.4",
+     "name": "The Mouse Regains Its Tail"
+    },
+    {
+     "id": "Z41.4.1",
+     "name": "Mouse Bursts Open When Crossing A Stream"
+    },
+    {
+     "id": "Z41.4.2",
+     "name": "My Dog Picked Up A String, But Did Not Wish To Give It To Me Unless I Gave Her Bread"
+    },
+    {
+     "id": "Z41.7",
+     "name": "The Wormwood Does Not Want To Rock The Sparrow"
+    },
+    {
+     "id": "Z41.7.1",
+     "name": "Boy Dirties His Shoe And Asks The Hay Stack To Wipe It Clean"
+    },
+    {
+     "id": "Z41.8",
+     "name": "Pulling The Needle Out Of The Seamstress's Hand"
+    },
+    {
+     "id": "Z41.9",
+     "name": "The Lazy Servant And The Grain"
+    }
+   ],
+   "related": []
+  },
+  "2031C": {
+   "total": 1,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "L392",
+     "name": "Mouse Stronger Than Wall, Wind, Mountain"
+    }
+   ],
+   "related": []
+  },
+  "2032": {
+   "total": 2,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "Z43",
+     "name": "The Cock's Whiskers"
+    },
+    {
+     "id": "Z43.1",
+     "name": "Toad Asks Magpie In Tree To Throw Down A Chestnut"
+    }
+   ],
+   "related": []
+  },
+  "2034F": {
+   "total": 2,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "Z39.9",
+     "name": "Series Of Things Acquired By Mouse --\"You Cannot Have This But You May Have That Instead,\" --Etc Clod--Fish--Cakes--Kid--Goat--Drum--Girl"
+    },
+    {
+     "id": "Z47.1",
+     "name": "Series Of Trick Exchanges: Razor--Pot--Bride--Drum By Tricky Fox"
+    }
+   ],
+   "related": []
+  },
+  "2035": {
+   "total": 1,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "Z44",
+     "name": "The House That Jack Built"
+    }
+   ],
+   "related": []
+  },
+  "2043": {
+   "total": 1,
+   "group": "Chains Involving Other Events 2029-2075",
+   "motifs": [
+    {
+     "id": "Z49.5",
+     "name": "Where Is The Warehouse? --The Fire Burned It Down"
+    }
+   ],
+   "related": []
+  },
+  "207C": {
+   "total": 1,
+   "group": "Domestic Animals 200-219",
+   "motifs": [
+    {
+     "id": "B271.3",
+     "name": "Animals Ring Bell And Demand Justice"
+    }
+   ],
+   "related": []
+  },
+  "20C": {
+   "total": 2,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "Z43.3",
+     "name": "Nut Hits Cock In Head: He Thinks World Is Coming To An End"
+    },
+    {
+     "id": "J1812",
+     "name": "Other Sounds Misunderstood"
+    }
+   ],
+   "related": []
+  },
+  "214A": {
+   "total": 2,
+   "group": "Domestic Animals 200-219",
+   "motifs": [
+    {
+     "id": "J2133.1",
+     "name": "Camel With Ass On His Back Dances"
+    },
+    {
+     "id": "J2137.6",
+     "name": "Camel And Ass Together Captured Because Of Ass's Singing"
+    }
+   ],
+   "related": []
+  },
+  "225": {
+   "total": 1,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "K1041",
+     "name": "Borrowed Feathers"
+    }
+   ],
+   "related": []
+  },
+  "2250": {
+   "total": 1,
+   "group": "Unfinished Tales 2250-2299",
+   "motifs": [
+    {
+     "id": "Z12",
+     "name": "Unfinished Tales"
+    }
+   ],
+   "related": []
+  },
+  "231": {
+   "total": 2,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "J657.3",
+     "name": "Crane Persuades Fish To Let Him Change Him From One Lake Into Another: He Eats Fish"
+    },
+    {
+     "id": "K815.14",
+     "name": "Fish Tricked By Crane Into Letting Selves Be Carried From One Pond To Another"
+    }
+   ],
+   "related": []
+  },
+  "237": {
+   "total": 1,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "J2211.2",
+     "name": "Why The Sow Was Muddy"
+    }
+   ],
+   "related": []
+  },
+  "243A": {
+   "total": 1,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "J551.1",
+     "name": "Cocks Who Crow About Mistress's Adultery Killed"
+    }
+   ],
+   "related": []
+  },
+  "244": {
+   "total": 2,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "J1062.1",
+     "name": "Frog As Beauty Doctor Unable To Cure His Own Ugliness"
+    },
+    {
+     "id": "J951.2",
+     "name": "Jay In Peacock's (Pigeon's) Skin Unmasked"
+    }
+   ],
+   "related": []
+  },
+  "247": {
+   "total": 1,
+   "group": "Birds 220-249",
+   "motifs": [
+    {
+     "id": "T681",
+     "name": "Each Likes His Own Children Best"
+    }
+   ],
+   "related": []
+  },
+  "278": {
+   "total": 1,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "J681.1",
+     "name": "Rat And Frog Tie Paws Together To Cross Marsh"
+    }
+   ],
+   "related": []
+  },
+  "278A": {
+   "total": 2,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "J1064.1",
+     "name": "Raven Killed By Apes Who Will Not Receive His Teaching That A Shining Stone Is Not Fire"
+    },
+    {
+     "id": "J652.1",
+     "name": "Frog Persists In Living In Puddle On Road"
+    }
+   ],
+   "related": []
+  },
+  "280A": {
+   "total": 1,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "J711.1",
+     "name": "Ant And Lazy Cricket (Grasshopper)"
+    }
+   ],
+   "related": []
+  },
+  "285A": {
+   "total": 4,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "B103.0.4.1",
+     "name": "Grateful Snake Gives Gold Piece Daily"
+    },
+    {
+     "id": "B335.1",
+     "name": "Man Attempts To Kill Faithful Serpent At Wife's Instigation"
+    },
+    {
+     "id": "J15",
+     "name": "Serpent (Bird) Having Injured Man Refuses Reconciliation"
+    },
+    {
+     "id": "W185.6",
+     "name": "Insult Worse Than Wound"
+    }
+   ],
+   "related": []
+  },
+  "295": {
+   "total": 4,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "A2741.1",
+     "name": "Bean Laughs Till It Splits: Cause Of Black Stripe"
+    },
+    {
+     "id": "A2793.1",
+     "name": "Why Bean Has Black Stripe"
+    },
+    {
+     "id": "F1025.1",
+     "name": "Bean, Straw, And Coal Go Journeying"
+    },
+    {
+     "id": "Z41.4.1",
+     "name": "Mouse Bursts Open When Crossing A Stream"
+    }
+   ],
+   "related": []
+  },
+  "298": {
+   "total": 1,
+   "group": "Other Animals And Objects",
+   "motifs": [
+    {
+     "id": "L351",
+     "name": "Contest Of Wind And Sun"
+    }
+   ],
+   "related": []
+  },
+  "303": {
+   "total": 15,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "T589.7.1",
+     "name": "Simultaneous Birth Of (Domestic) Animal And Child"
+    },
+    {
+     "id": "E761",
+     "name": "Life Token"
+    },
+    {
+     "id": "G451",
+     "name": "Following Witch's Fire Into Her Power"
+    },
+    {
+     "id": "D231",
+     "name": "Transformation: Man To Stone"
+    },
+    {
+     "id": "K1311.1",
+     "name": "Husband's Twin Brother Mistaken By Woman For Her Husband"
+    },
+    {
+     "id": "T351",
+     "name": "Sword Of Chastity"
+    },
+    {
+     "id": "N342.3",
+     "name": "Jealous And Overhasty Man Kills His Rescuing Twin Brother"
+    },
+    {
+     "id": "B512",
+     "name": "Medicine Shown By Animal"
+    },
+    {
+     "id": "T511.1.1",
+     "name": "Conception From Eating Apple"
+    },
+    {
+     "id": "T511.5.1",
+     "name": "Conception From Eating Fish"
+    },
+    {
+     "id": "T512",
+     "name": "Conception From Drinking"
+    },
+    {
+     "id": "H83",
+     "name": "Rescue Tokens"
+    }
+   ],
+   "related": []
+  },
+  "306": {
+   "total": 8,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "H508.2",
+     "name": "Bride Offered To Man Who Can Find Answer To Question"
+    },
+    {
+     "id": "D1980",
+     "name": "Magic Invisibility"
+    },
+    {
+     "id": "K625.1",
+     "name": "Escape Of Girl Foiled By Hero's Refusal To Take Narcotic"
+    },
+    {
+     "id": "D2131",
+     "name": "Magic Underground Journey"
+    },
+    {
+     "id": "F1015.1.1",
+     "name": "The Danced-Out Shoes"
+    },
+    {
+     "id": "H80",
+     "name": "Identification By Tokens"
+    },
+    {
+     "id": "L161",
+     "name": "Lowly Hero Marries Princess"
+    },
+    {
+     "id": "F87",
+     "name": "Journey To Otherworld To Secure Bride"
+    }
+   ],
+   "related": []
+  },
+  "310": {
+   "total": 9,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "G279.2",
+     "name": "Theft From Witch"
+    },
+    {
+     "id": "S222.1",
+     "name": "Woman Promises Her Unborn Child To Appease Offended Witch"
+    },
+    {
+     "id": "G204",
+     "name": "Girl In Service Of Witch"
+    },
+    {
+     "id": "R41.2",
+     "name": "Captivity In Tower"
+    },
+    {
+     "id": "F848.1",
+     "name": "Girl's Long Hair As Ladder Into Tower"
+    },
+    {
+     "id": "F555",
+     "name": "Remarkable Hair"
+    },
+    {
+     "id": "N455",
+     "name": "Overheard (Human) Conversation"
+    },
+    {
+     "id": "D642.7",
+     "name": "Transformation To Elude Pursuers"
+    },
+    {
+     "id": "L162",
+     "name": "Lowly Heroine Marries Prince (King)"
+    }
+   ],
+   "related": []
+  },
+  "311": {
+   "total": 11,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "C920",
+     "name": "Death For Breaking Tabu"
+    },
+    {
+     "id": "R157.1",
+     "name": "Youngest Sister Rescues Elder"
+    },
+    {
+     "id": "G561",
+     "name": "Ogre Tricked Into Carrying His Prisoners Home In Bag On His Own Back"
+    },
+    {
+     "id": "Q211",
+     "name": "Murder Punished"
+    },
+    {
+     "id": "R11.1",
+     "name": "Princess (Maiden) Abducted By Monster (Ogre)"
+    },
+    {
+     "id": "K521.1",
+     "name": "Escape By Dressing In Animal (Bird, Human) Skin"
+    },
+    {
+     "id": "K525",
+     "name": "Escape By Use Of Substituted Object"
+    },
+    {
+     "id": "T721.5",
+     "name": null
+    },
+    {
+     "id": "C227",
+     "name": "Tabu: Eating Human Flesh"
+    },
+    {
+     "id": "C611",
+     "name": "Forbidden Chamber"
+    },
+    {
+     "id": "C913",
+     "name": "Bloody Key As Sign Of Disobedience"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "312",
+     "score": 0.112,
+     "shared": [
+      {
+       "id": "C920",
+       "name": "Death For Breaking Tabu"
+      },
+      {
+       "id": "C611",
+       "name": "Forbidden Chamber"
+      }
+     ]
+    }
+   ]
+  },
+  "312": {
+   "total": 6,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "S62.1",
+     "name": "Bluebeard"
+    },
+    {
+     "id": "C611",
+     "name": "Forbidden Chamber"
+    },
+    {
+     "id": "C920",
+     "name": "Death For Breaking Tabu"
+    },
+    {
+     "id": "K551",
+     "name": "Respite From Death Granted Until Particular Act Is Performed"
+    },
+    {
+     "id": "G551.1",
+     "name": "Rescue Of Sister From Ogre By Brother"
+    },
+    {
+     "id": "G652",
+     "name": "Ogre Sings Constantly, Usually Own Name"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "311",
+     "score": 0.112,
+     "shared": [
+      {
+       "id": "C920",
+       "name": "Death For Breaking Tabu"
+      },
+      {
+       "id": "C611",
+       "name": "Forbidden Chamber"
+      }
+     ]
+    }
+   ]
+  },
+  "313": {
+   "total": 22,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "S222",
+     "name": "Man Promises (Sells) Child In Order To Save Himself From Danger Or Death"
+    },
+    {
+     "id": "B261",
+     "name": "War Of Birds And Quadrupeds"
+    },
+    {
+     "id": "G465",
+     "name": "Ogre Sets Impossible Tasks"
+    },
+    {
+     "id": "H1104",
+     "name": "Task: Building Castle In One Night"
+    },
+    {
+     "id": "H1113",
+     "name": "Task: Bailing Out A Pond"
+    },
+    {
+     "id": "H1154.8",
+     "name": "Task: Capturing Magic Horse"
+    },
+    {
+     "id": "H335.0.1",
+     "name": "Bride Helps Suitor Perform His Tasks"
+    },
+    {
+     "id": "D1611",
+     "name": "Magic Object Answers For Fugitive"
+    },
+    {
+     "id": "D671",
+     "name": "Transformation Flight"
+    },
+    {
+     "id": "D672",
+     "name": "Obstacle Flight"
+    },
+    {
+     "id": "D2003",
+     "name": "Forgotten Fiancée"
+    },
+    {
+     "id": "D2006.1.1",
+     "name": "Forgotten Fiancée Reawakens Husband's Memory By Detaining Lovers Through Magic"
+    }
+   ],
+   "related": []
+  },
+  "325": {
+   "total": 9,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "D1711.0.1",
+     "name": "Magician's Apprentice"
+    },
+    {
+     "id": "C837",
+     "name": "Tabu: Loosing Bridle In Selling Man Transformed To Horse"
+    },
+    {
+     "id": "L142.2",
+     "name": "Pupil Surpasses Magician"
+    },
+    {
+     "id": "H161",
+     "name": "Recognition Of Transformed Person Among Identical Companions"
+    },
+    {
+     "id": "D612",
+     "name": "Protean Sale: Man Sells Youth In Successive Transformations"
+    },
+    {
+     "id": "D615.2",
+     "name": "Transformation Contest Between Master And Pupil"
+    },
+    {
+     "id": "D722",
+     "name": "Disenchantment By Taking Off Bridle"
+    },
+    {
+     "id": "K252",
+     "name": "Selling Oneself And Escaping"
+    },
+    {
+     "id": "H62.1",
+     "name": "Recognition Of Person Transformed To Animal"
+    }
+   ],
+   "related": []
+  },
+  "328": {
+   "total": 9,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "H1151.9",
+     "name": "Task: Stealing Troll's Golden Horse"
+    },
+    {
+     "id": "D1400.1.4.1",
+     "name": "Magic Sword Conquers Enemy"
+    },
+    {
+     "id": "D1233",
+     "name": "Magic Violin (Fiddle)"
+    },
+    {
+     "id": "H1172",
+     "name": "Task: Bringing An Ogre To Court"
+    },
+    {
+     "id": "G514.1",
+     "name": "Ogre Trapped In Box (Cage)"
+    },
+    {
+     "id": "G610.1",
+     "name": "Stealing From Ogre For Revenge"
+    },
+    {
+     "id": "G610.3",
+     "name": "Stealing From Ogre As Task"
+    },
+    {
+     "id": "H1151",
+     "name": "Theft As A Task"
+    },
+    {
+     "id": "H911",
+     "name": "Tasks Assigned At Suggestion Of Jealous Rivals"
+    }
+   ],
+   "related": []
+  },
+  "331": {
+   "total": 4,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "R181",
+     "name": "Demon Enclosed In Bottle Released"
+    },
+    {
+     "id": "K717",
+     "name": "Deception Into Bottle (Vessel)"
+    },
+    {
+     "id": "D1240",
+     "name": "Magic Waters And Medicines"
+    },
+    {
+     "id": "D2102",
+     "name": "Gold Magically Produced"
+    }
+   ],
+   "related": []
+  },
+  "332": {
+   "total": 7,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "D1825.3.1",
+     "name": "Magic Power Of Seeing Death At Head Or Foot Of Bed And Thus Forecasting Progress Of Sickness"
+    },
+    {
+     "id": "K557",
+     "name": "Death Cheated By Moving Bed"
+    },
+    {
+     "id": "K551.1",
+     "name": "Respite From Death Granted Until Prayer Is Finished"
+    },
+    {
+     "id": "J486",
+     "name": "Death Preferred Above God And Justice"
+    },
+    {
+     "id": "E765.1.3",
+     "name": "Life-Lights In Lower World"
+    },
+    {
+     "id": "K551.9",
+     "name": "Let Me Live As Long As This Candle Lasts"
+    },
+    {
+     "id": "Z111",
+     "name": "Death Personified"
+    }
+   ],
+   "related": []
+  },
+  "333": {
+   "total": 5,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "J21.5",
+     "name": "\"Do Not Leave The Highway\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "Z18.1",
+     "name": "What Makes Your Ears So Big? -- To Hear The Better, My Child, Etc Type 333"
+    },
+    {
+     "id": "K2011",
+     "name": "Wolf Poses As \"Grandmother\" And Kills Child"
+    },
+    {
+     "id": "F913",
+     "name": "Victims Rescued From Swallower's Belly"
+    },
+    {
+     "id": "Q426",
+     "name": "Wolf Cut Open And Filled With Stones As Punishment"
+    }
+   ],
+   "related": []
+  },
+  "335": {
+   "total": 1,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "J1051",
+     "name": "Death's Three Messengers"
+    }
+   ],
+   "related": []
+  },
+  "361": {
+   "total": 5,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "M211",
+     "name": "Man Sells Soul To Devil"
+    },
+    {
+     "id": "L54.1",
+     "name": "Youngest Daughter Agrees To Marry A Monster; Later The Sisters Are Jealous"
+    },
+    {
+     "id": "K217",
+     "name": "Devil Gets Another Soul Instead Of One Bargained For"
+    },
+    {
+     "id": "C721.1",
+     "name": "Tabu: Bathing During Certain Time"
+    },
+    {
+     "id": "C723.1",
+     "name": "Tabu: Combing Hair During Certain Time"
+    }
+   ],
+   "related": []
+  },
+  "365": {
+   "total": 1,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "E215",
+     "name": "The Dead Rider (Lenore)"
+    }
+   ],
+   "related": []
+  },
+  "366": {
+   "total": 4,
+   "group": "Supernatural Adversaries 300-399",
+   "motifs": [
+    {
+     "id": "G60",
+     "name": "Human Flesh Eaten Unwittingly"
+    },
+    {
+     "id": "E235.4",
+     "name": "Return From Dead To Punish Theft Of Part Of Corpse"
+    },
+    {
+     "id": "E235.4.1",
+     "name": "Return From Dead To Punish Theft Of Golden Arm From Grave"
+    },
+    {
+     "id": "E235.4.2",
+     "name": "Return From Dead To Punish Theft Of Leg From Grave"
+    }
+   ],
+   "related": []
+  },
+  "402": {
+   "total": 12,
+   "group": "Wife 400-424",
+   "motifs": [
+    {
+     "id": "H1210.1",
+     "name": "Quest Assigned By Father"
+    },
+    {
+     "id": "H1306",
+     "name": "Quest For The Finest Of Linen"
+    },
+    {
+     "id": "H1303",
+     "name": "Quest For The Finest Of Chains"
+    },
+    {
+     "id": "H1307",
+     "name": "Quest For The Smallest Of Dogs"
+    },
+    {
+     "id": "B422",
+     "name": "Helpful Cat"
+    },
+    {
+     "id": "B493.1",
+     "name": "Helpful Frog"
+    },
+    {
+     "id": "B437.2",
+     "name": "Helpful Mouse"
+    },
+    {
+     "id": "H1242",
+     "name": "Youngest Brother Alone Succeeds On Quest"
+    },
+    {
+     "id": "H1301.1",
+     "name": "Quest For The Most Beautiful Bride"
+    },
+    {
+     "id": "D711",
+     "name": "Disenchantment By Decapitation"
+    },
+    {
+     "id": "B313",
+     "name": "Helpful Animal An Enchanted Person"
+    },
+    {
+     "id": "D700",
+     "name": "Person Disenchanted"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "545B",
+     "score": 0.073,
+     "shared": [
+      {
+       "id": "B422",
+       "name": "Helpful Cat"
+      },
+      {
+       "id": "D711",
+       "name": "Disenchantment By Decapitation"
+      }
+     ]
+    }
+   ]
+  },
+  "410": {
+   "total": 15,
+   "group": "Wife 400-424",
+   "motifs": [
+    {
+     "id": "B211.7.1",
+     "name": "Speaking Frog"
+    },
+    {
+     "id": "F316.1",
+     "name": "Fairy's Curse Partially Overcome By Another Fairy's Amendment"
+    },
+    {
+     "id": "M370",
+     "name": "Vain Attempts To Escape Fulfillment Of Prophecy"
+    },
+    {
+     "id": "D1967.1",
+     "name": "Person In Magic Sleep Surrounded By Protecting Hedge"
+    },
+    {
+     "id": "N711.2",
+     "name": "Hero Finds Maiden In (Magic) Castle"
+    },
+    {
+     "id": "D1978.5",
+     "name": "Waking From Magic Sleep By Kiss"
+    },
+    {
+     "id": "D735",
+     "name": "Disenchantment By Kiss"
+    },
+    {
+     "id": "F316",
+     "name": "Fairy Lays Curse On Child"
+    },
+    {
+     "id": "D1364.17",
+     "name": "Spindle Causes Magic Sleep"
+    },
+    {
+     "id": "D1960.3",
+     "name": "Sleeping Beauty"
+    },
+    {
+     "id": "F771.4.4",
+     "name": "Castle In Which Everyone Is Asleep"
+    },
+    {
+     "id": "F771.4.7",
+     "name": "Castle Inhabited By Enchanted Princess"
+    }
+   ],
+   "related": []
+  },
+  "425C": {
+   "total": 4,
+   "group": "Husband 425-449",
+   "motifs": [
+    {
+     "id": "L221",
+     "name": "Modest Request: Present From The Journey"
+    },
+    {
+     "id": "S222",
+     "name": "Man Promises (Sells) Child In Order To Save Himself From Danger Or Death"
+    },
+    {
+     "id": "C761.2",
+     "name": "Tabu: Staying Too Long At Home"
+    },
+    {
+     "id": "D735.1",
+     "name": "Beauty And The Beast"
+    }
+   ],
+   "related": []
+  },
+  "425D": {
+   "total": 8,
+   "group": "Husband 425-449",
+   "motifs": [
+    {
+     "id": "T68",
+     "name": "Princess Offered As Prize"
+    },
+    {
+     "id": "B640.1",
+     "name": "Marriage To Beast By Day And Man By Night"
+    },
+    {
+     "id": "C932",
+     "name": "Loss Of Wife (Husband) For Breaking Tabu"
+    },
+    {
+     "id": "H11.1.1",
+     "name": "Recognition At Inn (Hospital, Etc) Where All Must Tell Their Life Histories"
+    },
+    {
+     "id": "K1837",
+     "name": "Disguise Of Woman In Man's Clothes"
+    },
+    {
+     "id": "C991",
+     "name": "Quest Imposed For Breaking Tabu"
+    },
+    {
+     "id": "D150",
+     "name": "Transformation: Man To Bird"
+    },
+    {
+     "id": "H1194",
+     "name": "Task: Making Person Laugh"
+    }
+   ],
+   "related": []
+  },
+  "440": {
+   "total": 8,
+   "group": "Husband 425-449",
+   "motifs": [
+    {
+     "id": "C41.2",
+     "name": "Tabu: Letting Ball Fall Into Water"
+    },
+    {
+     "id": "B211.7.1",
+     "name": "Speaking Frog"
+    },
+    {
+     "id": "S215.1",
+     "name": "Girl Promises Herself To Animal Suitor"
+    },
+    {
+     "id": "D789",
+     "name": "Other Means Of Disenchantment"
+    },
+    {
+     "id": "F875",
+     "name": "Iron Bands Around Heart To Keep It From Breaking"
+    },
+    {
+     "id": "D711",
+     "name": "Disenchantment By Decapitation"
+    },
+    {
+     "id": "D735.1",
+     "name": "Beauty And The Beast"
+    },
+    {
+     "id": "D743",
+     "name": "Disenchantment By Sexual Intercourse"
+    }
+   ],
+   "related": []
+  },
+  "441": {
+   "total": 5,
+   "group": "Husband 425-449",
+   "motifs": [
+    {
+     "id": "S226",
+     "name": "Child Promised To Devil For Directions Out Of Woods When Father Is Lost"
+    },
+    {
+     "id": "B641.5",
+     "name": "Marriage To Person In Hedgehog Form"
+    },
+    {
+     "id": "D721.3",
+     "name": "Disenchantment By Destroying Skin (Covering)"
+    },
+    {
+     "id": "C758.1",
+     "name": "Monster Born Because Of Hasty (Inconsiderate) Wish Of Parents"
+    },
+    {
+     "id": "T554",
+     "name": "Woman Gives Birth To Animal"
+    }
+   ],
+   "related": []
+  },
+  "451": {
+   "total": 15,
+   "group": "Brother Or Sister 450-459",
+   "motifs": [
+    {
+     "id": "P253.2",
+     "name": "Sister Faithful To Transformed Brother"
+    },
+    {
+     "id": "D161.1",
+     "name": "Transformation: Man To Swan"
+    },
+    {
+     "id": "D151.5",
+     "name": "Transformation: Man To Raven"
+    },
+    {
+     "id": "D758",
+     "name": "Disenchantment By Maintaining Silence"
+    },
+    {
+     "id": "D753.1",
+     "name": "Disenchantment By Sewing Shirts For Enchanted Brothers"
+    },
+    {
+     "id": "N711",
+     "name": "King (Prince) Accidentally Finds Maiden And Marries Her"
+    },
+    {
+     "id": "K2116.1.1",
+     "name": "Innocent Woman Accused Of Killing Her New-Born Children"
+    },
+    {
+     "id": "H1232",
+     "name": "Directions On Quest Given By Sun, Moon, Wind, And Stars"
+    },
+    {
+     "id": "S272",
+     "name": "Sacrifice Of Brothers Promised If Girl Is Born"
+    },
+    {
+     "id": "T595",
+     "name": "Sign Hung Out Informing Brothers Whether Mother Has Borne Boy Or Girl"
+    },
+    {
+     "id": "N344.1",
+     "name": "Wrong Sign Put Out Leads To Boys' Leaving Home"
+    },
+    {
+     "id": "S272.1",
+     "name": "Flight Of Brothers From Home To Avoid Being Sacrificed"
+    }
+   ],
+   "related": []
+  },
+  "47A": {
+   "total": 4,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K1022.2",
+     "name": "Wolf Tied To Cow's Horns"
+    },
+    {
+     "id": "A2211.2",
+     "name": "Rabbit Laughs: Cause Of Hare-Lip"
+    },
+    {
+     "id": "A2342.1",
+     "name": "Why Hare's Lip Is Split"
+    },
+    {
+     "id": "K1047",
+     "name": "The Bear Bites The Seemingly Dead Horse's Tail"
+    }
+   ],
+   "related": []
+  },
+  "47B": {
+   "total": 7,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "J954.1",
+     "name": "Mule As Descendant Of King's War-Horse"
+    },
+    {
+     "id": "K1121",
+     "name": "Wolf (Lion) Approaches Too Near To Horse: Kicked In Face"
+    },
+    {
+     "id": "K1121.1",
+     "name": "Wolf (Lion) As Sham Doctor Looks At Horse's Foot: Kicked In Face"
+    },
+    {
+     "id": "J1608",
+     "name": "Ass's Charter In His Hoof"
+    },
+    {
+     "id": "K551.18",
+     "name": "Respite From Death Granted Until Wolf Reads Horse's Passport"
+    },
+    {
+     "id": "K1955",
+     "name": "Sham Physician"
+    },
+    {
+     "id": "K566",
+     "name": "Ass Begs Wolf To Pull Thorn Out Of Foot Before Eating Him: Kicks Wolf In Mouth"
+    }
+   ],
+   "related": []
+  },
+  "480": {
+   "total": 24,
+   "group": "Supernatural Tasks 460-499",
+   "motifs": [
+    {
+     "id": "G466",
+     "name": "Lousing As Task Set By Ogre"
+    },
+    {
+     "id": "Q2",
+     "name": "Kind And Unkind"
+    },
+    {
+     "id": "S31",
+     "name": "Cruel Stepmother"
+    },
+    {
+     "id": "H934.3",
+     "name": "Tasks Assigned By Stepmother"
+    },
+    {
+     "id": "N777.4",
+     "name": "Spindle Dropped Into Well Leads To Adventures"
+    },
+    {
+     "id": "L211",
+     "name": "Modest Choice: Three Caskets Type"
+    },
+    {
+     "id": "N777",
+     "name": "Dropped Ball (Basket) Leads To Adventures When Recovery Is Attempted"
+    },
+    {
+     "id": "H1226",
+     "name": "Pursuit Of Rolling Cake Leads To Quest"
+    },
+    {
+     "id": "D1658.1.5",
+     "name": "Apple-Tree Grateful For Being Shaken"
+    },
+    {
+     "id": "H1192",
+     "name": "Task: Combing Hair Of Fairies"
+    },
+    {
+     "id": "H1023.2",
+     "name": "Task: Carrying Water In A Sieve"
+    },
+    {
+     "id": "H1023.6",
+     "name": "Task: Washing Black Wool (Cloth, Cattle) White"
+    }
+   ],
+   "related": []
+  },
+  "50": {
+   "total": 2,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K961.2",
+     "name": "Flesh (Vital Organs) Of Certain Person Alleged To Be Only Cure For Disease"
+    },
+    {
+     "id": "K961",
+     "name": "Flesh Of Certain Animal Alleged To Be Only Cure For Disease: Animal To Be Killed"
+    }
+   ],
+   "related": []
+  },
+  "500": {
+   "total": 9,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "H914",
+     "name": "Tasks Assigned Because Of Mother's Foolish Boasting"
+    },
+    {
+     "id": "D2183",
+     "name": "Magic Spinning"
+    },
+    {
+     "id": "N475",
+     "name": "Secret Name Overheard By Eavesdropper"
+    },
+    {
+     "id": "C432.1",
+     "name": "Guessing Name Of Supernatural Creature Gives Power Over Him"
+    },
+    {
+     "id": "H1021.8",
+     "name": "Task: Spinning Gold"
+    },
+    {
+     "id": "H1092",
+     "name": "Task: Spinning Impossible Amount In One Night"
+    },
+    {
+     "id": "H521",
+     "name": "Test: Guessing Unknown Propounder's Name"
+    },
+    {
+     "id": "S222",
+     "name": "Man Promises (Sells) Child In Order To Save Himself From Danger Or Death"
+    },
+    {
+     "id": "S222.1",
+     "name": "Woman Promises Her Unborn Child To Appease Offended Witch"
+    }
+   ],
+   "related": []
+  },
+  "502": {
+   "total": 5,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "R222",
+     "name": "Unknown Knight"
+    },
+    {
+     "id": "L161",
+     "name": "Lowly Hero Marries Princess"
+    },
+    {
+     "id": "G671",
+     "name": "Wild Man Released From Captivity Aids Hero"
+    },
+    {
+     "id": "C611",
+     "name": "Forbidden Chamber"
+    },
+    {
+     "id": "B316",
+     "name": "Abused And Pampered Horses"
+    }
+   ],
+   "related": []
+  },
+  "503": {
+   "total": 6,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "F331.1",
+     "name": "Mortal Wins Fairies' Gratitude By Joining In Their Dance"
+    },
+    {
+     "id": "F344.1",
+     "name": "Fairies Remove Hunchback's Hump (Or Replace It)"
+    },
+    {
+     "id": "F342.1",
+     "name": "Fairy Gold"
+    },
+    {
+     "id": "J2415",
+     "name": "Foolish Imitation Of Lucky Man"
+    },
+    {
+     "id": "F331.3",
+     "name": "Mortal Wins Fairies' Gratitude By Joining In Their Song And Completing It By Adding The Names Of The Days Of The Week"
+    },
+    {
+     "id": "F331.4",
+     "name": "Mortal Wins Fairies' Gratitude By Playing For Their Dance"
+    }
+   ],
+   "related": []
+  },
+  "505": {
+   "total": 13,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "R163",
+     "name": "Rescue By Grateful Dead Man"
+    },
+    {
+     "id": "Q271.1",
+     "name": "Debtor Deprived Of Burial"
+    },
+    {
+     "id": "E341",
+     "name": "The Grateful Dead"
+    },
+    {
+     "id": "M241",
+     "name": "Bargain: To Divide All Winnings"
+    },
+    {
+     "id": "S142",
+     "name": "Person Thrown Into The Water And Abandoned"
+    },
+    {
+     "id": "M241.1",
+     "name": "Dividing The Winnings: Half Of The Bride Demanded"
+    },
+    {
+     "id": "N848.1",
+     "name": "Hero Ransoms Maltreated Picture Of A Saint"
+    },
+    {
+     "id": "L161",
+     "name": "Lowly Hero Marries Princess"
+    },
+    {
+     "id": "H11.1",
+     "name": "Recognition By Telling Life History"
+    },
+    {
+     "id": "H331.2",
+     "name": "Suitor Contest: Tournament"
+    },
+    {
+     "id": "H972",
+     "name": "Tasks Accomplished With Help Of Grateful Dead"
+    },
+    {
+     "id": "H94.4",
+     "name": "Identification By Ring Dropped In Glass (Cup) Of Wine"
+    }
+   ],
+   "related": []
+  },
+  "510A": {
+   "total": 15,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "B450",
+     "name": "Helpful Birds"
+    },
+    {
+     "id": "C761.3",
+     "name": "Tabu: Staying Too Long At Ball"
+    },
+    {
+     "id": "H36.1",
+     "name": "Slipper Test"
+    },
+    {
+     "id": "K1911.3.3.1",
+     "name": "False Bride's Mutilated Feet"
+    },
+    {
+     "id": "L55",
+     "name": "Stepdaughter Heroine"
+    },
+    {
+     "id": "D1050.1",
+     "name": "Clothes Produced By Magic"
+    },
+    {
+     "id": "N711.4",
+     "name": "Prince Sees Maiden At Church And Is Enamored"
+    },
+    {
+     "id": "F823.2",
+     "name": "Glass Shoes"
+    },
+    {
+     "id": "R221",
+     "name": "Heroine's Three-Fold Flight From Ball"
+    },
+    {
+     "id": "N711.6",
+     "name": "Prince Sees Heroine At Ball And Is Enamored"
+    },
+    {
+     "id": "N815",
+     "name": "Fairy As Helper"
+    },
+    {
+     "id": "S31",
+     "name": "Cruel Stepmother"
+    }
+   ],
+   "related": []
+  },
+  "510B": {
+   "total": 10,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "M255",
+     "name": "Deathbed Promise Concerning The Second Wife"
+    },
+    {
+     "id": "T311.1",
+     "name": "Flight Of Maiden (Bridegroom) To Escape Marriage"
+    },
+    {
+     "id": "N711.6",
+     "name": "Prince Sees Heroine At Ball And Is Enamored"
+    },
+    {
+     "id": "R255",
+     "name": "Formula For Girl Fleeing: Behind Me Night, Etc \"Behind Me Night And Before Me Day That No One Shall See Where I Go"
+    },
+    {
+     "id": "H151.5",
+     "name": "Attention Attracted By Hints Dropped By Heroine As Menial: Recognition Follows"
+    },
+    {
+     "id": "H94.2",
+     "name": "Identification By Ring Baked In Bread"
+    },
+    {
+     "id": "H94.4",
+     "name": "Identification By Ring Dropped In Glass (Cup) Of Wine"
+    },
+    {
+     "id": "F821.1.3",
+     "name": "Dress Of Raw Fur"
+    },
+    {
+     "id": "F821.1.4",
+     "name": "Wooden Coat"
+    },
+    {
+     "id": "K521.1",
+     "name": "Escape By Dressing In Animal (Bird, Human) Skin"
+    }
+   ],
+   "related": []
+  },
+  "545B": {
+   "total": 13,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "B435.1",
+     "name": "Helpful Fox"
+    },
+    {
+     "id": "B435.2",
+     "name": "Helpful Jackal"
+    },
+    {
+     "id": "B441.1",
+     "name": "Helpful Monkey"
+    },
+    {
+     "id": "K1917.3",
+     "name": "Penniless Wooer: Helpful Animal Reports Master Wealthy And Thus Wins Girl For Him"
+    },
+    {
+     "id": "K1952.1.1",
+     "name": "Poor Boy Said By Helpful Animal To Be Dispossessed Prince (Wealthy Man) Who Has Lost Clothes While Swimming (In Shipwreck)"
+    },
+    {
+     "id": "D711",
+     "name": "Disenchantment By Decapitation"
+    },
+    {
+     "id": "B211.1.8",
+     "name": "Speaking Cat"
+    },
+    {
+     "id": "F771.4.1",
+     "name": "Castle Inhabited By Ogres"
+    },
+    {
+     "id": "K722",
+     "name": "Giant Tricked Into Becoming Mouse"
+    },
+    {
+     "id": "B422",
+     "name": "Helpful Cat"
+    },
+    {
+     "id": "B580",
+     "name": "Animal Helps Men To Wealth And Greatness"
+    },
+    {
+     "id": "B581",
+     "name": "Animal Brings Wealth To Man"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "402",
+     "score": 0.073,
+     "shared": [
+      {
+       "id": "B422",
+       "name": "Helpful Cat"
+      },
+      {
+       "id": "D711",
+       "name": "Disenchantment By Decapitation"
+      }
+     ]
+    }
+   ]
+  },
+  "555": {
+   "total": 7,
+   "group": "Supernatural Helpers 500-559",
+   "motifs": [
+    {
+     "id": "B170",
+     "name": "Magic Birds, Fish, Reptiles, Etc"
+    },
+    {
+     "id": "B375.1",
+     "name": "Fish Returned To Water: Grateful"
+    },
+    {
+     "id": "D1761.0.1",
+     "name": "Wishes Granted Without Limit"
+    },
+    {
+     "id": "C773.1",
+     "name": "Tabu: Making Unreasonable Requests"
+    },
+    {
+     "id": "J514",
+     "name": "One Should Not Be Too Greedy"
+    },
+    {
+     "id": "L420",
+     "name": "Overweening Ambition Punished"
+    },
+    {
+     "id": "Q338",
+     "name": "Immoderate Request Punished"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "675",
+     "score": 0.1,
+     "shared": [
+      {
+       "id": "B375.1",
+       "name": "Fish Returned To Water: Grateful"
+      },
+      {
+       "id": "D1761.0.1",
+       "name": "Wishes Granted Without Limit"
+      }
+     ]
+    }
+   ]
+  },
+  "562": {
+   "total": 11,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "D845",
+     "name": "Magic Object Found In Underground Room"
+    },
+    {
+     "id": "D1426",
+     "name": "Magic Object Draws Woman To Man"
+    },
+    {
+     "id": "R135",
+     "name": "Abandoned Children (Wife, Etc) Find Way Back By Clue (Bread-Crumb, Grain, Pebble, Etc)"
+    },
+    {
+     "id": "D1391",
+     "name": "Magic Object Saves Person From Execution"
+    },
+    {
+     "id": "D765.1",
+     "name": "Disenchantment By Removing Cause Of Enchantment"
+    },
+    {
+     "id": "E765.1",
+     "name": "Life Bound Up With Light (Flame)"
+    },
+    {
+     "id": "K331",
+     "name": "Goods Stolen While Owner Sleeps"
+    },
+    {
+     "id": "D1421.1.2",
+     "name": "Magic Fire-Steel Summons Genie"
+    },
+    {
+     "id": "D1421.1.4",
+     "name": "Magic Light Summons Genie"
+    },
+    {
+     "id": "D1470.1",
+     "name": "Magic Wishing-Object"
+    },
+    {
+     "id": "N813",
+     "name": "Helpful Genie (Spirit)"
+    }
+   ],
+   "related": []
+  },
+  "563": {
+   "total": 14,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "J2355.1",
+     "name": "Fool Loses Magic Objects By Talking About Them"
+    },
+    {
+     "id": "B103.1.1",
+     "name": "Gold-Producing Ass"
+    },
+    {
+     "id": "D1401.2",
+     "name": "Magic Sack Furnishes Mannikin Who Cudgels Owner's Enemies"
+    },
+    {
+     "id": "D881.2",
+     "name": "Recovery Of Magic Object By Use Of Magic Cudgel"
+    },
+    {
+     "id": "D1030.1",
+     "name": "Food Supplied By Magic"
+    },
+    {
+     "id": "D1401.1",
+     "name": "Magic Club (Stick) Beats Person"
+    },
+    {
+     "id": "D1601.5",
+     "name": "Automatic Cudgel"
+    },
+    {
+     "id": "D1651.2",
+     "name": "Magic Cudgel Works Only For Master"
+    },
+    {
+     "id": "D1472.1.22",
+     "name": "Magic Bag (Sack) Supplies Food"
+    },
+    {
+     "id": "D1472.1.7",
+     "name": "Magic Table Supplies Food And Drink"
+    },
+    {
+     "id": "D861.1",
+     "name": "Magic Object Stolen By Host (At Inn"
+    },
+    {
+     "id": "D861.2",
+     "name": "Magic Object Stolen By Neighbor"
+    }
+   ],
+   "related": []
+  },
+  "565": {
+   "total": 7,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "D1601.21.1",
+     "name": "Self-Grinding Salt-Mill"
+    },
+    {
+     "id": "C916.3",
+     "name": "Magic Porridge-Pot Keeps Cooking"
+    },
+    {
+     "id": "A1115.2",
+     "name": "Why The Sea Is Salt: Magic Salt Mill"
+    },
+    {
+     "id": "D1472.1.9",
+     "name": "Magic Pot Supplies Food And Drink"
+    },
+    {
+     "id": "D1651",
+     "name": "Magic Object Obeys Master Alone"
+    },
+    {
+     "id": "D1651.3",
+     "name": "Magic Cooking-Pot Obeys Only Master"
+    },
+    {
+     "id": "D1601.10.1",
+     "name": "Self-Cooking Pot"
+    }
+   ],
+   "related": []
+  },
+  "57": {
+   "total": 2,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "A2426.2.6",
+     "name": "Cawing Of Crow"
+    },
+    {
+     "id": "K334.1",
+     "name": "The Raven With Cheese In His Mouth"
+    }
+   ],
+   "related": []
+  },
+  "570": {
+   "total": 8,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "D1441.1.2",
+     "name": "Magic Pipe Calls Animals Together"
+    },
+    {
+     "id": "K1288",
+     "name": "King Induced To Kiss Horse's Rump: Trickster Then Threatens To Tell"
+    },
+    {
+     "id": "K1358",
+     "name": "Girl Shows Herself Naked In Return For Youth's Dancing Hogs"
+    },
+    {
+     "id": "H1045",
+     "name": "Task: Filling A Sack Full Of Lies (Truths)"
+    },
+    {
+     "id": "K1271.1.1",
+     "name": "The Bag Of Lies: Threat To Tell Of Queen's Adultery"
+    },
+    {
+     "id": "H1112",
+     "name": "Task: Herding Rabbits"
+    },
+    {
+     "id": "H335",
+     "name": "Tasks Assigned Suitors"
+    },
+    {
+     "id": "T68",
+     "name": "Princess Offered As Prize"
+    }
+   ],
+   "related": []
+  },
+  "571B": {
+   "total": 6,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "D1413.8",
+     "name": "Chamber-Pot To Which One Sticks"
+    },
+    {
+     "id": "D812.3",
+     "name": "Magic Object Received From Devil"
+    },
+    {
+     "id": "D1413.7",
+     "name": "Basin To Which One Sticks"
+    },
+    {
+     "id": "K1217",
+     "name": "Tale Of The Basin"
+    },
+    {
+     "id": "H1010",
+     "name": "Impossible Tasks"
+    },
+    {
+     "id": "H931",
+     "name": "Tasks Assigned In Order To Get Rid Of Hero"
+    }
+   ],
+   "related": []
+  },
+  "592": {
+   "total": 11,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "S322.4",
+     "name": "Evil Stepmother Casts Boy Forth"
+    },
+    {
+     "id": "W154.1",
+     "name": "Man Dismissed After Years Of Service With A Pittance"
+    },
+    {
+     "id": "Q42.1",
+     "name": "Spendthrift Knight"
+    },
+    {
+     "id": "D1761.0.2",
+     "name": "Limited Number Of Wishes Granted"
+    },
+    {
+     "id": "D1653.1.7",
+     "name": "Infallible Gun"
+    },
+    {
+     "id": "D1653.1.4",
+     "name": "Unerring Bow"
+    },
+    {
+     "id": "D1415.2.5",
+     "name": "Magic Fiddle Causes Dancing"
+    },
+    {
+     "id": "D1761.0.1",
+     "name": "Wishes Granted Without Limit"
+    },
+    {
+     "id": "K551.3.1",
+     "name": "Respite From Death While One Plays The Fiddle"
+    },
+    {
+     "id": "N55",
+     "name": "Shooting Contest On Wager"
+    },
+    {
+     "id": "N55.1",
+     "name": "Loser Of Shooting Wager To Go Naked Into Thorns For Bird"
+    }
+   ],
+   "related": []
+  },
+  "613": {
+   "total": 24,
+   "group": "Magic Objects 560-649",
+   "motifs": [
+    {
+     "id": "N61",
+     "name": "Wager That Falsehood Is Better Than Truth"
+    },
+    {
+     "id": "F1045",
+     "name": "Night Spent In Tree"
+    },
+    {
+     "id": "H963",
+     "name": "Tasks Performed By Means Of Secrets Overheard From Tree"
+    },
+    {
+     "id": "D1505.5",
+     "name": "Magic Water Restores Sight"
+    },
+    {
+     "id": "H346",
+     "name": "Princess Given To Man Who Can Heal Her"
+    },
+    {
+     "id": "N471",
+     "name": "Foolish Attempt Of Second Man To Overhear Secrets (From Animals, Demons Etc)"
+    },
+    {
+     "id": "K451.1",
+     "name": "Unjust Umpire Decides A Religious Dispute"
+    },
+    {
+     "id": "N92",
+     "name": "Wager To Win Or Lose According To Whether Jackal Howls Or Ass Brays Before Game Is Finished"
+    },
+    {
+     "id": "M225",
+     "name": "Eyes Exchanged For Food"
+    },
+    {
+     "id": "C940.1",
+     "name": "Princess's Secret Sickness From Breaking Tabu"
+    },
+    {
+     "id": "F933.2",
+     "name": "Dry Spring Restored By Removal Of Certain Stone"
+    },
+    {
+     "id": "D2101",
+     "name": "Treasure Magically Discovered"
+    }
+   ],
+   "related": []
+  },
+  "63": {
+   "total": 1,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K921",
+     "name": "Fox Rids Himself Of Fleas"
+    }
+   ],
+   "related": []
+  },
+  "650A": {
+   "total": 34,
+   "group": "Supernatural Power Or Knowledge 650-699",
+   "motifs": [
+    {
+     "id": "F611.3.1",
+     "name": "Strong Hero Practices Uprooting Trees"
+    },
+    {
+     "id": "F615.2.3",
+     "name": "Strong Man Sent For Wild Horses: Brings Them Back"
+    },
+    {
+     "id": "F615",
+     "name": "Strong Man Evades Death"
+    },
+    {
+     "id": "F611.2.1",
+     "name": "Strong Hero Suckled By Animal"
+    },
+    {
+     "id": "F612.1",
+     "name": "Strong Hero Sent From Home Because Of Enormous Appetite"
+    },
+    {
+     "id": "F615.3.1",
+     "name": "Strong Hero Attacked With Millstone Puts It On As Collar"
+    },
+    {
+     "id": "F615.3.1.1",
+     "name": "Strong Hero Asks That Chickens Stop Scratching"
+    },
+    {
+     "id": "F614.1",
+     "name": "Strong Man Drives Anvil Into Ground"
+    },
+    {
+     "id": "F611.2.3",
+     "name": "Strong Hero's Long Nursing"
+    },
+    {
+     "id": "K1411",
+     "name": "Plowing The Field: Horse And Harness Destroyed"
+    },
+    {
+     "id": "F615.1",
+     "name": "Strong Man Sent To Devil's Mill: Drives Devils To Master's House"
+    },
+    {
+     "id": "F80",
+     "name": "Journey To Lower World"
+    }
+   ],
+   "related": []
+  },
+  "66A": {
+   "total": 2,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "K1722",
+     "name": "Monkey Pretends That His House Always Answers Him"
+    },
+    {
+     "id": "K607.1",
+     "name": "The Cave Call"
+    }
+   ],
+   "related": []
+  },
+  "670": {
+   "total": 10,
+   "group": "Supernatural Power Or Knowledge 650-699",
+   "motifs": [
+    {
+     "id": "C425",
+     "name": "Tabu: Revealing Knowledge Of Animal Languages"
+    },
+    {
+     "id": "N456",
+     "name": "Enigmatical Smile (Laugh) Reveals Secret Knowledge"
+    },
+    {
+     "id": "T253.1",
+     "name": "Nagging Wife Drives Husband To Prepare For Suicide"
+    },
+    {
+     "id": "B469.5",
+     "name": "Helpful Cock"
+    },
+    {
+     "id": "N451",
+     "name": "Secrets Overheard From Animal (Demon) Conversation"
+    },
+    {
+     "id": "T252.2",
+     "name": "Cock Shows Browbeaten Husband How To Rule His Wife"
+    },
+    {
+     "id": "B165.1",
+     "name": "Animal Languages Learned From Serpent (Not Eaten)"
+    },
+    {
+     "id": "B216",
+     "name": "Knowledge Of Animal Languages"
+    },
+    {
+     "id": "B350",
+     "name": "Grateful Animals"
+    },
+    {
+     "id": "B491.1",
+     "name": "Helpful Serpent"
+    }
+   ],
+   "related": []
+  },
+  "675": {
+   "total": 13,
+   "group": "Supernatural Power Or Knowledge 650-699",
+   "motifs": [
+    {
+     "id": "L114.1",
+     "name": "Lazy Hero"
+    },
+    {
+     "id": "D1601",
+     "name": "Object Labors Automatically"
+    },
+    {
+     "id": "D1523.1",
+     "name": "Self-Propelling Wagon"
+    },
+    {
+     "id": "T513",
+     "name": "Conception From Wish"
+    },
+    {
+     "id": "H486",
+     "name": "Test Of Paternity"
+    },
+    {
+     "id": "H481",
+     "name": "Infant Picks Out His Unknown Father"
+    },
+    {
+     "id": "H481.1",
+     "name": "Infant Indicates His Unknown Father By Handing Him An Apple"
+    },
+    {
+     "id": "S141",
+     "name": "Exposure In Boat"
+    },
+    {
+     "id": "S147",
+     "name": "Abandonment On Mountain"
+    },
+    {
+     "id": "D1131.1",
+     "name": "Castle Produced By Magic"
+    },
+    {
+     "id": "L175",
+     "name": "Lowly Successful Hero Invites King And Humbles Him"
+    },
+    {
+     "id": "B375.1",
+     "name": "Fish Returned To Water: Grateful"
+    }
+   ],
+   "related": [
+    {
+     "atuType": "555",
+     "score": 0.1,
+     "shared": [
+      {
+       "id": "B375.1",
+       "name": "Fish Returned To Water: Grateful"
+      },
+      {
+       "id": "D1761.0.1",
+       "name": "Wishes Granted Without Limit"
+      }
+     ]
+    }
+   ]
+  },
+  "681": {
+   "total": 1,
+   "group": "Supernatural Power Or Knowledge 650-699",
+   "motifs": [
+    {
+     "id": "D2012.1",
+     "name": "King In The Bath; Years Of Experience In A Moment"
+    }
+   ],
+   "related": []
+  },
+  "68A": {
+   "total": 1,
+   "group": "The Clever Fox (Other Animal) 1-69",
+   "motifs": [
+    {
+     "id": "J2131.5.7",
+     "name": "Fox Trying To Drown Jug"
+    }
+   ],
+   "related": []
+  },
+  "700": {
+   "total": 6,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "F911.3.1",
+     "name": "Thumbling Swallowed By Animals"
+    },
+    {
+     "id": "F913",
+     "name": "Victims Rescued From Swallower's Belly"
+    },
+    {
+     "id": "F535.1",
+     "name": "Thumbling"
+    },
+    {
+     "id": "F535.1.1.1",
+     "name": "Thumbling Drives Wagon By Sitting In Horse's Ear"
+    },
+    {
+     "id": "F535.1.1.8",
+     "name": "Thumbling Imprisoned In A Sausage"
+    },
+    {
+     "id": "F535.1.1",
+     "name": "Adventures Of Thumbling"
+    }
+   ],
+   "related": []
+  },
+  "704": {
+   "total": 1,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "H41.1",
+     "name": "Princess On The Pea"
+    }
+   ],
+   "related": []
+  },
+  "706": {
+   "total": 11,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "S322.1.2",
+     "name": "Father Casts Daughter Forth When She Will Not Marry Him"
+    },
+    {
+     "id": "S211",
+     "name": "Child Sold (Promised) To Devil (Ogre)"
+    },
+    {
+     "id": "N711",
+     "name": "King (Prince) Accidentally Finds Maiden And Marries Her"
+    },
+    {
+     "id": "L162",
+     "name": "Lowly Heroine Marries Prince (King)"
+    },
+    {
+     "id": "E782.1",
+     "name": "Hands Restored"
+    },
+    {
+     "id": "Q451.1",
+     "name": "Hands Cut Off As Punishment"
+    },
+    {
+     "id": "K2110.1",
+     "name": "Calumniated Wife"
+    },
+    {
+     "id": "H57.5",
+     "name": "Recognition By Artificial Hands"
+    },
+    {
+     "id": "S451",
+     "name": "Outcast Wife At Last United With Husband And Children"
+    },
+    {
+     "id": "K2117",
+     "name": "Calumniated Wife: Substituted Letter (Falsified Message)"
+    },
+    {
+     "id": "S11.1",
+     "name": "Father Mutilates Children"
+    }
+   ],
+   "related": []
+  },
+  "709": {
+   "total": 19,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "Z65.1",
+     "name": "Red As Blood, White As Snow"
+    },
+    {
+     "id": "S322.2",
+     "name": "Jealous Mother Casts Daughter Forth"
+    },
+    {
+     "id": "K512.2",
+     "name": "Compassionate Executioner: Substituted Heart"
+    },
+    {
+     "id": "N831.1",
+     "name": "Mysterious Housekeeper"
+    },
+    {
+     "id": "F451.5.1.2",
+     "name": "Dwarfs Adopt Girl As Sister"
+    },
+    {
+     "id": "F852.1",
+     "name": "Glass Coffin"
+    },
+    {
+     "id": "Q414.4",
+     "name": "Punishment: Dancing To Death In Red-Hot Shoes"
+    },
+    {
+     "id": "D1364.16",
+     "name": "Hairpin Causes Magic Sleep"
+    },
+    {
+     "id": "D1364.9",
+     "name": "Comb Causes Magic Sleep"
+    },
+    {
+     "id": "D1364.4.1",
+     "name": "Apple Causes Magic Sleep"
+    },
+    {
+     "id": "E21.1",
+     "name": "Resuscitation By Removal Of Poisoned Apple"
+    },
+    {
+     "id": "E21.3",
+     "name": "Resuscitation By Removal Of Poisoned Comb"
+    }
+   ],
+   "related": []
+  },
+  "720": {
+   "total": 7,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "S121",
+     "name": "Murder By Slamming Down Chest-Lid"
+    },
+    {
+     "id": "G61",
+     "name": "Relative's Flesh Eaten Unwittingly"
+    },
+    {
+     "id": "E607.1",
+     "name": "Bones Of Dead Collected And Buried"
+    },
+    {
+     "id": "Q412",
+     "name": "Punishment: Millstone Dropped On Guilty Person"
+    },
+    {
+     "id": "E30",
+     "name": "Resuscitation By Arrangement Of Members"
+    },
+    {
+     "id": "E610.1.1",
+     "name": "Reincarnation: Boy To Bird To Boy"
+    },
+    {
+     "id": "E613.0.1",
+     "name": "Reincarnation Of Murdered Child As Bird"
+    }
+   ],
+   "related": []
+  },
+  "726": {
+   "total": 1,
+   "group": "Other Tales Of The Supernatural",
+   "motifs": [
+    {
+     "id": "F571.2",
+     "name": "Sending To The Older"
+    }
+   ],
+   "related": []
+  },
+  "75": {
+   "total": 5,
+   "group": "Other Wild Animals 70-99",
+   "motifs": [
+    {
+     "id": "B545.1",
+     "name": "Deer In Net Freed By Friendly Animals, A Crow, A Mouse And A Tortoise"
+    },
+    {
+     "id": "J426",
+     "name": "Association Of Rat With Cat Ceases As Soon As Mutual Danger Has Passed"
+    },
+    {
+     "id": "B363",
+     "name": "Animal Grateful For Rescue From Net"
+    },
+    {
+     "id": "B371.1",
+     "name": "Lion Spared Mouse: Mouse Grateful"
+    },
+    {
+     "id": "B437.2",
+     "name": "Helpful Mouse"
+    }
+   ],
+   "related": []
+  },
+  "750A": {
+   "total": 8,
+   "group": "Religious Tales",
+   "motifs": [
+    {
+     "id": "K1811",
+     "name": "Gods (Saints) In Disguise Visit Mortals"
+    },
+    {
+     "id": "J2072.3",
+     "name": "Short-Sighted Wish: All He Pulls On Will Follow"
+    },
+    {
+     "id": "D2172.2",
+     "name": "Magic Gift: Power To Continue All Day What One Starts"
+    },
+    {
+     "id": "J2075",
+     "name": "The Transferred Wish"
+    },
+    {
+     "id": "D1761.0.2",
+     "name": "Limited Number Of Wishes Granted"
+    },
+    {
+     "id": "J2071",
+     "name": "Three Foolish Wishes"
+    },
+    {
+     "id": "J2073",
+     "name": "Same Wishes Used Wisely And Foolishly"
+    },
+    {
+     "id": "Q1.1",
+     "name": "Gods (Saints) In Disguise Reward Hospitality And Punish Inhospitality"
+    }
+   ],
+   "related": []
+  },
+  "763": {
+   "total": 1,
+   "group": "Religious Tales",
+   "motifs": [
+    {
+     "id": "K1685",
+     "name": "The Treasure-Finders Who Murder One Another"
+    }
+   ],
+   "related": []
+  },
+  "777": {
+   "total": 2,
+   "group": "Religious Tales",
+   "motifs": [
+    {
+     "id": "A221.3",
+     "name": null
+    },
+    {
+     "id": "Q502.1",
+     "name": "The Wandering Jew"
+    }
+   ],
+   "related": []
+  },
+  "779J*": {
+   "total": 2,
+   "group": "Religious Tales",
+   "motifs": [
+    {
+     "id": "C631",
+     "name": "Tabu: Breaking The Sabbath"
+    },
+    {
+     "id": "C94.1.1",
+     "name": "The Cursed Dancers"
+    }
+   ],
+   "related": []
+  },
+  "780": {
+   "total": 5,
+   "group": "The Truth Comes To Light 780-799",
+   "motifs": [
+    {
+     "id": "D1610.2",
+     "name": "Speaking Tree"
+    },
+    {
+     "id": "E632",
+     "name": "Reincarnation As Musical Instrument"
+    },
+    {
+     "id": "E631",
+     "name": "Reincarnation In Plant (Tree) Growing From Grave"
+    },
+    {
+     "id": "D1610.34",
+     "name": "Speaking Musical Instrument"
+    },
+    {
+     "id": "N271",
+     "name": "Murder Will Out"
+    }
+   ],
+   "related": []
+  },
+  "782": {
+   "total": 4,
+   "group": "The Truth Comes To Light 780-799",
+   "motifs": [
+    {
+     "id": "F511.2.2",
+     "name": "Person With Ass's (Horse's) Ears"
+    },
+    {
+     "id": "N465",
+     "name": "Secret Physical Peculiarity Discovered By Barber"
+    },
+    {
+     "id": "D1316.5",
+     "name": "Magic Speaking Reed (Tree) Betrays Secret"
+    },
+    {
+     "id": "D1610.34",
+     "name": "Speaking Musical Instrument"
+    }
+   ],
+   "related": []
+  },
+  "800": {
+   "total": 4,
+   "group": "Heaven 800-809",
+   "motifs": [
+    {
+     "id": "F1037.1",
+     "name": "Footstool Thrown From Heaven"
+    },
+    {
+     "id": "L435.3",
+     "name": "Self-Righteous Tailor In Heaven Expelled"
+    },
+    {
+     "id": "A661.0.1.2",
+     "name": "Saint Peter As Porter Of Heaven"
+    },
+    {
+     "id": "P441.1",
+     "name": "Tailor Occupies God's Throne For A Day"
+    }
+   ],
+   "related": []
+  },
+  "845": {
+   "total": 1,
+   "group": "Other Religious Tales 827-849",
+   "motifs": [
+    {
+     "id": "C11",
+     "name": "The Old Man And Death"
+    }
+   ],
+   "related": []
+  },
+  "850": {
+   "total": 5,
+   "group": "The Man Marries The Princess 850-869",
+   "motifs": [
+    {
+     "id": "H315",
+     "name": "Suitor Test: To Whom The Princess Turns"
+    },
+    {
+     "id": "H51.1",
+     "name": "Recognition By Birthmark"
+    },
+    {
+     "id": "K1358",
+     "name": "Girl Shows Herself Naked In Return For Youth's Dancing Hogs"
+    },
+    {
+     "id": "K443.6",
+     "name": "Trickster Exacts Promise Of Marriage As Price Of Silence After Having Seen A Princess Naked"
+    },
+    {
+     "id": "H525",
+     "name": "Test: Guessing Princess's Birthmarks"
+    }
+   ],
+   "related": []
+  },
+  "875": {
+   "total": 114,
+   "group": "The Woman Marries The Prince 870-879",
+   "motifs": [
+    {
+     "id": "H561.1.2",
+     "name": "Found Mortar Taken To King Reveals Peasant Girl's Wisdom"
+    },
+    {
+     "id": "L162",
+     "name": "Lowly Heroine Marries Prince (King)"
+    },
+    {
+     "id": "J1191.1",
+     "name": "Reductio Ad Absurdum: The Decision About The Colt"
+    },
+    {
+     "id": "J1545.4",
+     "name": "The Exiled Wife's Dearest Possession"
+    },
+    {
+     "id": "J1191.2",
+     "name": "Suit For Chickens Produced From Boiled Eggs"
+    },
+    {
+     "id": "H1023.1.1",
+     "name": "Task: Hatching Boiled Eggs; Countertask: Sowing Cooked Seeds And Harvesting The Crop"
+    },
+    {
+     "id": "H631.3",
+     "name": "What Is Strongest? Earth"
+    },
+    {
+     "id": "H632",
+     "name": "Riddle: What Is The Swiftest? *Type 875; *De Vries Ffc Lxxiii 69ff"
+    },
+    {
+     "id": "H633",
+     "name": "Riddle: What Is Sweetest? Type 875; *De Vries Ffc Lxxiii 79ff"
+    },
+    {
+     "id": "H636",
+     "name": "Riddle: What Is The Richest? Types 461, 875; Bp Iii 357; Aarne Ffc Xxiii 129"
+    },
+    {
+     "id": "H641.1",
+     "name": "What Is Most Beautiful? The Spring"
+    },
+    {
+     "id": "H561.1",
+     "name": "Clever Peasant Girl Asked Riddles By King"
+    }
+   ],
+   "related": []
+  },
+  "882": {
+   "total": 5,
+   "group": "Proofs Of Fidelity And Innocence 880-899",
+   "motifs": [
+    {
+     "id": "N15",
+     "name": "Chastity Wager"
+    },
+    {
+     "id": "K1342",
+     "name": "Entrance Into Woman's (Man's) Room By Hiding In Chest"
+    },
+    {
+     "id": "H94",
+     "name": "Identification By Ring"
+    },
+    {
+     "id": "K2112.1",
+     "name": "False Tokens Of Woman's Unfaithfulness"
+    },
+    {
+     "id": "K1837",
+     "name": "Disguise Of Woman In Man's Clothes"
+    }
+   ],
+   "related": []
+  },
+  "888": {
+   "total": 6,
+   "group": "Proofs Of Fidelity And Innocence 880-899",
+   "motifs": [
+    {
+     "id": "K1837",
+     "name": "Disguise Of Woman In Man's Clothes"
+    },
+    {
+     "id": "R61",
+     "name": "Person Sold Into Slavery"
+    },
+    {
+     "id": "H431.1",
+     "name": "Shirt As Chastity Index"
+    },
+    {
+     "id": "T320.1",
+     "name": "Oft-Proved Fidelity"
+    },
+    {
+     "id": "R152.1",
+     "name": "Disguised Wife Helps Husband Escape From Prison"
+    },
+    {
+     "id": "J1545.4",
+     "name": "The Exiled Wife's Dearest Possession"
+    }
+   ],
+   "related": []
+  },
+  "900": {
+   "total": 16,
+   "group": "The Obstinate Wife Learns To Obey 900-909",
+   "motifs": [
+    {
+     "id": "H311",
+     "name": "Inspection Test For Suitors"
+    },
+    {
+     "id": "T62",
+     "name": "Princess To Marry First Man Who Asks For Her"
+    },
+    {
+     "id": "T72.2.1",
+     "name": "Prince Marries Scornful Girl And Punishes Her"
+    },
+    {
+     "id": "H181",
+     "name": "Recognition By Unmasking"
+    },
+    {
+     "id": "T74.0.1",
+     "name": null
+    },
+    {
+     "id": "K1816.0.3",
+     "name": "Menial Disguise Of Princess's Lover"
+    },
+    {
+     "id": "K1361",
+     "name": "Beggar Buys Right To Sleep Before The Girl's Door, At Foot Of Bed, In The Bed"
+    },
+    {
+     "id": "T45",
+     "name": "Lover Buys Admission To Woman's Room"
+    },
+    {
+     "id": "K1817.1",
+     "name": "Disguise As Beggar (Pauper)"
+    },
+    {
+     "id": "T76",
+     "name": "Princess Calls Her Suitors Ugly Names"
+    },
+    {
+     "id": "H461",
+     "name": "Test Of Wife's Patience"
+    },
+    {
+     "id": "H465",
+     "name": "Test Of Wife's Endurance"
+    }
+   ],
+   "related": []
+  },
+  "91": {
+   "total": 2,
+   "group": "Other Wild Animals 70-99",
+   "motifs": [
+    {
+     "id": "K544",
+     "name": "Escape By Alleged Possession Of External Soul"
+    },
+    {
+     "id": "K961.1",
+     "name": "Disease To Be Cured By Heart Of Monkey"
+    }
+   ],
+   "related": []
+  },
+  "910B": {
+   "total": 15,
+   "group": "Good Precepts 910-919",
+   "motifs": [
+    {
+     "id": "J21.5",
+     "name": "\"Do Not Leave The Highway\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21.6",
+     "name": "\"Do Not Ask Questions About Extraordinary Things\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21.3",
+     "name": "\"Do Not Go Where An Old Man Has A Young Wife\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21.2",
+     "name": "\"Do Not Act When Angry\": Counsel Proved Wise By Experience"
+    },
+    {
+     "id": "J21",
+     "name": "Counsels Proved Wise By Experience"
+    },
+    {
+     "id": "J1655.2",
+     "name": "Valuable Rubies Baked In Bread"
+    },
+    {
+     "id": "C320",
+     "name": "Tabu: Looking Into Certain Receptacle"
+    },
+    {
+     "id": "K2213.3",
+     "name": "Faithless Wife Plots With Paramour Against Husband's Life"
+    },
+    {
+     "id": "K2155",
+     "name": "Evidence Of Crime Left So That Dupe Is Blamed"
+    },
+    {
+     "id": "Q20.2",
+     "name": "Fulfillment Of Precepts Rewarded"
+    },
+    {
+     "id": "J865",
+     "name": "Consolation By Thinking Of Some Good Aspect Of A Situation"
+    },
+    {
+     "id": "D700",
+     "name": "Person Disenchanted"
+    }
+   ],
+   "related": []
+  },
+  "92": {
+   "total": 2,
+   "group": "Other Wild Animals 70-99",
+   "motifs": [
+    {
+     "id": "K1715.1",
+     "name": "Weak Animal Shows Strong His Own Reflection And Frightens Him"
+    },
+    {
+     "id": "K1716",
+     "name": "Hare As Ambassador Of The Moon"
+    }
+   ],
+   "related": []
+  },
+  "920E": {
+   "total": 2,
+   "group": "Clever Acts And Words 920-929",
+   "motifs": [
+    {
+     "id": "J462.3.1",
+     "name": "Father Leaves Sons Three Jewels -- Christianity, Judaism, Mohammedanism"
+    },
+    {
+     "id": "J80",
+     "name": "Wisdom (Knowledge) Taught By Parable"
+    }
+   ],
+   "related": []
+  },
+  "926": {
+   "total": 1,
+   "group": "Clever Acts And Words 920-929",
+   "motifs": [
+    {
+     "id": "J1171.1",
+     "name": "Solomon's Judgment: The Divided Child"
+    }
+   ],
+   "related": []
+  },
+  "954": {
+   "total": 7,
+   "group": "Robbers And Murderers 950-969",
+   "motifs": [
+    {
+     "id": "D1552.2",
+     "name": "Mountain Opens To Magic Formula (Open Sesame)"
+    },
+    {
+     "id": "N455.3",
+     "name": "Secret Formula For Opening Treasure Mountain Overheard From Robbers (Open Sesame)"
+    },
+    {
+     "id": "N478",
+     "name": "Secret Wealth Betrayed By Money Left In Borrowed Money-Scales"
+    },
+    {
+     "id": "N471",
+     "name": "Foolish Attempt Of Second Man To Overhear Secrets (From Animals, Demons Etc)"
+    },
+    {
+     "id": "K312",
+     "name": "Thieves Hidden In Oil Casks"
+    },
+    {
+     "id": "F721.4",
+     "name": "Underground Treasure Chambers"
+    },
+    {
+     "id": "N512",
+     "name": "Treasure In Underground Chamber (Cavern)"
+    }
+   ],
+   "related": []
+  },
+  "955": {
+   "total": 2,
+   "group": "Robbers And Murderers 950-969",
+   "motifs": [
+    {
+     "id": "R135",
+     "name": "Abandoned Children (Wife, Etc) Find Way Back By Clue (Bread-Crumb, Grain, Pebble, Etc)"
+    },
+    {
+     "id": "H57.2.1",
+     "name": "Severed Finger As Sign Of Crime"
+    }
+   ],
+   "related": []
+  },
+  "958E*": {
+   "total": 1,
+   "group": "Robbers And Murderers 950-969",
+   "motifs": [
+    {
+     "id": "K437.2",
+     "name": "Robber With Hand Of Glory Killed"
+    }
+   ],
+   "related": []
+  },
+  "980": {
+   "total": 3,
+   "group": "Other Realistic Tales 970-999",
+   "motifs": [
+    {
+     "id": "J121.1",
+     "name": "Ungrateful Son Reproved By Naïve Action Of His Own Son: Preparing For Old Age (Wooden Drinking Cup Or Bowl)"
+    },
+    {
+     "id": "J121",
+     "name": "Ungrateful Son Reproved By Naïve Action Of His Own Son: Preparing For Old Age"
+    },
+    {
+     "id": "J121.2",
+     "name": "Undutiful Son Rebuked By Father"
+    }
+   ],
+   "related": []
+  },
+  "980D": {
+   "total": 1,
+   "group": "Other Realistic Tales 970-999",
+   "motifs": [
+    {
+     "id": "D444.2",
+     "name": "Transformation: Meat To Toad"
+    }
+   ],
+   "related": []
+  },
+  "981": {
+   "total": 1,
+   "group": "Other Realistic Tales 970-999",
+   "motifs": [
+    {
+     "id": "J151.1",
+     "name": "Wisdom Of Hidden Old Man Saves Kingdom"
+    }
+   ],
+   "related": []
+  },
+  "982": {
+   "total": 2,
+   "group": "Other Realistic Tales 970-999",
+   "motifs": [
+    {
+     "id": "P236.2",
+     "name": "Supposed Chest Of Gold Induces Children To Care For Aged Father"
+    },
+    {
+     "id": "Q281.1",
+     "name": "Ungrateful Children Punished"
+    }
+   ],
+   "related": []
+  },
+  "990": {
+   "total": 1,
+   "group": "Other Realistic Tales 970-999",
+   "motifs": [
+    {
+     "id": "K426",
+     "name": "Apparently Dead Woman Revives When Thief Tries To Steal From Her Grave"
+    }
+   ],
+   "related": []
+  }
+ }
+}

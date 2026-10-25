@@ -6,13 +6,13 @@ from functools import lru_cache
 from .data import DATA_DIR
 from .models import Motif, MotifEntry, Source, StoryDetail, StorySummary, ThompsonRef
 
-# The frontend's mock data uses shorter ids for the four original stories.
-LEGACY_IDS = {
-    "cendrillon": "cinderella",
-    "kongjwi-patjwi": "kongjwi",
-    "ye-xian": "yexian",
-    "shakuntala": "shakuntala",
+# Stories that exist in the frontend's own data (ids are now the same on both sides). The two
+# stories that replaced Mufaro and Baba Abdalla have no counterpart there, so legacyId is None.
+FRONTEND_IDS = {
+    "cinderella", "kongjwi", "yexian", "shakuntala", "vasilisa", "anansi", "momotaro", "golden-crab",
+    "urashima-taro", "sedna", "rhodopis", "one-hand-girl", "popol-vuh-twins",
 }
+LEGACY_IDS = {sid: sid for sid in FRONTEND_IDS}
 DEFAULT_DATE_CAVEAT = "earliest known record, not origin"
 _UNCERTAIN_ATU = re.compile(r"verify|similar|commonly|also listed|predecessor", re.I)
 
@@ -60,7 +60,8 @@ def _build() -> tuple[dict, list[Motif], list[StoryDetail]]:
             df[mid] = df.get(mid, 0) + 1
     motifs = [
         Motif(
-            id=m["id"], label=m["label"], thompsonIds=m["thompsonIds"],
+            id=m["id"], label=m["label"], name=m["name"], description=m["description"],
+            significance=m["significance"], thompsonIds=m["thompsonIds"],
             thompson=[ThompsonRef(id=t, name=names.get(t)) for t in m["thompsonIds"]],
             thompsonNote=m.get("thompsonNote", ""), thompsonVerified=bool(m.get("thompsonVerified", False)),
             storyCount=df.get(m["id"], 0), share=df.get(m["id"], 0) / n_stories,
@@ -79,8 +80,8 @@ def _build() -> tuple[dict, list[Motif], list[StoryDetail]]:
         ]
         atu = s.get("atuType")
         stories.append(StoryDetail(
-            id=s["id"], title=s["title"], region=s["region"], culturalTradition=s["tradition"],
-            lat=s["lat"], lon=s["lon"], coordsNote=meta["coordsNote"],
+            id=s["id"], title=s["title"], originalTitle=s.get("originalTitle"), kind=s["kind"], region=s["region"], culturalTradition=s["tradition"],
+            lat=s["lat"], lon=s["lon"], coordsNote=s.get("coordsNote") or meta["coordsNote"],
             atuType=atu, atuFamily=atu_family(atu), atuUncertain=bool(atu and _UNCERTAIN_ATU.search(atu)),
             atuNote=s.get("atuNote"),
             earliestRecordedDate=s.get("earliestRecordedDate"), sortYear=years.get(s["id"]), dateSource=s.get("dateSource"),

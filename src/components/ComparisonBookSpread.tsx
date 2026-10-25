@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ComparisonDetail, StoryData } from '../types';
 import { MOTIFS_CATALOG } from '../data/motifs';
+import { classificationLabel } from '../data/comparisons';
+import { EvidencePanel } from './EvidencePanel';
 import { StoryIllustration } from './StoryIllustrations';
 import { X, Sparkles, BookMarked, Check } from 'lucide-react';
 import { playGoldenThreadResonance, playGentleClick } from '../utils/audio';
@@ -118,9 +120,7 @@ export const ComparisonBookSpread: React.FC<ComparisonBookSpreadProps> = ({
               {/* Classification Tag */}
               <div className="mb-3">
                 <span className="text-xs sm:text-[13px] uppercase tracking-wider font-sans font-bold text-[#8A6726] px-2.5 py-1 rounded bg-[#E8DCBF] border border-[#D6B36B]/50 inline-block">
-                  {comparison.classification === 'cinderella-parallel'
-                    ? '✦ Cinderella-Type Folktale Parallel (ATU 510A)'
-                    : '✦ Broader Thematic Parallel (Literary Drama)'}
+                  ✦ {classificationLabel(comparison)}
                 </span>
               </div>
 
@@ -138,7 +138,7 @@ export const ComparisonBookSpread: React.FC<ComparisonBookSpreadProps> = ({
               {/* Concise Cultural Difference */}
               <div className="p-3.5 rounded-xl bg-[#FAF5EA] border border-[#D6B36B]/50 space-y-1 mb-3">
                 <div className="text-xs font-sans uppercase font-bold text-[#8A6726] tracking-wider">
-                  Important Cultural Difference
+                  Difference
                 </div>
                 <p className="text-sm sm:text-base font-serif text-[#19372F] leading-relaxed">
                   {comparison.culturalDifference}
@@ -149,13 +149,17 @@ export const ComparisonBookSpread: React.FC<ComparisonBookSpreadProps> = ({
               <div className="p-2.5 rounded-lg bg-[#E2D4B7]/70 text-xs sm:text-[13px] font-sans text-[#19372F]/85 leading-relaxed border border-[#D6B36B]/40">
                 {comparison.scholarlyNote}
               </div>
+
+              <div className="mt-3">
+                <EvidencePanel storyA={storyA.id} storyB={storyB.id} motif={comparison.sharedMotif} />
+              </div>
             </div>
 
             {/* Weave Golden Thread CTA */}
             <div className="pt-4 border-t border-[#D6B36B]/40 mt-4">
               <button
                 onClick={handleCollect}
-                className="w-full py-3.5 px-5 rounded-xl bg-[#19372F] hover:bg-[#234A3F] text-[#FFF7E8] font-serif font-bold text-base sm:text-lg tracking-wider transition-all duration-150 shadow-md flex items-center justify-center gap-2.5 cursor-pointer hover:scale-[1.01]"
+                className="btn btn-forest"
               >
                 <Sparkles className="w-5 h-5 text-[#D6B36B]" />
                 <span>{isAlreadyCollected ? 'Thread Preserved in Journal' : 'Weave Golden Thread'}</span>

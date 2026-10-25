@@ -8,18 +8,23 @@ import { playCelestialChime } from '../utils/audio';
 
 interface SharedJourneyReflectionModalProps {
   journey: SharedJourneyData;
-  onCompleteReflection: (reflectionText: string, joinerName: string) => void;
+  // Resolves true when the journey was saved on the server
+  onCompleteReflection: (reflectionText: string, joinerName: string, printOnPassport: boolean) => Promise<boolean>;
+  onViewPassport: () => void;
   onClose: () => void;
 }
 
 export const SharedJourneyReflectionModal: React.FC<SharedJourneyReflectionModalProps> = ({
   journey,
   onCompleteReflection,
+  onViewPassport,
   onClose
 }) => {
   const [reflectionText, setReflectionText] = useState('');
   const [joinerName, setJoinerName] = useState('');
   const [isSaved, setIsSaved] = useState(false);
+  const [printOnPassport, setPrintOnPassport] = useState(false);
+  const [saveFailed, setSaveFailed] = useState(false);
 
   const startStory = STORIES.find((s) => s.id === journey.joinerStoryId);
   const targetStory = STORIES.find((s) => s.id === journey.creatorStoryId);
@@ -38,13 +43,16 @@ export const SharedJourneyReflectionModal: React.FC<SharedJourneyReflectionModal
     }
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     playCelestialChime();
     setIsSaved(true);
-    onCompleteReflection(
+    // The reflection can be printed on the Passport only if the player typed one and said yes
+    const saved = await onCompleteReflection(
       reflectionText.trim() || 'Two faraway traditions united through the ancient golden thread.',
-      joinerName.trim() || 'A Fellow Traveler'
+      joinerName.trim() || 'A Fellow Traveler',
+      printOnPassport && reflectionText.trim().length > 0
     );
+    setSaveFailed(!saved);
   };
 
   return (
@@ -96,6 +104,16 @@ export const SharedJourneyReflectionModal: React.FC<SharedJourneyReflectionModal
                 className="w-full p-2.5 rounded-lg bg-[#0B1424] border border-[#D6B36B]/60 text-xs sm:text-sm font-serif text-[#FFF7E8] focus:outline-none focus:border-[#D6B36B] resize-none mb-3"
               />
 
+              <label className="flex items-start gap-2 mb-3 text-xs font-sans text-[#F1E5CC]/90 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={printOnPassport}
+                  onChange={(e) => setPrintOnPassport(e.target.checked)}
+                  className="mt-0.5 accent-[#D6B36B]"
+                />
+                <span>Print my reflection on the Friendship Passport (it can be saved and shared as an image)</span>
+              </label>
+
               <div className="mb-4">
                 <label className="block text-xs font-serif font-bold text-[#FFF7E8] mb-1">
                   Your Traveler Name:
@@ -111,7 +129,7 @@ export const SharedJourneyReflectionModal: React.FC<SharedJourneyReflectionModal
 
               <button
                 onClick={handleSubmit}
-                className="w-full py-2.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-sm transition-all shadow-[0_0_20px_rgba(214,179,107,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                className="btn btn-gold"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Save Joint Storykeeper Plaque</span>
@@ -126,12 +144,25 @@ export const SharedJourneyReflectionModal: React.FC<SharedJourneyReflectionModal
               <p className="text-xs font-serif text-[#F1E5CC] italic mb-4">
                 “{reflectionText || 'Two faraway traditions united through the ancient golden thread.'}”
               </p>
-              <button
-                onClick={onClose}
-                className="px-6 py-2 rounded-full bg-[#D6B36B] text-[#0B1424] font-serif font-bold text-xs cursor-pointer hover:bg-[#E7CCA0] transition-all"
-              >
-                Close & Explore Atlas
-              </button>
+              {saveFailed && (
+                <p className="text-[11px] font-sans text-amber-300 mb-3">
+                  The journey could not be saved on the server, so your friend will not see your reply. Your passport still works.
+                </p>
+              )}
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  onClick={onClose}
+                  className="btn btn-gold"
+                >
+                  Close & Explore Atlas
+                </button>
+                <button
+                  onClick={onViewPassport}
+                  className="text-xs font-sans font-semibold text-[#D6B36B] hover:text-[#FFF7E8] underline underline-offset-4 cursor-pointer"
+                >
+                  View Your Passport
+                </button>
+              </div>
             </div>
           )}
         </div>

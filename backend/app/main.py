@@ -1,9 +1,9 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import catalog, data, evidence, library, ranking, search as search_mod
+from . import catalog, data, evidence, library, myth_card, ranking, search as search_mod
 from .models import (
-    Comparison, LibraryPage, LibraryStory, Motif, MotifView, SearchResult, StoryDetail, StorySummary,
+    Bootstrap, Comparison, LibraryPage, LibraryStory, Motif, MotifView, SearchResult, StoryDetail, StorySummary,
 )
 
 app = FastAPI(title="The Golden Thread API")
@@ -25,6 +25,22 @@ app.add_middleware(
 @app.get("/api/health")
 def health():
     return {"ok": True}
+
+
+def build_bootstrap() -> Bootstrap:
+    stories, motifs = catalog.stories(), catalog.motifs()
+    meta = catalog.meta()
+    return Bootstrap(
+        meta=meta, library=library.meta_block(), motifs=library.with_counts(motifs), stories=stories,
+        comparisons=ranking.all_comparisons(stories, motifs, meta, catalog.differences()),
+        related=ranking.lens_map(stories),
+    )
+
+
+@app.get("/api/bootstrap", response_model=Bootstrap)
+def get_bootstrap():
+    """One call with all curated stories, motifs, comparisons and related-story rankings."""
+    return build_bootstrap()
 
 
 @app.get("/api/meta")
@@ -172,13 +188,33 @@ def get_legacy_comparison(a: str = Query(...), b: str = Query(...), motif: str =
     return entry
 
 
-# Evidence still uses the legacy ids and pairs until it is re-keyed per story (a later step).
 @app.get("/api/evidence")
 def get_evidence(a: str = Query(...), b: str = Query(...), motif: str = Query(...)):
-    ids = data.story_ids()
-    for sid in (a, b):
-        if sid not in ids:
+    """Sources for a comparison: live SerpApi results for each of the two stories, filtered to an
+    allowlist of reputable domains, falling back to the pre-fetched cache. Never errors on a network
+    failure; `source` says whether the results are live, cached or absent."""
+    if a == b:
+        raise HTTPException(400, "Pick two different stories")
+    story_a, story_b = catalog.get_story(a), catalog.get_story(b)
+    for sid, st in ((a, story_a), (b, story_b)):
+        if st is None:
             raise HTTPException(404, f"Unknown story id: {sid}")
-    if data.find_comparison(a, b, motif) is None:
-        raise HTTPException(404, f"No comparison for {a} / {b} on {motif}")
+    if catalog.get_motif(motif) is None:
+        raise HTTPException(404, f"Unknown motif id: {motif}")
+    for st in (story_a, story_b):
+        if motif not in st.motifs:
+            raise HTTPException(400, f"{st.id} does not have motif {motif}")
     return evidence.get_evidence(a, b, motif)
+
+
+@app.get("/api/myth-card")
+def get_myth_card(
+    id: str = Query(..., description="Curated story id or library tale id"),
+    refresh: bool = Query(False, description="Ignore the saved search results and summary"),
+):
+    """Dataset record + this tale's own source search + a short summary written from those sources.
+    Never raises on a search or summary failure: the card comes back without them."""
+    card = myth_card.get_card(id, refresh)
+    if card is None:
+        raise HTTPException(404, f"Unknown tale id: {id}")
+    return card

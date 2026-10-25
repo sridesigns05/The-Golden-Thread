@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoldenThreadConnection, StoryId } from '../types';
 import { STORIES } from '../data/stories';
 import { MOTIFS_CATALOG } from '../data/motifs';
-import { COMPARISONS, getComparison } from '../data/comparisons';
+import { COMPARISONS, getComparison, classificationLabel, totalThreads } from '../data/comparisons';
 import { X, BookMarked, Sparkles, Scroll, ArrowRightLeft } from 'lucide-react';
 import { playGentleClick, playParchmentRustle } from '../utils/audio';
 
@@ -144,9 +144,7 @@ export const JournalModal: React.FC<JournalModalProps> = ({
                       </div>
 
                       <div className="text-[11px] font-sans text-[#19372F]/70 italic">
-                        {detail.classification === 'cinderella-parallel'
-                          ? '✦ Cinderella-type folktale parallel (ATU 510A)'
-                          : '✦ Broader thematic parallel (Token recognition in classical literary drama)'}
+                        ✦ {classificationLabel(detail)}
                       </div>
                     </div>
                   );
@@ -222,7 +220,7 @@ export const JournalModal: React.FC<JournalModalProps> = ({
         {/* Footer */}
         <div className="pt-4 border-t border-[#D6B36B]/40 flex items-center justify-between text-xs font-sans text-[#19372F]/60">
           <span>The Golden Thread Archival Record · HackTX 2026</span>
-          <span>{connections.length} of 3 target threads collected</span>
+          <span>{connections.length} of {totalThreads()} threads collected</span>
         </div>
       </div>
     </div>

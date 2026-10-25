@@ -12,8 +12,8 @@ import re
 
 from . import library as library_mod
 from .models import (
-    Comparison, Difference, LibraryStory, Motif, MotifEntry, MotifView, RankedGroup, RankedLibrary, RankedStory,
-    StoryDetail, StorySummary, TimelineItem,
+    Comparison, Difference, LibraryStory, Motif, MotifEntry, MotifView, PairComparison, RankedGroup, RankedLibrary,
+    RankedStory, StoryDetail, StorySummary, TimelineItem,
 )
 
 GENERIC_SHARE = 0.15  # a motif in more than this share of stories is "generic"
@@ -252,3 +252,70 @@ def compare(
         caveats={k: meta[k] for k in ("coordsNote", "dateRule", "status", "pairTypeRule") if k in meta}
         | {"similarity": "Shared motifs show similarity of story pattern. They are not evidence that one tale borrowed from or influenced another."},
     )
+
+
+def all_comparisons(stories: list[StoryDetail], motifs: list[Motif], meta: dict, differences: dict[str, str]) -> list[PairComparison]:
+    """Every pair of curated stories, once per motif they share (pairs in catalog order).
+    Built from compare() so the rules stay in one place; only the pair-level fields are kept."""
+    by_id = {m.id: m for m in motifs}
+    out = []
+    for i, a in enumerate(stories):
+        for b in stories[i + 1:]:
+            for motif_id in a.motifs:
+                if motif_id in b.motifs:
+                    c = compare(a, b, by_id[motif_id], meta, differences)
+                    out.append(PairComparison(
+                        a=a.id, b=b.id, motif=motif_id, connectionType=c.connectionType,
+                        typeConfirmed=c.typeConfirmed, sharedMotifs=c.sharedMotifs, difference=c.difference,
+                    ))
+    return out
+
+
+def related_map(stories: list[StoryDetail]) -> dict[str, dict[str, list[str]]]:
+    """For each story and each of its motifs, the other curated stories sharing it, best first
+    (same-type group, then different-type group). Library tales are not included."""
+    out: dict[str, dict[str, list[str]]] = {}
+    for s in stories:
+        out[s.id] = {}
+        for motif_id in s.motifs:
+            same, different = rank_related(s, motif_id, stories, cap=None)
+            out[s.id][motif_id] = [r.story.id for g in (same, different) for r in g.results]
+    return out
+
+
+LENS_LIMIT = 2
+LENS_MOTIFS = 3  # the storybook offers a story's first three motifs, so only those can be followed
+
+
+def lens_map(stories: list[StoryDetail], cap: int = LENS_LIMIT) -> dict[str, dict[str, list[str]]]:
+    """What the globe lights up when a player follows a motif: at most `cap` other stories.
+
+    Too many options make the game hard to read, but simply taking the two best-ranked stories would leave
+    some stories (Sedna, for one) in nobody's list, so a quest to them could never be won. So the best-ranked
+    story is always kept, and the other slot goes to the strong-link candidate that has been offered least so
+    far. Only the first three motifs of a story are covered, because that is all the storybook offers.
+    Both picks share the clicked motif, and the result is deterministic. The first pick is the story the
+    ranking likes best; the second only evens out which stories can be reached.
+    """
+    ranked: dict[tuple[str, str], list[RankedStory]] = {}
+    for s in stories:
+        for motif_id in s.motifs[:LENS_MOTIFS]:
+            same, different = rank_related(s, motif_id, stories, cap=None)
+            ranked[(s.id, motif_id)] = [r for g in (same, different) for r in g.results]
+
+    offered = {s.id: 0 for s in stories}
+    out: dict[str, dict[str, list[str]]] = {s.id: {} for s in stories}
+    for s in sorted(stories, key=lambda x: x.id):
+        for motif_id in s.motifs[:LENS_MOTIFS]:
+            cands = ranked[(s.id, motif_id)]
+            picks = cands[:cap]
+            if len(cands) > cap:
+                picks = cands[: cap - 1]
+                rest = cands[cap - 1:]
+                pool = [c for c in rest if not c.weakLink] or rest
+                order = {id(c): i for i, c in enumerate(rest)}
+                picks.append(min(pool, key=lambda c: (offered[c.story.id], order[id(c)])))
+            for c in picks:
+                offered[c.story.id] += 1
+            out[s.id][motif_id] = [c.story.id for c in picks]
+    return out

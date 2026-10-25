@@ -1,6 +1,8 @@
 import { StoryId, MotifId } from '../types';
 import { STORIES } from '../data/stories';
 import { MOTIFS_CATALOG } from '../data/motifs';
+import { getRelatedStoriesForMotif, MAX_LENS_MOTIFS } from '../data/comparisons';
+import { DEMO_DESTINATIONS } from '../data/demoQuest';
 
 export interface GraphEdge {
   from: StoryId;
@@ -15,29 +17,25 @@ export interface PathResult {
 }
 
 /**
- * Builds an adjacency map of the 15-story graph based on shared motifs.
- * Two stories share an edge if they have at least one motif in common.
+ * Builds the move graph from the same related-story lists the globe lights up (RELATED, from the backend).
+ * A move from A to B exists only if B is highlighted when A is viewed through one of its motifs, so every
+ * path found here is a path the player can actually play. Moves are directed because the lists are capped.
  */
 export function buildStoryGraph(): Map<StoryId, { neighbor: StoryId; sharedMotifs: MotifId[] }[]> {
   const graph = new Map<StoryId, { neighbor: StoryId; sharedMotifs: MotifId[] }[]>();
 
   STORIES.forEach((s) => {
-    graph.set(s.id, []);
+    const byNeighbor = new Map<StoryId, MotifId[]>();
+    s.motifs.slice(0, MAX_LENS_MOTIFS).forEach((m) => {
+      getRelatedStoriesForMotif(s.id, m).forEach((other) => {
+        byNeighbor.set(other, [...(byNeighbor.get(other) ?? []), m]);
+      });
+    });
+    graph.set(
+      s.id,
+      [...byNeighbor.entries()].map(([neighbor, sharedMotifs]) => ({ neighbor, sharedMotifs }))
+    );
   });
-
-  for (let i = 0; i < STORIES.length; i++) {
-    for (let j = i + 1; j < STORIES.length; j++) {
-      const storyA = STORIES[i];
-      const storyB = STORIES[j];
-
-      // Find shared motifs
-      const shared = storyA.motifs.filter((m) => storyB.motifs.includes(m));
-      if (shared.length > 0) {
-        graph.get(storyA.id)?.push({ neighbor: storyB.id, sharedMotifs: shared });
-        graph.get(storyB.id)?.push({ neighbor: storyA.id, sharedMotifs: shared });
-      }
-    }
-  }
 
   return graph;
 }
@@ -89,38 +87,41 @@ export function findShortestPath(startId: StoryId, targetId: StoryId): PathResul
   return null;
 }
 
+/** Same text always gives the same number, so a start story always gets the same destination. */
+function stableIndex(text: string, size: number): number {
+  let h = 7;
+  for (const ch of text) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return h % size;
+}
+
 /**
- * Picks a random reachable destination that is ideally 2 to 3 hops away from the start story.
- * If 2-3 hops not available, picks the furthest reachable node.
+ * The destination for a solo quest from `startId`. It is always the same for a given start, so a demo does
+ * not change between runs:
+ *   1. a destination fixed in DEMO_DESTINATIONS, if it is reachable and takes at least two steps;
+ *   2. otherwise a story two steps away (then three, then any), picked by a stable hash of the start story.
  */
 export function getReachableDestinationForSolo(startId: StoryId): StoryId {
-  const candidate2Hops: StoryId[] = [];
-  const candidate3Hops: StoryId[] = [];
-  const candidateAnyHops: StoryId[] = [];
+  const fixed = DEMO_DESTINATIONS[startId];
+  if (fixed && fixed !== startId) {
+    const hops = findShortestPath(startId, fixed)?.hops ?? 0;
+    if (hops >= 2) return fixed;
+  }
 
+  const byHops = new Map<number, StoryId[]>();
   STORIES.forEach((s) => {
     if (s.id === startId) return;
     const res = findShortestPath(startId, s.id);
-    if (res) {
-      if (res.hops === 2) candidate2Hops.push(s.id);
-      else if (res.hops === 3) candidate3Hops.push(s.id);
-      else candidateAnyHops.push(s.id);
-    }
+    if (res) byHops.set(res.hops, [...(byHops.get(res.hops) ?? []), s.id]);
   });
-
-  if (candidate2Hops.length > 0 && (candidate3Hops.length === 0 || Math.random() > 0.4)) {
-    return candidate2Hops[Math.floor(Math.random() * candidate2Hops.length)];
-  }
-  if (candidate3Hops.length > 0) {
-    return candidate3Hops[Math.floor(Math.random() * candidate3Hops.length)];
-  }
-  if (candidateAnyHops.length > 0) {
-    return candidateAnyHops[Math.floor(Math.random() * candidateAnyHops.length)];
+  const preferred = byHops.get(2) ?? byHops.get(3) ?? [...byHops.entries()].sort((x, y) => y[0] - x[0])[0]?.[1];
+  if (preferred && preferred.length > 0) {
+    const sorted = [...preferred].sort();
+    return sorted[stableIndex(startId, sorted.length)];
   }
 
-  // Fallback to another story
-  const others = STORIES.filter((s) => s.id !== startId);
-  return others[Math.floor(Math.random() * others.length)].id;
+  // Nothing reachable: any other story
+  const others = STORIES.filter((s) => s.id !== startId).map((s) => s.id).sort();
+  return others[stableIndex(startId, others.length)];
 }
 
 /**
@@ -147,9 +148,8 @@ export function getNextStepHint(
   const targetStory = STORIES.find((s) => s.id === targetId);
   if (!nextStory || !currentStory || !targetStory) return null;
 
-  // Find shared motif between current and next
-  const shared = currentStory.motifs.filter((m) => nextStory.motifs.includes(m));
-  const chosenMotif = shared[0] || currentStory.motifs[0];
+  // The motif that lights up the next story from here (the edge the path actually uses)
+  const chosenMotif = shortest.edges[0].motif;
   const motifInfo = MOTIFS_CATALOG[chosenMotif];
 
   return {

@@ -1,4 +1,396 @@
 {
-  "version": 1,
-  "entries": {}
+  "version": 2,
+  "entries": {
+    "shakuntala": {
+      "query": "Shakuntala Kalidasa play | Shakuntala Kalidasa Britannica",
+      "fetchedAt": "2026-10-25T16:07:11+00:00",
+      "results": [
+        {
+          "title": "Translations of Shakuntala and Other Works",
+          "link": "https://www.gutenberg.org/files/16659/16659-h/16659-h.htm",
+          "snippet": "we are to offer them a new play, called Shakuntala and the ring of recognition, written by the famous Kalidasa. It is a light, graceful drama ...",
+          "domain": "gutenberg.org",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Abhijnana-Sakuntala of Kalidasa, Volume 1: Dramas",
+          "link": "https://archive.org/details/in.ernet.dli.2015.267495",
+          "snippet": "Abhijnana-Sakuntala of Kalidasa, Volume 1: Dramas ; Collection: MotilalBanarsidass; JaiGyan ; Language: Sanskrit ; Item Size: 976.7M ; Addeddate ...",
+          "domain": "archive.org",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Kalidasa | Indian Poet & Playwright",
+          "link": "https://www.britannica.com/biography/Kalidasa",
+          "snippet": "Kalidasa was a Sanskrit poet and dramatist, probably the greatest Indian writer of any epoch. Abhijnanashakuntala (\"The Recognition of Shakuntala\"), Created ...",
+          "domain": "britannica.com",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Shakuntala | Character Sketch & Adaptations",
+          "link": "https://www.britannica.com/topic/Shakuntala",
+          "snippet": "Shakuntala, a fictional character, is the heroine of Indian poet Kalidasa's Sanskrit drama Abhijnanashakuntala ('The Recognition of Shakuntala').",
+          "domain": "britannica.com",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Shakuntala - Kids | Britannica Kids | Homework Help",
+          "link": "https://kids.britannica.com/kids/article/Shakuntala/486496/related",
+          "snippet": "Abhijnanashakuntala drama by Kalidasa composed about the 5th century ce that is generally considered to be the greatest Indian literary work of any period.",
+          "domain": "kids.britannica.com",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Kalidasa summary",
+          "link": "https://www.britannica.com/summary/Kalidasa",
+          "snippet": "Kalidasa , (flourished c. 5th century), Indian poet and dramatist. Little is known about him; his poems suggest that he was a Brahman (priest).",
+          "domain": "britannica.com",
+          "story": "shakuntala"
+        },
+        {
+          "title": "Kalidasa - Students | Britannica Kids | Homework Help",
+          "link": "https://kids.britannica.com/students/article/Kalidasa/275216/related",
+          "snippet": "'Sakuntala' (or Shakuntala), Sanskrit drama by Kalidasa; Sakuntala is found in her forest home by King Dushyanta, who marries her and gives ...",
+          "domain": "kids.britannica.com",
+          "story": "shakuntala"
+        },
+        {
+          "title": "A Closer Look Into Kalidasa's Sakuntala",
+          "link": "https://blogs.baruch.cuny.edu/shakuntula/",
+          "snippet": "Kalidasa (c.401-c.500?), often considered the greatest writer of India, was a phenomenal poet and classical Sanskrit playwright.",
+          "domain": "blogs.baruch.cuny.edu",
+          "story": "shakuntala"
+        }
+      ]
+    },
+    "cinderella": {
+      "query": "\"Cinderella\" Perrault Cendrillon | Cinderella ATU 510 folktale Ashliman",
+      "fetchedAt": "2026-10-25T16:15:40+00:00",
+      "results": [
+        {
+          "title": "Cinderella",
+          "link": "https://sites.pitt.edu/~dash/type0510a.html",
+          "snippet": "Cinderella Aarne-Thompson-Uther folktale type 510A and related stories of persecuted heroines translated and/or edited by D. L. Ashliman",
+          "domain": "sites.pitt.edu",
+          "story": "cinderella"
+        },
+        {
+          "title": "ATU 510A - Cinderella | Fairy Tales at CU Boulder",
+          "link": "https://www.colorado.edu/projects/fairy-tales/atu-510a-cinderella",
+          "snippet": "Tale SummaryAn abusive stepmother and two stepdaughters are invited to a royal ball, leaving their daughter and sister whom they call Cinderella, or Cindertail, ...",
+          "domain": "colorado.edu",
+          "story": "cinderella"
+        },
+        {
+          "title": "Library Research Guide for Folklore and Mythology",
+          "link": "https://guides.library.harvard.edu/folk_and_myth/indices",
+          "snippet": "The story is tale-type 510 (ATU 510) or “The Persecuted Heroine”. This tale type has two variant types, ATU 510A “Cinderella” tale-type and ATU ...",
+          "domain": "guides.library.harvard.edu",
+          "story": "cinderella"
+        },
+        {
+          "title": "Cinderella | History",
+          "link": "https://surlalunefairytales.com/a-g/cinderella/cinderella-history.html",
+          "snippet": "Cinderellas centers around stories of unnatural fathers—those who want to marry their daughters, an ATU 510B motif—which were not uncommon during this era,",
+          "domain": "surlalunefairytales.com",
+          "story": "cinderella"
+        },
+        {
+          "title": "Literature & Film (HUMN 2333): Cinderella",
+          "link": "https://guides.library.tulsacc.edu/HUMN2333/Cinderella",
+          "snippet": "Fairy Tales with ATU numbers ) is a catalogue of folktale types used in folklore studies. Tales organized by … edited and/or translated by D. L. Ashliman. Has ...",
+          "domain": "guides.library.tulsacc.edu",
+          "story": "cinderella"
+        },
+        {
+          "title": "ATU-AT-Motif: Tales of Magic 300 - 559 - Library Guides",
+          "link": "https://libraryguides.missouri.edu/c.php?g=1039894&p=7610331",
+          "snippet": "ATU 510A Cinderella AT 510A Cinderella S31. Clothes produced by magic. Fairy as helper. Prince sees heroine at ball and is enamored.",
+          "domain": "libraryguides.missouri.edu",
+          "story": "cinderella"
+        },
+        {
+          "title": "Cinderella in Old Norse Literature - Apollo",
+          "link": "https://www.repository.cam.ac.uk/items/410380fc-3d50-4ee7-a000-881105afdcc5",
+          "snippet": "The article focuses on analysing if and how the stereotype is realised in the context of two fairy tale types – Cinderella (ATU 510A) and The Princess",
+          "domain": "repository.cam.ac.uk",
+          "story": "cinderella"
+        }
+      ]
+    },
+    "kongjwi": {
+      "query": "\"Kongjwi\" OR \"Kong-ji\" Patjwi Korean folktale | Kongjwi Patjwi Korean folktale Cinderella",
+      "fetchedAt": "2026-10-25T16:07:31+00:00",
+      "results": [
+        {
+          "title": "Kong-Ji and Pat-Ji, A Korean Cinderella Story",
+          "link": "https://folklore.usc.edu/kong-ji-and-pat-ji-a-korean-cinderella-story/",
+          "snippet": "Kong-Ji and Pat-Ji, A Korean Cinderella Story. Nationality ... “Kongjwi and Patjwi.” Encyclopedia of Korean Folk Culture, National ...",
+          "domain": "folklore.usc.edu",
+          "story": "kongjwi"
+        }
+      ]
+    },
+    "yexian": {
+      "query": "\"Ye Xian\" OR \"Yeh Hsien\" Tang Cinderella | Ye Xian Chinese Cinderella Duan Chengshi",
+      "fetchedAt": "2026-10-25T16:15:46+00:00",
+      "results": [
+        {
+          "title": "the role of a tang story in the Cinderella cycle | Documents",
+          "link": "https://recerca.uoc.edu/documentos/6560f41ed2805226009352a0?lang=en",
+          "snippet": "Ye Xian is the protagonist of a story written in the Tang dynasty (618-907 CE) which has been defined as “the Chinese Cinderella” and “the first written ...",
+          "domain": "recerca.uoc.edu",
+          "story": "yexian"
+        }
+      ]
+    },
+    "vasilisa": {
+      "query": "\"Vasilisa the Beautiful\" OR \"Vasilisa the Fair\" Baba Yaga Afanasyev | Baba Yaga Vasilisa Russian folklore",
+      "fetchedAt": "2026-10-25T14:39:20+00:00",
+      "results": [
+        {
+          "title": "Folktale and Fairy Tale Resources in the CRC: Baba Yaga",
+          "link": "https://libguides.bgsu.edu/fairytales/baba-yaga",
+          "snippet": "Baba Yaga is a terrible witch prominently featured in far Eastern European and Russian folklore. She lives deep in the forest in a hut that ...",
+          "domain": "libguides.bgsu.edu",
+          "story": "vasilisa"
+        },
+        {
+          "title": "Retelling of the Baba Yaga Story",
+          "link": "https://www.lib.cam.ac.uk/files/baba_yaga_story_and_images.pdf",
+          "snippet": "Her father had told her stories of Baba Yaga, an old witch who lived in a chicken-legged house in the forest. But Vasilisa knew that witches know spells, and ...",
+          "domain": "lib.cam.ac.uk",
+          "story": "vasilisa"
+        }
+      ]
+    },
+    "anansi": {
+      "query": "Ananse Akan Ashanti Rattray folktale Sky-god stories | Ananse Anansi Akan folktale Britannica",
+      "fetchedAt": "2026-10-25T06:57:54+00:00",
+      "results": [
+        {
+          "title": "AKAN-ASHANTI FOLK-TALES, collected and translated by ...",
+          "link": "https://www.jstor.org/stable/535628",
+          "snippet": "AKAN-ASHANTI FOLK-TALES, collected and translated by Captain R. Rattray, and illustrated by Africans of the Gold Coast Colony. New Yor.",
+          "domain": "jstor.org",
+          "story": "anansi"
+        },
+        {
+          "title": "Ananse | West African Folklore, Mythology & Legends",
+          "link": "https://www.britannica.com/topic/Ananse",
+          "snippet": "Ananse is an Akan character celebrated throughout Africa and the Caribbean for his insight, intelligence, and wisdom. Usually depicted as a spider, he is a ...",
+          "domain": "britannica.com",
+          "story": "anansi"
+        },
+        {
+          "title": "Folktale and Fairy Tale Resources in the CRC: Ananse",
+          "link": "https://libguides.bgsu.edu/fairytales/ananse",
+          "snippet": "Ananse is a folktale character from the stories of the Akan, peoples originating in the south of the former Gold Coast - an area we now call ...",
+          "domain": "libguides.bgsu.edu",
+          "story": "anansi"
+        }
+      ]
+    },
+    "momotaro": {
+      "query": "Momotaro peach boy Japanese folktale | \"Momotaro\" OR \"Momotarō\" Japanese folktale text",
+      "fetchedAt": "2026-10-25T06:59:43+00:00",
+      "results": [
+        {
+          "title": "Momotaro, or the Story of the Son of a Peach | Lit2Go ETC",
+          "link": "https://etc.usf.edu/lit2go/72/japanese-fairy-tales/4845/momotaro-or-the-story-of-the-son-of-a-peach/",
+          "snippet": "I am Momotaro, and I am on my way to subdue the devils in their island stronghold in the northeast of Japan. If you try to stop me on my way there I will cut ...",
+          "domain": "etc.usf.edu",
+          "story": "momotaro"
+        }
+      ]
+    },
+    "golden-crab": {
+      "query": "\"Golden Crab\" Greek folktale Andrew Lang Green Fairy Book | \"Golden Crab\" Greek folktale text",
+      "fetchedAt": "2026-10-25T06:59:45+00:00",
+      "results": [
+        {
+          "title": "Linked Tales: Lang Fairy Tale Books by Color - Library Guides",
+          "link": "https://libraryguides.missouri.edu/c.php?g=1078942&p=7861219",
+          "snippet": "Golden Crab, 425D, Greek. Grateful Beasts, 613, Hungarian. Hazel-Nut Child, 700, Bukovina. Hermod and Hadvor R, NA, Icelandic. How Six Men ...",
+          "domain": "libraryguides.missouri.edu",
+          "story": "golden-crab"
+        },
+        {
+          "title": "from Andrew Lang's Fairy Books",
+          "link": "http://www.mythfolklore.net/andrewlang/yellow.htm",
+          "snippet": "Online Literature ; YELLOW, GOLDEN CRAB, European. Greek. Schmidt. Griechische Märchen. Prinz Krebs ; YELLOW, IRON STOVE, European. German. Grimm. ; YELLOW, DRAGON ...",
+          "domain": "mythfolklore.net",
+          "story": "golden-crab"
+        },
+        {
+          "title": "Source: Germany | Fairy Tales at CU Boulder",
+          "link": "https://www.colorado.edu/projects/fairy-tales/source-germany",
+          "snippet": "“The Golden Crab.” The Yellow Fairy Book, edited by Andrew Lang, London, New York, Bombay: Longmans, Green, and Co., 1906, pp. 26-31. Jul 11, 2024. Tale ...",
+          "domain": "colorado.edu",
+          "story": "golden-crab"
+        }
+      ]
+    },
+    "urashima-taro": {
+      "query": "\"Urashima Taro\" OR \"Urashima Tarō\" Japanese legend fisherman turtle Dragon Palace | \"Urashima Taro\" legend Japan encyclopedia",
+      "fetchedAt": "2026-10-25T06:59:36+00:00",
+      "results": [
+        {
+          "title": "The Transformation of the Urashima Legend",
+          "link": "https://www.jstor.org/stable/42772094",
+          "snippet": "Urashima Tarő is a modern creation.3 This is mainly because Japan's Ministry of. Education disseminated its modern version of the tale systematically through ...",
+          "domain": "jstor.org",
+          "story": "urashima-taro"
+        }
+      ]
+    },
+    "sedna": {
+      "query": "Sedna Nuliajuk Inuit sea mother | Sedna Inuit sea goddess Britannica",
+      "fetchedAt": "2026-10-25T16:16:51+00:00",
+      "results": [
+        {
+          "title": "Sedna, Goddess of the Sea | Religion and Philosophy",
+          "link": "https://www.ebsco.com/research-starters/religion-and-philosophy/sedna-goddess-sea/",
+          "snippet": "Sedna is the revered goddess of the sea in Inuit mythology, known for her deep connection to marine life and her dualistic nature.",
+          "domain": "ebsco.com",
+          "story": "sedna"
+        },
+        {
+          "title": "Mythologies of the Indigenous peoples of the Americas",
+          "link": "https://www.britannica.com/art/mythologies-of-the-Indigenous-peoples-of-the-Americas/Oral-literatures",
+          "snippet": "In the region from Greenland to the Mackenzie River, Sedna is the highest spirit and controls the sea mammals; the Moon is a male deity who lives incestuously ...",
+          "domain": "britannica.com",
+          "story": "sedna"
+        }
+      ]
+    },
+    "rhodopis": {
+      "query": "\"Rhodopis\" Strabo Egyptian Cinderella Naucratis sandal | Rhodopis Strabo Cinderella Egypt folktale",
+      "fetchedAt": "2026-10-25T16:07:20+00:00",
+      "results": [
+        {
+          "title": "Cinderella",
+          "link": "https://sites.pitt.edu/~dash/type0510a.html",
+          "snippet": "... Naucratis for sale, but others give her the name Rhodopis. They tell the fabulous story that, when she was bathing, an eagle snatched one of her sandals ...",
+          "domain": "sites.pitt.edu",
+          "story": "rhodopis"
+        },
+        {
+          "title": "The Egyptian Cinderella Story Debunked",
+          "link": "https://www.worldhistory.org/article/1038/the-egyptian-cinderella-story-debunked/",
+          "snippet": "Herodotus identifies Rhodopis as a Thracian who was sold into slavery in Egypt and worked as a highly paid courtesan in the city of Naucratis, ...",
+          "domain": "worldhistory.org",
+          "story": "rhodopis"
+        },
+        {
+          "title": "Rhodopis and Her Little Gilded Sandals (An Egyptian Tale)",
+          "link": "https://surlalunefairytales.com/a-g/cinderella/stories/rhodopis.html",
+          "snippet": "Rhodopis, an Egyptian tale, is popularly labeled the earliest or first Cinderella story. The tale was first recorded by the Greek historian Strabo in the first ...",
+          "domain": "surlalunefairytales.com",
+          "story": "rhodopis"
+        }
+      ]
+    },
+    "one-hand-girl": {
+      "query": "Steere Swahili Tales Zanzibar \"Blessing or Property\" OR \"one-handed girl\" | Swahili tale girl without hands Steere",
+      "fetchedAt": "2026-10-25T14:12:58+00:00",
+      "results": [
+        {
+          "title": "A handbook of the Swahili language, as spoken at Zanzibar",
+          "link": "https://archive.org/details/handbookswahili00stee",
+          "snippet": "A handbook of the Swahili language, as spoken at Zanzibar. by: Steere, Edward, 1828-1882. Publication date: 1894; Publisher: London : Society ...",
+          "domain": "archive.org",
+          "story": "one-hand-girl"
+        },
+        {
+          "title": "A handbook of the Swahili language, as spoken at Zanzibar",
+          "link": "https://archive.org/details/ahandbookswahil00madagoog",
+          "snippet": "A handbook of the Swahili language, as spoken at Zanzibar. by: Steere, Edward, 1828-1882; Madan, A. C. (Arthur Cornwallis), b. 1846, ed.",
+          "domain": "archive.org",
+          "story": "one-hand-girl"
+        },
+        {
+          "title": "A handbook of the Swahili language, as spoken at Zanzibar",
+          "link": "https://archive.org/details/ahandbookswahil00afrigoog",
+          "snippet": "A handbook of the Swahili language, as spoken at Zanzibar. by: Steere, Edward, 1828-1882; Madan, A. C. (Arthur Cornwallis), b. 1846, ed.",
+          "domain": "archive.org",
+          "story": "one-hand-girl"
+        },
+        {
+          "title": "The Girl without Hands",
+          "link": "https://sites.pitt.edu/~dash/type0706.html",
+          "snippet": "Once upon a time there was a woman who had an inn where she provided shelter to travelers. She had a daughter who was so beautiful that one could not imagine ...",
+          "domain": "sites.pitt.edu",
+          "story": "one-hand-girl"
+        }
+      ]
+    },
+    "tam-cam": {
+      "query": "\"Tam and Cam\" OR \"Tấm Cám\" Vietnamese folktale | Tam Cam Vietnamese Cinderella folktale",
+      "fetchedAt": "2026-10-25T14:38:27+00:00",
+      "results": [
+        {
+          "title": "The Vietnam Version of Cinderella (PDF)",
+          "link": "https://www.niu.edu/clas/cseas/_pdf/lesson-plans/k-12/vietnam-version-cinderella.pdf",
+          "snippet": "A Cinderella Tale from Vietnam: the Story of Tam and Cam. A Cinderella Tale from Vietnam. Return to: • The home page of D. L. Ashliman. Index of folklore and ...",
+          "domain": "niu.edu",
+          "story": "tam-cam"
+        }
+      ]
+    },
+    "popol-vuh-twins": {
+      "query": "Popol Vuh Hero Twins Hunahpu Xbalanque Xibalba | \"Popol Vuh\" Maya creation epic Britannica",
+      "fetchedAt": "2026-10-25T14:13:32+00:00",
+      "results": [
+        {
+          "title": "Maya Hero Twins: Hunahpu and Xbalanque",
+          "link": "https://www.ebsco.com/research-starters/literature-and-writing/maya-hero-twins-hunahpu-and-xbalanque/",
+          "snippet": "The Maya Hero Twins, Hunahpu and Xbalanque, are central figures in ancient Maya mythology, celebrated for their cleverness and strength.",
+          "domain": "ebsco.com",
+          "story": "popol-vuh-twins"
+        },
+        {
+          "title": "Popol Vuh | Mayan mythology, creation story, sacred text",
+          "link": "https://www.britannica.com/topic/Popol-Vuh",
+          "snippet": "In explaining how the Mayan gods created the world, the Popol Vuh features the Hero Twins, Hunahpu and Xbalanque, who were transformed into, respectively, the ...",
+          "domain": "britannica.com",
+          "story": "popol-vuh-twins"
+        },
+        {
+          "title": "Itzamna | Definition & Facts",
+          "link": "https://www.britannica.com/topic/Itzamna",
+          "snippet": "Popol Vuh, Maya document, an invaluable source of knowledge of ancient Mayan mythology and culture. Written in K'iche' (a Mayan language) by a Mayan author or ...",
+          "domain": "britannica.com",
+          "story": "popol-vuh-twins"
+        },
+        {
+          "title": "Pre-Columbian civilizations - Maya Calendar, Writing System",
+          "link": "https://www.britannica.com/topic/pre-Columbian-civilizations/The-Maya-calendar-and-writing-system",
+          "snippet": "The main act of creation, as stated in the Popol Vuh, was the dawn: the world and humanity were in darkness, but the gods created the Sun and the Moon.",
+          "domain": "britannica.com",
+          "story": "popol-vuh-twins"
+        }
+      ]
+    },
+    "fisherman-and-the-jinni": {
+      "query": "\"Fisherman and the Jinni\" OR \"Fisherman and the Genie\" Arabian Nights | Fisherman and the Jinni Arabian Nights Britannica",
+      "fetchedAt": "2026-10-25T06:58:20+00:00",
+      "results": [
+        {
+          "title": "THE FISHERMAN AND THE GENIE",
+          "link": "https://pressbooks.uiowa.edu/makur3/chapter/the-fisherman-and-the-genie/",
+          "snippet": "Stories from The Arabian Nights. Main Body. THE FISHERMAN AND THE GENIE. There was once an old fisherman who lived in great poverty with a wife and three ...",
+          "domain": "pressbooks.uiowa.edu",
+          "story": "fisherman-and-the-jinni"
+        },
+        {
+          "title": "THE FISHERMAN AND THE JINNI – The Arabian Nights",
+          "link": "https://sacred-texts.com/book/the-arabian-nights/the-fisherman-and-the-jinni",
+          "snippet": "THE FISHERMAN AND THE JINNI. IT hath reached me, O auspicious King, that there was a fisherman well stricken in years who had a wife and three children, and ...",
+          "domain": "sacred-texts.com",
+          "story": "fisherman-and-the-jinni"
+        }
+      ]
+    }
+  }
 }

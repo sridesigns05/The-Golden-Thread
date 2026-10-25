@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComparisonDetail, StoryData } from '../types';
 import { MOTIFS_CATALOG } from '../data/motifs';
+import { classificationLabel } from '../data/comparisons';
 import { X, Sparkles, Compass, Check, Bookmark, ArrowRightLeft } from 'lucide-react';
 import { playGoldenThreadResonance, playGentleClick, playParchmentRustle } from '../utils/audio';
 
@@ -131,9 +132,7 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
             <div className="font-serif font-bold text-sm mb-1 flex items-center gap-2">
               <span>
                 Classification:{' '}
-                {comparison.classification === 'cinderella-parallel'
-                  ? 'Cinderella-Type Parallel (ATU 510A Cycle)'
-                  : 'Broader Thematic Parallel (Literary Token Recognition)'}
+                {classificationLabel(comparison)}
               </span>
             </div>
             <p className="text-xs leading-relaxed text-[#19372F]/85">
@@ -152,7 +151,7 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
 
           <button
             onClick={handleCollect}
-            className="px-6 py-2.5 rounded-lg bg-[#19372F] hover:bg-[#234A3F] text-[#FFF7E8] font-serif font-semibold text-sm tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer whitespace-nowrap shrink-0"
+            className="btn btn-forest"
           >
             <Sparkles className="w-4 h-4 text-[#D6B36B]" />
             <span>{isAlreadyCollected ? 'Close Comparison' : 'Weave Golden Thread'}</span>

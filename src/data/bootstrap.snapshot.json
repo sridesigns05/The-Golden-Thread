@@ -1,0 +1,4859 @@
+{
+ "meta": {
+  "status": "DRAFT. Every entry is verified:false. Researched by web search; each motif entry names the page it rests on. The page reader used for research returned summaries, so quotes and details are unconfirmed until checked against the source. Entries starting 'DRAFT' rest on secondary sources (mostly Wikipedia) or on a wording the research could not confirm.",
+  "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+  "dateRule": "earliestRecordedDate is the earliest record we located, NOT the tale's origin. Most of these tales were oral long before they were written down; do not let the timeline imply otherwise.",
+  "thompsonRule": "Thompson ids were not checked against the Motif-Index itself. The ids shown were resolved against the trilogy dataset only. Confirm all ids in Thompson's index before use.",
+  "pairTypeRule": "connectionType is computed: same atuType family = cinderella-type parallel when the family is 510, otherwise thematic parallel. Where a story's atuType is marked 'verify', treat the pairing as unconfirmed.",
+  "similarityRule": "Shared motifs show similarity of story pattern. They are not evidence that one tale borrowed from or influenced another."
+ },
+ "library": {
+  "attribution": "Tale metadata from the trilogy repository (J. Hagedorn, github.com/j-hagedorn/trilogy), derived from D. L. Ashliman's Folktexts (https://www.pitt.edu/~dash/folktexts.html, (c) 1996-2021). Tale-type and motif data derive from the Aarne-Thompson-Uther index and Thompson's Motif-Index. Tale texts are not included.",
+  "license": "trilogy's LICENSE.md is CC BY-NC-SA 4.0 (its README says CC BY-SA 4.0); treated here as the stricter BY-NC-SA. Attribution is required and use must be non-commercial.",
+  "taleCount": 1517,
+  "linkedToMotifs": 95,
+  "droppedAsDuplicates": [
+   {
+    "title": "Cinderella; or, The Little Glass Slipper",
+    "atuType": "510A",
+    "duplicateOf": "cinderella"
+   }
+  ],
+  "limitations": [
+   "Library tales are metadata only: titles, provenance text, citations and ATU types. No tale texts are included.",
+   "Motifs are linked through the ATU tale type, not read from each tale.",
+   "Provenance is free text, coverage skews European, and library tales have no dates or coordinates, so they are never plotted."
+  ]
+ },
+ "motifs": [
+  {
+   "id": "unjust-treatment",
+   "label": "Mistreated by a cruel stepfamily or others",
+   "name": "Unjust Treatment",
+   "description": "A protagonist is wronged by family or others.",
+   "significance": "Mistreatment sets up the conflict; the tales differ in who causes it and how it is answered.",
+   "thompsonIds": [
+    "S31"
+   ],
+   "thompson": [
+    {
+     "id": "S31",
+     "name": "Cruel Stepmother"
+    }
+   ],
+   "thompsonNote": "S31 Cruel stepmother appears in the ATU 510A motif list (trilogy atu_seq); also used here for other cruelty, so the fit is loose",
+   "thompsonVerified": false,
+   "storyCount": 8,
+   "share": 0.5333333333333333,
+   "libraryCount": 38
+  },
+  {
+   "id": "supernatural-assistance",
+   "label": "Magical or supernatural helper",
+   "name": "Supernatural Assistance",
+   "description": "Magical help arrives: a spirit, fairy or enchanted object.",
+   "significance": "The helper differs widely between traditions; each story's entry says what it is.",
+   "thompsonIds": [
+    "B350"
+   ],
+   "thompson": [
+    {
+     "id": "B350",
+     "name": "Grateful Animals"
+    }
+   ],
+   "thompsonNote": "B350 Grateful animals seen for tale type 480; other helper types (fairy, object, spirit): look up",
+   "thompsonVerified": false,
+   "storyCount": 11,
+   "share": 0.7333333333333333,
+   "libraryCount": 34
+  },
+  {
+   "id": "lost-object-recognition",
+   "label": "Recognition through a lost or left-behind object",
+   "name": "Recognition Through a Lost Object",
+   "description": "A lost object, like a shoe, identifies its owner.",
+   "significance": "The object and what it proves differ: a shoe may lead to a bride, a ring may end a curse.",
+   "thompsonIds": [
+    "H36.1"
+   ],
+   "thompson": [
+    {
+     "id": "H36.1",
+     "name": "Slipper Test"
+    }
+   ],
+   "thompsonNote": "H36.1 Slipper test seen in the ATU 510A list; ring/token recognition: look up in H0-H199 (identity tests: recognition)",
+   "thompsonVerified": false,
+   "storyCount": 6,
+   "share": 0.4,
+   "libraryCount": 20
+  },
+  {
+   "id": "impossible-tasks",
+   "label": "Impossible or dangerous tasks imposed",
+   "name": "Impossible Tasks",
+   "description": "The protagonist is set demanding or dangerous tasks.",
+   "significance": "Tasks come from a stepfamily, a witch, a king or a god, and are met with help or cleverness.",
+   "thompsonIds": [
+    "H1010",
+    "H935"
+   ],
+   "thompson": [
+    {
+     "id": "H1010",
+     "name": "Impossible Tasks"
+    },
+    {
+     "id": "H935",
+     "name": "Witch Assigns Tasks"
+    }
+   ],
+   "thompsonNote": "H1010 Impossible tasks (Thompson H section); H935 Witch assigns tasks (type 480)",
+   "thompsonVerified": false,
+   "storyCount": 6,
+   "share": 0.4,
+   "libraryCount": 35
+  },
+  {
+   "id": "trickster",
+   "label": "Trickster or cunning hero",
+   "name": "Trickster",
+   "description": "A cunning figure wins by trickery or disguise.",
+   "significance": "Tricks are used to win something, escape danger or defeat a powerful rival.",
+   "thompsonIds": [],
+   "thompson": [],
+   "thompsonNote": "look up (A500s culture hero, K deceptions)",
+   "thompsonVerified": false,
+   "storyCount": 3,
+   "share": 0.2,
+   "libraryCount": 0
+  },
+  {
+   "id": "transformation",
+   "label": "Transformation or shapeshifting",
+   "name": "Transformation",
+   "description": "A person or object changes form.",
+   "significance": "Shape-changes serve different ends in different tales: disguise, enchantment, punishment or revelation.",
+   "thompsonIds": [],
+   "thompson": [],
+   "thompsonNote": "look up in section D (Magic)",
+   "thompsonVerified": false,
+   "storyCount": 9,
+   "share": 0.6,
+   "libraryCount": 0
+  },
+  {
+   "id": "death-and-rebirth",
+   "label": "Death followed by rebirth or return",
+   "name": "Death & Rebirth",
+   "description": "A character dies and returns, in the same or another form.",
+   "significance": "In each tale the return from death works differently.",
+   "thompsonIds": [],
+   "thompson": [],
+   "thompsonNote": "look up in section E (The Dead)",
+   "thompsonVerified": false,
+   "storyCount": 3,
+   "share": 0.2,
+   "libraryCount": 0
+  },
+  {
+   "id": "unusual-birth",
+   "label": "Miraculous or otherworldly birth or origin",
+   "name": "Unusual Birth",
+   "description": "A hero is born in an unusual way.",
+   "significance": "How the character comes into the world is part of the story's wonder.",
+   "thompsonIds": [],
+   "thompson": [],
+   "thompsonNote": "look up (conception and birth motifs)",
+   "thompsonVerified": false,
+   "storyCount": 3,
+   "share": 0.2,
+   "libraryCount": 0
+  },
+  {
+   "id": "separation-and-reunion",
+   "label": "Lovers or kin separated, then reunited",
+   "name": "Separation & Reunion",
+   "description": "Those who belong together part, then reunite.",
+   "significance": "The cause and length of the separation, and whether the reunion is complete, differ in each story.",
+   "thompsonIds": [
+    "S451"
+   ],
+   "thompson": [
+    {
+     "id": "S451",
+     "name": "Outcast Wife At Last United With Husband And Children"
+    }
+   ],
+   "thompsonNote": "S451 Outcast wife at last united with husband and children seen for type 706; loose fit for several tales here",
+   "thompsonVerified": false,
+   "storyCount": 3,
+   "share": 0.2,
+   "libraryCount": 17
+  },
+  {
+   "id": "reversal-of-fortune",
+   "label": "Lowly hero or heroine rises to high status",
+   "name": "Reversal of Fortune",
+   "description": "A lowly or wronged character rises in status.",
+   "significance": "The rise comes through marriage, reward or victory, depending on the tale.",
+   "thompsonIds": [
+    "L162"
+   ],
+   "thompson": [
+    {
+     "id": "L162",
+     "name": "Lowly Heroine Marries Prince (King)"
+    }
+   ],
+   "thompsonNote": "L162 Lowly heroine marries prince seen in type listings; male counterpart: look up",
+   "thompsonVerified": false,
+   "storyCount": 9,
+   "share": 0.6,
+   "libraryCount": 29
+  },
+  {
+   "id": "memory-and-forgetting",
+   "label": "Memory lost through a curse or enchantment",
+   "name": "Memory & Forgetting",
+   "description": "Memory is lost, then restored.",
+   "significance": "Only one tale in this atlas carries this motif, so it links to no others here.",
+   "thompsonIds": [],
+   "thompson": [],
+   "thompsonNote": "look up (curses and forgetting, D/E sections)",
+   "thompsonVerified": false,
+   "storyCount": 1,
+   "share": 0.06666666666666667,
+   "libraryCount": 0
+  }
+ ],
+ "stories": [
+  {
+   "tier": "curated",
+   "id": "cinderella",
+   "title": "Cendrillon (Perrault, 1697)",
+   "originalTitle": "Cendrillon, ou la petite pantoufle de verre",
+   "kind": "Literary fairy tale",
+   "region": "France",
+   "culturalTradition": "French literary fairy tale",
+   "lat": 48.8566,
+   "lon": 2.3522,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "510A",
+   "atuFamily": "510",
+   "atuUncertain": false,
+   "earliestRecordedDate": "1697",
+   "sortYear": 1697,
+   "dateCaveat": "Earliest of THIS version. Basile's 'La gatta Cenerentola' (1634) is an earlier European literary Cinderella, and Strabo's Rhodopis is often cited as an earlier analogue (both per Wikipedia).",
+   "summary": "A girl mistreated by her stepmother and stepsisters is helped by her godmother, a fairy, who turns a pumpkin and animals into a coach and attendants and gives her glass slippers, warning her to leave before midnight. She loses a slipper, it fits only her, and she forgives her sisters.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "lost-object-recognition",
+    "transformation",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": "cinderella",
+   "atuNote": "The ATU index (via the trilogy dataset) lists Cendrillon among the names of type 510A 'Cinderella'; Wikipedia gives the type name as 'Persecuted Heroine'. Confirm in Uther.",
+   "dateSource": "Perrault, Histoires ou contes du temps passe (Paris, 1697), per the bibliographic note on the Pitt/Ashliman page of the translation",
+   "form": "literary",
+   "summarySources": [
+    {
+     "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman; translation credited to Lang)",
+     "url": "https://sites.pitt.edu/~dash/perrault06.html"
+    },
+    {
+     "title": "Wikipedia: Cinderella (Basile 1634, Rhodopis, ATU 510A)",
+     "url": "https://en.wikipedia.org/wiki/Cinderella"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "cinderella",
+     "motif": "unjust-treatment",
+     "howItAppears": "Her stepmother and stepsisters make her do the household drudgery; she sleeps in a garret on a straw bed and sits in the chimney corner among the cinders after her work.",
+     "evidence": {
+      "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+      "url": "https://sites.pitt.edu/~dash/perrault06.html"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "cinderella",
+     "motif": "supernatural-assistance",
+     "howItAppears": "Her godmother, who is a fairy, magically provides a coach, attendants and glass slippers.",
+     "evidence": {
+      "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+      "url": "https://sites.pitt.edu/~dash/perrault06.html"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "cinderella",
+     "motif": "lost-object-recognition",
+     "howItAppears": "She loses a glass slipper as she leaves at midnight; when it is tried on her foot it fits her, and it fits no one else.",
+     "evidence": {
+      "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+      "url": "https://sites.pitt.edu/~dash/perrault06.html"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "cinderella",
+     "motif": "transformation",
+     "howItAppears": "DRAFT, check what the mice and lizards become: a pumpkin becomes the coach and a rat becomes a coachman; the godmother also transforms mice and lizards into her retinue.",
+     "evidence": {
+      "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+      "url": "https://sites.pitt.edu/~dash/perrault06.html"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "cinderella",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "DRAFT, confirm the wording of the ending: from household drudge she marries the prince.",
+     "evidence": {
+      "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+      "url": "https://sites.pitt.edu/~dash/perrault06.html"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "Which translation the Pitt page uses (its wording looks more modern than Lang's); cite it exactly",
+    "Confirm what the mice and lizards become and the wording of the ending",
+    "ATU wording, Basile and Rhodopis dates are Wikipedia-only",
+    "Perrault's pumpkin, glass slippers and fairy are in this text; the claim that they were his own additions is Wikipedia-only"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "kongjwi",
+   "title": "Kongjwi and Patjwi",
+   "originalTitle": "콩쥐팥쥐 (Kongjwi Patjwi)",
+   "kind": "Oral folktale",
+   "region": "Korea",
+   "culturalTradition": "Korean folktale (oral; later printed as a novel)",
+   "lat": 37.5665,
+   "lon": 126.978,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "510 (similar; Korean type KT 450 per Wikipedia; verify)",
+   "atuFamily": "510",
+   "atuUncertain": true,
+   "earliestRecordedDate": null,
+   "sortYear": null,
+   "dateCaveat": "Passed down orally for generations before it was written; the 1919 edition is not the origin. Versions differ widely.",
+   "summary": "Following English Wikipedia, cross-checked with Korean Wikipedia: Kongjwi is mistreated by her stepmother and stepsister Patjwi, is given hard chores, and is helped by animals and a celestial maiden. She loses a shoe, a magistrate finds her by it and marries her. In widely told versions the story continues: Patjwi drowns her and takes her place, and Kongjwi returns in another form to reveal the truth.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "transformation",
+    "death-and-rebirth",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": "kongjwi",
+   "atuNote": "English Wikipedia says the tale resembles ATU 510 and merits its own Korean type, KT 450; it cites the National Folk Museum encyclopedia, which could not be opened.",
+   "dateSource": "No verified first record. The earliest print the research found is a 1919 movable-type edition (per Korean Wikipedia; a weak source).",
+   "form": "oral tale, later printed novel; many variants",
+   "summarySources": [
+    {
+     "title": "Wikipedia: Kongjwi and Patjwi",
+     "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+    },
+    {
+     "title": "Korean Wikipedia: Kongjwi Patjwi",
+     "url": "https://ko.wikipedia.org/wiki/콩쥐_팥쥐"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "kongjwi",
+     "motif": "unjust-treatment",
+     "howItAppears": "DRAFT (Korean Wikipedia): after her mother's death she is mistreated by her stepmother and stepsister Patjwi.",
+     "evidence": {
+      "title": "Korean Wikipedia: Kongjwi Patjwi",
+      "url": "https://ko.wikipedia.org/wiki/콩쥐_팥쥐"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "supernatural-assistance",
+     "howItAppears": "DRAFT (Wikipedia): helpers include a cow, a tortoise or toad, sparrows and, in the English account, a celestial maiden; the helpers differ between the two accounts.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "impossible-tasks",
+     "howItAppears": "DRAFT (English Wikipedia): she is told to plow a field with a wooden hoe, fill a pot that has a hole, and hull a large sack of rice.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "lost-object-recognition",
+     "howItAppears": "DRAFT (Wikipedia): she loses a shoe on a bridge, and the magistrate's test with the shoe shows it fits only her.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "transformation",
+     "howItAppears": "DRAFT (English Wikipedia): in the continuation, a golden lotus is turned back into Kongjwi.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "death-and-rebirth",
+     "howItAppears": "DRAFT (Wikipedia): Patjwi drowns her, and she returns as a spirit and in another form to reveal the truth; the endings differ between versions.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "kongjwi",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "DRAFT (Wikipedia): she marries the magistrate.",
+     "evidence": {
+      "title": "Wikipedia: Kongjwi and Patjwi",
+      "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": "Korean tale with many oral variants; present which version is followed.",
+   "verifyBeforeUse": [
+    "Every entry here rests on Wikipedia only. Open the National Folk Museum of Korea entry (folkency.nfm.go.kr/en/topic/detail/5996) and find a scholarly source",
+    "Confirm the earliest print edition (1919 per Korean Wikipedia) and the KT 450 claim",
+    "No source says the cow is black or names the draft's earlier 'Sinjeung Dongguk Yeoji Seungnam' woodblock editions; that earlier claim is unsupported",
+    "Choose which ending to present"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "yexian",
+   "title": "Ye Xian",
+   "originalTitle": "葉限 (Yè Xiàn)",
+   "kind": "Literary record of an oral tale",
+   "region": "Southern China (Guangxi)",
+   "culturalTradition": "Tang-dynasty literary record of an oral tale, in Duan Chengshi's Youyang Zazu",
+   "lat": 22.817,
+   "lon": 108.3665,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "510A (commonly cited; verify)",
+   "atuFamily": "510",
+   "atuUncertain": true,
+   "earliestRecordedDate": "mid-9th century CE (c. 850-860)",
+   "sortYear": 855,
+   "dateCaveat": "Earliest known written record, not the origin. The text credits an informant (Li Shiyuan, a former household servant of Duan's, per the text), so it circulated orally before.",
+   "summary": "After her father, a cave chief, dies, Ye Xian is mistreated by her stepmother. She raises a fish that the stepmother kills; its bones grant wishes. At the cave festival she wears clothes and golden shoes provided through the bones and leaves one shoe behind. Cave people sell it to the kingdom of Tuohan, whose king obtains it. The stepmother and her daughter are later killed by flying stones.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "transformation",
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": "yexian",
+   "atuNote": "An earlier project draft cited Ting's index via Wikipedia for 510A; this research pass opened no source that states an ATU number for Ye Xian. Confirm before treating the pairing with Cendrillon as established.",
+   "dateSource": "Youyang Zazu (Duan Chengshi, 803-863), continuation, juan 1; dates per medievalists.net and Wikipedia, which disagree (c. 850, 850-860, c. 860)",
+   "form": "literary record of an oral tale",
+   "summarySources": [
+    {
+     "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+     "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+    },
+    {
+     "title": "Wikipedia: Ye Xian",
+     "url": "https://en.wikipedia.org/wiki/Ye_Xian"
+    },
+    {
+     "title": "Medievalists.net: Medieval Cinderella",
+     "url": "https://www.medievalists.net/2020/08/medieval-cinderella"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "yexian",
+     "motif": "unjust-treatment",
+     "howItAppears": "After her father's death she is mistreated by her stepmother.",
+     "evidence": {
+      "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+      "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "yexian",
+     "motif": "supernatural-assistance",
+     "howItAppears": "The bones of her dead fish grant whatever she asks of them.",
+     "evidence": {
+      "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+      "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "yexian",
+     "motif": "transformation",
+     "howItAppears": "For the festival, the bones provide fine blue-green clothing and golden shoes.",
+     "evidence": {
+      "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+      "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "yexian",
+     "motif": "lost-object-recognition",
+     "howItAppears": "DRAFT, confirm in a translation that only her foot fits: she leaves one shoe behind at the festival; cave people sell it to the kingdom of Tuohan, and its king obtains it.",
+     "evidence": {
+      "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+      "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "yexian",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "DRAFT, from a page summary only; confirm in the text: she is taken by the king as his chief wife.",
+     "evidence": {
+      "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+      "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "Read Waley (Folklore 58, 1947) or Beauchamp's translation (Oral Tradition 25(2), 2010); neither could be opened",
+    "Confirm whether the text calls Tuohan an island and how the fish is described (red fins / golden eyes)",
+    "Do not call it 'the world's earliest Cinderella'; Rhodopis is usually cited earlier. Say 'among the earliest' or 'earliest surviving Asian version'",
+    "No ATU number was found in an opened source"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "shakuntala",
+   "title": "Shakuntala (Kalidasa's play)",
+   "originalTitle": "Abhijñānaśākuntalam (The Recognition of Shakuntala)",
+   "kind": "Sanskrit drama",
+   "region": "India",
+   "culturalTradition": "Sanskrit court drama adapting an episode of the Mahabharata",
+   "lat": 29.9457,
+   "lon": 78.1642,
+   "coordsNote": "Placement unverified: the sources opened say only that Kanva's hermitage was on the Malini river in the Himalayan foothills. This is a display point.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "Kalidasa's play: c. 4th-5th century CE (uncertain; a minority view says 6th century)",
+   "sortYear": 400,
+   "dateCaveat": "The Mahabharata episode is undated in the sources opened. The curse and the ring are not in the Mahabharata sections read (Adi Parva 70-74), so they appear to be Kalidasa's additions.",
+   "summary": "In Kalidasa's play, King Dushyanta marries Shakuntala, the foster daughter of the sage Kanva. After he leaves, the sage Durvasas's curse makes him forget her, to be lifted when he sees the token he gave her. The ring is lost while she worships at the Ganges, a fisherman finds it in a carp, the king's memory returns, and they are later reunited at the hermitage of Maricha.",
+   "motifs": [
+    "lost-object-recognition",
+    "memory-and-forgetting",
+    "separation-and-reunion",
+    "unusual-birth"
+   ],
+   "verified": false,
+   "legacyId": "shakuntala",
+   "atuNote": "Not a Cinderella-type tale. Display as a thematic parallel only.",
+   "dateSource": "Wikipedia: Kalidasa; Ryder's introduction to his translation (Gutenberg)",
+   "form": "literary",
+   "summarySources": [
+    {
+     "title": "Ryder, Kalidasa: Translations of Shakuntala and Other Works (Gutenberg #16659)",
+     "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+    },
+    {
+     "title": "Mahabharata (Ganguli), Adi Parva Sections 70-74 (Wikisource)",
+     "url": "https://en.wikisource.org/wiki/The_Mahabharata/Book_1:_Adi_Parva/Section_70"
+    },
+    {
+     "title": "Wikipedia: Kalidasa",
+     "url": "https://en.wikipedia.org/wiki/Kalidasa"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "shakuntala",
+     "motif": "lost-object-recognition",
+     "howItAppears": "In Kalidasa's play the curse is to be lifted when the king sees the token he gave her; the ring is lost while she worships at the Ganges, and a fisherman finds it in a carp.",
+     "evidence": {
+      "title": "Ryder, Kalidasa: Translations of Shakuntala and Other Works (Gutenberg), Acts IV and VI",
+      "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "shakuntala",
+     "motif": "memory-and-forgetting",
+     "howItAppears": "In the play, Durvasas's curse makes the king forget her. In the Mahabharata, the king says he does not remember any union with her and no curse is mentioned.",
+     "evidence": {
+      "title": "Ryder translation (Gutenberg), Act IV; Mahabharata Adi Parva Section 74 (Wikisource)",
+      "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "shakuntala",
+     "motif": "separation-and-reunion",
+     "howItAppears": "DRAFT, reunion wording not confirmed: in Act VII the king travels to Gold Peak, the hermitage of Maricha, where the play ends.",
+     "evidence": {
+      "title": "Ryder translation (Gutenberg), Act VII",
+      "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "shakuntala",
+     "motif": "unusual-birth",
+     "howItAppears": "In the Mahabharata she is the daughter of the apsara Menaka and the sage Viswamitra, left in the forest where birds protect her; Kanva adopts and names her.",
+     "evidence": {
+      "title": "Mahabharata, Adi Parva Section 72 (Ganguli, Wikisource)",
+      "url": "https://en.wikisource.org/wiki/The_Mahabharata/Book_1:_Adi_Parva/Section_72"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "Check the Act VI wording about the ring and the place name, and the Act VII reunion, directly in the text",
+    "Kalidasa's date is genuinely uncertain; present it as a range",
+    "Where the hermitage was: only 'the Malini river, Himalayan foothills' is supported; Uttarakhand is not",
+    "Which details are Kalidasa's additions to the epic episode"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "vasilisa",
+   "title": "Vasilisa the Beautiful",
+   "originalTitle": "Василиса Прекрасная (Vasilisa Prekrasnaya)",
+   "kind": "Wondertale (skazka)",
+   "region": "Russia",
+   "culturalTradition": "Russian wondertale (skazka), collected by Afanasyev",
+   "lat": 55.7558,
+   "lon": 37.6173,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "480B* (per Wikipedia citing Haney; verify)",
+   "atuFamily": "480",
+   "atuUncertain": true,
+   "earliestRecordedDate": "1855-1863 (Afanasyev's collection; the year of this tale is not verified)",
+   "sortYear": 1859,
+   "dateCaveat": "Collected from oral tradition and first printed by Afanasyev; some versions end differently.",
+   "summary": "After her mother's death, Vasilisa keeps a doll her mother gave her. Her stepmother's daughters send her to Baba Yaga for fire. With the doll's help she completes Baba Yaga's household tasks and is given a burning skull whose gaze destroys the stepfamily. She later spins and weaves very fine linen, and the Tsar, after receiving shirts made from it, marries her.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "impossible-tasks",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": "vasilisa",
+   "atuNote": "English Wikipedia cites Haney for AT 480B* and Russian scholarship for SUS 480B* 'Stepmother and Stepdaughter'. Not a 510A tale. Second-hand; confirm in Haney (2014).",
+   "dateSource": "A review of Afanasyev in the Journal of Folklore Research (IU); the English Wikipedia article on Afanasyev gives inconsistent dates (1855-1867, 1855-1863)",
+   "form": "oral tale collected in print",
+   "summarySources": [
+    {
+     "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+     "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+    },
+    {
+     "title": "Wikipedia: Vasilisa the Beautiful",
+     "url": "https://en.wikipedia.org/wiki/Vasilisa_the_Beautiful"
+    },
+    {
+     "title": "Journal of Folklore Research review of Afanasyev",
+     "url": "https://scholarworks.iu.edu/journals/index.php/jfrr/article/view/38597"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "vasilisa",
+     "motif": "unjust-treatment",
+     "howItAppears": "The stepmother's daughters put out the light and send Vasilisa to Baba Yaga to fetch fire.",
+     "evidence": {
+      "title": "Russian Folk-Tales, Magnus (1915), 'Vasilisa the Fair' (Gutenberg #62509)",
+      "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "vasilisa",
+     "motif": "supernatural-assistance",
+     "howItAppears": "The doll her mother gave her does the work for her, sifting the oats overnight and later producing the loom and the linen; Baba Yaga gives her the skull.",
+     "evidence": {
+      "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+      "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "vasilisa",
+     "motif": "impossible-tasks",
+     "howItAppears": "Baba Yaga sets her many household tasks, including cleaning the courtyard, cooking, sifting oats, sorting hay and making poppy-oil, which the doll helps her finish. 'Impossible' is the project's label for hard tasks.",
+     "evidence": {
+      "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+      "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "vasilisa",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "She goes from persecuted orphan to wife of the Tsar, in the version read.",
+     "evidence": {
+      "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+      "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "The Afanasyev number (No. 104) rests on Russian Wikipedia only",
+    "Confirm the exact tasks and the ending in the full Magnus text; the research read it through a summarizing page reader",
+    "The doll's mother's gift is a gift and a promise of safety in the text read; do not call it a 'blessing' unless the text does",
+    "ATU 480B* is second-hand"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "anansi",
+   "title": "How the Sky-god's Stories Came to Be Spider-stories (Anansi)",
+   "originalTitle": "Anansesem (Ananse stories), recorded by Rattray as tale 17",
+   "kind": "Akan trickster tale",
+   "region": "Ghana (Akan / Ashanti)",
+   "culturalTradition": "Akan oral storytelling about Ananse, recorded by R. S. Rattray",
+   "lat": 6.6885,
+   "lon": -1.6244,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "1930",
+   "sortYear": 1930,
+   "dateCaveat": "The earliest record the research verified, not the earliest; a living oral tradition. Versions differ on which creatures are captured.",
+   "summary": "Ananse asks the Sky-god Nyankonpon for his stories and is told they can be had for nothing but the python, the leopard, the fairy and the hornets. On his wife Aso's advice, Ananse traps each by trickery and delivers them. The Sky-god accepts, and the tales come to be called Spider-stories.",
+   "motifs": [
+    "trickster",
+    "impossible-tasks"
+   ],
+   "verified": false,
+   "legacyId": "anansi",
+   "atuNote": "No tale type found in an opened source.",
+   "dateSource": "Rattray, Akan-Ashanti Folk-Tales (Oxford: Clarendon Press, 1930), tale 17, Akan text with English translation",
+   "form": "oral tradition recorded by a colonial-era ethnographer",
+   "summarySources": [
+    {
+     "title": "Rattray, Akan-Ashanti Folk-Tales (1930) (Internet Archive full text)",
+     "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+    },
+    {
+     "title": "Wikipedia: Anansi",
+     "url": "https://en.wikipedia.org/wiki/Anansi"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "anansi",
+     "motif": "trickster",
+     "howItAppears": "Ananse traps the python by tying it to a palm branch, the hornets by coaxing them into a water gourd, the leopard with a pit, and the fairy with a sticky doll holding mashed yam.",
+     "evidence": {
+      "title": "Rattray, Akan-Ashanti Folk-Tales (1930), tale 17 (Internet Archive full text)",
+      "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "anansi",
+     "motif": "impossible-tasks",
+     "howItAppears": "The Sky-god says the stories cannot be bought for anything except the python, the leopard, the fairy and the hornets. 'Impossible' is the project's label for hard demands.",
+     "evidence": {
+      "title": "Rattray, Akan-Ashanti Folk-Tales (1930), tale 17 (Internet Archive full text)",
+      "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "A living Akan tradition, not a myth of the past. Rattray was a colonial-era British ethnographer; credit the Akan tradition and seek Ghanaian-authored tellings.",
+   "verifyBeforeUse": [
+    "Confirm the tale number and exact details in the archive.org scan",
+    "Say which version is followed; others differ on the creatures and on who owns the stories",
+    "Add a Ghanaian-authored source"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "momotaro",
+   "title": "Momotaro (Peach Boy)",
+   "originalTitle": "桃太郎 (Momotarō)",
+   "kind": "Folktale (mukashibanashi)",
+   "region": "Japan",
+   "culturalTradition": "Japanese folktale (mukashibanashi), printed in Edo-period children's books and standardized in the Meiji era",
+   "lat": 34.6555,
+   "lon": 133.9197,
+   "coordsNote": "Okayama is traditionally associated with the tale, which the research did not verify. This is a display point.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "1723 (oldest surviving printed text, a miniature akahon)",
+   "sortYear": 1723,
+   "dateCaveat": "Earlier Edo works (Genroku era, 1688-1704, or earlier) are lost per Wikipedia. An oral version may date to the Muromachi period (1392-1573). The version most people know was standardized in the Meiji era.",
+   "summary": "An old woman finds a large peach in the river, and when it is cut open a boy comes out. The couple raise him. When grown he sets off for the island of the devils with millet dumplings from his parents, which he gives to a dog, a monkey and a pheasant who join him. They defeat the devils' chief and return with the treasure.",
+   "motifs": [
+    "unusual-birth",
+    "supernatural-assistance"
+   ],
+   "verified": false,
+   "legacyId": "momotaro",
+   "atuNote": "No tale type found in an opened source.",
+   "dateSource": "Wikipedia: Momotaro; National Diet Library JapanSearch page",
+   "form": "oral tale, printed in Edo-period children's books",
+   "summarySources": [
+    {
+     "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+     "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+    },
+    {
+     "title": "Wikipedia: Momotaro",
+     "url": "https://en.wikipedia.org/wiki/Momotar%C5%8D"
+    },
+    {
+     "title": "NDL JapanSearch: Momotaro",
+     "url": "https://jpsearch.go.jp/en/gallery/ndl-jbPgdl9pVY6"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "momotaro",
+     "motif": "unusual-birth",
+     "howItAppears": "He is born from a large peach that floats down the river and is cut open by the old woman.",
+     "evidence": {
+      "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+      "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "momotaro",
+     "motif": "supernatural-assistance",
+     "howItAppears": "A dog, a monkey and a pheasant join him after each is given a millet dumpling, and they help him defeat the devils.",
+     "evidence": {
+      "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+      "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "Wikipedia documents that Momotaro was used as a soldier figure in wartime propaganda from the 1890s through the Second World War, with the devils portrayed as enemies, and that the 1894 Meiji version, edited by Iwaya Sazanami, is the standardized form. Mention this when presenting the tale.",
+   "verifyBeforeUse": [
+    "The text followed is an early-20th-century English translation of the Meiji form, not an Edo text; its translator is unnamed",
+    "Check the wartime-use claims in the primary scholarship (Dower, others); they come from Wikipedia here",
+    "Check the Edo texts for what the helpers are given (oldest texts differ on the dumplings)"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "golden-crab",
+   "title": "The Golden Crab",
+   "originalTitle": "Prinz Krebs (Schmidt's German title)",
+   "kind": "Greek wonder tale",
+   "region": "Greece",
+   "culturalTradition": "Greek wonder tale published in German by Bernhard Schmidt (1877) and in English by Andrew Lang (1894)",
+   "lat": 37.9838,
+   "lon": 23.7275,
+   "coordsNote": "Place of collection not verified (a search summary suggested Zakynthos; that page was not opened). This is a representative Greek point.",
+   "atuType": "425D (per Wikipedia; verify)",
+   "atuFamily": "425",
+   "atuUncertain": true,
+   "earliestRecordedDate": "1877",
+   "sortYear": 1877,
+   "dateCaveat": "Earliest record of this specific tale that the research verified, not its origin. Lang's English version is 1894.",
+   "summary": "Following Lang's English text: a fisherman catches a talking golden crab, which has the fisherman's wife ask the king for his younger daughter and meets the king's demands with a golden rod. On the wedding night the crab says he is an enchanted prince, a crab by day and a man at night. When the princess's mother burns his crab-shell, he vanishes. Guided by an old man, the princess finds her husband among twelve enchanted eagles in an underground palace and they are reunited.",
+   "motifs": [
+    "supernatural-assistance",
+    "transformation",
+    "impossible-tasks",
+    "separation-and-reunion"
+   ],
+   "verified": false,
+   "legacyId": "golden-crab",
+   "atuNote": "English Wikipedia gives ATU 425D 'Vanished Husband learned of by keeping inn' and says Greek versions often combine it with 425E. In Lang's text the princess does not keep an inn.",
+   "dateSource": "Schmidt, Griechische Maerchen, Sagen und Volkslieder (Leipzig, 1877), per the footnote in Lang's Yellow Fairy Book and Wikipedia",
+   "form": "oral tale published by a collector",
+   "summarySources": [
+    {
+     "title": "Lang, The Yellow Fairy Book (Gutenberg #640)",
+     "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+    },
+    {
+     "title": "Wikipedia: The Golden Crab",
+     "url": "https://en.wikipedia.org/wiki/The_Golden_Crab"
+    },
+    {
+     "title": "CU Boulder Fairy Tales project: The Golden Crab (summary)",
+     "url": "https://www.colorado.edu/projects/fairy-tales/the-yellow-fairy-book/the-golden-crab"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "golden-crab",
+     "motif": "supernatural-assistance",
+     "howItAppears": "The crab's golden rod produces the flower-covered wall and the garden with fountains overnight, and a servant who comes out of a mountain or the garden gate supplies the golden garments and armour.",
+     "evidence": {
+      "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+      "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "golden-crab",
+     "motif": "transformation",
+     "howItAppears": "The prince is enchanted to be a crab by day and a man at night, and he can turn into an eagle; twelve eagles become youths at a fountain.",
+     "evidence": {
+      "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+      "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "golden-crab",
+     "motif": "impossible-tasks",
+     "howItAppears": "The king demands, each by the next morning, a wall higher than his tower covered in all the flowers of the world and then a garden with fountains of gold and jewels; the crab fulfils both with the golden rod.",
+     "evidence": {
+      "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+      "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "golden-crab",
+     "motif": "separation-and-reunion",
+     "howItAppears": "After the mother burns the shell her husband does not come back; the princess later finds him in an underground palace, recognizes him among the twelve, and embraces him.",
+     "evidence": {
+      "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+      "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "Lang's text uses dated language for a servant character; avoid repeating it uncritically.",
+   "verifyBeforeUse": [
+    "Open Schmidt's 1877 book to confirm the tale number, narrator and place of collection",
+    "ATU 425D is Wikipedia-only",
+    "No golden hen, spindle or cross-continental journey appears in this tale; earlier draft claims about them are unsupported"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "urashima-taro",
+   "title": "Urashima Taro",
+   "originalTitle": "浦島太郎 (Urashima Tarō)",
+   "kind": "Legend",
+   "region": "Japan",
+   "culturalTradition": "Japanese legend first recorded in 8th-century chronicles and poetry and reshaped in the Muromachi-era Otogizoshi",
+   "lat": 35.6762,
+   "lon": 135.2503,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "681 (per Wikipedia; verify)",
+   "atuFamily": "681",
+   "atuUncertain": true,
+   "earliestRecordedDate": "early 8th century CE (Tango Fudoki, c. 713, extant only in fragment; Man'yoshu 9.1740; Nihon Shoki entry)",
+   "sortYear": 713,
+   "dateCaveat": "These are the earliest surviving records, not the origin. The Nihon Shoki entry is conventionally dated to the reign of Yuryaku (478); the Fudoki is preserved only as a quoted fragment. Versions differ on whether the hero rescues or catches the turtle and on how many years pass.",
+   "summary": "In the earliest versions a fisherman called Urashima meets a woman from the immortal land of Tokoyo; in the Tango Fudoki she is a turtle he caught. He lives there about three years, returns to find his home and village gone, and opening the box she gave him ends in her loss or his own aging. Later tellings add a rescued turtle and a Dragon Palace.",
+   "motifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "verified": false,
+   "legacyId": "urashima-taro",
+   "atuNote": "English Wikipedia gives ATU 681 'The Relativity of Time' and Ikeda's Japanese index type 470*; Wikipedia only.",
+   "dateSource": "Wikipedia: Urashima Taro; Univie Kamigraphie on the Man'yoshu poem; Hearn and Chamberlain's retellings (Gutenberg)",
+   "form": "legend recorded in chronicles and poetry, reshaped in later tellings",
+   "summarySources": [
+    {
+     "title": "Wikipedia: Urashima Taro",
+     "url": "https://en.wikipedia.org/wiki/Urashima_Tar%C5%8D"
+    },
+    {
+     "title": "Univie Kamigraphie: Urashima Taro in the Man'yoshu",
+     "url": "https://religion-in-japan.univie.ac.at/Kamigraphie/Urashima_Tarō_im_Man%27yōshū"
+    },
+    {
+     "title": "Chamberlain, The Fisher-Boy Urashima (Gutenberg #30024)",
+     "url": "https://www.gutenberg.org/cache/epub/30024/pg30024.txt"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "urashima-taro",
+     "motif": "supernatural-assistance",
+     "howItAppears": "DRAFT (Wikipedia and Univie): in the Fudoki a turtle he caught becomes a woman who takes him to the realm of the immortals; in the Man'yoshu the sea god's daughter takes him to the Land Everlasting.",
+     "evidence": {
+      "title": "Wikipedia: Urashima Taro",
+      "url": "https://en.wikipedia.org/wiki/Urashima_Tar%C5%8D"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "urashima-taro",
+     "motif": "transformation",
+     "howItAppears": "DRAFT (Wikipedia and Chamberlain): in the earliest accounts a caught turtle becomes a woman; in later versions the hero ages when the box is opened.",
+     "evidence": {
+      "title": "Chamberlain, The Fisher-Boy Urashima (Gutenberg #30024)",
+      "url": "https://www.gutenberg.org/cache/epub/30024/pg30024.txt"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "The Nihon Shoki and Fudoki details come from Wikipedia only; open a scholarly edition",
+    "Years passed differ by source (about 300 in the Fudoki, 700 in the Otogizoshi, 400 in Chamberlain); say which version is followed",
+    "The tamatebako box appears only in a poem inserted into the Otogizoshi texts; early sources have a comb-box",
+    "ATU 681 and Ikeda 470* are Wikipedia-only"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "sedna",
+   "title": "Sedna (Nuliajuk, Takannaaluk)",
+   "originalTitle": "Nuliajuk / Takannaaluk (Boas: 'Sedna and the Fulmar')",
+   "kind": "Inuit sea-mother story",
+   "region": "Inuit Nunangat and Greenland (Boas recorded it on Baffin Island)",
+   "culturalTradition": "Inuit sea-mother story",
+   "lat": 63.7467,
+   "lon": -68.517,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "1888",
+   "sortYear": 1888,
+   "dateCaveat": "Earliest full text the research verified, recorded by an outside ethnographer; the story is oral and far older. Versions differ greatly by region (Cumberland Sound, Igloolik, Netsilik, Greenland).",
+   "summary": "Following Boas's 'Sedna and the Fulmar' (Baffin Island): Sedna, who has refused every suitor, is lured away by a fulmar who promises a rich home but delivers a miserable tent. Her father kills the fulmar and takes her away by boat; the other fulmars raise a storm and the father throws her overboard and cuts off her clinging fingers. The finger joints become whales and seals. Other Inuit tellings differ in key ways.",
+   "motifs": [
+    "unjust-treatment",
+    "transformation"
+   ],
+   "verified": false,
+   "legacyId": "sedna",
+   "atuNote": "Not an ATU tale type.",
+   "dateSource": "Franz Boas, The Central Eskimo (Sixth Annual Report of the Bureau of Ethnology, 1884-1885, published 1888), text pp. 583-587",
+   "form": "oral tradition recorded by an ethnologist",
+   "summarySources": [
+    {
+     "title": "Boas, The Central Eskimo (Gutenberg #42084)",
+     "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+    },
+    {
+     "title": "Inhabit Media: Takannaaluk (Herve Paniaq)",
+     "url": "https://inhabitmedia.com/2018/11/23/takannaaluk/"
+    },
+    {
+     "title": "Wikipedia: Sedna (mythology)",
+     "url": "https://en.wikipedia.org/wiki/Sedna_(mythology)"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "sedna",
+     "motif": "unjust-treatment",
+     "howItAppears": "In Boas's version the fulmar deceives her, and her father throws her overboard and cuts off her fingers to save himself.",
+     "evidence": {
+      "title": "Boas, The Central Eskimo (Gutenberg #42084), 'Sedna and the Fulmar'",
+      "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "sedna",
+     "motif": "transformation",
+     "howItAppears": "In Boas's version the cut-off finger joints fall into the sea and become whales and seals, and the stumps become bearded seals.",
+     "evidence": {
+      "title": "Boas, The Central Eskimo (Gutenberg #42084)",
+      "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "A living Inuit belief and story. Prefer Inuit-authored tellings (for example Inhabit Media's books) over Boas's 1880s ethnography, use 'Inuit' (not 'Eskimo'), and take care with her names, many of which are avoidance names. Do not merge variants.",
+   "verifyBeforeUse": [
+    "Walrus origin and hair-combing are not in Boas's Sedna text; they come from other and secondary tellings (for example Igloolik). Add them only from a sourced Inuit telling",
+    "Check the Canadian Museum of History, Inuit Cultural Online Resource and Rasmussen, which could not be opened",
+    "Name the nation or region for the version used"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "rhodopis",
+   "title": "Rhodopis and the eagle-stolen sandal",
+   "originalTitle": "Ῥοδῶπις (Rhodopis)",
+   "kind": "Ancient literary account",
+   "region": "Egypt (Naucratis and Memphis)",
+   "culturalTradition": "Greek-language ancient literary tradition about a Greek woman in Egypt",
+   "lat": 31.02,
+   "lon": 30.47,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "late 1st century BCE to early 1st century CE (Strabo, Geographica 17.1.33)",
+   "sortYear": 10,
+   "dateCaveat": "Earliest surviving written record of the sandal story, not its origin. Herodotus (5th century BCE) records Rhodopis herself but no sandal story.",
+   "summary": "Following Strabo: while the courtesan Rhodopis (called Doricha by Sappho) was bathing, an eagle took one of her sandals and carried it to Memphis, dropping it in the lap of the king as he gave judgment outdoors. The king, struck by the sandal, sent men everywhere to find its owner. They found her at Naucratis, and he made her his wife. Strabo does not name the king.",
+   "motifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": "rhodopis",
+   "atuNote": "Often called an early analogue of Cinderella (Wikipedia: 'sometimes considered the earliest known version'); no ATU number from an opened source, so it is not paired as a Cinderella-type tale.",
+   "dateSource": "Strabo; the date of his Geographica is disputed (a first edition around 7 BCE and a final edition no later than 23 CE, per Wikipedia)",
+   "form": "ancient literary account",
+   "summarySources": [
+    {
+     "title": "Strabo, Geographica 17.1 (LacusCurtius, Loeb text)",
+     "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+    },
+    {
+     "title": "Herodotus, Book 2 (Rawlinson, Wikisource)",
+     "url": "https://en.wikisource.org/wiki/The_History_of_Herodotus_(Rawlinson)/Book_2"
+    },
+    {
+     "title": "Wikipedia: Rhodopis (hetaera)",
+     "url": "https://en.wikipedia.org/wiki/Rhodopis_(hetaera)"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "rhodopis",
+     "motif": "lost-object-recognition",
+     "howItAppears": "In Strabo the king sends men out to find the owner of the sandal the eagle dropped, and she is found at Naucratis. Strabo does not say the sandal was fitted to her foot.",
+     "evidence": {
+      "title": "Strabo, Geographica 17.1.33 (LacusCurtius, Loeb text)",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "rhodopis",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "In Strabo a courtesan becomes the king's wife; in Herodotus she is a Thracian slave ransomed by Charaxus who grows rich in Egypt.",
+     "evidence": {
+      "title": "Strabo, Geographica 17.1.33 (LacusCurtius, Loeb text)",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": null,
+   "verifyBeforeUse": [
+    "Read Strabo 17.1.33 directly (the research saw a summary); check whether he calls her queen of Egypt",
+    "Aelian (Varia Historia 13.33) names the king Psammetichus; not opened. Herodotus places her under Amasis. Strabo names no king and does not say Pharaoh",
+    "Do not call her an 'enslaved laundress' or the sandal 'gilded' or 'rose-red'; none of that is in Strabo",
+    "Say 'sometimes considered the earliest known Cinderella-type story', not 'the oldest precursor'"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "one-hand-girl",
+   "title": "Blessing or Property (a Swahili one-handed-girl tale)",
+   "originalTitle": "Ao rathi, ao mali (Steere's Swahili title)",
+   "kind": "Swahili tale",
+   "region": "Zanzibar / Swahili coast",
+   "culturalTradition": "Swahili tale recorded by Edward Steere in Swahili Tales as Told by Natives of Zanzibar (1870)",
+   "lat": -6.1659,
+   "lon": 39.2026,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": "706 (per Wikipedia; verify)",
+   "atuFamily": "706",
+   "atuUncertain": true,
+   "earliestRecordedDate": "1870",
+   "sortYear": 1870,
+   "dateCaveat": "The earliest record the research verified, not the origin. The wider tale type is much older and widely known in Europe. Steere says the sources of his tales are uncertain.",
+   "summary": "Following Steere's 'Blessing or Property': a dying father asks his two children whether they want blessing or property. The brother takes the property and the sister the blessing, and she is left a pot and a mortar. When she refuses to sell him pumpkins, the brother cuts off her hand and drives her out. A snake she helped restores her hand and gives her a ring that provides food and a house. A king's son marries her, the brother has her cast out as a witch, and she is reunited with her husband after telling her story.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "reversal-of-fortune",
+    "separation-and-reunion"
+   ],
+   "verified": false,
+   "legacyId": "one-hand-girl",
+   "atuNote": "Wikipedia gives ATU 706 'The Maiden Without Hands'. Steere does not classify it. This is not a Cinderella-type (510) tale.",
+   "dateSource": "Steere, Swahili Tales as Told by Natives of Zanzibar (London: Bell and Daldy, 1870), per the Wikisource title page",
+   "form": "oral tale recorded by a missionary-scholar",
+   "summarySources": [
+    {
+     "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+     "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+    },
+    {
+     "title": "Steere, Swahili Tales: contents (Wikisource)",
+     "url": "https://en.wikisource.org/wiki/Swahili_Tales"
+    },
+    {
+     "title": "Wikipedia: The One-Handed Girl",
+     "url": "https://en.wikipedia.org/wiki/The_One-Handed_Girl"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "one-hand-girl",
+     "motif": "unjust-treatment",
+     "howItAppears": "The brother takes the property, cuts off her right hand and drives her from the house; later he denounces her to the king as a witch and she is cast out.",
+     "evidence": {
+      "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "one-hand-girl",
+     "motif": "supernatural-assistance",
+     "howItAppears": "A snake she sheltered leads her to its home, where her hand is restored; its father's ring can produce food, clothing or a house, and she uses it to build a home.",
+     "evidence": {
+      "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "one-hand-girl",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "From destitute and maimed she becomes a prince's wife with a house built by the ring; at the end her brother is banished.",
+     "evidence": {
+      "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "one-hand-girl",
+     "motif": "separation-and-reunion",
+     "howItAppears": "The king's family expels her and her son while the prince is away; he returns to find graves prepared for them, and at the end she tells her story and he embraces her.",
+     "evidence": {
+      "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "Recorded in 1870 by a colonial-era missionary from tellers of mixed Arab and African descent; credit the Swahili tradition. The Xhosa tale 'A Father Cuts Off His Daughter's Arms' is another African version of the same tale type (per Wikipedia).",
+   "verifyBeforeUse": [
+    "The research read the tale through a summarizing page reader; check it against the scan before quoting",
+    "Earlier project drafts called this 'The Maiden Without Hands' with a heroine 'Binti Ali', a baobab, doves and a golden ring; none of that appears in Steere",
+    "ATU 706 is Wikipedia-only"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "tam-cam",
+   "title": "The Story of Tam and Cam",
+   "originalTitle": "Tấm Cám",
+   "kind": "Vietnamese folktale",
+   "region": "Vietnam",
+   "culturalTradition": "Vietnamese folktale; related variants among other peoples in Vietnam are noted by Wikipedia",
+   "lat": 16.0,
+   "lon": 107.8,
+   "coordsNote": "No opened source locates the tale's origin; it is told across Vietnam. This is an approximate national display point (Landes's informants were from Nghe An province).",
+   "atuType": "510A (commonly cited; verify)",
+   "atuFamily": "510",
+   "atuUncertain": true,
+   "earliestRecordedDate": "1886 (Landes, Contes et legendes annamites, Saigon)",
+   "sortYear": 1886,
+   "dateCaveat": "The earliest record the research verified, not the origin. 'Earliest European transcription' leaves open earlier non-European versions; whether the tale appeared in the journal Excursions et Reconnaissances (1884-1887) before the book is unverified. Landes recorded his tales through intermediaries, shortened them, and swapped the sisters' names relative to the standard version.",
+   "summary": "Following the standard version as summarised by Wikipedia and EBSCO: Tam, mistreated by her stepmother, is cheated of her catch by her half-sister Cam. A spirit-helper tells her to bury the bones of her fish in four jars, which later provide clothes and a horse for the king's festival. She loses a slipper on a bridge, it fits only her, and she marries the king. She is then killed and reborn several times, as a bird, trees and a golden fruit, until the king recognizes her work and she returns.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "lost-object-recognition",
+    "transformation",
+    "death-and-rebirth",
+    "reversal-of-fortune",
+    "impossible-tasks"
+   ],
+   "verified": false,
+   "legacyId": null,
+   "atuNote": "No opened source states an ATU number. Wikipedia places it only in the 'ATU 500-559' range; a search-result snippet attributed 510A to SurLaLune, but that page could not be opened. Treat the Cinderella-type pairing as unconfirmed.",
+   "dateSource": "A. Landes, 'Histoire de con Tam et de con Cam', in Contes et legendes annamites (Saigon: Imprimerie coloniale, 1886), ch. XXII, pp. 52-57; EBSCO Research Starters calls it 'the earliest European transcription'; the Internet Archive record confirms the book",
+   "form": "oral tale first transcribed by a European colonial administrator; many variants",
+   "summarySources": [
+    {
+     "title": "Wikipedia: The Story of Tam and Cam",
+     "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+    },
+    {
+     "title": "EBSCO Research Starters: Tam and Cam (Vietnamese folktale)",
+     "url": "https://www.ebsco.com/research-starters/literature-and-writing/tam-and-cam-vietnamese-folktale"
+    },
+    {
+     "title": "Landes, Contes et legendes annamites, ch. XXII (French Wikisource)",
+     "url": "https://fr.wikisource.org/wiki/Contes_et_l%C3%A9gendes_annamites/L%C3%A9gendes/022_Histoire_de_con_Tam_et_de_con_Cam"
+    },
+    {
+     "title": "Contes et legendes annamites (Internet Archive record)",
+     "url": "https://archive.org/details/contesetlgende00landuoft"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "tam-cam",
+     "motif": "unjust-treatment",
+     "howItAppears": "DRAFT (Wikipedia): the heroine is overworked by her stepmother while her half-sister does no chores, and the half-sister secretly steals her fishing catch.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "supernatural-assistance",
+     "howItAppears": "DRAFT (Wikipedia): a spirit-helper advises her about the fish and its bones, and the buried bones produce clothes, a horse and a saddle.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "lost-object-recognition",
+     "howItAppears": "DRAFT (Wikipedia): a slipper lost on a stone bridge fits only the heroine, so the king identifies and marries her; later the king recognizes her by the betel quids she prepared.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "transformation",
+     "howItAppears": "DRAFT (Wikipedia): after her death the heroine is reborn as an oriole, then peach trees, then a golden fruit tree from which she emerges.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "death-and-rebirth",
+     "howItAppears": "DRAFT (Wikipedia): she is killed by a fall from an areca tree and is reborn through bird, tree and fruit forms until she regains human shape.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "DRAFT (Wikipedia): the mistreated stepdaughter, aided by the fish bones, attends the festival and marries the king.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    },
+    {
+     "story": "tam-cam",
+     "motif": "impossible-tasks",
+     "howItAppears": "DRAFT (Wikipedia): the stepmother sets a rice-and-bran sorting task before the festival, which she can finish only with the spirit's sparrows. It is a difficult task rather than a strictly impossible one.",
+     "evidence": {
+      "title": "Wikipedia: The Story of Tam and Cam",
+      "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": "A living tradition that is part of Vietnam's cultural heritage. The original ending is violent (the stepmother unknowingly eats her daughter's flesh); EBSCO says Vietnam's 2011 school textbook removed that scene, so a children-facing summary should say Cam is punished. Landes's 1886 text was recorded through intermediaries under colonial administration and swaps the sisters' names; Judy Sierra's 1992 English translation repeated the swap. Do not call it purely Vietnamese in origin without a source; EBSCO links the slipper motif to Rhodopis and a route through the Middle East, India and China, but that is only EBSCO's claim.",
+   "verifyBeforeUse": [
+    "Every entry here rests on Wikipedia and EBSCO summaries; read the Landes text (French Wikisource) and a Vietnamese source",
+    "Whether Landes 1886 is the first printed version, and whether any earlier Vietnamese written version exists",
+    "ATU number is unverified",
+    "Say which version is followed: the standard modern one (Tam is the victim) or Landes's (names swapped)"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "popol-vuh-twins",
+   "title": "Hunahpu and Xbalanque, the Hero Twins (Popol Vuh)",
+   "originalTitle": "Popol Vuh (K'iche')",
+   "kind": "Maya sacred narrative",
+   "region": "Guatemalan highlands (K'iche' Maya)",
+   "culturalTradition": "K'iche' Maya sacred narrative",
+   "lat": 15.0267,
+   "lon": -91.1497,
+   "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
+   "atuType": null,
+   "atuFamily": null,
+   "atuUncertain": false,
+   "earliestRecordedDate": "1554-1558 (K'iche' text in Latin script; the original is lost)",
+   "sortYear": 1556,
+   "dateCaveat": "The oldest surviving copy is Francisco Ximenez's, made in 1701-1704, with a parallel Spanish translation. The text records older oral tradition; the tale is older than any written record.",
+   "summary": "Following Christenson's translation: the twins' father and uncle were killed by the lords of Xibalba. Hunahpu and Xbalanque, conceived when their father's skull spat in their mother's hand, go down to Xibalba and survive a ball game and trials in the Houses of Blade, Cold, Jaguars, Fire and Bats. They allow their own deaths, are ground up in a river and return, first as fish-like people and then as poor orphan dancers, trick the lords into asking to be sacrificed, and defeat Xibalba. Afterward one rises as the sun and the other as the moon.",
+   "motifs": [
+    "unjust-treatment",
+    "supernatural-assistance",
+    "transformation",
+    "reversal-of-fortune",
+    "impossible-tasks",
+    "trickster",
+    "death-and-rebirth",
+    "unusual-birth"
+   ],
+   "verified": false,
+   "legacyId": "popol-vuh-twins",
+   "atuNote": "Not an ATU tale type.",
+   "dateSource": "Christenson's introduction to his translation of the Popol Vuh (Mesoweb edition)",
+   "form": "written, recording older tradition",
+   "summarySources": [
+    {
+     "title": "Christenson, Popol Vuh (Mesoweb electronic edition of the 2003 University of Oklahoma Press translation)",
+     "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+    },
+    {
+     "title": "Wikipedia: Popol Vuh",
+     "url": "https://en.wikipedia.org/wiki/Popol_Vuh"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "popol-vuh-twins",
+     "motif": "unjust-treatment",
+     "howItAppears": "Their half-brothers abuse them out of envy, and the lords of Xibalba killed their father and uncle; the twins call themselves the avengers of their fathers.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "supernatural-assistance",
+     "howItAppears": "Ants steal flowers from the lords' garden, and an insect (really a hair plucked from Hunahpu's knee) learns the lords' names on the road to Xibalba; Xbalanque calls animals to help when Hunahpu is beheaded.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "transformation",
+     "howItAppears": "After their deaths they appear first as fish-like people and then as ragged orphan dancers; their half-brothers become spider monkeys; at the end they rise as the sun and the moon.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "The lords of Xibalba, who killed the twins' father and thought the twins defeated, are themselves sacrificed and told they will never again be great.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "impossible-tasks",
+     "howItAppears": "The lords set deadly trials: nights in the Houses of Blade, Cold, Jaguars, Fire and Bats, and a ball game. 'Impossible' is the project's label for lethal trials.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "trickster",
+     "howItAppears": "Disguised as orphan dancers, the twins feign sacrifice and revival and persuade the lords to ask to be sacrificed, and the lords are killed and not revived.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "death-and-rebirth",
+     "howItAppears": "The twins jump into a pit oven, their bones are ground and strewn in the river, and on the fifth day they appear again as fish-like people.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "popol-vuh-twins",
+     "motif": "unusual-birth",
+     "howItAppears": "Their mother is made pregnant when the skull of One Hunahpu spits into her hand and tells her his son is like his spittle.",
+     "evidence": {
+      "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+      "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+     },
+     "verified": false,
+     "draft": false
+    }
+   ],
+   "sensitivity": "A K'iche' Maya sacred text that remains meaningful to living K'iche' people. Christenson is an outside scholar who worked with K'iche' collaborators. Do not call the lords of Xibalba 'demons'; use 'K'iche'' and 'Maya' spellings and prefer K'iche' sources.",
+   "verifyBeforeUse": [
+    "House names and order differ between translations; cite one",
+    "The sun and moon ending is in Christenson; check Tedlock, and any Venus identification, which was not found",
+    "Ximenez's copy is dated 1701-1704 (Christenson) or c. 1701 (Wikipedia); pick one"
+   ]
+  },
+  {
+   "tier": "curated",
+   "id": "fisherman-and-the-jinni",
+   "title": "The Fisherman and the Jinni",
+   "originalTitle": "The Story of the Fisherman and the Demon (Haddawy/Mahdi title)",
+   "kind": "Arabian Nights tale",
+   "region": "Middle East (Arabian Nights tradition)",
+   "culturalTradition": "Arabian Nights (Thousand and One Nights) frame-tale cycle, Syrian recension",
+   "lat": 33.3152,
+   "lon": 44.3661,
+   "coordsNote": "The text names no real home for the fisherman, only a seashore, a mountain tarn and an unnamed city. This is a display point for the Nights tradition (Baghdad), not the tale's setting or origin.",
+   "atuType": "331 (per Wikipedia citing the Arabian Nights Encyclopedia; verify)",
+   "atuFamily": "331",
+   "atuUncertain": true,
+   "earliestRecordedDate": "by the 14th-15th century CE (Galland manuscript, BnF arabe 3609-3611)",
+   "sortYear": 1400,
+   "dateCaveat": "The earliest surviving manuscript record of the tale, not its origin. The oldest Nights witness overall is a 9th-century fragment, which is not this tale.",
+   "summary": "Following Burton's translation: a poor old fisherman hauls up a copper jar sealed with Solomon's seal. A jinni who has sworn to kill whoever frees him comes out, and the fisherman tricks him back into the jar by doubting that he could fit. The jinni swears a covenant and leads him to a tarn with four coloured fish, which earn the fisherman 400 dinars from the sultan and begin the story of an enchanted prince.",
+   "motifs": [
+    "supernatural-assistance",
+    "trickster",
+    "transformation",
+    "reversal-of-fortune"
+   ],
+   "verified": false,
+   "legacyId": null,
+   "atuNote": "English Wikipedia gives ATU 331 'The Spirit in the Bottle'; the primary reference was not opened.",
+   "dateSource": "The tale is in the contents of the Galland (Syrian) manuscript, per a list of its contents and Wikipedia; dating is disputed: Zotenberg and Mahdi say 14th century, Grotzfeld argues it was not copied before about 1450",
+   "form": "literary (manuscript tradition)",
+   "summarySources": [
+    {
+     "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+     "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+    },
+    {
+     "title": "Lang, Arabian Nights Entertainments (Gutenberg #128)",
+     "url": "https://www.gutenberg.org/files/128/128-h/128-h.htm"
+    },
+    {
+     "title": "Journal of the 1001 Nights: The Galland Manuscript",
+     "url": "http://journalofthenights.blogspot.com/2010/12/galland-manuscript.html"
+    },
+    {
+     "title": "Grotzfeld, The Age of the Galland Manuscript (Lancaster)",
+     "url": "https://www.lancaster.ac.uk/jais/volume/docs/vol1/V1_2_Grotzfeld.htm"
+    },
+    {
+     "title": "Wikipedia: The Fisherman and the Jinni",
+     "url": "https://en.wikipedia.org/wiki/The_Fisherman_and_the_Jinni"
+    }
+   ],
+   "motifEntries": [
+    {
+     "story": "fisherman-and-the-jinni",
+     "motif": "supernatural-assistance",
+     "howItAppears": "After being freed, the jinni leads the fisherman to a tarn where he catches four coloured fish that earn him payment.",
+     "evidence": {
+      "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+      "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "fisherman-and-the-jinni",
+     "motif": "trickster",
+     "howItAppears": "The fisherman asks how the jinni could fit in so small a vessel, and when the jinni goes back into the jar he seals it again.",
+     "evidence": {
+      "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+      "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "fisherman-and-the-jinni",
+     "motif": "transformation",
+     "howItAppears": "The jinni turns to vapor to enter the jar, and the enchanted prince is found half man and half stone.",
+     "evidence": {
+      "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+      "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+     },
+     "verified": false,
+     "draft": false
+    },
+    {
+     "story": "fisherman-and-the-jinni",
+     "motif": "reversal-of-fortune",
+     "howItAppears": "DRAFT, the later reward is in Lang's summary only: the poor fisherman, who had been hauling up junk, receives 400 dinars from the sultan for the fish.",
+     "evidence": {
+      "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+      "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+     },
+     "verified": false,
+     "draft": true
+    }
+   ],
+   "sensitivity": "Burton (1885) carries Victorian Orientalist framing and archaic terms; Lang is a retelling of Galland's French, so names change. Use 'jinni' and note the variants (Ifrit, demon). Burton's jinni is imprisoned for refusing 'the True Faith', a religious frame to handle carefully.",
+   "verifyBeforeUse": [
+    "Confirm ATU 331 in Marzolph and van Leeuwen's Arabian Nights Encyclopedia, or leave it as unverified",
+    "Confirm the tale's place in the Galland manuscript contents (seen only through a blog's list of the Haddawy/Mahdi contents and Wikipedia)",
+    "The Burton excerpt read ended mid-tale; read the rest of Burton or Lane for the prince's story and the fisherman's final reward",
+    "The tale's geography: no real city is named, so no origin is claimed"
+   ]
+  }
+ ],
+ "comparisons": [
+  {
+   "a": "cinderella",
+   "b": "kongjwi",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "kongjwi",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "kongjwi",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "kongjwi",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "kongjwi",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "yexian",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella's stepmother and stepsisters make her do household drudgery and sleep in a garret; in Ye Xian the stepmother's mistreatment begins after her father's death.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "yexian",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella's help comes from a fairy godmother; Ye Xian's comes from the bones of her dead fish, which grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "yexian",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "In Perrault's tale the lost glass slipper fits the heroine when it is tried on her foot; in the Ye Xian text she leaves one golden shoe behind, and it reaches the king of Tuohan after cave people sell it there.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "yexian",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "yexian",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "shakuntala",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "lost-object-recognition"
+   ],
+   "difference": {
+    "text": "In Perrault the lost glass slipper identifies the heroine when it fits her foot; in Kalidasa's play a ring, lost while she worships at the Ganges and found by a fisherman in a carp, lifts the curse once the king sees it again.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "vasilisa",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella is set drudgery by her stepmother and stepsisters; Vasilisa's stepmother's daughters put out the light and send her to Baba Yaga to fetch fire.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "vasilisa",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella's godmother is a fairy who provides a coach and slippers; Vasilisa's helper is the doll her mother gave her, which does her work and produces the loom and linen.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "vasilisa",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "momotaro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "Cinderella's help is a fairy godmother's magic; Momotaro's is a dog, a monkey and a pheasant who join him after each is given a millet dumpling.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "golden-crab",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "A fairy godmother provides Cinderella's coach, attendants and slippers; in the Golden Crab a golden rod produces the wall and garden overnight, and a servant supplies golden garments and armour.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "golden-crab",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "urashima-taro",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "sedna",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella's mistreatment is drudgery set by her stepmother and stepsisters; in Boas's Sedna the fulmar deceives her and her father throws her overboard and cuts off her fingers to save himself.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "sedna",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "rhodopis",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": {
+    "text": "In Perrault the slipper is tried on her foot and fits; in Strabo an eagle drops the sandal in the king's lap and the king sends men to find its owner, and Strabo does not say the sandal was fitted to her.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "rhodopis",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "one-hand-girl",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella's stepmother and stepsisters set her household drudgery and a bed in a garret; the Swahili girl's brother takes the property, cuts off her right hand, drives her out, and later denounces her to the king as a witch.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "A fairy godmother magically provides Cinderella's coach and slippers; in the Swahili tale a sheltered snake leads the girl home, where her hand is restored, and its father's ring can produce food, clothing or a house.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "one-hand-girl",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "tam-cam",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella is made to do drudgery by her stepfamily; the twins are abused out of envy by their half-brothers, and the lords of Xibalba killed their father and uncle.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Cinderella is helped by one fairy godmother's magic; the twins are helped by animals, such as ants that steal flowers, and by an insect that is really a hair from Hunahpu's knee.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "Cinderella's fairy godmother provides a coach, attendants and glass slippers; in the Fisherman and the Jinni the freed jinni only leads the fisherman to a tarn where he catches four coloured fish that earn him payment.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "cinderella",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "cinderella",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "yexian",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "yexian",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "yexian",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "yexian",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "yexian",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "shakuntala",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "vasilisa",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "vasilisa",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "vasilisa",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "vasilisa",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "anansi",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "momotaro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "golden-crab",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "golden-crab",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "golden-crab",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "urashima-taro",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "sedna",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "sedna",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "rhodopis",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "rhodopis",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "one-hand-girl",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "one-hand-girl",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "impossible-tasks",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "death-and-rebirth",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "death-and-rebirth",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "kongjwi",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "shakuntala",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition"
+   ],
+   "difference": {
+    "text": "Ye Xian's shoe is left behind at the festival and reaches a king by being sold; in Kalidasa's play the ring, found by a fisherman in a carp, lifts a curse once the king sees it again.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "vasilisa",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Vasilisa's stepmother's daughters put out the light and send her to Baba Yaga to fetch fire; Ye Xian is mistreated by her stepmother after her father's death.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "vasilisa",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "Vasilisa's mother's doll does her work, sifting oats and producing the loom and linen; Ye Xian's fish bones grant whatever she asks of them.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "vasilisa",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "momotaro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "Momotaro's help is a dog, a monkey and a pheasant; Ye Xian's is the bones of her dead fish, which grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "golden-crab",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The crab's golden rod makes the wall and garden overnight, and a servant brings golden garments; the bones of Ye Xian's dead fish grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "golden-crab",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The Golden Crab's prince changes between crab, man and eagle; in Ye Xian the bones provide clothing and golden shoes for the festival.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "urashima-taro",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "sedna",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "In Boas's Sedna the fulmar deceives her and her father throws her overboard and cuts off her fingers; Ye Xian is mistreated by her stepmother after her father's death.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "sedna",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "In Boas's Sedna the severed finger joints become whales and seals and the stumps bearded seals; in Ye Xian the bones provide fine clothing and golden shoes for the festival.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "rhodopis",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "rhodopis",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "one-hand-girl",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl is maimed and driven out by her brother, who later denounces her to the king; Ye Xian is mistreated by her stepmother after her father's death.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl's sheltered snake restores her hand and gives a ring that can produce food, clothing or a house; Ye Xian's fish bones grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "one-hand-girl",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "tam-cam",
+   "motif": "lost-object-recognition",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "cinderella-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins are abused by their half-brothers, and the lords of Xibalba killed their father and uncle; Ye Xian is mistreated by her stepmother after her father's death.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins are helped by ants, an insect and animals Xbalanque calls; Ye Xian by the bones of her dead fish, which grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins change after death into fish-like people, orphan dancers and finally the sun and the moon; in Ye Xian the bones provide fine clothing and golden shoes for the festival.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "yexian",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The freed jinni leads the fisherman to four coloured fish that earn him payment; the bones of Ye Xian's dead fish grant whatever she asks.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The jinni turns to vapor and a prince is found half man and half stone; in the Ye Xian text the fish bones provide fine blue-green clothing and golden shoes for the festival.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "yexian",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "shakuntala",
+   "b": "momotaro",
+   "motif": "unusual-birth",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "unusual-birth"
+   ],
+   "difference": {
+    "text": "Momotaro comes out of a peach cut open by an old woman; in the Mahabharata Shakuntala is the daughter of the apsara Menaka and the sage Viswamitra, left in the forest where birds protect her until Kanva adopts her.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "shakuntala",
+   "b": "golden-crab",
+   "motif": "separation-and-reunion",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "separation-and-reunion"
+   ],
+   "difference": null
+  },
+  {
+   "a": "shakuntala",
+   "b": "rhodopis",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "lost-object-recognition"
+   ],
+   "difference": {
+    "text": "In Strabo the king sends men to find the owner of the sandal an eagle dropped, and she is found at Naucratis, with no mention of fitting it to her foot; in Kalidasa's play the ring that lifts the curse is lost at the Ganges and found by a fisherman in a carp.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "shakuntala",
+   "b": "one-hand-girl",
+   "motif": "separation-and-reunion",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "separation-and-reunion"
+   ],
+   "difference": null
+  },
+  {
+   "a": "shakuntala",
+   "b": "tam-cam",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition"
+   ],
+   "difference": null
+  },
+  {
+   "a": "shakuntala",
+   "b": "popol-vuh-twins",
+   "motif": "unusual-birth",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "unusual-birth"
+   ],
+   "difference": {
+    "text": "The twins' mother is made pregnant when the skull of One Hunahpu spits into her hand; in the Mahabharata Shakuntala is the daughter of an apsara and a sage, left in the forest where birds protect her.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "anansi",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks"
+   ],
+   "difference": {
+    "text": "Ananse must bring the Sky-god a python, a leopard, a fairy and hornets; Vasilisa is set household work by Baba Yaga (cleaning, cooking, sifting oats, sorting hay, making poppy-oil), which her doll helps her finish.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "momotaro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "Momotaro is helped by a dog, a monkey and a pheasant; Vasilisa by the doll her mother gave her, which does her work for her.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "golden-crab",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "The crab's golden rod produces a wall and garden overnight and a servant brings golden garments; Vasilisa's doll sifts the oats overnight and produces the loom and linen.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "golden-crab",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "In the Golden Crab the king demands a flower-covered wall and a jewelled garden by next morning, and the golden rod provides them; Baba Yaga sets Vasilisa household tasks, which the doll helps her finish.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "vasilisa",
+   "b": "sedna",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "In Boas's Sedna the fulmar deceives her and her father throws her overboard; Vasilisa is sent for fire to Baba Yaga by her stepmother's daughters.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "rhodopis",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune"
+   ],
+   "difference": {
+    "text": "Rhodopis rises to be the king's wife in Strabo, or grows rich in Egypt after being ransomed in Herodotus; Vasilisa goes from persecuted orphan to wife of the Tsar, in the version read.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "one-hand-girl",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl's brother takes the property, cuts off her hand and drives her out; Vasilisa's stepmother's daughters put out the light and send her to Baba Yaga to fetch fire.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl is helped by a snake whose father's ring can produce food, clothing or a house; Vasilisa by her mother's doll, which does the work and produces the loom and linen.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "one-hand-girl",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl goes from destitute and maimed to a prince's wife, and her brother is banished; Vasilisa goes from persecuted orphan to wife of the Tsar, in the version read.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "vasilisa",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "vasilisa",
+   "b": "tam-cam",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "vasilisa",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "vasilisa",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins are abused by envious half-brothers and have lost their father and uncle to the lords of Xibalba; Vasilisa is sent to Baba Yaga for fire by her stepmother's daughters.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins are helped by ants, an insect and animals Xbalanque calls; Vasilisa is helped by one doll that does her work overnight, and Baba Yaga gives her the skull.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "popol-vuh-twins",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins' tasks are deadly trials in the lords' houses and a ball game; Vasilisa's are Baba Yaga's household chores (courtyard, cooking, oats, hay, poppy-oil), finished with her doll's help.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins' reversal is the downfall of the lords of Xibalba, sacrificed and told they will never again be great; Vasilisa's is her own rise from persecuted orphan to wife of the Tsar.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "The jinni, once freed, leads the fisherman to four coloured fish that earn him payment; Vasilisa's doll does her work, sifting the oats overnight and producing the loom and linen, and Baba Yaga gives her the skull.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "vasilisa",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "anansi",
+   "b": "golden-crab",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks"
+   ],
+   "difference": {
+    "text": "The Sky-god names four captures as the price of his stories (the python, the leopard, the fairy and the hornets); the king in the Golden Crab demands a flower-covered wall and a jewelled garden, each by the next morning, and the crab meets both with the golden rod.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "anansi",
+   "b": "tam-cam",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks"
+   ],
+   "difference": null
+  },
+  {
+   "a": "anansi",
+   "b": "popol-vuh-twins",
+   "motif": "trickster",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "trickster"
+   ],
+   "difference": {
+    "text": "Ananse sets four physical traps for the python, hornets, leopard and fairy; the twins, disguised as orphan dancers, feign sacrifice and revival and persuade the lords to ask to be sacrificed, and the lords are not revived.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "anansi",
+   "b": "popol-vuh-twins",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "trickster"
+   ],
+   "difference": {
+    "text": "Ananse is set four captures to buy the stories from the Sky-god; the Hero Twins face deadly nights in the Houses of Blade, Cold, Jaguars, Fire and Bats, and a ball game, set by the lords of Xibalba.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "anansi",
+   "b": "fisherman-and-the-jinni",
+   "motif": "trickster",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "trickster"
+   ],
+   "difference": {
+    "text": "Ananse traps a python, hornets, a leopard and a fairy with a palm branch, a water gourd, a pit and a sticky doll; the fisherman wins with one question, asking how the jinni fits in so small a jar, and seals it again.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "momotaro",
+   "b": "golden-crab",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "In the Golden Crab a golden rod and a servant provide the wall, garden and armour; Momotaro's help is a dog, a monkey and a pheasant won with millet dumplings.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "momotaro",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "momotaro",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "Momotaro gains a dog, a monkey and a pheasant with millet dumplings; the Swahili girl is led by a sheltered snake to its home, where her hand is restored and a ring provides food, clothing or a house.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "momotaro",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "momotaro",
+   "b": "popol-vuh-twins",
+   "motif": "unusual-birth",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "unusual-birth"
+   ],
+   "difference": {
+    "text": "Momotaro is born from a large peach that floats down a river and is cut open by an old woman; the twins' mother is made pregnant when the skull of One Hunahpu spits into her hand.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "momotaro",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "unusual-birth"
+   ],
+   "difference": {
+    "text": "Momotaro's animals join him after each is given a millet dumpling and help him against the devils; the twins' animal helpers include ants that steal flowers, and Xbalanque calls animals when Hunahpu is beheaded.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "momotaro",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "The jinni leads the fisherman to a tarn where he catches four coloured fish that earn him payment; Momotaro is joined by a dog, a monkey and a pheasant, who help him defeat the devils.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "urashima-taro",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "golden-crab",
+   "b": "urashima-taro",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "golden-crab",
+   "b": "sedna",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation"
+   ],
+   "difference": {
+    "text": "The Golden Crab's prince changes between crab, man and eagle; in Boas's Sedna the cut-off finger joints become whales and seals and the stumps become bearded seals.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "separation-and-reunion",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "The Golden Crab's help is a golden rod and a servant who supplies garments and armour; the Swahili girl is helped by a snake she sheltered, which restores her hand and whose father's ring can produce food, clothing or a house.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "one-hand-girl",
+   "motif": "separation-and-reunion",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "separation-and-reunion",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "In the Golden Crab the husband leaves after his shell is burned and the princess finds him in an underground palace; in the Swahili tale the prince is away when his family expels his wife and son, and he returns to find graves prepared.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "golden-crab",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "golden-crab",
+   "b": "tam-cam",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "golden-crab",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The crab's golden rod produces the wall and garden overnight; the twins are helped by ants and an insect (a hair plucked from Hunahpu's knee), and Xbalanque calls animals when Hunahpu is beheaded.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The Golden Crab's prince is a crab by day, a man at night, and can become an eagle; the twins appear after death as fish-like people and then as orphan dancers, and at the end rise as the sun and the moon.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "popol-vuh-twins",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "impossible-tasks",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The king in the Golden Crab sets two overnight building demands, a flower-covered wall and a jewelled garden; the lords of Xibalba set the twins deadly nights in houses of blade, cold, jaguars, fire and bats, and a ball game.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The freed jinni leads the fisherman to a tarn with four coloured fish; in the Golden Crab a golden rod builds a wall and garden overnight and a servant supplies golden garments and armour.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "golden-crab",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": {
+    "text": "The jinni turns to vapor to enter a jar, and an enchanted prince is found half man and half stone; the Golden Crab's prince is a crab by day and a man at night, and can become an eagle.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "urashima-taro",
+   "b": "sedna",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "one-hand-girl",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "urashima-taro",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "sedna",
+   "b": "one-hand-girl",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl's brother takes her property and cuts off her right hand; in Boas's Sedna the fulmar deceives her and her father throws her overboard and cuts off her fingers to save himself.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "sedna",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "sedna",
+   "b": "tam-cam",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "sedna",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins are abused by their half-brothers and call themselves the avengers of their father and uncle, killed by the lords of Xibalba; in Boas's Sedna her own father throws her overboard.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "sedna",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The twins' changes follow their deaths and end with their rising as the sun and the moon, and their half-brothers become spider monkeys; in Boas's Sedna the fingers become whales and seals and the stumps bearded seals.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "sedna",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "transformation"
+   ],
+   "difference": {
+    "text": "The jinni turns to vapor to enter the jar and a prince is half stone; in Boas's Sedna the cut-off finger joints fall into the sea and become whales and seals.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "rhodopis",
+   "b": "one-hand-girl",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune"
+   ],
+   "difference": {
+    "text": "The girl in the Swahili tale rises from destitution and maiming to a prince's wife; in Strabo a courtesan becomes the king's wife, and in Herodotus a Thracian slave, ransomed by Charaxus, grows rich in Egypt.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "rhodopis",
+   "b": "tam-cam",
+   "motif": "lost-object-recognition",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "rhodopis",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "lost-object-recognition",
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "rhodopis",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": true,
+   "sharedMotifs": [
+    "reversal-of-fortune"
+   ],
+   "difference": {
+    "text": "The reversal falls on the lords of Xibalba, who are sacrificed after thinking the twins defeated; in the Rhodopis accounts it lifts the heroine, a courtesan who becomes the king's wife in Strabo, a slave who grows rich in Herodotus.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "rhodopis",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune"
+   ],
+   "difference": null
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "tam-cam",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "tam-cam",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "tam-cam",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The Swahili girl is wronged by her brother, who takes the property, cuts off her hand and denounces her; the twins are abused by envious half-brothers, and the lords of Xibalba killed their father and uncle.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "A snake the girl sheltered restores her hand and gives her a ring that can produce food, clothing or a house; the twins' help comes from ants, an insect and animals called by Xbalanque.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "unjust-treatment"
+   ],
+   "difference": {
+    "text": "The maimed, destitute girl becomes a prince's wife with a house built by the ring, and her brother is banished; in the Popol Vuh it is the lords of Xibalba who fall, sacrificed and told they will never again be great.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance"
+   ],
+   "difference": {
+    "text": "The freed jinni leads the fisherman to a tarn of four coloured fish that earn him payment; the Swahili girl's sheltered snake restores her hand and its father's ring can produce a house.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "one-hand-girl",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "unjust-treatment",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "death-and-rebirth",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "popol-vuh-twins",
+   "motif": "impossible-tasks",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "death-and-rebirth",
+    "impossible-tasks",
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "unjust-treatment"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "tam-cam",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation"
+   ],
+   "difference": null
+  },
+  {
+   "a": "popol-vuh-twins",
+   "b": "fisherman-and-the-jinni",
+   "motif": "supernatural-assistance",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "trickster"
+   ],
+   "difference": {
+    "text": "The freed jinni leads the fisherman to a tarn with four coloured fish; the twins are aided by ants, an insect that is really a hair from Hunahpu's knee, and animals Xbalanque calls.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "popol-vuh-twins",
+   "b": "fisherman-and-the-jinni",
+   "motif": "transformation",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "trickster"
+   ],
+   "difference": {
+    "text": "The jinni turns to vapor and the enchanted prince is half stone; the twins' changes follow their deaths (fish-like people, orphan dancers) and end with their rising as the sun and the moon, and their half-brothers become spider monkeys.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  },
+  {
+   "a": "popol-vuh-twins",
+   "b": "fisherman-and-the-jinni",
+   "motif": "reversal-of-fortune",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "trickster"
+   ],
+   "difference": null
+  },
+  {
+   "a": "popol-vuh-twins",
+   "b": "fisherman-and-the-jinni",
+   "motif": "trickster",
+   "connectionType": "thematic-parallel",
+   "typeConfirmed": false,
+   "sharedMotifs": [
+    "reversal-of-fortune",
+    "supernatural-assistance",
+    "transformation",
+    "trickster"
+   ],
+   "difference": {
+    "text": "The fisherman tricks the jinni back into the jar by asking how it could fit, and seals it; the twins, disguised as dancers, feign sacrifice and revival so the lords ask for it and are killed.",
+    "draft": true,
+    "verified": false,
+    "basis": "Drafted only from the stored howItAppears text of both stories; unverified."
+   }
+  }
+ ],
+ "related": {
+  "cinderella": {
+   "unjust-treatment": [
+    "yexian",
+    "tam-cam"
+   ],
+   "supernatural-assistance": [
+    "yexian",
+    "kongjwi"
+   ],
+   "lost-object-recognition": [
+    "yexian",
+    "rhodopis"
+   ]
+  },
+  "kongjwi": {
+   "unjust-treatment": [
+    "tam-cam",
+    "sedna"
+   ],
+   "supernatural-assistance": [
+    "tam-cam",
+    "golden-crab"
+   ],
+   "impossible-tasks": [
+    "tam-cam",
+    "golden-crab"
+   ]
+  },
+  "yexian": {
+   "unjust-treatment": [
+    "cinderella",
+    "sedna"
+   ],
+   "supernatural-assistance": [
+    "cinderella",
+    "urashima-taro"
+   ],
+   "transformation": [
+    "cinderella",
+    "sedna"
+   ]
+  },
+  "shakuntala": {
+   "lost-object-recognition": [
+    "rhodopis",
+    "kongjwi"
+   ],
+   "memory-and-forgetting": [],
+   "separation-and-reunion": [
+    "one-hand-girl",
+    "golden-crab"
+   ]
+  },
+  "vasilisa": {
+   "unjust-treatment": [
+    "popol-vuh-twins",
+    "one-hand-girl"
+   ],
+   "supernatural-assistance": [
+    "popol-vuh-twins",
+    "one-hand-girl"
+   ],
+   "impossible-tasks": [
+    "popol-vuh-twins",
+    "golden-crab"
+   ]
+  },
+  "anansi": {
+   "trickster": [
+    "popol-vuh-twins",
+    "fisherman-and-the-jinni"
+   ],
+   "impossible-tasks": [
+    "popol-vuh-twins",
+    "vasilisa"
+   ]
+  },
+  "momotaro": {
+   "unusual-birth": [
+    "popol-vuh-twins",
+    "shakuntala"
+   ],
+   "supernatural-assistance": [
+    "popol-vuh-twins",
+    "urashima-taro"
+   ]
+  },
+  "golden-crab": {
+   "supernatural-assistance": [
+    "one-hand-girl",
+    "tam-cam"
+   ],
+   "transformation": [
+    "popol-vuh-twins",
+    "kongjwi"
+   ],
+   "impossible-tasks": [
+    "popol-vuh-twins",
+    "vasilisa"
+   ]
+  },
+  "urashima-taro": {
+   "supernatural-assistance": [
+    "yexian",
+    "fisherman-and-the-jinni"
+   ],
+   "transformation": [
+    "yexian",
+    "fisherman-and-the-jinni"
+   ]
+  },
+  "sedna": {
+   "unjust-treatment": [
+    "yexian",
+    "kongjwi"
+   ],
+   "transformation": [
+    "yexian",
+    "cinderella"
+   ]
+  },
+  "rhodopis": {
+   "lost-object-recognition": [
+    "yexian",
+    "kongjwi"
+   ],
+   "reversal-of-fortune": [
+    "yexian",
+    "cinderella"
+   ]
+  },
+  "one-hand-girl": {
+   "unjust-treatment": [
+    "yexian",
+    "cinderella"
+   ],
+   "supernatural-assistance": [
+    "golden-crab",
+    "fisherman-and-the-jinni"
+   ],
+   "reversal-of-fortune": [
+    "yexian",
+    "cinderella"
+   ]
+  },
+  "tam-cam": {
+   "unjust-treatment": [
+    "kongjwi",
+    "vasilisa"
+   ],
+   "supernatural-assistance": [
+    "kongjwi",
+    "fisherman-and-the-jinni"
+   ],
+   "lost-object-recognition": [
+    "kongjwi",
+    "rhodopis"
+   ]
+  },
+  "popol-vuh-twins": {
+   "unjust-treatment": [
+    "tam-cam",
+    "one-hand-girl"
+   ],
+   "supernatural-assistance": [
+    "tam-cam",
+    "momotaro"
+   ],
+   "transformation": [
+    "tam-cam",
+    "sedna"
+   ]
+  },
+  "fisherman-and-the-jinni": {
+   "supernatural-assistance": [
+    "popol-vuh-twins",
+    "cinderella"
+   ],
+   "trickster": [
+    "popol-vuh-twins",
+    "anansi"
+   ],
+   "transformation": [
+    "popol-vuh-twins",
+    "urashima-taro"
+   ]
+  }
+ }
+}

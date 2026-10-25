@@ -1,320 +1,1479 @@
 {
   "meta": {
-    "status": "DRAFT. Every entry is verified:false. Drafted from retrieved sources (listed per story); nothing here has been checked against primary texts.",
+    "status": "DRAFT. Every entry is verified:false. Researched by web search; each motif entry names the page it rests on. The page reader used for research returned summaries, so quotes and details are unconfirmed until checked against the source. Entries starting 'DRAFT' rest on secondary sources (mostly Wikipedia) or on a wording the research could not confirm.",
     "coordsNote": "All coordinates are approximate representative points for display only, not claimed origin points.",
-    "dateRule": "earliestRecordedDate is the earliest record we located, NOT the tale's origin. Oral traditions (Raven, Maui, Anansi, Kongjwi, Tam and Cam) were written down long after they began; do not let the timeline imply otherwise.",
-    "thompsonRule": "Only IDs seen in retrieved sources are listed. Everything else says 'look up'. Confirm all IDs in Thompson's index before use.",
-    "pairTypeRule": "connectionType is computed: same atuType family (510/510A) = cinderella-type parallel; otherwise thematic parallel."
+    "dateRule": "earliestRecordedDate is the earliest record we located, NOT the tale's origin. Most of these tales were oral long before they were written down; do not let the timeline imply otherwise.",
+    "thompsonRule": "Thompson ids were not checked against the Motif-Index itself. The ids shown were resolved against the trilogy dataset only. Confirm all ids in Thompson's index before use.",
+    "pairTypeRule": "connectionType is computed: same atuType family = cinderella-type parallel when the family is 510, otherwise thematic parallel. Where a story's atuType is marked 'verify', treat the pairing as unconfirmed.",
+    "similarityRule": "Shared motifs show similarity of story pattern. They are not evidence that one tale borrowed from or influenced another."
   },
   "motifs": [
-    {"id": "unjust-treatment", "label": "Mistreated by a cruel stepfamily", "thompsonIds": ["S31"], "thompsonNote": "S31 Cruel stepmother appears in the ATU 510A motif list (arXiv 2510.18561)", "thompsonVerified": false},
-    {"id": "supernatural-assistance", "label": "Magical or supernatural helper", "thompsonIds": ["B350"], "thompsonNote": "B350 Grateful animals seen for type 480; other helper types (fairy, object, spirit): look up", "thompsonVerified": false},
-    {"id": "lost-object-recognition", "label": "Recognition through a lost or left-behind object", "thompsonIds": ["H36.1"], "thompsonNote": "H36.1 Slipper test seen in ATU 510A list; ring/token recognition: look up in H0-H199 (identity tests: recognition)", "thompsonVerified": false},
-    {"id": "impossible-tasks", "label": "Impossible or dangerous tasks imposed", "thompsonIds": ["H1010", "H935"], "thompsonNote": "H1010 Impossible tasks (Thompson H section); H935 Witch assigns tasks (type 480)", "thompsonVerified": false},
-    {"id": "trickster", "label": "Trickster or cunning culture hero", "thompsonIds": [], "thompsonNote": "look up (A500s culture hero, K deceptions)", "thompsonVerified": false},
-    {"id": "theft-of-fire-or-light", "label": "Fire or light obtained from a guardian", "thompsonIds": ["A1411", "A1415"], "thompsonNote": "A1411 Theft of light, A1415 Theft of fire per an encyclopedia.pub listing of Thompson; confirm in the index", "thompsonVerified": false},
-    {"id": "transformation", "label": "Transformation or shapeshifting", "thompsonIds": [], "thompsonNote": "look up in section D (Magic)", "thompsonVerified": false},
-    {"id": "death-and-rebirth", "label": "Death followed by rebirth or return", "thompsonIds": [], "thompsonNote": "look up in section E (The Dead)", "thompsonVerified": false},
-    {"id": "unusual-birth", "label": "Miraculous or otherworldly birth or origin", "thompsonIds": [], "thompsonNote": "look up (conception and birth motifs)", "thompsonVerified": false},
-    {"id": "separation-and-reunion", "label": "Lovers or kin separated, then reunited", "thompsonIds": ["S451"], "thompsonNote": "S451 Outcast wife at last united with husband seen for type 706; may fit Shakuntala only loosely", "thompsonVerified": false},
-    {"id": "reversal-of-fortune", "label": "Lowly hero or heroine rises to high status", "thompsonIds": ["L162"], "thompsonNote": "L162 Lowly heroine marries prince seen in type listings; male counterpart: look up", "thompsonVerified": false}
+    {
+      "id": "unjust-treatment",
+      "label": "Mistreated by a cruel stepfamily or others",
+      "thompsonIds": [
+        "S31"
+      ],
+      "thompsonNote": "S31 Cruel stepmother appears in the ATU 510A motif list (trilogy atu_seq); also used here for other cruelty, so the fit is loose",
+      "thompsonVerified": false,
+      "name": "Unjust Treatment",
+      "description": "A protagonist is wronged by family or others.",
+      "significance": "Mistreatment sets up the conflict; the tales differ in who causes it and how it is answered."
+    },
+    {
+      "id": "supernatural-assistance",
+      "label": "Magical or supernatural helper",
+      "thompsonIds": [
+        "B350"
+      ],
+      "thompsonNote": "B350 Grateful animals seen for tale type 480; other helper types (fairy, object, spirit): look up",
+      "thompsonVerified": false,
+      "name": "Supernatural Assistance",
+      "description": "Magical help arrives: a spirit, fairy or enchanted object.",
+      "significance": "The helper differs widely between traditions; each story's entry says what it is."
+    },
+    {
+      "id": "lost-object-recognition",
+      "label": "Recognition through a lost or left-behind object",
+      "thompsonIds": [
+        "H36.1"
+      ],
+      "thompsonNote": "H36.1 Slipper test seen in the ATU 510A list; ring/token recognition: look up in H0-H199 (identity tests: recognition)",
+      "thompsonVerified": false,
+      "name": "Recognition Through a Lost Object",
+      "description": "A lost object, like a shoe, identifies its owner.",
+      "significance": "The object and what it proves differ: a shoe may lead to a bride, a ring may end a curse."
+    },
+    {
+      "id": "impossible-tasks",
+      "label": "Impossible or dangerous tasks imposed",
+      "thompsonIds": [
+        "H1010",
+        "H935"
+      ],
+      "thompsonNote": "H1010 Impossible tasks (Thompson H section); H935 Witch assigns tasks (type 480)",
+      "thompsonVerified": false,
+      "name": "Impossible Tasks",
+      "description": "The protagonist is set demanding or dangerous tasks.",
+      "significance": "Tasks come from a stepfamily, a witch, a king or a god, and are met with help or cleverness."
+    },
+    {
+      "id": "trickster",
+      "label": "Trickster or cunning hero",
+      "thompsonIds": [],
+      "thompsonNote": "look up (A500s culture hero, K deceptions)",
+      "thompsonVerified": false,
+      "name": "Trickster",
+      "description": "A cunning figure wins by trickery or disguise.",
+      "significance": "Tricks are used to win something, escape danger or defeat a powerful rival."
+    },
+    {
+      "id": "transformation",
+      "label": "Transformation or shapeshifting",
+      "thompsonIds": [],
+      "thompsonNote": "look up in section D (Magic)",
+      "thompsonVerified": false,
+      "name": "Transformation",
+      "description": "A person or object changes form.",
+      "significance": "Shape-changes serve different ends in different tales: disguise, enchantment, punishment or revelation."
+    },
+    {
+      "id": "death-and-rebirth",
+      "label": "Death followed by rebirth or return",
+      "thompsonIds": [],
+      "thompsonNote": "look up in section E (The Dead)",
+      "thompsonVerified": false,
+      "name": "Death & Rebirth",
+      "description": "A character dies and returns, in the same or another form.",
+      "significance": "In each tale the return from death works differently."
+    },
+    {
+      "id": "unusual-birth",
+      "label": "Miraculous or otherworldly birth or origin",
+      "thompsonIds": [],
+      "thompsonNote": "look up (conception and birth motifs)",
+      "thompsonVerified": false,
+      "name": "Unusual Birth",
+      "description": "A hero is born in an unusual way.",
+      "significance": "How the character comes into the world is part of the story's wonder."
+    },
+    {
+      "id": "separation-and-reunion",
+      "label": "Lovers or kin separated, then reunited",
+      "thompsonIds": [
+        "S451"
+      ],
+      "thompsonNote": "S451 Outcast wife at last united with husband and children seen for type 706; loose fit for several tales here",
+      "thompsonVerified": false,
+      "name": "Separation & Reunion",
+      "description": "Those who belong together part, then reunite.",
+      "significance": "The cause and length of the separation, and whether the reunion is complete, differ in each story."
+    },
+    {
+      "id": "reversal-of-fortune",
+      "label": "Lowly hero or heroine rises to high status",
+      "thompsonIds": [
+        "L162"
+      ],
+      "thompsonNote": "L162 Lowly heroine marries prince seen in type listings; male counterpart: look up",
+      "thompsonVerified": false,
+      "name": "Reversal of Fortune",
+      "description": "A lowly or wronged character rises in status.",
+      "significance": "The rise comes through marriage, reward or victory, depending on the tale."
+    },
+    {
+      "id": "memory-and-forgetting",
+      "label": "Memory lost through a curse or enchantment",
+      "thompsonIds": [],
+      "thompsonNote": "look up (curses and forgetting, D/E sections)",
+      "thompsonVerified": false,
+      "name": "Memory & Forgetting",
+      "description": "Memory is lost, then restored.",
+      "significance": "Only one tale in this atlas carries this motif, so it links to no others here."
+    }
   ],
   "stories": [
     {
-      "id": "ye-xian", "title": "Ye Xian", "region": "Southern China", "tradition": "Chinese (set among non-Han southern peoples; informant described as Zhuang)",
-      "lat": 22.8, "lon": 108.3, "atuType": "510A", "atuNote": "Ting's index places the fish-helper tale under 510A (per Wikipedia citing Ting); confirm in Ting 1978",
-      "earliestRecordedDate": "c. 850-860 CE", "dateSource": "Miscellaneous Morsels from Youyang by Duan Chengshi; sources give c. 850 or c. 860",
+      "id": "cinderella",
+      "title": "Cendrillon (Perrault, 1697)",
+      "region": "France",
+      "tradition": "French literary fairy tale",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "atuType": "510A",
+      "atuNote": "The ATU index (via the trilogy dataset) lists Cendrillon among the names of type 510A 'Cinderella'; Wikipedia gives the type name as 'Persecuted Heroine'. Confirm in Uther.",
+      "earliestRecordedDate": "1697",
+      "dateSource": "Perrault, Histoires ou contes du temps passe (Paris, 1697), per the bibliographic note on the Pitt/Ashliman page of the translation",
+      "dateCaveat": "Earliest of THIS version. Basile's 'La gatta Cenerentola' (1634) is an earlier European literary Cinderella, and Strabo's Rhodopis is often cited as an earlier analogue (both per Wikipedia).",
+      "form": "literary",
+      "summary": "A girl mistreated by her stepmother and stepsisters is helped by her godmother, a fairy, who turns a pumpkin and animals into a coach and attendants and gives her glass slippers, warning her to leave before midnight. She loses a slipper, it fits only her, and she forgives her sisters.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "lost-object-recognition",
+        "transformation",
+        "reversal-of-fortune"
+      ],
+      "motifEntries": [
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "Her stepmother and stepsisters make her do the household drudgery; she sleeps in a garret on a straw bed and sits in the chimney corner among the cinders after her work.",
+          "evidence": {
+            "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+            "url": "https://sites.pitt.edu/~dash/perrault06.html"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "Her godmother, who is a fairy, magically provides a coach, attendants and glass slippers.",
+          "evidence": {
+            "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+            "url": "https://sites.pitt.edu/~dash/perrault06.html"
+          }
+        },
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "She loses a glass slipper as she leaves at midnight; when it is tried on her foot it fits her, and it fits no one else.",
+          "evidence": {
+            "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+            "url": "https://sites.pitt.edu/~dash/perrault06.html"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "DRAFT, check what the mice and lizards become: a pumpkin becomes the coach and a rat becomes a coachman; the godmother also transforms mice and lizards into her retinue.",
+          "evidence": {
+            "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+            "url": "https://sites.pitt.edu/~dash/perrault06.html"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "DRAFT, confirm the wording of the ending: from household drudge she marries the prince.",
+          "evidence": {
+            "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman)",
+            "url": "https://sites.pitt.edu/~dash/perrault06.html"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Only weakly supported (she flees at midnight and is found through the slipper); not a separation in the sense of the motif."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Perrault, Cinderella; or, The Little Glass Slipper (Pitt, Ashliman; translation credited to Lang)",
+          "url": "https://sites.pitt.edu/~dash/perrault06.html"
+        },
+        {
+          "title": "Wikipedia: Cinderella (Basile 1634, Rhodopis, ATU 510A)",
+          "url": "https://en.wikipedia.org/wiki/Cinderella"
+        }
+      ],
+      "verifyBeforeUse": [
+        "Which translation the Pitt page uses (its wording looks more modern than Lang's); cite it exactly",
+        "Confirm what the mice and lizards become and the wording of the ending",
+        "ATU wording, Basile and Rhodopis dates are Wikipedia-only",
+        "Perrault's pumpkin, glass slippers and fairy are in this text; the claim that they were his own additions is Wikipedia-only"
+      ],
+      "verified": false,
+      "originalTitle": "Cendrillon, ou la petite pantoufle de verre",
+      "kind": "Literary fairy tale"
+    },
+    {
+      "id": "kongjwi",
+      "title": "Kongjwi and Patjwi",
+      "region": "Korea",
+      "tradition": "Korean folktale (oral; later printed as a novel)",
+      "lat": 37.5665,
+      "lon": 126.978,
+      "atuType": "510 (similar; Korean type KT 450 per Wikipedia; verify)",
+      "atuNote": "English Wikipedia says the tale resembles ATU 510 and merits its own Korean type, KT 450; it cites the National Folk Museum encyclopedia, which could not be opened.",
+      "earliestRecordedDate": null,
+      "dateSource": "No verified first record. The earliest print the research found is a 1919 movable-type edition (per Korean Wikipedia; a weak source).",
+      "dateCaveat": "Passed down orally for generations before it was written; the 1919 edition is not the origin. Versions differ widely.",
+      "form": "oral tale, later printed novel; many variants",
+      "summary": "Following English Wikipedia, cross-checked with Korean Wikipedia: Kongjwi is mistreated by her stepmother and stepsister Patjwi, is given hard chores, and is helped by animals and a celestial maiden. She loses a shoe, a magistrate finds her by it and marries her. In widely told versions the story continues: Patjwi drowns her and takes her place, and Kongjwi returns in another form to reveal the truth.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "impossible-tasks",
+        "lost-object-recognition",
+        "transformation",
+        "death-and-rebirth",
+        "reversal-of-fortune"
+      ],
+      "motifEntries": [
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "DRAFT (Korean Wikipedia): after her mother's death she is mistreated by her stepmother and stepsister Patjwi.",
+          "evidence": {
+            "title": "Korean Wikipedia: Kongjwi Patjwi",
+            "url": "https://ko.wikipedia.org/wiki/콩쥐_팥쥐"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "DRAFT (Wikipedia): helpers include a cow, a tortoise or toad, sparrows and, in the English account, a celestial maiden; the helpers differ between the two accounts.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "DRAFT (English Wikipedia): she is told to plow a field with a wooden hoe, fill a pot that has a hole, and hull a large sack of rice.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        },
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "DRAFT (Wikipedia): she loses a shoe on a bridge, and the magistrate's test with the shoe shows it fits only her.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "DRAFT (English Wikipedia): in the continuation, a golden lotus is turned back into Kongjwi.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        },
+        {
+          "motif": "death-and-rebirth",
+          "howItAppears": "DRAFT (Wikipedia): Patjwi drowns her, and she returns as a spirit and in another form to reveal the truth; the endings differ between versions.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "DRAFT (Wikipedia): she marries the magistrate.",
+          "evidence": {
+            "title": "Wikipedia: Kongjwi and Patjwi",
+            "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Not clearly stated in the sources read beyond the drowning and restoration."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Kongjwi and Patjwi",
+          "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"
+        },
+        {
+          "title": "Korean Wikipedia: Kongjwi Patjwi",
+          "url": "https://ko.wikipedia.org/wiki/콩쥐_팥쥐"
+        }
+      ],
+      "sensitivity": "Korean tale with many oral variants; present which version is followed.",
+      "verifyBeforeUse": [
+        "Every entry here rests on Wikipedia only. Open the National Folk Museum of Korea entry (folkency.nfm.go.kr/en/topic/detail/5996) and find a scholarly source",
+        "Confirm the earliest print edition (1919 per Korean Wikipedia) and the KT 450 claim",
+        "No source says the cow is black or names the draft's earlier 'Sinjeung Dongguk Yeoji Seungnam' woodblock editions; that earlier claim is unsupported",
+        "Choose which ending to present"
+      ],
+      "verified": false,
+      "originalTitle": "콩쥐팥쥐 (Kongjwi Patjwi)",
+      "kind": "Oral folktale"
+    },
+    {
+      "id": "yexian",
+      "title": "Ye Xian",
+      "region": "Southern China (Guangxi)",
+      "tradition": "Tang-dynasty literary record of an oral tale, in Duan Chengshi's Youyang Zazu",
+      "lat": 22.817,
+      "lon": 108.3665,
+      "atuType": "510A (commonly cited; verify)",
+      "atuNote": "An earlier project draft cited Ting's index via Wikipedia for 510A; this research pass opened no source that states an ATU number for Ye Xian. Confirm before treating the pairing with Cendrillon as established.",
+      "earliestRecordedDate": "mid-9th century CE (c. 850-860)",
+      "dateSource": "Youyang Zazu (Duan Chengshi, 803-863), continuation, juan 1; dates per medievalists.net and Wikipedia, which disagree (c. 850, 850-860, c. 860)",
+      "dateCaveat": "Earliest known written record, not the origin. The text credits an informant (Li Shiyuan, a former household servant of Duan's, per the text), so it circulated orally before.",
       "form": "literary record of an oral tale",
-      "summary": "A girl mistreated by her stepmother befriends a golden-eyed fish. After the stepmother kills it, a spirit tells her to keep its bones, which grant wishes. She attends a festival in splendid clothes, loses a golden slipper, and the king who obtains it searches for its owner and marries her.",
-      "motifs": ["unjust-treatment", "supernatural-assistance", "lost-object-recognition", "reversal-of-fortune"],
+      "summary": "After her father, a cave chief, dies, Ye Xian is mistreated by her stepmother. She raises a fish that the stepmother kills; its bones grant wishes. At the cave festival she wears clothes and golden shoes provided through the bones and leaves one shoe behind. Cave people sell it to the kingdom of Tuohan, whose king obtains it. The stepmother and her daughter are later killed by flying stones.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "transformation",
+        "lost-object-recognition",
+        "reversal-of-fortune"
+      ],
       "motifEntries": [
-        {"motif": "unjust-treatment", "howItAppears": "Her stepmother and half-sister force her into servitude and kill the fish she befriends."},
-        {"motif": "supernatural-assistance", "howItAppears": "The bones of the fish grant her wishes, including the clothes she wears to the festival."},
-        {"motif": "lost-object-recognition", "howItAppears": "A golden slipper left behind at the festival reaches the king, who has every maiden try it; it fits only her."},
-        {"motif": "reversal-of-fortune", "howItAppears": "The servant girl becomes the king's wife."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "After her father's death she is mistreated by her stepmother.",
+          "evidence": {
+            "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+            "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "The bones of her dead fish grant whatever she asks of them.",
+          "evidence": {
+            "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+            "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "For the festival, the bones provide fine blue-green clothing and golden shoes.",
+          "evidence": {
+            "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+            "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+          }
+        },
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "DRAFT, confirm in a translation that only her foot fits: she leaves one shoe behind at the festival; cave people sell it to the kingdom of Tuohan, and its king obtains it.",
+          "evidence": {
+            "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+            "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "DRAFT, from a page summary only; confirm in the text: she is taken by the king as his chief wife.",
+          "evidence": {
+            "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+            "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Not clearly stated."
+        },
+        {
+          "motif": "death-and-rebirth",
+          "reason": "Only Wikipedia's Cinderella article says the fish is the heroine's mother reincarnated; the Chinese text read does not confirm it."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Ye Xian (overview, plot, tale-type note)", "url": "https://en.wikipedia.org/wiki/Ye_Xian"},
-        {"title": "Beauchamp, Asian Origins of Cinderella (Oral Tradition journal)", "url": "https://journal.oraltradition.org/wp-content/uploads/files/articles/25ii/10_25.2.pdf"}
+        {
+          "title": "Youyang Zazu, continuation juan 1 (Chinese Wikisource)",
+          "url": "https://zh.wikisource.org/zh/酉陽雜俎/續集/卷一"
+        },
+        {
+          "title": "Wikipedia: Ye Xian",
+          "url": "https://en.wikipedia.org/wiki/Ye_Xian"
+        },
+        {
+          "title": "Medievalists.net: Medieval Cinderella",
+          "url": "https://www.medievalists.net/2020/08/medieval-cinderella"
+        }
       ],
-      "verifyBeforeUse": ["Confirm 510A in Ting 1978", "Pick one date (850 vs 860) and cite Reed's translation of Youyang Zazu", "Some versions call the fish her mother's reincarnation; decide whether to mention"], "verified": false
+      "verifyBeforeUse": [
+        "Read Waley (Folklore 58, 1947) or Beauchamp's translation (Oral Tradition 25(2), 2010); neither could be opened",
+        "Confirm whether the text calls Tuohan an island and how the fish is described (red fins / golden eyes)",
+        "Do not call it 'the world's earliest Cinderella'; Rhodopis is usually cited earlier. Say 'among the earliest' or 'earliest surviving Asian version'",
+        "No ATU number was found in an opened source"
+      ],
+      "verified": false,
+      "originalTitle": "葉限 (Yè Xiàn)",
+      "kind": "Literary record of an oral tale"
     },
     {
-      "id": "cendrillon", "title": "Cendrillon (Perrault, 1697)", "region": "France", "tradition": "French literary fairy tale",
-      "lat": 48.86, "lon": 2.35, "atuType": "510A", "atuNote": "Standard 510A classification",
-      "earliestRecordedDate": "1697", "dateSource": "Perrault, Histoires ou contes du temps passe",
-      "dateCaveat": "Earliest of THIS version; Basile's Pentamerone (1634) is an earlier European literary Cinderella",
+      "id": "shakuntala",
+      "title": "Shakuntala (Kalidasa's play)",
+      "region": "India",
+      "tradition": "Sanskrit court drama adapting an episode of the Mahabharata",
+      "lat": 29.9457,
+      "lon": 78.1642,
+      "coordsNote": "Placement unverified: the sources opened say only that Kanva's hermitage was on the Malini river in the Himalayan foothills. This is a display point.",
+      "atuType": null,
+      "atuNote": "Not a Cinderella-type tale. Display as a thematic parallel only.",
+      "earliestRecordedDate": "Kalidasa's play: c. 4th-5th century CE (uncertain; a minority view says 6th century)",
+      "dateSource": "Wikipedia: Kalidasa; Ryder's introduction to his translation (Gutenberg)",
+      "dateCaveat": "The Mahabharata episode is undated in the sources opened. The curse and the ring are not in the Mahabharata sections read (Adi Parva 70-74), so they appear to be Kalidasa's additions.",
       "form": "literary",
-      "summary": "A mistreated young woman is helped by a fairy godmother to attend the prince's ball in magically transformed clothes and coach. She loses a glass slipper, and the prince finds her by its fit.",
-      "motifs": ["unjust-treatment", "supernatural-assistance", "lost-object-recognition", "transformation", "reversal-of-fortune"],
+      "summary": "In Kalidasa's play, King Dushyanta marries Shakuntala, the foster daughter of the sage Kanva. After he leaves, the sage Durvasas's curse makes him forget her, to be lifted when he sees the token he gave her. The ring is lost while she worships at the Ganges, a fisherman finds it in a carp, the king's memory returns, and they are later reunited at the hermitage of Maricha.",
+      "motifs": [
+        "lost-object-recognition",
+        "memory-and-forgetting",
+        "separation-and-reunion",
+        "unusual-birth"
+      ],
       "motifEntries": [
-        {"motif": "unjust-treatment", "howItAppears": "DRAFT, check Perrault text: her stepmother and stepsisters make her do the household drudgery."},
-        {"motif": "supernatural-assistance", "howItAppears": "DRAFT, check Perrault text: a fairy godmother equips her for the ball."},
-        {"motif": "lost-object-recognition", "howItAppears": "DRAFT, check Perrault text: the prince finds her by trying the glass slipper she left behind."},
-        {"motif": "transformation", "howItAppears": "DRAFT, check Perrault text: ordinary objects and animals are transformed into a coach and attendants."},
-        {"motif": "reversal-of-fortune", "howItAppears": "DRAFT, check Perrault text: she marries the prince."}
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "In Kalidasa's play the curse is to be lifted when the king sees the token he gave her; the ring is lost while she worships at the Ganges, and a fisherman finds it in a carp.",
+          "evidence": {
+            "title": "Ryder, Kalidasa: Translations of Shakuntala and Other Works (Gutenberg), Acts IV and VI",
+            "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+          }
+        },
+        {
+          "motif": "memory-and-forgetting",
+          "howItAppears": "In the play, Durvasas's curse makes the king forget her. In the Mahabharata, the king says he does not remember any union with her and no curse is mentioned.",
+          "evidence": {
+            "title": "Ryder translation (Gutenberg), Act IV; Mahabharata Adi Parva Section 74 (Wikisource)",
+            "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+          }
+        },
+        {
+          "motif": "separation-and-reunion",
+          "howItAppears": "DRAFT, reunion wording not confirmed: in Act VII the king travels to Gold Peak, the hermitage of Maricha, where the play ends.",
+          "evidence": {
+            "title": "Ryder translation (Gutenberg), Act VII",
+            "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+          }
+        },
+        {
+          "motif": "unusual-birth",
+          "howItAppears": "In the Mahabharata she is the daughter of the apsara Menaka and the sage Viswamitra, left in the forest where birds protect her; Kanva adopts and names her.",
+          "evidence": {
+            "title": "Mahabharata, Adi Parva Section 72 (Ganguli, Wikisource)",
+            "url": "https://en.wikisource.org/wiki/The_Mahabharata/Book_1:_Adi_Parva/Section_72"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "love-and-duty",
+          "reason": "The draft's king torn between duty and love is not stated in the sections read; the only duty-related passage found is the marriage condition about their son's succession in the Mahabharata."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Cinderella (Perrault 1697, Basile 1634, ATU 510A)", "url": "https://en.wikipedia.org/wiki/Cinderella"}
+        {
+          "title": "Ryder, Kalidasa: Translations of Shakuntala and Other Works (Gutenberg #16659)",
+          "url": "https://www.gutenberg.org/cache/epub/16659/pg16659.txt"
+        },
+        {
+          "title": "Mahabharata (Ganguli), Adi Parva Sections 70-74 (Wikisource)",
+          "url": "https://en.wikisource.org/wiki/The_Mahabharata/Book_1:_Adi_Parva/Section_70"
+        },
+        {
+          "title": "Wikipedia: Kalidasa",
+          "url": "https://en.wikipedia.org/wiki/Kalidasa"
+        }
       ],
-      "verifyBeforeUse": ["Entries are NOT yet sourced to Perrault's text; read it on Project Gutenberg and cite", "F823.2 Glass shoes appears in the 510A motif list"], "verified": false
+      "verifyBeforeUse": [
+        "Check the Act VI wording about the ring and the place name, and the Act VII reunion, directly in the text",
+        "Kalidasa's date is genuinely uncertain; present it as a range",
+        "Where the hermitage was: only 'the Malini river, Himalayan foothills' is supported; Uttarakhand is not",
+        "Which details are Kalidasa's additions to the epic episode"
+      ],
+      "verified": false,
+      "originalTitle": "Abhijñānaśākuntalam (The Recognition of Shakuntala)",
+      "kind": "Sanskrit drama"
     },
     {
-      "id": "kongjwi-patjwi", "title": "Kongjwi and Patjwi", "region": "Korea", "tradition": "Korean folktale",
-      "lat": 36.5, "lon": 127.8, "atuType": "510 (similar)", "atuNote": "Shares similarities with ATU 510 but has its own Korean type KT 450",
-      "earliestRecordedDate": null, "dateSource": "Source says it was passed down orally for generations before first being recorded; first-record date not given",
-      "form": "oral tale, many variants",
-      "summary": "Kongjwi is abused by her stepmother and stepsister Patjwi and is helped by animals and supernatural helpers. She marries a magistrate, but unlike Western Cinderella tales the story continues: Patjwi drowns her and takes her place, Kongjwi is reborn in other forms, and her husband learns the truth.",
-      "motifs": ["unjust-treatment", "supernatural-assistance", "lost-object-recognition", "impossible-tasks", "transformation", "death-and-rebirth", "reversal-of-fortune"],
-      "motifEntries": [
-        {"motif": "unjust-treatment", "howItAppears": "Her stepmother and Patjwi abuse and overwork her."},
-        {"motif": "supernatural-assistance", "howItAppears": "A cow, a toad, birds and a fairy help her in widely told versions."},
-        {"motif": "lost-object-recognition", "howItAppears": "NEEDS SOURCE: lost-shoe recognition appears in our team's notes but was not confirmed in retrieved sources."},
-        {"motif": "impossible-tasks", "howItAppears": "NEEDS SOURCE: difficult household tasks appear in our team's notes but were not confirmed in retrieved sources."},
-        {"motif": "transformation", "howItAppears": "After Patjwi drowns her, Kongjwi is reborn as a lotus flower and then as a marble."},
-        {"motif": "death-and-rebirth", "howItAppears": "She is killed by Patjwi and returns in other forms to reveal the truth."},
-        {"motif": "reversal-of-fortune", "howItAppears": "She marries the magistrate."}
-      ],
-      "sources": [
-        {"title": "Wikipedia: Kongjwi and Patjwi (type note, KT 450)", "url": "https://en.wikipedia.org/wiki/Kongjwi_and_Patjwi"},
-        {"title": "Wikipedia: Cinderella (Kongjwi section)", "url": "https://en.wikipedia.org/wiki/Cinderella"},
-        {"title": "National Folk Museum of Korea encyclopedia entry (cited by USC Digital Folklore; not yet opened)", "url": "https://folkency.nfm.go.kr/en/topic/detail/5996"}
-      ],
-      "verifyBeforeUse": ["Open the NFMK entry and confirm the shoe and the tasks", "Find the earliest written version or leave date null", "Versions differ widely; pick one and say which"], "verified": false
-    },
-    {
-      "id": "tam-cam", "title": "Tam and Cam", "region": "Vietnam", "tradition": "Vietnamese folktale",
-      "lat": 16.0, "lon": 107.8, "atuType": "510A (commonly cited; verify)", "atuNote": "Not confirmed in a retrieved source as an ATU assignment",
-      "earliestRecordedDate": "1886", "dateSource": "Landes, Saigon 1886, described as the earliest European transcription",
-      "dateCaveat": "Earliest transcription we located, not necessarily the earliest record; many Vietnamese variants existed",
-      "form": "oral tale, many variants",
-      "summary": "Tam is mistreated by her stepmother and half-sister Cam, who steals her catch of fish. A spirit tells her to bury the bones of her fish, which help her. A magical slipper leads a king to marry her, but she is killed and reincarnated several times before regaining her place.",
-      "motifs": ["unjust-treatment", "supernatural-assistance", "lost-object-recognition", "transformation", "death-and-rebirth", "reversal-of-fortune"],
-      "motifEntries": [
-        {"motif": "unjust-treatment", "howItAppears": "Her stepmother makes her do all the housework, and Cam steals her catch."},
-        {"motif": "supernatural-assistance", "howItAppears": "A spirit tells her to bury the fish's bones in pots at the corners of her bed, and they help her."},
-        {"motif": "lost-object-recognition", "howItAppears": "A slipper reaches the sovereign, who says he will marry the girl it fits; it fits Tam."},
-        {"motif": "transformation", "howItAppears": "After being killed, she is reincarnated as a bird, a loom and a gold apple."},
-        {"motif": "death-and-rebirth", "howItAppears": "She is killed by her stepmother and sister and returns in new forms."},
-        {"motif": "reversal-of-fortune", "howItAppears": "She becomes the sovereign's wife."}
-      ],
-      "sources": [
-        {"title": "Wikipedia: The Story of Tam and Cam", "url": "https://en.wikipedia.org/wiki/The_Story_of_T%E1%BA%A5m_and_C%C3%A1m"},
-        {"title": "EBSCO Research Starters: Tam and Cam (Landes 1886 transcription)", "url": "https://www.ebsco.com/research-starters/literature-and-writing/tam-and-cam-vietnamese-folktale"}
-      ],
-      "verifyBeforeUse": ["Confirm ATU type", "Variants differ on the details; cite one version", "Look for an earlier Vietnamese record"], "verified": false
-    },
-    {
-      "id": "vasilisa", "title": "Vasilisa the Beautiful", "region": "Russia", "tradition": "Russian fairy tale",
-      "lat": 55.75, "lon": 37.62, "atuType": "480B*", "atuNote": "Haney: AT 480B*; Russian scholarship: SUS 480B* 'Stepmother and Stepdaughter'. NOT a 510A tale.",
-      "earliestRecordedDate": "1850s-1860s", "dateSource": "Collected by Afanasyev in Narodnye russkie skazki",
+      "id": "vasilisa",
+      "title": "Vasilisa the Beautiful",
+      "region": "Russia",
+      "tradition": "Russian wondertale (skazka), collected by Afanasyev",
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "atuType": "480B* (per Wikipedia citing Haney; verify)",
+      "atuNote": "English Wikipedia cites Haney for AT 480B* and Russian scholarship for SUS 480B* 'Stepmother and Stepdaughter'. Not a 510A tale. Second-hand; confirm in Haney (2014).",
+      "earliestRecordedDate": "1855-1863 (Afanasyev's collection; the year of this tale is not verified)",
+      "dateSource": "A review of Afanasyev in the Journal of Folklore Research (IU); the English Wikipedia article on Afanasyev gives inconsistent dates (1855-1867, 1855-1863)",
+      "dateCaveat": "Collected from oral tradition and first printed by Afanasyev; some versions end differently.",
       "form": "oral tale collected in print",
-      "summary": "Vasilisa's dying mother leaves her a magic doll. Her stepmother sends her to Baba Yaga's hut for fire. With the doll's help she completes Baba Yaga's tasks and returns with a skull lantern whose fire destroys her stepfamily.",
-      "motifs": ["unjust-treatment", "supernatural-assistance", "impossible-tasks", "reversal-of-fortune"],
+      "summary": "After her mother's death, Vasilisa keeps a doll her mother gave her. Her stepmother's daughters send her to Baba Yaga for fire. With the doll's help she completes Baba Yaga's household tasks and is given a burning skull whose gaze destroys the stepfamily. She later spins and weaves very fine linen, and the Tsar, after receiving shirts made from it, marries her.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "impossible-tasks",
+        "reversal-of-fortune"
+      ],
       "motifEntries": [
-        {"motif": "unjust-treatment", "howItAppears": "Her stepmother sends her into the forest hoping Baba Yaga will devour her."},
-        {"motif": "supernatural-assistance", "howItAppears": "A doll given by her dying mother guides her and does the work."},
-        {"motif": "impossible-tasks", "howItAppears": "Baba Yaga sets her tasks, which she completes with the doll's help."},
-        {"motif": "reversal-of-fortune", "howItAppears": "She ends the tale married into the royal household."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "The stepmother's daughters put out the light and send Vasilisa to Baba Yaga to fetch fire.",
+          "evidence": {
+            "title": "Russian Folk-Tales, Magnus (1915), 'Vasilisa the Fair' (Gutenberg #62509)",
+            "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "The doll her mother gave her does the work for her, sifting the oats overnight and later producing the loom and the linen; Baba Yaga gives her the skull.",
+          "evidence": {
+            "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+            "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "Baba Yaga sets her many household tasks, including cleaning the courtyard, cooking, sifting oats, sorting hay and making poppy-oil, which the doll helps her finish. 'Impossible' is the project's label for hard tasks.",
+          "evidence": {
+            "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+            "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "She goes from persecuted orphan to wife of the Tsar, in the version read.",
+          "evidence": {
+            "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+            "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "transformation",
+          "reason": "No person or object changes form in the text read; the linen is very fine (it passes through a needle's eye) but not transformed."
+        },
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Only her father's return is mentioned, and the reason for his absence was not read."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Vasilisa the Beautiful (classification)", "url": "https://en.wikipedia.org/wiki/Vasilisa_the_Beautiful"},
-        {"title": "Standard Ebooks: Vasilisa the Fair (Magnus translation of Afanasyev)", "url": "https://standardebooks.org/ebooks/a-n-afanasyev/russian-folktales/leonard-a-magnus/text/vasilisa-the-fair"}
+        {
+          "title": "Russian Folk-Tales, Magnus (1915) (Gutenberg #62509)",
+          "url": "https://www.gutenberg.org/cache/epub/62509/pg62509.txt"
+        },
+        {
+          "title": "Wikipedia: Vasilisa the Beautiful",
+          "url": "https://en.wikipedia.org/wiki/Vasilisa_the_Beautiful"
+        },
+        {
+          "title": "Journal of Folklore Research review of Afanasyev",
+          "url": "https://scholarworks.iu.edu/journals/index.php/jfrr/article/view/38597"
+        }
       ],
-      "verifyBeforeUse": ["Read the Standard Ebooks text and cite it", "Good for teaching: shares motifs with Cinderella but is a DIFFERENT tale type"], "verified": false
+      "verifyBeforeUse": [
+        "The Afanasyev number (No. 104) rests on Russian Wikipedia only",
+        "Confirm the exact tasks and the ending in the full Magnus text; the research read it through a summarizing page reader",
+        "The doll's mother's gift is a gift and a promise of safety in the text read; do not call it a 'blessing' unless the text does",
+        "ATU 480B* is second-hand"
+      ],
+      "verified": false,
+      "originalTitle": "Василиса Прекрасная (Vasilisa Prekrasnaya)",
+      "kind": "Wondertale (skazka)"
     },
     {
-      "id": "shakuntala", "title": "Shakuntala (Kalidasa's play)", "region": "India", "tradition": "Sanskrit literary drama adapting a Mahabharata episode",
-      "lat": 29.0, "lon": 77.7, "atuType": null, "atuNote": "Not a Cinderella-type tale. Display as a thematic parallel only.",
-      "earliestRecordedDate": "Mahabharata episode: epic composed roughly 400 BCE-400 CE; Kalidasa's play: c. 4th-5th century CE (date uncertain)", "dateSource": "Wikipedia: Shakuntala",
-      "dateCaveat": "The curse and the signet ring are Kalidasa's additions; they are not in the Mahabharata version",
-      "form": "literary",
-      "summary": "In Kalidasa's play, King Dushyanta marries Shakuntala and leaves her his signet ring. A sage's curse makes him forget her. The ring is lost in a river, he rejects her, and only when the ring is recovered does his memory return, leading to their reunion.",
-      "motifs": ["lost-object-recognition", "separation-and-reunion", "unusual-birth"],
+      "id": "anansi",
+      "title": "How the Sky-god's Stories Came to Be Spider-stories (Anansi)",
+      "region": "Ghana (Akan / Ashanti)",
+      "tradition": "Akan oral storytelling about Ananse, recorded by R. S. Rattray",
+      "lat": 6.6885,
+      "lon": -1.6244,
+      "atuType": null,
+      "atuNote": "No tale type found in an opened source.",
+      "earliestRecordedDate": "1930",
+      "dateSource": "Rattray, Akan-Ashanti Folk-Tales (Oxford: Clarendon Press, 1930), tale 17, Akan text with English translation",
+      "dateCaveat": "The earliest record the research verified, not the earliest; a living oral tradition. Versions differ on which creatures are captured.",
+      "form": "oral tradition recorded by a colonial-era ethnographer",
+      "summary": "Ananse asks the Sky-god Nyankonpon for his stories and is told they can be had for nothing but the python, the leopard, the fairy and the hornets. On his wife Aso's advice, Ananse traps each by trickery and delivers them. The Sky-god accepts, and the tales come to be called Spider-stories.",
+      "motifs": [
+        "trickster",
+        "impossible-tasks"
+      ],
       "motifEntries": [
-        {"motif": "lost-object-recognition", "howItAppears": "The signet ring is the token that lifts the curse once he sees it again. (Kalidasa's version only.)"},
-        {"motif": "separation-and-reunion", "howItAppears": "Dushyanta repudiates her under the curse, and they are reunited after the ring is found."},
-        {"motif": "unusual-birth", "howItAppears": "She is the child of a celestial mother, Menaka, and is protected by birds in the wilderness (the source of her name)."}
+        {
+          "motif": "trickster",
+          "howItAppears": "Ananse traps the python by tying it to a palm branch, the hornets by coaxing them into a water gourd, the leopard with a pit, and the fairy with a sticky doll holding mashed yam.",
+          "evidence": {
+            "title": "Rattray, Akan-Ashanti Folk-Tales (1930), tale 17 (Internet Archive full text)",
+            "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "The Sky-god says the stories cannot be bought for anything except the python, the leopard, the fairy and the hornets. 'Impossible' is the project's label for hard demands.",
+          "evidence": {
+            "title": "Rattray, Akan-Ashanti Folk-Tales (1930), tale 17 (Internet Archive full text)",
+            "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "reversal-of-fortune",
+          "reason": "Ananse is not shown low before; he gains the stories."
+        },
+        {
+          "motif": "supernatural-assistance",
+          "reason": "His wife Aso's advice is human, not supernatural; no 'golden chest' or silk ladder appears in Rattray's tale."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Shakuntala", "url": "https://en.wikipedia.org/wiki/Shakuntala"},
-        {"title": "NIOS: Abhijnanashakuntalam chapter (source and additions)", "url": "https://www.nios.ac.in/media/documents/385-Natyakala/English/Th/Ch-10.pdf"}
+        {
+          "title": "Rattray, Akan-Ashanti Folk-Tales (1930) (Internet Archive full text)",
+          "url": "https://archive.org/stream/akanashantifolkt0000ratt/akanashantifolkt0000ratt_djvu.txt"
+        },
+        {
+          "title": "Wikipedia: Anansi",
+          "url": "https://en.wikipedia.org/wiki/Anansi"
+        }
       ],
-      "verifyBeforeUse": ["Confirm where the ring is found (swallowed by a fish in the play) in a translation", "Confirm Menaka/Vishvamitra birth details in the Mahabharata", "Dates are uncertain; present as a range"], "verified": false
+      "sensitivity": "A living Akan tradition, not a myth of the past. Rattray was a colonial-era British ethnographer; credit the Akan tradition and seek Ghanaian-authored tellings.",
+      "verifyBeforeUse": [
+        "Confirm the tale number and exact details in the archive.org scan",
+        "Say which version is followed; others differ on the creatures and on who owns the stories",
+        "Add a Ghanaian-authored source"
+      ],
+      "verified": false,
+      "originalTitle": "Anansesem (Ananse stories), recorded by Rattray as tale 17",
+      "kind": "Akan trickster tale"
     },
     {
-      "id": "cupid-psyche", "title": "Cupid and Psyche", "region": "Roman Empire (author a North African native)", "tradition": "Latin literary tale within Apuleius's novel",
-      "lat": 36.85, "lon": 10.32, "atuType": "425B (also listed as 425A)", "atuNote": "Sources differ; sometimes 'Search for the Lost Husband'",
-      "earliestRecordedDate": "2nd century CE (c. 160 CE)", "dateSource": "Apuleius, Metamorphoses (The Golden Ass)",
-      "dateCaveat": "Eros and Psyche appear in Greek art from the 4th century BCE; Apuleius gives the only surviving extended ancient narrative",
-      "form": "literary",
-      "summary": "Venus is jealous of the mortal Psyche and sends Cupid to punish her, but he falls in love and meets her in secret. When Psyche's curiosity breaks his trust, he leaves. Venus sets her four tasks, including a trip to the underworld, and Psyche is finally made immortal and reunited with Cupid.",
-      "motifs": ["supernatural-assistance", "impossible-tasks", "separation-and-reunion"],
+      "id": "momotaro",
+      "title": "Momotaro (Peach Boy)",
+      "region": "Japan",
+      "tradition": "Japanese folktale (mukashibanashi), printed in Edo-period children's books and standardized in the Meiji era",
+      "lat": 34.6555,
+      "lon": 133.9197,
+      "coordsNote": "Okayama is traditionally associated with the tale, which the research did not verify. This is a display point.",
+      "atuType": null,
+      "atuNote": "No tale type found in an opened source.",
+      "earliestRecordedDate": "1723 (oldest surviving printed text, a miniature akahon)",
+      "dateSource": "Wikipedia: Momotaro; National Diet Library JapanSearch page",
+      "dateCaveat": "Earlier Edo works (Genroku era, 1688-1704, or earlier) are lost per Wikipedia. An oral version may date to the Muromachi period (1392-1573). The version most people know was standardized in the Meiji era.",
+      "form": "oral tale, printed in Edo-period children's books",
+      "summary": "An old woman finds a large peach in the river, and when it is cut open a boy comes out. The couple raise him. When grown he sets off for the island of the devils with millet dumplings from his parents, which he gives to a dog, a monkey and a pheasant who join him. They defeat the devils' chief and return with the treasure.",
+      "motifs": [
+        "unusual-birth",
+        "supernatural-assistance"
+      ],
       "motifEntries": [
-        {"motif": "supernatural-assistance", "howItAppears": "Ants sort the seeds, a reed advises her, Jupiter's eagle fetches the water, and a tower tells her how to enter the underworld."},
-        {"motif": "impossible-tasks", "howItAppears": "Venus assigns four seemingly impossible tasks, the last a journey to Proserpina in the underworld."},
-        {"motif": "separation-and-reunion", "howItAppears": "Psyche's curiosity separates her from Cupid; after her trials they are reunited and she becomes immortal."}
+        {
+          "motif": "unusual-birth",
+          "howItAppears": "He is born from a large peach that floats down the river and is cut open by the old woman.",
+          "evidence": {
+            "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+            "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "A dog, a monkey and a pheasant join him after each is given a millet dumpling, and they help him defeat the devils.",
+          "evidence": {
+            "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+            "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "reversal-of-fortune",
+          "reason": "He becomes wealthy but there is no prior misfortune."
+        },
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Only weakly supported: he leaves his parents and returns."
+        },
+        {
+          "motif": "love-and-duty",
+          "reason": "No source opened says filial duty is a theme."
+        }
       ],
       "sources": [
-        {"title": "WSU Mythology (Delahoyde): Cupid and Psyche summary", "url": "https://public.wsu.edu/~delahoyd/mythology/cupid&psyche.html"},
-        {"title": "Toronto Metropolitan Univ. exhibit: tale type and sources", "url": "https://childrenslit.library.torontomu.ca/exhibits/show/redromancebook_cupidandpysch/timeculturespecific"}
+        {
+          "title": "Momotaro; or, Little Peachling (Gutenberg #33051)",
+          "url": "https://www.gutenberg.org/cache/epub/33051/pg33051.txt"
+        },
+        {
+          "title": "Wikipedia: Momotaro",
+          "url": "https://en.wikipedia.org/wiki/Momotar%C5%8D"
+        },
+        {
+          "title": "NDL JapanSearch: Momotaro",
+          "url": "https://jpsearch.go.jp/en/gallery/ndl-jbPgdl9pVY6"
+        }
       ],
-      "verifyBeforeUse": ["Cite Apuleius directly (public-domain translation)", "Confirm 425A vs 425B"], "verified": false
+      "sensitivity": "Wikipedia documents that Momotaro was used as a soldier figure in wartime propaganda from the 1890s through the Second World War, with the devils portrayed as enemies, and that the 1894 Meiji version, edited by Iwaya Sazanami, is the standardized form. Mention this when presenting the tale.",
+      "verifyBeforeUse": [
+        "The text followed is an early-20th-century English translation of the Meiji form, not an Edo text; its translator is unnamed",
+        "Check the wartime-use claims in the primary scholarship (Dower, others); they come from Wikipedia here",
+        "Check the Edo texts for what the helpers are given (oldest texts differ on the dumplings)"
+      ],
+      "verified": false,
+      "originalTitle": "桃太郎 (Momotarō)",
+      "kind": "Folktale (mukashibanashi)"
     },
     {
-      "id": "two-brothers", "title": "The Tale of Two Brothers", "region": "Egypt", "tradition": "Ancient Egyptian narrative (Papyrus d'Orbiney)",
-      "lat": 26.8, "lon": 30.8, "atuType": "predecessor of ATU 318 (classification complex)", "atuNote": "Wikipedia notes the tale mixes several types and ATU fits it poorly",
-      "earliestRecordedDate": "c. 1215 BCE", "dateSource": "British Museum dating of Papyrus d'Orbiney; other sources give c. 1197-1185 BCE (reign of Seti II)",
-      "dateCaveat": "The only known copy; the museum says it is probably roughly contemporary with composition",
-      "form": "written (papyrus)",
-      "summary": "Bata is falsely accused by his brother Anubis's wife and forced to leave. The brothers are later reunited after Anubis learns the truth. Gods fashion a wife for Bata, who betrays him; he is killed, returns in other forms, is reborn as her son, and becomes king.",
-      "motifs": ["transformation", "death-and-rebirth", "separation-and-reunion"],
+      "id": "golden-crab",
+      "title": "The Golden Crab",
+      "region": "Greece",
+      "tradition": "Greek wonder tale published in German by Bernhard Schmidt (1877) and in English by Andrew Lang (1894)",
+      "lat": 37.9838,
+      "lon": 23.7275,
+      "coordsNote": "Place of collection not verified (a search summary suggested Zakynthos; that page was not opened). This is a representative Greek point.",
+      "atuType": "425D (per Wikipedia; verify)",
+      "atuNote": "English Wikipedia gives ATU 425D 'Vanished Husband learned of by keeping inn' and says Greek versions often combine it with 425E. In Lang's text the princess does not keep an inn.",
+      "earliestRecordedDate": "1877",
+      "dateSource": "Schmidt, Griechische Maerchen, Sagen und Volkslieder (Leipzig, 1877), per the footnote in Lang's Yellow Fairy Book and Wikipedia",
+      "dateCaveat": "Earliest record of this specific tale that the research verified, not its origin. Lang's English version is 1894.",
+      "form": "oral tale published by a collector",
+      "summary": "Following Lang's English text: a fisherman catches a talking golden crab, which has the fisherman's wife ask the king for his younger daughter and meets the king's demands with a golden rod. On the wedding night the crab says he is an enchanted prince, a crab by day and a man at night. When the princess's mother burns his crab-shell, he vanishes. Guided by an old man, the princess finds her husband among twelve enchanted eagles in an underground palace and they are reunited.",
+      "motifs": [
+        "supernatural-assistance",
+        "transformation",
+        "impossible-tasks",
+        "separation-and-reunion"
+      ],
       "motifEntries": [
-        {"motif": "transformation", "howItAppears": "Bata appears in other forms, including a bull, before his rebirth."},
-        {"motif": "death-and-rebirth", "howItAppears": "Bata is reborn as the son of the woman who betrayed him and becomes king of Egypt."},
-        {"motif": "separation-and-reunion", "howItAppears": "Anubis drives Bata away on his wife's false claim, then discovers the truth and the brothers are reunited."}
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "The crab's golden rod produces the flower-covered wall and the garden with fountains overnight, and a servant who comes out of a mountain or the garden gate supplies the golden garments and armour.",
+          "evidence": {
+            "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+            "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "The prince is enchanted to be a crab by day and a man at night, and he can turn into an eagle; twelve eagles become youths at a fountain.",
+          "evidence": {
+            "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+            "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "The king demands, each by the next morning, a wall higher than his tower covered in all the flowers of the world and then a garden with fountains of gold and jewels; the crab fulfils both with the golden rod.",
+          "evidence": {
+            "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+            "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+          }
+        },
+        {
+          "motif": "separation-and-reunion",
+          "howItAppears": "After the mother burns the shell her husband does not come back; the princess later finds him in an underground palace, recognizes him among the twelve, and embraces him.",
+          "evidence": {
+            "title": "Lang, The Yellow Fairy Book, 'The Golden Crab' (Gutenberg #640)",
+            "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "lost-object-recognition",
+          "reason": "She recognizes him by sight, not by an object."
+        },
+        {
+          "motif": "love-and-duty",
+          "reason": "Her loyalty is shown but no conflict with duty is stated."
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "reason": "Only weakly supported (the fisherman's household becomes rich)."
+        }
       ],
       "sources": [
-        {"title": "British Museum collection record, Papyrus d'Orbiney", "url": "https://www.britishmuseum.org/collection/object/Y_EA10183-8"},
-        {"title": "British Museum blog: literature of ancient Egypt", "url": "https://www.britishmuseum.org/blog/page-turners-literature-ancient-egypt"},
-        {"title": "Wikipedia: Tale of Two Brothers", "url": "https://en.wikipedia.org/wiki/Tale_of_Two_Brothers"}
+        {
+          "title": "Lang, The Yellow Fairy Book (Gutenberg #640)",
+          "url": "https://www.gutenberg.org/files/640/640-h/640-h.htm"
+        },
+        {
+          "title": "Wikipedia: The Golden Crab",
+          "url": "https://en.wikipedia.org/wiki/The_Golden_Crab"
+        },
+        {
+          "title": "CU Boulder Fairy Tales project: The Golden Crab (summary)",
+          "url": "https://www.colorado.edu/projects/fairy-tales/the-yellow-fairy-book/the-golden-crab"
+        }
       ],
-      "verifyBeforeUse": ["Confirm the bull, tree and rebirth sequence in Lichtheim's translation", "Pick one date and cite it"], "verified": false
+      "sensitivity": "Lang's text uses dated language for a servant character; avoid repeating it uncritically.",
+      "verifyBeforeUse": [
+        "Open Schmidt's 1877 book to confirm the tale number, narrator and place of collection",
+        "ATU 425D is Wikipedia-only",
+        "No golden hen, spindle or cross-continental journey appears in this tale; earlier draft claims about them are unsupported"
+      ],
+      "verified": false,
+      "originalTitle": "Prinz Krebs (Schmidt's German title)",
+      "kind": "Greek wonder tale"
     },
     {
-      "id": "prometheus", "title": "Prometheus and the theft of fire", "region": "Greece", "tradition": "Greek myth (Hesiod)",
-      "lat": 38.0, "lon": 23.7, "atuType": null, "atuNote": "Myth, not a classified tale type",
-      "earliestRecordedDate": "late 8th century BCE", "dateSource": "Hesiod, Theogony 507-616; Works and Days 42-105",
-      "form": "literary (epic poetry)",
-      "summary": "Prometheus tricks Zeus at the sacrifice at Mekone. Zeus hides fire from humans, and Prometheus steals it back in a fennel stalk. Zeus punishes humanity with Pandora and Prometheus with chains.",
-      "motifs": ["trickster", "theft-of-fire-or-light"],
+      "id": "urashima-taro",
+      "title": "Urashima Taro",
+      "region": "Japan",
+      "tradition": "Japanese legend first recorded in 8th-century chronicles and poetry and reshaped in the Muromachi-era Otogizoshi",
+      "lat": 35.6762,
+      "lon": 135.2503,
+      "atuType": "681 (per Wikipedia; verify)",
+      "atuNote": "English Wikipedia gives ATU 681 'The Relativity of Time' and Ikeda's Japanese index type 470*; Wikipedia only.",
+      "earliestRecordedDate": "early 8th century CE (Tango Fudoki, c. 713, extant only in fragment; Man'yoshu 9.1740; Nihon Shoki entry)",
+      "dateSource": "Wikipedia: Urashima Taro; Univie Kamigraphie on the Man'yoshu poem; Hearn and Chamberlain's retellings (Gutenberg)",
+      "dateCaveat": "These are the earliest surviving records, not the origin. The Nihon Shoki entry is conventionally dated to the reign of Yuryaku (478); the Fudoki is preserved only as a quoted fragment. Versions differ on whether the hero rescues or catches the turtle and on how many years pass.",
+      "form": "legend recorded in chronicles and poetry, reshaped in later tellings",
+      "summary": "In the earliest versions a fisherman called Urashima meets a woman from the immortal land of Tokoyo; in the Tango Fudoki she is a turtle he caught. He lives there about three years, returns to find his home and village gone, and opening the box she gave him ends in her loss or his own aging. Later tellings add a rescued turtle and a Dragon Palace.",
+      "motifs": [
+        "supernatural-assistance",
+        "transformation"
+      ],
       "motifEntries": [
-        {"motif": "trickster", "howItAppears": "He tricks Zeus over the division of the sacrificial meal at Mekone."},
-        {"motif": "theft-of-fire-or-light", "howItAppears": "He steals fire back from Zeus in a fennel stalk and returns it to humans."}
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "DRAFT (Wikipedia and Univie): in the Fudoki a turtle he caught becomes a woman who takes him to the realm of the immortals; in the Man'yoshu the sea god's daughter takes him to the Land Everlasting.",
+          "evidence": {
+            "title": "Wikipedia: Urashima Taro",
+            "url": "https://en.wikipedia.org/wiki/Urashima_Tar%C5%8D"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "DRAFT (Wikipedia and Chamberlain): in the earliest accounts a caught turtle becomes a woman; in later versions the hero ages when the box is opened.",
+          "evidence": {
+            "title": "Chamberlain, The Fisher-Boy Urashima (Gutenberg #30024)",
+            "url": "https://www.gutenberg.org/cache/epub/30024/pg30024.txt"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "memory-and-forgetting",
+          "reason": "The sources describe a time gap, not memory loss."
+        },
+        {
+          "motif": "separation-and-reunion",
+          "reason": "In the early versions the woman is carried away; no reunion except a later shared revering as deities in the Otogizoshi per Wikipedia."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Prometheus (Hesiod sections)", "url": "https://en.wikipedia.org/wiki/Prometheus"},
-        {"title": "TMU Pressbooks: Hesiod, Theogony and Works and Days (translation)", "url": "https://pressbooks.library.torontomu.ca/myths/chapter/lesson-5-primary-readings-prometheus-and-pandora/"}
+        {
+          "title": "Wikipedia: Urashima Taro",
+          "url": "https://en.wikipedia.org/wiki/Urashima_Tar%C5%8D"
+        },
+        {
+          "title": "Univie Kamigraphie: Urashima Taro in the Man'yoshu",
+          "url": "https://religion-in-japan.univie.ac.at/Kamigraphie/Urashima_Tarō_im_Man%27yōshū"
+        },
+        {
+          "title": "Chamberlain, The Fisher-Boy Urashima (Gutenberg #30024)",
+          "url": "https://www.gutenberg.org/cache/epub/30024/pg30024.txt"
+        }
       ],
-      "verifyBeforeUse": ["Cite the specific line numbers", "Sources note stories of fire theft by tricksters appear worldwide; do not imply Greek origin of the motif"], "verified": false
+      "verifyBeforeUse": [
+        "The Nihon Shoki and Fudoki details come from Wikipedia only; open a scholarly edition",
+        "Years passed differ by source (about 300 in the Fudoki, 700 in the Otogizoshi, 400 in Chamberlain); say which version is followed",
+        "The tamatebako box appears only in a poem inserted into the Otogizoshi texts; early sources have a comb-box",
+        "ATU 681 and Ikeda 470* are Wikipedia-only"
+      ],
+      "verified": false,
+      "originalTitle": "浦島太郎 (Urashima Tarō)",
+      "kind": "Legend"
     },
     {
-      "id": "raven-light", "title": "Raven Steals the Light", "region": "Pacific Northwest Coast (Haida, Tlingit and neighbouring nations)", "tradition": "Haida / Tlingit oral tradition",
-      "lat": 53.3, "lon": -132.0, "atuType": null, "atuNote": "Not an ATU tale type",
-      "earliestRecordedDate": "1900-01 (recorded by Swanton; published 1905 and 1909)", "dateSource": "Swanton, Haida Texts and Myths (1905); Tlingit Myths and Texts (1909)",
-      "dateCaveat": "A living oral tradition far older than its first written record. Versions differ by nation and storyteller.",
+      "id": "sedna",
+      "title": "Sedna (Nuliajuk, Takannaaluk)",
+      "region": "Inuit Nunangat and Greenland (Boas recorded it on Baffin Island)",
+      "tradition": "Inuit sea-mother story",
+      "lat": 63.7467,
+      "lon": -68.517,
+      "atuType": null,
+      "atuNote": "Not an ATU tale type.",
+      "earliestRecordedDate": "1888",
+      "dateSource": "Franz Boas, The Central Eskimo (Sixth Annual Report of the Bureau of Ethnology, 1884-1885, published 1888), text pp. 583-587",
+      "dateCaveat": "Earliest full text the research verified, recorded by an outside ethnographer; the story is oral and far older. Versions differ greatly by region (Cumberland Sound, Igloolik, Netsilik, Greenland).",
       "form": "oral tradition recorded by an ethnologist",
-      "summary": "In a dark world, Raven learns that light is hidden in a distant house. He turns himself into a speck of dirt, slips into the water the owner's daughter drinks, is born as her child, and tricks the grandfather into opening the box, releasing light into the world.",
-      "motifs": ["trickster", "theft-of-fire-or-light", "transformation"],
+      "summary": "Following Boas's 'Sedna and the Fulmar' (Baffin Island): Sedna, who has refused every suitor, is lured away by a fulmar who promises a rich home but delivers a miserable tent. Her father kills the fulmar and takes her away by boat; the other fulmars raise a storm and the father throws her overboard and cuts off her clinging fingers. The finger joints become whales and seals. Other Inuit tellings differ in key ways.",
+      "motifs": [
+        "unjust-treatment",
+        "transformation"
+      ],
       "motifEntries": [
-        {"motif": "trickster", "howItAppears": "Raven uses disguise and persuasion to get past the guardian of the light."},
-        {"motif": "theft-of-fire-or-light", "howItAppears": "He gets the light out of its box and releases it, becoming the sun and stars."},
-        {"motif": "transformation", "howItAppears": "He turns himself into a speck of dirt to slip into the daughter's drinking water."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "In Boas's version the fulmar deceives her, and her father throws her overboard and cuts off her fingers to save himself.",
+          "evidence": {
+            "title": "Boas, The Central Eskimo (Gutenberg #42084), 'Sedna and the Fulmar'",
+            "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "In Boas's version the cut-off finger joints fall into the sea and become whales and seals, and the stumps become bearded seals.",
+          "evidence": {
+            "title": "Boas, The Central Eskimo (Gutenberg #42084)",
+            "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "supernatural-assistance",
+          "reason": "Nothing helps Sedna in Boas's version."
+        },
+        {
+          "motif": "separation-and-reunion",
+          "reason": "She is separated from her father, but the reunion in the text is violent and the motif's meaning does not fit."
+        }
       ],
       "sources": [
-        {"title": "Swanton, Haida Texts and Myths (Project Gutenberg)", "url": "https://gutenberg.org/cache/epub/74172/pg74172-images.html"},
-        {"title": "Swanton, Tlingit Myths and Texts (Project Gutenberg)", "url": "https://www.gutenberg.org/ebooks/78871"},
-        {"title": "Wikipedia: Ravens in Native American mythology", "url": "https://en.wikipedia.org/wiki/Ravens_in_Native_American_mythology"}
+        {
+          "title": "Boas, The Central Eskimo (Gutenberg #42084)",
+          "url": "https://www.gutenberg.org/cache/epub/42084/pg42084-images.html"
+        },
+        {
+          "title": "Inhabit Media: Takannaaluk (Herve Paniaq)",
+          "url": "https://inhabitmedia.com/2018/11/23/takannaaluk/"
+        },
+        {
+          "title": "Wikipedia: Sedna (mythology)",
+          "url": "https://en.wikipedia.org/wiki/Sedna_(mythology)"
+        }
       ],
-      "sensitivity": "Living traditions of specific nations. Name the nation for the version used, credit the sources, and prefer Haida-authored retellings (Bill Reid and Robert Bringhurst, The Raven Steals the Light, 1996) over secondary summaries.",
-      "verifyBeforeUse": ["Confirm details in Swanton's own texts", "Decide which nation's version you present"], "verified": false
+      "sensitivity": "A living Inuit belief and story. Prefer Inuit-authored tellings (for example Inhabit Media's books) over Boas's 1880s ethnography, use 'Inuit' (not 'Eskimo'), and take care with her names, many of which are avoidance names. Do not merge variants.",
+      "verifyBeforeUse": [
+        "Walrus origin and hair-combing are not in Boas's Sedna text; they come from other and secondary tellings (for example Igloolik). Add them only from a sourced Inuit telling",
+        "Check the Canadian Museum of History, Inuit Cultural Online Resource and Rasmussen, which could not be opened",
+        "Name the nation or region for the version used"
+      ],
+      "verified": false,
+      "originalTitle": "Nuliajuk / Takannaaluk (Boas: 'Sedna and the Fulmar')",
+      "kind": "Inuit sea-mother story"
     },
     {
-      "id": "maui-fire", "title": "Maui obtains fire from Mahuika", "region": "Aotearoa New Zealand (Maori; Maui stories are Polynesia-wide)", "tradition": "Maori",
-      "lat": -38.7, "lon": 176.1, "atuType": null, "atuNote": "Not an ATU tale type",
-      "earliestRecordedDate": "1855", "dateSource": "George Grey, Polynesian Mythology (drawing on manuscripts by Te Rangikaheke)",
-      "dateCaveat": "Oral tradition much older. Maui stories vary across Polynesia.",
-      "form": "oral tradition recorded in print",
-      "summary": "Maui finds that fire has been lost and goes to Mahuika, the fire goddess. He tricks her into giving him her burning fingernails one by one, extinguishing each, until she angrily hurls the last, and fire lodges in certain trees.",
-      "motifs": ["trickster", "theft-of-fire-or-light", "unusual-birth"],
+      "id": "rhodopis",
+      "title": "Rhodopis and the eagle-stolen sandal",
+      "region": "Egypt (Naucratis and Memphis)",
+      "tradition": "Greek-language ancient literary tradition about a Greek woman in Egypt",
+      "lat": 31.02,
+      "lon": 30.47,
+      "atuType": null,
+      "atuNote": "Often called an early analogue of Cinderella (Wikipedia: 'sometimes considered the earliest known version'); no ATU number from an opened source, so it is not paired as a Cinderella-type tale.",
+      "earliestRecordedDate": "late 1st century BCE to early 1st century CE (Strabo, Geographica 17.1.33)",
+      "dateSource": "Strabo; the date of his Geographica is disputed (a first edition around 7 BCE and a final edition no later than 23 CE, per Wikipedia)",
+      "dateCaveat": "Earliest surviving written record of the sandal story, not its origin. Herodotus (5th century BCE) records Rhodopis herself but no sandal story.",
+      "form": "ancient literary account",
+      "summary": "Following Strabo: while the courtesan Rhodopis (called Doricha by Sappho) was bathing, an eagle took one of her sandals and carried it to Memphis, dropping it in the lap of the king as he gave judgment outdoors. The king, struck by the sandal, sent men everywhere to find its owner. They found her at Naucratis, and he made her his wife. Strabo does not name the king.",
+      "motifs": [
+        "lost-object-recognition",
+        "reversal-of-fortune"
+      ],
       "motifEntries": [
-        {"motif": "trickster", "howItAppears": "He tricks Mahuika into giving up her fingernails of fire by making excuses after extinguishing each."},
-        {"motif": "theft-of-fire-or-light", "howItAppears": "He obtains fire from Mahuika by trickery; in some traditions the fire is stored in trees."},
-        {"motif": "unusual-birth", "howItAppears": "Maui is born prematurely and thrown into the sea wrapped in a tress of his mother's topknot."}
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "In Strabo the king sends men out to find the owner of the sandal the eagle dropped, and she is found at Naucratis. Strabo does not say the sandal was fitted to her foot.",
+          "evidence": {
+            "title": "Strabo, Geographica 17.1.33 (LacusCurtius, Loeb text)",
+            "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "In Strabo a courtesan becomes the king's wife; in Herodotus she is a Thracian slave ransomed by Charaxus who grows rich in Egypt.",
+          "evidence": {
+            "title": "Strabo, Geographica 17.1.33 (LacusCurtius, Loeb text)",
+            "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "supernatural-assistance",
+          "reason": "Only weak: an eagle carries the sandal. Strabo does not call it divine, and no source opened links it to Horus."
+        },
+        {
+          "motif": "unjust-treatment",
+          "reason": "Strabo shows no mistreatment; Herodotus has her as a slave who works as a courtesan but frames no injustice."
+        }
       ],
       "sources": [
-        {"title": "Te Ara: Maui obtains fire (Grey excerpt)", "url": "https://teara.govt.nz/en/node/18810"},
-        {"title": "Te Kete Ipurangi: How Maui brought fire to the world", "url": "https://eng.mataurangamaori.tki.org.nz/Support-materials/Te-Reo-Maori/Maori-Myths-Legends-and-Contemporary-Stories/How-Maui-brought-fire-to-the-world"},
-        {"title": "Wikipedia: Polynesian Mythology (book)", "url": "https://en.wikipedia.org/wiki/Polynesian_Mythology_(book)"}
+        {
+          "title": "Strabo, Geographica 17.1 (LacusCurtius, Loeb text)",
+          "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A3*.html"
+        },
+        {
+          "title": "Herodotus, Book 2 (Rawlinson, Wikisource)",
+          "url": "https://en.wikisource.org/wiki/The_History_of_Herodotus_(Rawlinson)/Book_2"
+        },
+        {
+          "title": "Wikipedia: Rhodopis (hetaera)",
+          "url": "https://en.wikipedia.org/wiki/Rhodopis_(hetaera)"
+        }
       ],
-      "sensitivity": "Maori taonga. Use the NZ government and education sources above, say it is the Maori version, and avoid presenting it as generic Polynesian.",
-      "verifyBeforeUse": ["Confirm the birth episode in Te Ara or Grey", "Note 'steals' is a simplification: sources describe obtaining fire by trickery"], "verified": false
+      "verifyBeforeUse": [
+        "Read Strabo 17.1.33 directly (the research saw a summary); check whether he calls her queen of Egypt",
+        "Aelian (Varia Historia 13.33) names the king Psammetichus; not opened. Herodotus places her under Amasis. Strabo names no king and does not say Pharaoh",
+        "Do not call her an 'enslaved laundress' or the sandal 'gilded' or 'rose-red'; none of that is in Strabo",
+        "Say 'sometimes considered the earliest known Cinderella-type story', not 'the oldest precursor'"
+      ],
+      "verified": false,
+      "originalTitle": "Ῥοδῶπις (Rhodopis)",
+      "kind": "Ancient literary account"
     },
     {
-      "id": "popol-vuh-twins", "title": "Hero Twins of the Popol Vuh", "region": "Guatemalan highlands (K'iche' Maya)", "tradition": "K'iche' Maya sacred narrative",
-      "lat": 15.0, "lon": -91.1, "atuType": null, "atuNote": "Not an ATU tale type",
-      "earliestRecordedDate": "c. 1554-1558", "dateSource": "Britannica: K'iche' text in Latin script; original lost; earliest surviving copy by Ximenez 1701-1703",
-      "dateCaveat": "Text was surely written in hieroglyphs before the Conquest (UNC Libraries); sources also say the Hero Twins appear on Classic-period ceramics",
-      "form": "written, from older oral and hieroglyphic tradition",
-      "summary": "The twins Hunahpu and Xbalanque are summoned to the underworld Xibalba, as their father and uncle were before them. They defeat the Lords of Death through cunning, and are said to become the Sun and Moon (or Venus).",
-      "motifs": ["trickster", "transformation", "death-and-rebirth", "unusual-birth"],
+      "id": "one-hand-girl",
+      "title": "Blessing or Property (a Swahili one-handed-girl tale)",
+      "region": "Zanzibar / Swahili coast",
+      "tradition": "Swahili tale recorded by Edward Steere in Swahili Tales as Told by Natives of Zanzibar (1870)",
+      "lat": -6.1659,
+      "lon": 39.2026,
+      "atuType": "706 (per Wikipedia; verify)",
+      "atuNote": "Wikipedia gives ATU 706 'The Maiden Without Hands'. Steere does not classify it. This is not a Cinderella-type (510) tale.",
+      "earliestRecordedDate": "1870",
+      "dateSource": "Steere, Swahili Tales as Told by Natives of Zanzibar (London: Bell and Daldy, 1870), per the Wikisource title page",
+      "dateCaveat": "The earliest record the research verified, not the origin. The wider tale type is much older and widely known in Europe. Steere says the sources of his tales are uncertain.",
+      "form": "oral tale recorded by a missionary-scholar",
+      "summary": "Following Steere's 'Blessing or Property': a dying father asks his two children whether they want blessing or property. The brother takes the property and the sister the blessing, and she is left a pot and a mortar. When she refuses to sell him pumpkins, the brother cuts off her hand and drives her out. A snake she helped restores her hand and gives her a ring that provides food and a house. A king's son marries her, the brother has her cast out as a witch, and she is reunited with her husband after telling her story.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "reversal-of-fortune",
+        "separation-and-reunion"
+      ],
       "motifEntries": [
-        {"motif": "trickster", "howItAppears": "They overcome the Lords of Xibalba through cunning and trickery."},
-        {"motif": "transformation", "howItAppears": "They are transformed into celestial bodies, interpreted as the Sun and Moon."},
-        {"motif": "death-and-rebirth", "howItAppears": "Their father is killed in Xibalba and the twins defeat death there. NEEDS SOURCE: confirm the twins' own death and resurrection in Tedlock or Christenson."},
-        {"motif": "unusual-birth", "howItAppears": "Their mother Xquic conceives when the skull of One Hunahpu spits into her hand."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "The brother takes the property, cuts off her right hand and drives her from the house; later he denounces her to the king as a witch and she is cast out.",
+          "evidence": {
+            "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+            "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "A snake she sheltered leads her to its home, where her hand is restored; its father's ring can produce food, clothing or a house, and she uses it to build a home.",
+          "evidence": {
+            "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+            "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "From destitute and maimed she becomes a prince's wife with a house built by the ring; at the end her brother is banished.",
+          "evidence": {
+            "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+            "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+          }
+        },
+        {
+          "motif": "separation-and-reunion",
+          "howItAppears": "The king's family expels her and her son while the prince is away; he returns to find graves prepared for them, and at the end she tells her story and he embraces her.",
+          "evidence": {
+            "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+            "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "lost-object-recognition",
+          "reason": "No object identifies her; recognition comes from her telling her story."
+        },
+        {
+          "motif": "transformation",
+          "reason": "Her hand is restored by the snake; that is healing, not transformation."
+        }
       ],
       "sources": [
-        {"title": "Britannica: Popol Vuh", "url": "https://www.britannica.com/topic/Popol-Vuh"},
-        {"title": "UNC Libraries exhibit: Popol Vuh", "url": "https://exhibits.lib.unc.edu/exhibits/show/maya/sacred-texts/popol-vuh"},
-        {"title": "mayan.org: Hero Twins and Xibalba (popular source; confirm elsewhere)", "url": "https://mayan.org/myths/hero-twins-xibalba/"}
+        {
+          "title": "Steere, Swahili Tales: Blessing or Property (Wikisource)",
+          "url": "https://en.wikisource.org/wiki/Swahili_Tales/Blessing_or_Property"
+        },
+        {
+          "title": "Steere, Swahili Tales: contents (Wikisource)",
+          "url": "https://en.wikisource.org/wiki/Swahili_Tales"
+        },
+        {
+          "title": "Wikipedia: The One-Handed Girl",
+          "url": "https://en.wikipedia.org/wiki/The_One-Handed_Girl"
+        }
       ],
-      "sensitivity": "Sacred narrative of the K'iche'. Credit the K'iche' authors; use a scholarly translation (Tedlock 1996 or Christenson).",
-      "verifyBeforeUse": ["Replace mayan.org with Tedlock or Christenson for episode details"], "verified": false
+      "sensitivity": "Recorded in 1870 by a colonial-era missionary from tellers of mixed Arab and African descent; credit the Swahili tradition. The Xhosa tale 'A Father Cuts Off His Daughter's Arms' is another African version of the same tale type (per Wikipedia).",
+      "verifyBeforeUse": [
+        "The research read the tale through a summarizing page reader; check it against the scan before quoting",
+        "Earlier project drafts called this 'The Maiden Without Hands' with a heroine 'Binti Ali', a baobab, doves and a golden ring; none of that appears in Steere",
+        "ATU 706 is Wikipedia-only"
+      ],
+      "verified": false,
+      "originalTitle": "Ao rathi, ao mali (Steere's Swahili title)",
+      "kind": "Swahili tale"
     },
     {
-      "id": "anansi-stories", "title": "Anansi buys the Sky God's stories", "region": "Ghana (Akan / Ashanti)", "tradition": "Akan oral tradition",
-      "lat": 6.7, "lon": -1.6, "atuType": null, "atuNote": "Not an ATU tale type",
-      "earliestRecordedDate": "1930", "dateSource": "Rattray, Akan-Ashanti Folk-Tales (Clarendon Press)",
-      "dateCaveat": "Earliest located record, not earliest. Oral tradition is older. Retellings differ on which beings Nyame demands.",
-      "form": "oral tradition recorded by an ethnographer",
-      "summary": "All stories belong to Nyame, the Sky God. Anansi offers to buy them, and Nyame names a price of dangerous creatures, such as the python Onini, the leopard Osebo and the hornets Mmoboro (and the fairy Mmoatia in some versions). Anansi captures each by trickery, and the stories become 'spider stories.'",
-      "motifs": ["trickster", "impossible-tasks"],
+      "id": "tam-cam",
+      "title": "The Story of Tam and Cam",
+      "region": "Vietnam",
+      "tradition": "Vietnamese folktale; related variants among other peoples in Vietnam are noted by Wikipedia",
+      "lat": 16.0,
+      "lon": 107.8,
+      "coordsNote": "No opened source locates the tale's origin; it is told across Vietnam. This is an approximate national display point (Landes's informants were from Nghe An province).",
+      "atuType": "510A (commonly cited; verify)",
+      "atuNote": "No opened source states an ATU number. Wikipedia places it only in the 'ATU 500-559' range; a search-result snippet attributed 510A to SurLaLune, but that page could not be opened. Treat the Cinderella-type pairing as unconfirmed.",
+      "earliestRecordedDate": "1886 (Landes, Contes et legendes annamites, Saigon)",
+      "dateSource": "A. Landes, 'Histoire de con Tam et de con Cam', in Contes et legendes annamites (Saigon: Imprimerie coloniale, 1886), ch. XXII, pp. 52-57; EBSCO Research Starters calls it 'the earliest European transcription'; the Internet Archive record confirms the book",
+      "dateCaveat": "The earliest record the research verified, not the origin. 'Earliest European transcription' leaves open earlier non-European versions; whether the tale appeared in the journal Excursions et Reconnaissances (1884-1887) before the book is unverified. Landes recorded his tales through intermediaries, shortened them, and swapped the sisters' names relative to the standard version.",
+      "form": "oral tale first transcribed by a European colonial administrator; many variants",
+      "summary": "Following the standard version as summarised by Wikipedia and EBSCO: Tam, mistreated by her stepmother, is cheated of her catch by her half-sister Cam. A spirit-helper tells her to bury the bones of her fish in four jars, which later provide clothes and a horse for the king's festival. She loses a slipper on a bridge, it fits only her, and she marries the king. She is then killed and reborn several times, as a bird, trees and a golden fruit, until the king recognizes her work and she returns.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "lost-object-recognition",
+        "transformation",
+        "death-and-rebirth",
+        "reversal-of-fortune",
+        "impossible-tasks"
+      ],
       "motifEntries": [
-        {"motif": "trickster", "howItAppears": "He captures the creatures through traps and ruses, such as a pit for the leopard and a gourd for the hornets."},
-        {"motif": "impossible-tasks", "howItAppears": "Nyame sets his price as capturing creatures no one else could take."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "DRAFT (Wikipedia): the heroine is overworked by her stepmother while her half-sister does no chores, and the half-sister secretly steals her fishing catch.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "DRAFT (Wikipedia): a spirit-helper advises her about the fish and its bones, and the buried bones produce clothes, a horse and a saddle.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "lost-object-recognition",
+          "howItAppears": "DRAFT (Wikipedia): a slipper lost on a stone bridge fits only the heroine, so the king identifies and marries her; later the king recognizes her by the betel quids she prepared.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "DRAFT (Wikipedia): after her death the heroine is reborn as an oriole, then peach trees, then a golden fruit tree from which she emerges.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "death-and-rebirth",
+          "howItAppears": "DRAFT (Wikipedia): she is killed by a fall from an areca tree and is reborn through bird, tree and fruit forms until she regains human shape.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "DRAFT (Wikipedia): the mistreated stepdaughter, aided by the fish bones, attends the festival and marries the king.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "DRAFT (Wikipedia): the stepmother sets a rice-and-bran sorting task before the festival, which she can finish only with the spirit's sparrows. It is a difficult task rather than a strictly impossible one.",
+          "evidence": {
+            "title": "Wikipedia: The Story of Tam and Cam",
+            "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "separation-and-reunion",
+          "reason": "She is separated from the king by death and returns after rebirth, but no source opened frames this as separation and reunion."
+        },
+        {
+          "motif": "trickster",
+          "reason": "Cam's theft and Tam's later trick on Cam are deceptions, but no source calls either a trickster figure."
+        }
       ],
       "sources": [
-        {"title": "Mythlok: The Theft of Stories (secondary; cites Rattray 1930)", "url": "https://mythlok.com/events/theft-of-stories/"},
-        {"title": "Courlander retelling, 'All Stories Are Anansi's' (school page; secondary)", "url": "https://re048.k12.sd.us/All%20Stories%20Are%20Anansi's.htm"}
+        {
+          "title": "Wikipedia: The Story of Tam and Cam",
+          "url": "https://en.wikipedia.org/wiki/The_Story_of_Tam_and_Cam"
+        },
+        {
+          "title": "EBSCO Research Starters: Tam and Cam (Vietnamese folktale)",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/tam-and-cam-vietnamese-folktale"
+        },
+        {
+          "title": "Landes, Contes et legendes annamites, ch. XXII (French Wikisource)",
+          "url": "https://fr.wikisource.org/wiki/Contes_et_l%C3%A9gendes_annamites/L%C3%A9gendes/022_Histoire_de_con_Tam_et_de_con_Cam"
+        },
+        {
+          "title": "Contes et legendes annamites (Internet Archive record)",
+          "url": "https://archive.org/details/contesetlgende00landuoft"
+        }
       ],
-      "sensitivity": "Rattray was a colonial-era ethnographer. Credit the Akan tradition and look for Ghanaian-authored retellings.",
-      "verifyBeforeUse": ["Find Rattray's actual text; current sources are secondary", "Decide three or four creatures and say which"], "verified": false
+      "sensitivity": "A living tradition that is part of Vietnam's cultural heritage. The original ending is violent (the stepmother unknowingly eats her daughter's flesh); EBSCO says Vietnam's 2011 school textbook removed that scene, so a children-facing summary should say Cam is punished. Landes's 1886 text was recorded through intermediaries under colonial administration and swaps the sisters' names; Judy Sierra's 1992 English translation repeated the swap. Do not call it purely Vietnamese in origin without a source; EBSCO links the slipper motif to Rhodopis and a route through the Middle East, India and China, but that is only EBSCO's claim.",
+      "verifyBeforeUse": [
+        "Every entry here rests on Wikipedia and EBSCO summaries; read the Landes text (French Wikisource) and a Vietnamese source",
+        "Whether Landes 1886 is the first printed version, and whether any earlier Vietnamese written version exists",
+        "ATU number is unverified",
+        "Say which version is followed: the standard modern one (Tam is the victim) or Landes's (names swapped)"
+      ],
+      "verified": false,
+      "originalTitle": "Tấm Cám",
+      "kind": "Vietnamese folktale"
     },
     {
-      "id": "aladdin", "title": "Aladdin and the Wonderful Lamp", "region": "Syria / Middle East (told in Paris)", "tradition": "Arabic-language tale told by Hanna Diyab, published by Galland",
-      "lat": 36.2, "lon": 37.16, "atuType": "561", "atuNote": "ATU 561 Aladdin; neighbouring types 560 and 562",
-      "earliestRecordedDate": "1709-1710", "dateSource": "Told to Galland by Hanna Diyab in 1709; published in Galland's Les mille et une nuits, vols. IX-X, 1710",
-      "dateCaveat": "Not in the original Nights manuscripts and no pre-Galland Arabic source found; Diyab's role as author versus informant is debated",
-      "form": "oral tale first written by a European translator",
-      "summary": "A poor boy is tricked by a sorcerer into retrieving a magic lamp. Its spirit grants wishes, and he rises to marry the sultan's daughter and eventually inherits the throne.",
-      "motifs": ["supernatural-assistance", "reversal-of-fortune"],
+      "id": "popol-vuh-twins",
+      "title": "Hunahpu and Xbalanque, the Hero Twins (Popol Vuh)",
+      "region": "Guatemalan highlands (K'iche' Maya)",
+      "tradition": "K'iche' Maya sacred narrative",
+      "lat": 15.0267,
+      "lon": -91.1497,
+      "atuType": null,
+      "atuNote": "Not an ATU tale type.",
+      "earliestRecordedDate": "1554-1558 (K'iche' text in Latin script; the original is lost)",
+      "dateSource": "Christenson's introduction to his translation of the Popol Vuh (Mesoweb edition)",
+      "dateCaveat": "The oldest surviving copy is Francisco Ximenez's, made in 1701-1704, with a parallel Spanish translation. The text records older oral tradition; the tale is older than any written record.",
+      "form": "written, recording older tradition",
+      "summary": "Following Christenson's translation: the twins' father and uncle were killed by the lords of Xibalba. Hunahpu and Xbalanque, conceived when their father's skull spat in their mother's hand, go down to Xibalba and survive a ball game and trials in the Houses of Blade, Cold, Jaguars, Fire and Bats. They allow their own deaths, are ground up in a river and return, first as fish-like people and then as poor orphan dancers, trick the lords into asking to be sacrificed, and defeat Xibalba. Afterward one rises as the sun and the other as the moon.",
+      "motifs": [
+        "unjust-treatment",
+        "supernatural-assistance",
+        "transformation",
+        "reversal-of-fortune",
+        "impossible-tasks",
+        "trickster",
+        "death-and-rebirth",
+        "unusual-birth"
+      ],
       "motifEntries": [
-        {"motif": "supernatural-assistance", "howItAppears": "DRAFT, confirm in Galland or Seale: a magic object brings a spirit that grants wishes."},
-        {"motif": "reversal-of-fortune", "howItAppears": "A down-on-his-luck boy ends as the sultan's heir."}
+        {
+          "motif": "unjust-treatment",
+          "howItAppears": "Their half-brothers abuse them out of envy, and the lords of Xibalba killed their father and uncle; the twins call themselves the avengers of their fathers.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "Ants steal flowers from the lords' garden, and an insect (really a hair plucked from Hunahpu's knee) learns the lords' names on the road to Xibalba; Xbalanque calls animals to help when Hunahpu is beheaded.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "After their deaths they appear first as fish-like people and then as ragged orphan dancers; their half-brothers become spider monkeys; at the end they rise as the sun and the moon.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "The lords of Xibalba, who killed the twins' father and thought the twins defeated, are themselves sacrificed and told they will never again be great.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "impossible-tasks",
+          "howItAppears": "The lords set deadly trials: nights in the Houses of Blade, Cold, Jaguars, Fire and Bats, and a ball game. 'Impossible' is the project's label for lethal trials.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "trickster",
+          "howItAppears": "Disguised as orphan dancers, the twins feign sacrifice and revival and persuade the lords to ask to be sacrificed, and the lords are killed and not revived.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "death-and-rebirth",
+          "howItAppears": "The twins jump into a pit oven, their bones are ground and strewn in the river, and on the fifth day they appear again as fish-like people.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        },
+        {
+          "motif": "unusual-birth",
+          "howItAppears": "Their mother is made pregnant when the skull of One Hunahpu spits into her hand and tells her his son is like his spittle.",
+          "evidence": {
+            "title": "Christenson, Popol Vuh (Mesoweb electronic edition)",
+            "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "separation-and-reunion",
+          "reason": "Only weak support (honoring their father's skull)."
+        },
+        {
+          "motif": "memory-and-forgetting",
+          "reason": "Only weak support (the lords' names are learned and their father's name is not to be forgotten)."
+        },
+        {
+          "motif": "love-and-duty",
+          "reason": "Filial duty appears in the twins' speeches, but the motif's duty-versus-love sense is not shown."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: Aladdin (ATU 561, provenance)", "url": "https://en.wikipedia.org/wiki/Aladdin"},
-        {"title": "ArabLit: translation of Diyab's memoir (provenance debate)", "url": "https://arablit.org/2019/05/27/translation-of-aladdin-tellers-memoir-forthcoming-2020/"}
+        {
+          "title": "Christenson, Popol Vuh (Mesoweb electronic edition of the 2003 University of Oklahoma Press translation)",
+          "url": "https://www.mesoweb.com/publications/Christenson/PopolVuh.pdf"
+        },
+        {
+          "title": "Wikipedia: Popol Vuh",
+          "url": "https://en.wikipedia.org/wiki/Popol_Vuh"
+        }
       ],
-      "verifyBeforeUse": ["Read Galland or Seale's translation", "Present Diyab's credit accurately and neutrally"], "verified": false
+      "sensitivity": "A K'iche' Maya sacred text that remains meaningful to living K'iche' people. Christenson is an outside scholar who worked with K'iche' collaborators. Do not call the lords of Xibalba 'demons'; use 'K'iche'' and 'Maya' spellings and prefer K'iche' sources.",
+      "verifyBeforeUse": [
+        "House names and order differ between translations; cite one",
+        "The sun and moon ending is in Christenson; check Tedlock, and any Venus identification, which was not found",
+        "Ximenez's copy is dated 1701-1704 (Christenson) or c. 1701 (Wikipedia); pick one"
+      ],
+      "verified": false,
+      "originalTitle": "Popol Vuh (K'iche')",
+      "kind": "Maya sacred narrative"
     },
     {
-      "id": "taketori", "title": "The Tale of the Bamboo Cutter", "region": "Japan", "tradition": "Japanese monogatari",
-      "lat": 35.0, "lon": 135.77, "atuType": null, "atuNote": "No ATU number found in retrieved sources",
-      "earliestRecordedDate": "late 9th - early 10th century CE", "dateSource": "Wikipedia: Tale of the Bamboo Cutter",
-      "dateCaveat": "Exact date unknown; oldest surviving manuscript is dated 1592",
-      "form": "literary",
-      "summary": "A bamboo cutter finds a baby in a glowing bamboo stalk and raises her as Kaguya-hime. When five suitors seek her hand, she sets each an impossible task. All fail, she refuses even the emperor, and she is finally revealed to be from the Moon and returns there.",
-      "motifs": ["impossible-tasks", "unusual-birth"],
+      "id": "fisherman-and-the-jinni",
+      "title": "The Fisherman and the Jinni",
+      "region": "Middle East (Arabian Nights tradition)",
+      "tradition": "Arabian Nights (Thousand and One Nights) frame-tale cycle, Syrian recension",
+      "lat": 33.3152,
+      "lon": 44.3661,
+      "coordsNote": "The text names no real home for the fisherman, only a seashore, a mountain tarn and an unnamed city. This is a display point for the Nights tradition (Baghdad), not the tale's setting or origin.",
+      "atuType": "331 (per Wikipedia citing the Arabian Nights Encyclopedia; verify)",
+      "atuNote": "English Wikipedia gives ATU 331 'The Spirit in the Bottle'; the primary reference was not opened.",
+      "earliestRecordedDate": "by the 14th-15th century CE (Galland manuscript, BnF arabe 3609-3611)",
+      "dateSource": "The tale is in the contents of the Galland (Syrian) manuscript, per a list of its contents and Wikipedia; dating is disputed: Zotenberg and Mahdi say 14th century, Grotzfeld argues it was not copied before about 1450",
+      "dateCaveat": "The earliest surviving manuscript record of the tale, not its origin. The oldest Nights witness overall is a 9th-century fragment, which is not this tale.",
+      "form": "literary (manuscript tradition)",
+      "summary": "Following Burton's translation: a poor old fisherman hauls up a copper jar sealed with Solomon's seal. A jinni who has sworn to kill whoever frees him comes out, and the fisherman tricks him back into the jar by doubting that he could fit. The jinni swears a covenant and leads him to a tarn with four coloured fish, which earn the fisherman 400 dinars from the sultan and begin the story of an enchanted prince.",
+      "motifs": [
+        "supernatural-assistance",
+        "trickster",
+        "transformation",
+        "reversal-of-fortune"
+      ],
       "motifEntries": [
-        {"motif": "impossible-tasks", "howItAppears": "Kaguya-hime assigns five suitors tasks that cannot be fulfilled, such as finding the Buddha's stone begging bowl."},
-        {"motif": "unusual-birth", "howItAppears": "She is found as a baby inside a glowing bamboo stalk and is later revealed to be from the Moon."}
+        {
+          "motif": "supernatural-assistance",
+          "howItAppears": "After being freed, the jinni leads the fisherman to a tarn where he catches four coloured fish that earn him payment.",
+          "evidence": {
+            "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+            "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+          }
+        },
+        {
+          "motif": "trickster",
+          "howItAppears": "The fisherman asks how the jinni could fit in so small a vessel, and when the jinni goes back into the jar he seals it again.",
+          "evidence": {
+            "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+            "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+          }
+        },
+        {
+          "motif": "transformation",
+          "howItAppears": "The jinni turns to vapor to enter the jar, and the enchanted prince is found half man and half stone.",
+          "evidence": {
+            "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+            "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+          }
+        },
+        {
+          "motif": "reversal-of-fortune",
+          "howItAppears": "DRAFT, the later reward is in Lang's summary only: the poor fisherman, who had been hauling up junk, receives 400 dinars from the sultan for the fish.",
+          "evidence": {
+            "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+            "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+          }
+        }
+      ],
+      "droppedMotifs": [
+        {
+          "motif": "unjust-treatment",
+          "reason": "Only the nested Duban story (a physician killed by the king he cured) fits, and it is confirmed only in Lang's summary."
+        },
+        {
+          "motif": "separation-and-reunion",
+          "reason": "The restoration of the prince and his people appears only in Lang's summary and is not a clear reunion."
+        }
       ],
       "sources": [
-        {"title": "Wikipedia: The Tale of the Bamboo Cutter", "url": "https://en.wikipedia.org/wiki/The_Tale_of_the_Bamboo_Cutter"}
+        {
+          "title": "Burton, The Fisherman and the Jinni (sacred-texts mirror)",
+          "url": "https://neonvagabond.xyz/mirrors/sacred-texts/neu/burt1k1/tale02.htm"
+        },
+        {
+          "title": "Lang, Arabian Nights Entertainments (Gutenberg #128)",
+          "url": "https://www.gutenberg.org/files/128/128-h/128-h.htm"
+        },
+        {
+          "title": "Journal of the 1001 Nights: The Galland Manuscript",
+          "url": "http://journalofthenights.blogspot.com/2010/12/galland-manuscript.html"
+        },
+        {
+          "title": "Grotzfeld, The Age of the Galland Manuscript (Lancaster)",
+          "url": "https://www.lancaster.ac.uk/jais/volume/docs/vol1/V1_2_Grotzfeld.htm"
+        },
+        {
+          "title": "Wikipedia: The Fisherman and the Jinni",
+          "url": "https://en.wikipedia.org/wiki/The_Fisherman_and_the_Jinni"
+        }
       ],
-      "verifyBeforeUse": ["Confirm in a scholarly translation (Keene or similar)", "Check whether a Japanese tale-type index assigns a number"], "verified": false
+      "sensitivity": "Burton (1885) carries Victorian Orientalist framing and archaic terms; Lang is a retelling of Galland's French, so names change. Use 'jinni' and note the variants (Ifrit, demon). Burton's jinni is imprisoned for refusing 'the True Faith', a religious frame to handle carefully.",
+      "verifyBeforeUse": [
+        "Confirm ATU 331 in Marzolph and van Leeuwen's Arabian Nights Encyclopedia, or leave it as unverified",
+        "Confirm the tale's place in the Galland manuscript contents (seen only through a blog's list of the Haddawy/Mahdi contents and Wikipedia)",
+        "The Burton excerpt read ended mid-tale; read the rest of Burton or Lane for the prince's story and the fisherman's final reward",
+        "The tale's geography: no real city is named, so no origin is claimed"
+      ],
+      "verified": false,
+      "originalTitle": "The Story of the Fisherman and the Demon (Haddawy/Mahdi title)",
+      "kind": "Arabian Nights tale"
     }
   ]
 }

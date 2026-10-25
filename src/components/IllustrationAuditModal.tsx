@@ -37,7 +37,7 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/kongjwi.jpg',
     fileExists: true,
     type: 'Real Masterpiece',
-    recommendedPrompt: 'Traditional Korean fairytale illustration of Kongjwi with silk shoe and black ox...'
+    recommendedPrompt: 'Traditional Korean fairytale illustration of Kongjwi with a lost shoe, a cow and a toad'
   },
   {
     storyId: 'yexian',
@@ -46,7 +46,7 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/yexian.jpg',
     fileExists: true,
     type: 'Real Masterpiece',
-    recommendedPrompt: 'Tang Dynasty illuminated manuscript of Ye Xian beside lotus pond feeding radiant spirit carp...'
+    recommendedPrompt: 'Tang dynasty manuscript-style illustration of Ye Xian beside a pond with a fish and a golden shoe'
   },
   {
     storyId: 'shakuntala',
@@ -64,16 +64,16 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/vasilisa.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Illuminated fairytale illustration of Vasilisa holding glowing skull lantern in dark birch forest, Ivan Bilibin style'
+    recommendedPrompt: 'Illuminated fairytale illustration of Vasilisa holding a glowing skull in a dark forest, with a doll'
   },
   {
     storyId: 'anansi',
-    title: 'Anansi and the Box of Stories',
+    title: 'How the Sky-god’s Stories Became Spider-stories',
     country: 'Ghana',
     path: '/assets/images/stories/anansi.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Rich West African folklore illustration of Anansi spinning golden web threads beneath the Golden Stool of Nyame'
+    recommendedPrompt: 'West African folklore illustration of Ananse the spider beneath the Sky-god’s sky, with a python, a leopard, a fairy and hornets'
   },
   {
     storyId: 'momotaro',
@@ -82,7 +82,7 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/momotaro.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Edo woodblock-inspired fairytale illustration of Momotaro in samurai armor with loyal dog, monkey, and pheasant'
+    recommendedPrompt: 'Edo woodblock-inspired fairytale illustration of Momotaro with a dog, a monkey and a pheasant'
   },
   {
     storyId: 'golden-crab',
@@ -91,52 +91,52 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/golden-crab.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Mythological Mediterranean fairytale illustration of enchanted prince as golden crab casting off crustacean shell'
+    recommendedPrompt: 'Fairytale illustration of an enchanted golden crab on the shore with a golden rod'
   },
   {
     storyId: 'urashima-taro',
-    title: 'Urashima Taro and the Dragon Palace',
+    title: 'Urashima Taro',
     country: 'Japan',
     path: '/assets/images/stories/urashima-taro.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Underwater Dragon Palace of Ryugu-jo with Princess Otohime presenting glowing lacquered Tamatebako box'
+    recommendedPrompt: 'A fisherman and a turtle at the edge of the sea, with a box that must not be opened'
   },
   {
     storyId: 'sedna',
-    title: 'Sedna, Mistress of the Ocean Deep',
-    country: 'Canada / Greenland',
+    title: 'Sedna',
+    country: 'Inuit Nunangat / Greenland',
     path: '/assets/images/stories/sedna.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Inuit cosmological legend of Sedna submerged beneath Arctic pack ice with marine creatures swimming in hair'
+    recommendedPrompt: 'Inuit sea-mother story: Sedna beneath Arctic pack ice with seals and whales'
   },
   {
     storyId: 'rhodopis',
-    title: 'Rhodopis and the Rose-Red Slipper',
+    title: 'Rhodopis and the Eagle-Stolen Sandal',
     country: 'Egypt',
     path: '/assets/images/stories/rhodopis.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Ancient Egyptian Greco-Egyptian illustration of royal eagle of Horus carrying rose-red gilded sandal to Pharaoh'
+    recommendedPrompt: 'Ancient Greco-Egyptian illustration of an eagle carrying a sandal to a king at Memphis'
   },
   {
     storyId: 'one-hand-girl',
-    title: 'The Maiden Without Hands',
-    country: 'Tanzania',
+    title: 'Blessing or Property (Swahili one-handed-girl tale)',
+    country: 'Zanzibar / Swahili coast',
     path: '/assets/images/stories/one-hand-girl.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'East African folklore illustration of Binti Ali sheltered inside hollow sacred baobab tree with silver signet amulet'
+    recommendedPrompt: 'East African folklore illustration of a woman and a snake in a forest, with a ring that provides a house'
   },
   {
-    storyId: 'mufaro',
-    title: 'Mufaro’s Beautiful Daughters',
-    country: 'Zimbabwe',
-    path: '/assets/images/stories/mufaro.jpg',
+    storyId: 'tam-cam',
+    title: 'The Story of Tam and Cam',
+    country: 'Vietnam',
+    path: '/assets/images/stories/tam-cam.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Great Zimbabwe stone citadel sunrise with Nyasha feeding sweet millet bread to friendly green garden serpent'
+    recommendedPrompt: 'Vietnamese folktale illustration of Tam on a stone bridge with a lost slipper and a fish'
   },
   {
     storyId: 'popol-vuh-twins',
@@ -145,16 +145,16 @@ export const AUDIT_DATA: StoryAssetStatus[] = [
     path: '/assets/images/stories/popol-vuh-twins.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'Ancient Highland Maya codex illustration of Hunahpu and Xbalanque with rubber ball and enchanted glowing torch'
+    recommendedPrompt: 'Highland Maya codex-style illustration of Hunahpu and Xbalanque playing the ball game against the lords of Xibalba'
   },
   {
-    storyId: 'baba-abdalla',
-    title: 'The Story of Blind Baba Abdalla',
-    country: 'Iraq',
-    path: '/assets/images/stories/baba-abdalla.jpg',
+    storyId: 'fisherman-and-the-jinni',
+    title: 'The Fisherman and the Jinni',
+    country: 'Middle East (Arabian Nights)',
+    path: '/assets/images/stories/fisherman-and-the-jinni.jpg',
     fileExists: false,
     type: 'Dedicated Slot',
-    recommendedPrompt: 'One Thousand and One Nights manuscript illustration of dervish holding enchanted ointment jar in Baghdad market'
+    recommendedPrompt: 'Arabian Nights manuscript-style illustration of a fisherman and a jinni rising from a sealed copper jar'
   }
 ];
 
@@ -324,7 +324,7 @@ export const IllustrationAuditModal: React.FC<IllustrationAuditModalProps> = ({ 
           </span>
           <button
             onClick={onClose}
-            className="px-5 py-1.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-xs transition-all cursor-pointer"
+            className="btn btn-gold"
           >
             Close Audit
           </button>

@@ -31,7 +31,7 @@ export const DestinationRevealModal: React.FC<DestinationRevealModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md pointer-events-auto select-none">
       <motion.div
-        className="relative w-full max-w-[680px] rounded-2xl bg-[#0E1726] border-2 border-[#D6B36B] p-6 sm:p-9 text-[#F1E5CC] shadow-[0_25px_80px_rgba(0,0,0,0.95)] overflow-hidden text-center"
+        className="relative w-full max-w-[680px] max-h-[94vh] overflow-y-auto rounded-2xl bg-[#0E1726] border-2 border-[#D6B36B] p-6 sm:p-9 text-[#F1E5CC] shadow-[0_25px_80px_rgba(0,0,0,0.95)] text-center"
         initial={{ scale: 0.92, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.92, opacity: 0, y: 20 }}
@@ -118,10 +118,39 @@ export const DestinationRevealModal: React.FC<DestinationRevealModalProps> = ({
             </div>
           </div>
 
+          {/* What the destination tale is about, so the player knows what they are travelling toward */}
+          {destinationStory.shortRetelling && (
+            <div className="w-full mb-5 p-4 rounded-xl bg-[#142033]/70 border border-[#D6B36B]/30 text-left">
+              <div className="text-[11px] uppercase font-sans font-semibold text-[#D6B36B] tracking-wider">
+                About {destinationStory.title}
+              </div>
+              <p className="text-sm font-serif text-[#F1E5CC]/90 mt-1.5 leading-relaxed">
+                {destinationStory.shortRetelling}
+              </p>
+            </div>
+          )}
+
+          {isSolo && (
+            <ol className="w-full mb-6 grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left list-none p-0">
+              {[
+                ['1', 'Read', 'Open a tale and read it.'],
+                ['2', 'Choose a thread', 'Pick one motif from the tale to follow.'],
+                ['3', 'Follow a beacon', 'Click a glowing beacon to jump to a related tale. Repeat.']
+              ].map(([n, title, body]) => (
+                <li key={n} className="p-3 rounded-lg bg-[#142033]/70 border border-[#D6B36B]/30">
+                  <div className="text-[11px] uppercase font-sans font-semibold text-[#D6B36B] tracking-wider">
+                    Step {n} · {title}
+                  </div>
+                  <p className="text-xs font-sans text-[#F1E5CC]/85 mt-1 leading-snug">{body}</p>
+                </li>
+              ))}
+            </ol>
+          )}
+
           {/* Primary CTA */}
           <button
             onClick={handleBegin}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#D6B36B] hover:bg-[#E7CCA0] text-[#0B1424] font-serif font-bold text-base sm:text-lg transition-all shadow-[0_0_25px_rgba(214,179,107,0.45)] flex items-center justify-center gap-2.5 cursor-pointer hover:scale-[1.02]"
+            className="btn btn-gold"
           >
             <span>Begin Your Journey</span>
             <ArrowRight className="w-5 h-5" />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StoryId } from '../types';
+import { totalThreads } from '../data/comparisons';
 import { STORIES } from '../data/stories';
 import { ChevronDown, ChevronUp, Sparkles, BookMarked, RotateCcw, HelpCircle } from 'lucide-react';
 import { playGentleClick } from '../utils/audio';
@@ -95,7 +96,7 @@ export const BottomDock: React.FC<BottomDockProps> = ({
                 <Sparkles className="w-3.5 h-3.5 text-[#D6B36B]" />
                 <span>
                   <strong className="text-[#D6B36B] font-mono tabular-nums">
-                    {connectionsCount} / 3
+                    {connectionsCount} / {totalThreads()}
                   </strong>{' '}
                   Threads Woven
                 </span>

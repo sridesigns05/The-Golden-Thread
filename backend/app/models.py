@@ -22,6 +22,9 @@ class ThompsonRef(BaseModel):
 class Motif(BaseModel):
     id: str
     label: str
+    name: str  # short display name
+    description: str  # one-line definition of the pattern
+    significance: str  # how the pattern varies between tales (no claims about any single tale)
     thompsonIds: list[str]
     thompson: list[ThompsonRef]
     thompsonNote: str
@@ -45,6 +48,8 @@ class StorySummary(BaseModel):
     tier: Literal["curated"] = "curated"
     id: str
     title: str
+    originalTitle: str | None
+    kind: str  # short label such as "Literary fairy tale" or "Oral folktale"
     region: str
     culturalTradition: str
     lat: float
@@ -211,3 +216,24 @@ class Comparison(BaseModel):
     inB: MotifEntry | TypeBasis
     difference: Difference | None  # None when no draft line exists, an entry needs a source, or a side is a library tale
     caveats: dict
+
+
+class PairComparison(BaseModel):
+    """A comparison without the repeated story and entry text; the frontend looks those up by id."""
+    a: str
+    b: str
+    motif: str
+    connectionType: str  # cinderella-parallel | same-tale-type | thematic-parallel
+    typeConfirmed: bool
+    sharedMotifs: list[str]
+    difference: Difference | None
+
+
+class Bootstrap(BaseModel):
+    """Everything the frontend needs at startup, in one response."""
+    meta: dict
+    library: dict
+    motifs: list[Motif]
+    stories: list[StoryDetail]
+    comparisons: list[PairComparison]  # every pair of curated stories, for every motif they share
+    related: dict[str, dict[str, list[str]]]  # story id -> motif id -> ranked related story ids (curated only)

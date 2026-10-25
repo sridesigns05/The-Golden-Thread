@@ -1,6 +1,6 @@
 {
   "_note": "Library tales that duplicate a curated story, dropped from the library list. Key: '<ATU id>|<exact tale_title in the trilogy aft table>'. Value: the curated story id. Check each by hand.",
   "links": {
-    "510A|Cinderella; or, The Little Glass Slipper": "cendrillon"
+    "510A|Cinderella; or, The Little Glass Slipper": "cinderella"
   }
 }

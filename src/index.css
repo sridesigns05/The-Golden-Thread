@@ -47,3 +47,56 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(214, 179, 107, 0.6);
 }
+
+/* Text hierarchy: balanced headings, no one-word last lines in body copy. */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+p, li, blockquote {
+  text-wrap: pretty;
+}
+
+/* One size for every text action button. Variants only change colour. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  height: 2.75rem;
+  min-width: 10.5rem;
+  max-width: 100%;
+  padding: 0 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn:focus-visible {
+  outline: 2px solid #8a6726;
+  outline-offset: 2px;
+}
+.btn-gold { background: #d6b36b; color: #0b1424; }
+.btn-gold:hover:not(:disabled) { background: #e7cca0; }
+.btn-dark { background: #142033; color: #fff7e8; border-color: rgba(214, 179, 107, 0.5); }
+.btn-dark:hover:not(:disabled) { background: #1c2c47; }
+.btn-forest { background: #19372f; color: #fff7e8; }
+.btn-forest:hover:not(:disabled) { background: #234a3f; }
+/* nav buttons carry story titles */
+.btn-ghost { max-width: 14rem; background: transparent; color: #8a6726; border-color: rgba(138, 103, 38, 0.5); }
+.btn-ghost:hover:not(:disabled) { background: rgba(214, 179, 107, 0.2); color: #19372f; }
+.btn-soft { background: rgba(214, 179, 107, 0.2); color: #d6b36b; border-color: rgba(214, 179, 107, 0.5); }
+.btn-soft:hover:not(:disabled) { background: rgba(214, 179, 107, 0.4); color: #fff7e8; }

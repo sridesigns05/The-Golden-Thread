@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { StoryData, MotifId, StoryId } from '../types';
 import { STORIES } from '../data/stories';
 import { MOTIFS_CATALOG } from '../data/motifs';
+import { MAX_LENS_MOTIFS } from '../data/comparisons';
 import { StoryIllustration } from './StoryIllustrations';
 import { X, ChevronLeft, ChevronRight, Sparkles, Check, ChevronDown, ChevronUp, Compass } from 'lucide-react';
 import { playGentleClick, playParchmentRustle, playGoldenThreadResonance } from '../utils/audio';
@@ -28,19 +29,20 @@ const MOTIF_GLYPHS: Record<MotifId, string> = {
   'unjust-treatment': '◈',
   'supernatural-assistance': '✦',
   'lost-object-recognition': '❖',
+  'impossible-tasks': '⚒',
+  'trickster': '☙',
   'transformation': '✧',
-  'reversal-of-fortune': '⚖',
+  'death-and-rebirth': '☥',
+  'unusual-birth': '☆',
   'separation-and-reunion': '⚭',
-  'memory-and-forgetting': '⏳',
-  'love-and-duty': '⚔'
+  'reversal-of-fortune': '⚖',
+  'memory-and-forgetting': '⏳'
 };
 
 function getChipsForStory(story: StoryData): MotifChipInfo[] {
-  return story.motifs.slice(0, 3).map((mId) => {
+  return story.motifs.slice(0, MAX_LENS_MOTIFS).map((mId) => {
     const meta = MOTIFS_CATALOG[mId];
-    const manifestation = story.motifManifestations[mId] || meta?.shortDescription || '';
-    const shortSubtitle =
-      manifestation.split('. ')[0]?.slice(0, 52).trim() || meta?.shortDescription || 'Narrative thread';
+    const shortSubtitle = meta?.shortDescription || 'Narrative thread';
 
     return {
       id: mId,
@@ -127,6 +129,9 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
               <h2 className="text-2xl sm:text-3xl md:text-[38px] font-serif font-bold text-[#19372F] leading-tight">
                 {story.title}
               </h2>
+              <div className="mt-1 flex flex-wrap items-center gap-2 text-[11px] font-sans text-[#19372F]/75">
+                {story.earliestRecordedDate && <span>Earliest record: {story.earliestRecordedDate} (not the origin)</span>}
+              </div>
 
               {/* Shakuntala Distinction Banner: Broader thematic parallel */}
               {isShakuntala && (
@@ -149,7 +154,7 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
             </div>
 
             {/* Discovered clue / caption */}
-            <div className="text-xs sm:text-[14px] font-sans text-[#19372F]/80 italic truncate mt-1">
+            <div className="text-xs sm:text-[14px] font-sans text-[#19372F]/80 italic mt-1 leading-snug">
               {discoveredTokenText ? (
                 <span className="text-[#8A6726] font-semibold not-italic">{discoveredTokenText}</span>
               ) : (
@@ -183,12 +188,15 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
 
             {/* Story Text: Short Retelling with Drop Cap (18-20px font, line-height 1.6) */}
             <div className="flex-1 pr-1 overflow-y-auto">
-              <div className="text-base sm:text-lg md:text-[19px] font-serif text-[#19372F] leading-[1.62] text-justify">
+              <div className="text-base sm:text-lg md:text-[19px] font-serif text-[#19372F] leading-[1.62] text-left">
                 <span className="float-left text-4xl sm:text-5xl leading-none font-bold text-[#8A6726] pr-2.5 font-serif">
                   {story.shortRetelling.charAt(0)}
                 </span>
                 {story.shortRetelling.slice(1)}
               </div>
+              {story.sensitivity && (
+                <p className="mt-3 text-xs font-sans italic text-[#19372F]/70 leading-relaxed">{story.sensitivity}</p>
+              )}
 
               {/* Expandable Full Folklore Narrative */}
               <div className="mt-4">
@@ -237,7 +245,7 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
                       <button
                         key={chip.id}
                         onClick={() => handleSelectMotif(chip.id)}
-                        className={`w-full text-left p-2.5 sm:p-3 rounded-xl border transition-all duration-200 cursor-pointer flex items-center justify-between group focus-visible:ring-2 focus-visible:ring-[#8A6726] ${
+                        className={`w-full text-left p-2.5 sm:p-3 rounded-xl border transition-all duration-200 cursor-pointer flex items-center justify-between gap-3 group focus-visible:ring-2 focus-visible:ring-[#8A6726] ${
                           isSelected
                             ? 'bg-[#E3C67C] border-[#8A6726] shadow-[0_3px_12px_rgba(138,103,38,0.3)] text-[#19372F]'
                             : 'bg-[#F2E7CF] hover:bg-[#EBDDC3] border-[#D6B36B]/60 text-[#19372F]'
@@ -252,13 +260,13 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
                               <span>{chip.title}</span>
                               {isSelected && <Check className="w-3.5 h-3.5 text-[#8A6726]" />}
                             </div>
-                            <div className="text-xs sm:text-[13px] font-sans text-[#19372F]/80 leading-tight truncate max-w-[280px] sm:max-w-[340px] mt-0.5">
+                            <div className="text-xs sm:text-[13px] font-sans text-[#19372F]/80 leading-snug mt-0.5">
                               {chip.subtitle}
                             </div>
                           </div>
                         </div>
                         <span className="text-xs sm:text-sm font-sans font-semibold text-[#8A6726] group-hover:translate-x-1 transition-transform flex items-center gap-1 shrink-0 ml-2">
-                          Weave Thread →
+                          Follow →
                         </span>
                       </button>
                     );
@@ -271,7 +279,7 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
             <div className="mt-4 pt-3 border-t border-[#D6B36B]/30 flex items-center justify-between text-xs sm:text-sm text-[#8A6726]">
               <button
                 onClick={() => handleFlipPage(prevStory)}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded hover:bg-[#D6B36B]/20 transition-all font-serif font-semibold cursor-pointer"
+                className="btn btn-ghost"
               >
                 <ChevronLeft className="w-4 h-4" />
                 <span className="hidden sm:inline">{prevStory.title}</span>
@@ -280,7 +288,7 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
 
               <button
                 onClick={onMinimizeToGlobe}
-                className="px-3.5 py-1.5 rounded-full bg-[#19372F] text-[#F1E5CC] hover:bg-[#22483D] transition-all text-xs sm:text-sm font-sans font-semibold flex items-center gap-1.5 cursor-pointer shadow-sm"
+                className="btn btn-forest"
               >
                 <Compass className="w-3.5 h-3.5 text-[#D6B36B]" />
                 <span>View on Globe</span>
@@ -288,7 +296,7 @@ export const StoryBookSpread: React.FC<StoryBookSpreadProps> = ({
 
               <button
                 onClick={() => handleFlipPage(nextStory)}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded hover:bg-[#D6B36B]/20 transition-all font-serif font-semibold cursor-pointer"
+                className="btn btn-ghost"
               >
                 <span className="hidden sm:inline">{nextStory.title}</span>
                 <span className="sm:hidden">Next</span>

@@ -56,6 +56,9 @@ export const StoryModal: React.FC<StoryModalProps> = ({
         <div className="text-xs font-serif italic text-[#19372F]/80 mt-0.5">
           {story.originalOrAlternateTitle}
         </div>
+        <div className="mt-1.5 flex flex-wrap items-center gap-2 text-[11px] font-sans text-[#19372F]/75">
+          {story.earliestRecordedDate && <span>Earliest record: {story.earliestRecordedDate} (not the origin)</span>}
+        </div>
 
         {/* Tab Navigation Controls (Interactive Filter Segmented Buttons) */}
         <div className="flex items-center gap-1 mt-4 p-1 bg-[#DBCBB0]/60 rounded-lg">
@@ -131,8 +134,9 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
             {/* Distinctive Feature Banner */}
             <div className="p-3.5 rounded-lg bg-[#E2D4B7]/60 border border-[#D6B36B]/40 text-xs font-sans text-[#19372F]/85">
-              <span className="font-semibold text-[#19372F] block mb-1">Cultural Distinction:</span>
+              <span className="font-semibold text-[#19372F] block mb-1">About this record:</span>
               {story.distinctiveFeatures}
+              {story.sensitivity && <p className="mt-2 italic text-[#19372F]/75">{story.sensitivity}</p>}
             </div>
 
             {/* The Motif Guesser Challenge */}
@@ -182,7 +186,13 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             {story.sources.map((src, i) => (
               <div key={i} className="p-4 rounded-lg bg-[#F9F3E6] border border-[#D6B36B]/40 space-y-2">
                 <div className="font-serif font-bold text-base text-[#19372F]">
-                  {src.title}
+                  {src.url ? (
+                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline decoration-[#D6B36B]/60 hover:text-[#8A6726]">
+                      {src.title}
+                    </a>
+                  ) : (
+                    src.title
+                  )}
                 </div>
                 <div className="text-xs font-sans text-[#19372F]/75 space-y-1">
                   <div>
