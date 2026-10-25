@@ -1,0 +1,10 @@
+{
+  "_note": "DRAFT difference lines. Each is written only from the two stories' stored howItAppears text for that motif; nothing outside those fields. All unverified. Pairs where either stored entry is marked NEEDS SOURCE (e.g. Kongjwi's lost-object entry) get no line. Keys are the sorted story ids plus the motif.",
+  "differences": {
+    "cendrillon|ye-xian|lost-object-recognition": "The object differs: a glass slipper in the Cendrillon draft, a golden one in Ye Xian. In Ye Xian the slipper first reaches a king, who then has every maiden try it.",
+    "cendrillon|tam-cam|lost-object-recognition": "Who holds the slipper differs: in Tam and Cam it reaches a sovereign, who says he will marry the girl it fits; in the Cendrillon draft the prince finds her by trying the glass slipper.",
+    "tam-cam|ye-xian|lost-object-recognition": "The stored Ye Xian entry places the loss at a festival, and the king has every maiden try the golden slipper; the stored Tam and Cam entry has the slipper reach a sovereign who says he will marry the girl it fits.",
+    "cendrillon|shakuntala|lost-object-recognition": "In the Cendrillon draft the prince finds her by trying the glass slipper she left behind; Shakuntala's signet ring instead lifts a curse once the king sees it again.",
+    "shakuntala|ye-xian|lost-object-recognition": "Ye Xian's golden slipper reaches a king who has every maiden try it; Shakuntala's signet ring lifts a curse once the king sees it again (Kalidasa's version only)."
+  }
+}

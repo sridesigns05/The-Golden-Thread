@@ -1,0 +1,255 @@
+[
+  {
+    "id": "cinderella",
+    "title": "Cinderella",
+    "originalOrAlternateTitle": "Cendrillon ou la petite pantoufle de verre",
+    "country": "France",
+    "culturalTradition": "French Literary Fairy Tale (Late 17th Century)",
+    "coordinates": {
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "label": "Paris, France"
+    },
+    "summary": "Charles Perrault’s definitive 1697 courtly retelling of an oppressed daughter whose virtue, aided by a fairy godmother and a lost glass slipper, guides her from the hearth to the royal palace.",
+    "fullRetelling": [
+      "Following her father’s remarriage, a gentle young woman is relegated to the scullery by her vain stepmother and haughty stepsisters, sleeping near the fireplace among the ashes—earning the mocking sobriquet Cendrillon.",
+      "When the King’s son announces a grand royal ball, the sisters depart in splendor while Cinderella weeps in solitude. Her fairy godmother appears, miraculously transfiguring a pumpkin into a gilded carriage, mice into dappled steeds, a rat into a coachman, and her threadbare rags into a gown of cloth of gold and silver, completed with delicate glass slippers (pantoufles de verre).",
+      "Warned to depart before the stroke of midnight, Cinderella enchants the prince. On the second evening, fleeing as the clock strikes twelve, she inadvertently leaves behind one of her glass slippers upon the palace stairway.",
+      "The prince proclaims he will marry whoever can wear the slipper without force. After court ladies and stepsisters fail, Cinderella effortlessly slides her foot into the slipper and produces its mate, forgiving her humbled sisters and ascending to the throne."
+    ],
+    "keyElements": [
+      "A mistreated, virtuous young woman degraded to domestic ashes",
+      "Cruel stepmother and arrogant stepsisters",
+      "Fairy godmother as a magical patroness",
+      "Marvelous courtly transformation of common objects",
+      "The royal ball and strict midnight curfew",
+      "The lost glass slipper (pantoufle de verre)",
+      "Recognition, courtly clemency, and royal marriage"
+    ],
+    "motifs": [
+      "unjust-treatment",
+      "supernatural-assistance",
+      "lost-object-recognition",
+      "transformation",
+      "reversal-of-fortune"
+    ],
+    "narrativeTraditionType": "Cinderella-Type Folktale",
+    "sources": [
+      {
+        "title": "Histoires ou contes du temps passé, avec des moralités",
+        "authorOrAttribution": "Charles Perrault",
+        "dateOrEra": "1697 (Paris: Claude Barbin)",
+        "context": "Written in the sophisticated literary salon culture of Louis XIV’s France, moralizing oral folklore into high courtly prose."
+      }
+    ],
+    "motifManifestations": {
+      "unjust-treatment": "Forced into the kitchen ashes and servant labor by her haughty stepfamily, who deny her nobility and basic comfort.",
+      "supernatural-assistance": "A fairy godmother arrives spontaneously to comfort her tears, wielding a magic wand to conjure royal luxury.",
+      "lost-object-recognition": "The unyielding glass slipper—which cannot stretch or deceive—identifies her foot uniquely among all women of the realm.",
+      "transformation": "A hollowed pumpkin becomes a gold coach, garden creatures become footmen, and ash-dusted rags turn into woven silver and jewels.",
+      "reversal-of-fortune": "Elevated from lowest scullery maid to royal bride, while granting magnanimous pardons to her humbled stepsisters.",
+      "separation-and-reunion": "",
+      "memory-and-forgetting": "",
+      "love-and-duty": ""
+    },
+    "distinctiveFeatures": "Perrault introduced the specific motifs of the fairy godmother, the pumpkin carriage, and the famous glass slippers (pantoufle de verre), establishing a courtly, moralized tone tailored for Versailles society.",
+    "quote": "Good graces are the true gift of the fairies; without them nothing is possible, with them one can accomplish all things.",
+    "guessOptions": {
+      "correct": "lost-object-recognition",
+      "decoys": [
+        "memory-and-forgetting",
+        "love-and-duty"
+      ]
+    }
+  },
+  {
+    "id": "kongjwi",
+    "title": "Kongjwi and Patjwi",
+    "originalOrAlternateTitle": "콩쥐팥쥐전 (Kongjwi Patjwi Jeon)",
+    "country": "South Korea",
+    "culturalTradition": "Korean Joseon-Era Folktale (Oral Tradition)",
+    "coordinates": {
+      "lat": 36.5,
+      "lng": 127.8,
+      "label": "Korean Peninsula"
+    },
+    "summary": "A beloved traditional Korean folktale wherein the gentle Kongjwi overcomes impossible household trials through the solidarity of animals and a heavenly maiden, leading to recognition through a lost silk shoe.",
+    "fullRetelling": [
+      "Following the death of Kongjwi’s mother, her father remarries a cruel woman named Bae-ssi, who dotes entirely upon her own biological daughter, Patjwi, while subjecting Kongjwi to endless labor, harsh scoldings, and starvation.",
+      "The stepmother repeatedly imposes impossible tasks: plowing a rocky, sun-baked field with a fragile wooden hoe, filling a cracked clay water jar, and hulling large sacks of unhusked grain. In each ordeal, benevolent supernatural forces intervene: a heavenly black cow tills the field, a giant toad seals the jar’s crack with its back, and a flock of sparrows threshes the rice.",
+      "When the village magistrate holds a festive banquet, the stepfamily leaves Kongjwi behind with impossible chores. A heavenly maiden (seonnyeo) descends, granting her exquisite traditional silk garments and embroidered shoes (kkotshin).",
+      "Hurrying to the festival, Kongjwi drops one of her embroidered silk shoes in a mountain stream during the magistrate’s procession. The magistrate discovers the exquisite shoe, searches the district, and finds that it belongs exclusively to Kongjwi, taking her as his wife."
+    ],
+    "keyElements": [
+      "Kongjwi mistreated by stepmother (Bae-ssi) and stepsister (Patjwi)",
+      "Impossible agricultural and domestic chores (rocky field, leaky jar, rice husking)",
+      "Supernatural intervention from animals (black cow, toad, flock of sparrows)",
+      "A heavenly maiden (seonnyeo) bestowing traditional silk hanbok and embroidered shoes",
+      "Lost silk shoe dropped into a stream near the magistrate’s entourage",
+      "Recognition by the magistrate and dramatic elevation",
+      "Complex traditional variants containing post-marital betrayal, water drowning, and lotus resurrection"
+    ],
+    "motifs": [
+      "unjust-treatment",
+      "supernatural-assistance",
+      "lost-object-recognition",
+      "reversal-of-fortune"
+    ],
+    "narrativeTraditionType": "Cinderella-Type Folktale",
+    "sources": [
+      {
+        "title": "Traditional Oral Korean Folktales & Joseon-era Woodblock Editions",
+        "authorOrAttribution": "Transmitted orally; recorded in early Joseon hangul manuscripts",
+        "dateOrEra": "Documented widely in Joseon dynasty (1392–1910)",
+        "context": "Rooted in Korean agrarian community values, animistic spirit cooperation, filial piety (hyo), and karmic retribution."
+      }
+    ],
+    "motifManifestations": {
+      "unjust-treatment": "Assigned impossible agricultural trials with broken tools—such as plowing granite dirt with a wooden hoe—under threat of beating.",
+      "supernatural-assistance": "Helpful animals (a black cow, a clay-plugging toad, a flock of grain-cleaning sparrows) and a celestial maiden (seonnyeo) fulfill her chores.",
+      "lost-object-recognition": "A finely embroidered silk shoe (kkotshin) dropped in a rushing stream is retrieved by the magistrate, who seeks its delicate owner.",
+      "reversal-of-fortune": "The uncomplaining, virtuous Kongjwi is honored as the magistrate’s wife, while her tormentors face social shame and karmic justice.",
+      "transformation": "",
+      "separation-and-reunion": "",
+      "memory-and-forgetting": "",
+      "love-and-duty": ""
+    },
+    "distinctiveFeatures": "Unlike the French ball, the setting is rural Joseon Korea; assistance comes from agricultural animal spirits (ox, toad, birds) rather than courtly magic, and traditional uncut versions continue beyond the wedding with darker cautionary arcs.",
+    "quote": "Even the birds of the sky and creatures of the marsh recognize a heart free of malice.",
+    "guessOptions": {
+      "correct": "lost-object-recognition",
+      "decoys": [
+        "transformation",
+        "memory-and-forgetting"
+      ]
+    }
+  },
+  {
+    "id": "yexian",
+    "title": "Ye Xian",
+    "originalOrAlternateTitle": "葉限 (Yè Xiàn)",
+    "country": "Southern China",
+    "culturalTradition": "Tang Dynasty Text / Southern Chinese Indigenous Oral Tradition",
+    "coordinates": {
+      "lat": 23.1291,
+      "lng": 113.2644,
+      "label": "Southern China (Guangdong / Guangxi)"
+    },
+    "summary": "Recorded in the 9th-century Tang dynasty text Youyang Zazu, Ye Xian is one of the earliest known Cinderella-type tales, featuring a magical fish whose bones grant wishes, a festival, and a lost golden shoe.",
+    "fullRetelling": [
+      "In ancient southern China before the Qin dynasty, the clever and skilled Ye Xian loses both her parents and is raised by a malicious stepmother who forces her to gather firewood in perilous ravines and draw water from deep pools.",
+      "Ye Xian befriends a small fish with red fins and golden eyes, feeding it leftover rice as it grows massive in the pool. Jealous of this affection, the stepmother tricks the fish into surfacing, slaughters it, and feasts on its flesh, hiding its remains beneath a dung heap.",
+      "A mysterious elder with unbound hair descends from the sky, comforting Ye Xian and instructing her to exhume the fish’s bones. He reveals that the bones possess miraculous spiritual power and will fulfill any earnest need she asks of them.",
+      "During the annual Cave Festival (Tuo Han), where unmarried youths gather, Ye Xian requests a magnificent gown spun from kingfisher feathers and a pair of delicate golden shoes. Recognized by her stepsister, she flees in panic, dropping one tiny golden slipper onto the mountain road.",
+      "The shoe is sold to the ruler of the island kingdom of Tuohan. Captivated by its impossibly small, ethereal craftsmanship, the king tests it upon every woman in his realm; only Ye Xian’s foot slips in like a leaf on water. Unveiling the matching shoe and her radiant feathered mantle, she is welcomed as queen."
+    ],
+    "keyElements": [
+      "A skilled, intelligent young woman mistreated by her father’s second wife",
+      "A beloved spirit fish with red fins and golden eyes",
+      "Cruel stepmother murders and eats the fish",
+      "Ancestral/celestial old man instructs Ye Xian to revere the magical fish bones",
+      "The vibrant Cave Festival (Tuo Han) in Southern China",
+      "Lost golden shoe of extraordinary smallness and artistry",
+      "King of Tuohan seeks the owner; recognition and marriage"
+    ],
+    "motifs": [
+      "unjust-treatment",
+      "supernatural-assistance",
+      "lost-object-recognition",
+      "reversal-of-fortune"
+    ],
+    "narrativeTraditionType": "Cinderella-Type Folktale",
+    "sources": [
+      {
+        "title": "Youyang Zazu (Miscellaneous Morsels from Youyang, 酉陽雜俎)",
+        "authorOrAttribution": "Duan Chengshi (段成式)",
+        "dateOrEra": "c. 860 CE (Tang Dynasty)",
+        "context": "Transcribed by Duan Chengshi from Li Shiyuan, a servant belonging to indigenous southern minority peoples (likely Zhuang/Buyei predecessors) in Guangxi/Guangdong."
+      }
+    ],
+    "motifManifestations": {
+      "unjust-treatment": "Sent to chop wood on perilous cliffs and draw water from treacherous chasms in hopes she would tumble and perish.",
+      "supernatural-assistance": "The spirit of her slaughtered companion fish resides in its venerated bones, serving as an ancestral wish-granting relic.",
+      "lost-object-recognition": "A golden shoe (woven with gold thread, light as a feather) that fits no one in the realm until Ye Xian easily slips it onto her foot.",
+      "reversal-of-fortune": "Ye Xian becomes the queen of the Tuohan kingdom; the cruel stepmother and sister remain in the cave and are eventually struck by flying stones.",
+      "transformation": "",
+      "separation-and-reunion": "",
+      "memory-and-forgetting": "",
+      "love-and-duty": ""
+    },
+    "distinctiveFeatures": "Predating Perrault by over eight hundred years, Ye Xian’s helper is a sacred fish rather than a godmother, and her footwear is woven golden filigree rather than glass. Rooted in southern Chinese cave festival culture.",
+    "quote": "Though the fish was consumed, its sacred bones guarded the maiden who had wept for it.",
+    "guessOptions": {
+      "correct": "lost-object-recognition",
+      "decoys": [
+        "separation-and-reunion",
+        "love-and-duty"
+      ]
+    }
+  },
+  {
+    "id": "shakuntala",
+    "title": "Shakuntala and Dushyanta",
+    "originalOrAlternateTitle": "Abhijñānaśākuntalam (The Recognition of Shakuntala)",
+    "country": "India",
+    "culturalTradition": "Classical Sanskrit Drama (Adapting Mahabharata Epic)",
+    "coordinates": {
+      "lat": 20.5937,
+      "lng": 78.9629,
+      "label": "Ancient India (Kanva Hermitage / Hastinapura)"
+    },
+    "summary": "Kalidasa’s celebrated Sanskrit dramatic masterpiece depicting the fated romance between Shakuntala and King Dushyanta, severed by an ascetic’s curse of amnesia, and resolved when a lost royal signet ring is discovered inside a fish.",
+    "fullRetelling": [
+      "King Dushyanta of the Puru dynasty encounters the radiant Shakuntala, daughter of the sage Vishvamitra and celestial nymph Menaka, raised within the peaceful forest hermitage of Sage Kanva. The two fall deeply in love and consummate a gandharva marriage.",
+      "Called back to his royal duties in Hastinapura, Dushyanta leaves Shakuntala with a signet ring engraved with his royal name, pledging to send for her soon.",
+      "Lost in reverie of her beloved husband, Shakuntala inadvertently neglects hospitality to the temperamental sage Durvasa. Infuriated by the perceived slight, Durvasa curses her: \"The one of whom you dream to the exclusion of all else will remember you no more, like a madman forgetting the words spoken before.\" When Shakuntala’s companions plead, the sage relents slightly: the curse will break upon the presentation of a token of recognition.",
+      "Traveling pregnant to Dushyanta’s capital, Shakuntala stops at the sacred river ford of Shachitirtha. As she cups water to worship, the fateful signet ring slips from her finger and is swallowed by a Rohita carp.",
+      "At court, Dushyanta has completely forgotten their vows due to the curse. Unable to produce the promised ring, Shakuntala is disbelieved, humiliated, and cast out, vanishing in a flash of celestial light to the heavenly ashram of Sage Maricha.",
+      "Months later, a humble fisherman nets the carp and discovers the sparkling royal signet ring in its belly. Upon beholding the ring, Dushyanta’s memory bursts open in agonizing grief. After proving his valor in celestial war, Dushyanta visits the hermitage of Maricha, where he meets a fearless young boy wrestling lion cubs—his and Shakuntala’s son, Sarvadamana (Bharata)—bringing about a tearful, profound reconciliation."
+    ],
+    "keyElements": [
+      "Shakuntala raised in Kanva’s hermitage, forest daughter of nature",
+      "King Dushyanta falls in love; mutual vows and sacred gandharva marriage",
+      "The signet ring given as a pledge and token of royal recognition",
+      "Sage Durvasa’s curse of amnesia triggered by absorbed contemplation",
+      "Fateful loss of the signet ring into the sacred river Ganges and swallowing by a fish",
+      "Dushyanta’s tragic repudiation of Shakuntala in the royal assembly",
+      "Recovery of the token by a fisherman, flood of memory and profound remorse",
+      "Sacred reunion in the celestial hermitage alongside their son Bharata"
+    ],
+    "motifs": [
+      "lost-object-recognition",
+      "separation-and-reunion",
+      "memory-and-forgetting",
+      "love-and-duty"
+    ],
+    "narrativeTraditionType": "Classical Sanskrit Drama",
+    "sources": [
+      {
+        "title": "Abhijñānaśākuntalam (The Recognition of Shakuntala)",
+        "authorOrAttribution": "Kālidāsa (Greatest Classical Sanskrit Dramatist & Poet)",
+        "dateOrEra": "c. 4th–5th Century CE (Gupta Empire)",
+        "context": "Adapts and enriches the earlier epic narrative in the Mahabharata (Adi Parva), introducing the poetic motifs of Durvasa’s curse and the lost signet ring to explore dramatic aesthetics of love in separation (vipralambha-sringara)."
+      }
+    ],
+    "motifManifestations": {
+      "lost-object-recognition": "The royal signet ring (abhijñāna) engraved with Dushyanta’s name is the essential talisman required to dismantle the amnesia curse and restore recognition.",
+      "separation-and-reunion": "The lovers undergo agonizing physical and emotional estrangement (the aesthetic of vipralambha) before attaining spiritual purification and reunion.",
+      "memory-and-forgetting": "Durvasa’s divine curse wipes the king’s conscious memory, rendering him blind to his own wife until physical sight of the ring shocks him back to truth.",
+      "love-and-duty": "Dushyanta must balance the righteous duty of a king (dharma)—not accepting another man’s wife without proof—against the intuitive pull of the heart.",
+      "unjust-treatment": "",
+      "supernatural-assistance": "",
+      "transformation": "",
+      "reversal-of-fortune": ""
+    },
+    "distinctiveFeatures": "CRITICAL DISTINCTION: This is a classical Sanskrit nataka (high literary drama), NOT a Cinderella folktale. It shares the narrative device of recognition through a lost token, but its core themes revolve around curse-induced amnesia, dharma, and poetic rasa.",
+    "quote": "When the ring was lost, memory perished; when the token returned, truth awoke in sorrow.",
+    "guessOptions": {
+      "correct": "lost-object-recognition",
+      "decoys": [
+        "transformation",
+        "unjust-treatment"
+      ]
+    }
+  }
+]

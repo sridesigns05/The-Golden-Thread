@@ -1,0 +1,20 @@
+{
+  "_note": "Ordering aid ONLY, never displayed: one rough year per story, read off the story's own earliestRecordedDate text (ranges -> midpoint, BCE negative). It is not an origin date. null = no first-record date given. Re-check if a date in stories.json changes.",
+  "years": {
+    "ye-xian": 855,
+    "cendrillon": 1697,
+    "kongjwi-patjwi": null,
+    "tam-cam": 1886,
+    "vasilisa": 1855,
+    "shakuntala": 400,
+    "cupid-psyche": 160,
+    "two-brothers": -1215,
+    "prometheus": -725,
+    "raven-light": 1900,
+    "maui-fire": 1855,
+    "popol-vuh-twins": 1556,
+    "anansi-stories": 1930,
+    "aladdin": 1709,
+    "taketori": 900
+  }
+}
