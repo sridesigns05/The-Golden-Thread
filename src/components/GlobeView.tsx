@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { StoryData, StoryId } from '../types';
 import { STORIES } from '../data/stories';
 import { latLngToVector3, createArcCurve } from '../utils/geo';
-import { generateAntiqueGlobeTexture, generateCelestialStarTexture } from '../utils/antiqueGlobeTexture';
+import { generateCelestialStarTexture } from '../utils/antiqueGlobeTexture';
+import { loadRealisticEarthTextures, loadCountryBorders, createAtmosphereMesh } from '../utils/earthGeography';
 import { playGentleClick } from '../utils/audio';
 
 // Module-scope math helpers for zero GC during animation loop
@@ -14,6 +15,7 @@ const _mouse = new THREE.Vector2();
 
 interface GlobeViewProps {
   selectedStoryId: StoryId | null;
+  focusedStoryId?: StoryId | null;
   onSelectStory: (storyId: StoryId) => void;
   highlightedStoryIds: StoryId[]; // stories illuminated after motif reveal
   activeConnection: { from: StoryId; to: StoryId } | null;
@@ -23,6 +25,7 @@ interface GlobeViewProps {
 
 export const GlobeView: React.FC<GlobeViewProps> = ({
   selectedStoryId,
+  focusedStoryId,
   onSelectStory,
   highlightedStoryIds,
   activeConnection,
@@ -32,7 +35,7 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
   const mountRef = useRef<HTMLDivElement>(null);
   const [hoveredStory, setHoveredStory] = useState<{ story: StoryData; x: number; y: number } | null>(null);
 
-  // References for mutable scene objects without re-triggering scene creation
+  // References for mutable scene objects
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -43,34 +46,90 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
   // Interaction & camera animation state
   const isUserInteractingRef = useRef(false);
   const lastMousePosRef = useRef({ x: 0, y: 0 });
+  const activePointersRef = useRef<Map<number, { clientX: number; clientY: number }>>(new Map());
+  const prevPinchDistanceRef = useRef<number | null>(null);
   const cameraTargetPosRef = useRef<THREE.Vector3 | null>(null);
   const isTransitioningCameraRef = useRef(false);
-  const sphericalRef = useRef({ radius: 6.5, theta: 0.5, phi: Math.PI / 2.3 });
-  const autoRotateSpeedRef = useRef(0.0012);
-  const idleTimerRef = useRef(0);
+  // Controls whether idle auto-rotation is allowed. Disabled permanently after first user action or story selection.
+  const allowAutoRotateRef = useRef(true);
+  const prevFocusedStoryIdRef = useRef<StoryId | null>(null);
+  // Default camera distance: 7.6 (25–35% further back than 5.8)
+  // Initial orientation: Asia Lat 25°N, Lng 95°E (phi = 1.135 rad, theta = 4.80 rad)
+  const sphericalRef = useRef({ radius: 7.6, theta: 4.80, phi: 1.135 });
 
-  // Globe radius constant
-  const GLOBE_RADIUS = 2.4;
+  // Globe radius constant matching authentic spherical proportions
+  const GLOBE_RADIUS = 2.45;
 
-  // Sync camera focus when selectedStoryId changes
+  // Sync camera focus when selectedStoryId changes (only pan once per unique story selection)
   useEffect(() => {
     if (!selectedStoryId) return;
+    if (prevFocusedStoryIdRef.current === selectedStoryId) return;
+    prevFocusedStoryIdRef.current = selectedStoryId;
+    allowAutoRotateRef.current = false; // Permanently stop auto-rotation
+
     const story = STORIES.find((s) => s.id === selectedStoryId);
     if (!story) return;
 
-    // Convert lat/lng to target camera spherical position
-    // For a pleasant 3/4 perspective, aim camera slightly above the target location
+    // Focus camera on story coordinates smoothly
     const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - story.coordinates.lat) * (Math.PI / 180)));
     const theta = (story.coordinates.lng + 180) * (Math.PI / 180);
 
-    // Target spherical coordinates
     const targetRadius = 5.2; // closer zoom on selected story
     _targetCamPos.setFromSphericalCoords(targetRadius, phi, theta);
 
     cameraTargetPosRef.current = _targetCamPos.clone();
     isTransitioningCameraRef.current = true;
-    idleTimerRef.current = 0;
   }, [selectedStoryId]);
+
+  // Smoothly rotate and center camera on searched story without opening storybook
+  useEffect(() => {
+    if (!focusedStoryId) return;
+    allowAutoRotateRef.current = false;
+    const story = STORIES.find((s) => s.id === focusedStoryId);
+    if (!story) return;
+
+    const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - story.coordinates.lat) * (Math.PI / 180)));
+    const theta = (story.coordinates.lng + 180) * (Math.PI / 180);
+
+    _targetCamPos.setFromSphericalCoords(6.0, phi, theta);
+    cameraTargetPosRef.current = _targetCamPos.clone();
+    isTransitioningCameraRef.current = true;
+  }, [focusedStoryId]);
+
+  // When stories are illuminated via Motif Lens, smoothly focus on the active region without zooming too close
+  useEffect(() => {
+    if (highlightedStoryIds.length > 0) {
+      const allActive = STORIES.filter(
+        (s) => s.id === selectedStoryId || highlightedStoryIds.includes(s.id)
+      );
+      if (allActive.length > 0) {
+        const avgLat = allActive.reduce((acc, s) => acc + s.coordinates.lat, 0) / allActive.length;
+        const avgLng = allActive.reduce((acc, s) => acc + s.coordinates.lng, 0) / allActive.length;
+        const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - avgLat) * (Math.PI / 180)));
+        const theta = (avgLng + 180) * (Math.PI / 180);
+        // Radius 6.8 gives clear situational awareness of both continents without zooming too close
+        _targetCamPos.setFromSphericalCoords(6.8, phi, theta);
+        cameraTargetPosRef.current = _targetCamPos.clone();
+        isTransitioningCameraRef.current = true;
+      }
+    }
+  }, [highlightedStoryIds, selectedStoryId]);
+
+  // When a Golden Thread connection is active, smoothly frame the arc midpoint
+  useEffect(() => {
+    if (!activeConnection) return;
+    const storyA = STORIES.find((s) => s.id === activeConnection.from);
+    const storyB = STORIES.find((s) => s.id === activeConnection.to);
+    if (!storyA || !storyB) return;
+
+    const latMid = (storyA.coordinates.lat + storyB.coordinates.lat) / 2;
+    const lngMid = (storyA.coordinates.lng + storyB.coordinates.lng) / 2;
+    const phi = Math.max(0.2, Math.min(Math.PI - 0.2, (90 - latMid) * (Math.PI / 180)));
+    const theta = (lngMid + 180) * (Math.PI / 180);
+    _targetCamPos.setFromSphericalCoords(5.8, phi, theta);
+    cameraTargetPosRef.current = _targetCamPos.clone();
+    isTransitioningCameraRef.current = true;
+  }, [activeConnection]);
 
   // Main Three.js Scene Setup
   useEffect(() => {
@@ -90,7 +149,7 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
 
     const scene = new THREE.Scene();
     sceneRef.current = scene;
-    scene.fog = new THREE.FogExp2(0x0b1424, 0.04);
+    scene.fog = new THREE.FogExp2(0x070c16, 0.035);
 
     const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
     cameraRef.current = camera;
@@ -100,17 +159,17 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     const renderer = new THREE.WebGLRenderer({
       antialias: !isSoftwareGl,
       powerPreference: 'high-performance',
-      alpha: false
+      alpha: true
     });
     rendererRef.current = renderer;
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.25;
+    renderer.toneMappingExposure = 1.35;
     container.appendChild(renderer.domElement);
 
-    // --- CELESTIAL BACKGROUND & STAR DOME ---
+    // --- CELESTIAL BACKGROUND & MINIMAL STAR DOME ---
     const starGeo = new THREE.SphereGeometry(35, 32, 32);
     const starTex = generateCelestialStarTexture();
     const starMat = new THREE.MeshBasicMaterial({
@@ -122,89 +181,73 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     const starDome = new THREE.Mesh(starGeo, starMat);
     scene.add(starDome);
 
-    // --- LIGHTING RIG ---
-    // Warm key light (Antique Gold sunlight)
-    const keyLight = new THREE.DirectionalLight(0xfff1d6, 2.2);
-    keyLight.position.set(10, 8, 12);
-    scene.add(keyLight);
+    // --- REALISTIC CELESTIAL LIGHTING RIG ---
+    // Warm key sunlight illuminating continents and oceans
+    const keyRimLight = new THREE.DirectionalLight(0xfffaed, 2.8);
+    keyRimLight.position.set(7, 8, 8);
+    scene.add(keyRimLight);
 
-    // Cool rim light (Midnight observatory illumination)
-    const rimLight = new THREE.DirectionalLight(0x7da4d4, 1.4);
-    rimLight.position.set(-10, -6, -10);
-    scene.add(rimLight);
+    // Subtle antique golden rim light on the crescent silhouette
+    const sideRimLight = new THREE.DirectionalLight(0xd6b36b, 1.8);
+    sideRimLight.position.set(-8, 3, -4);
+    scene.add(sideRimLight);
 
-    // Soft celestial ambient
-    const ambientLight = new THREE.AmbientLight(0x28384a, 0.9);
+    // Luminous ambient celestial fill so green/brown landmasses and deep ocean blues are vibrant
+    const ambientLight = new THREE.AmbientLight(0x28384a, 1.25);
     scene.add(ambientLight);
+
+    // Soft bottom water/ground glow reflection
+    const groundReflectLight = new THREE.DirectionalLight(0xd6b36b, 0.45);
+    groundReflectLight.position.set(0, -10, 2);
+    scene.add(groundReflectLight);
 
     // --- MAIN GLOBE GROUP ---
     const globeGroup = new THREE.Group();
     globeGroupRef.current = globeGroup;
     scene.add(globeGroup);
 
-    // 1. Globe Sphere with Antique Parchment / Midnight Ocean Map
+    // 1. Geographically Accurate, Physically Convincing 3D Earth
     const globeGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 64, 64);
-    const globeTex = generateAntiqueGlobeTexture();
+    const { map: earthMap, bumpMap: earthBump } = loadRealisticEarthTextures(() => {
+      if (rendererRef.current && sceneRef.current && cameraRef.current) {
+        rendererRef.current.render(sceneRef.current, cameraRef.current);
+      }
+    });
     const globeMat = new THREE.MeshStandardMaterial({
-      map: globeTex,
+      map: earthMap,
+      bumpMap: earthBump,
+      bumpScale: 0.038,
       roughness: 0.65,
-      metalness: 0.15,
-      bumpScale: 0.02
+      metalness: 0.08
     });
     const globeMesh = new THREE.Mesh(globeGeo, globeMat);
     globeGroup.add(globeMesh);
 
-    // 2. Atmospheric & Celestial Golden Sheen (Fresnel Glow)
-    const atmosphereGeo = new THREE.SphereGeometry(GLOBE_RADIUS * 1.018, 64, 64);
-    const atmosphereMat = new THREE.MeshBasicMaterial({
+    // 2. Real Country Borders from Natural Earth GeoJSON
+    let countryBordersMesh: THREE.LineSegments | null = null;
+    loadCountryBorders(GLOBE_RADIUS).then((borders) => {
+      if (borders && globeGroupRef.current) {
+        countryBordersMesh = borders;
+        globeGroupRef.current.add(borders);
+      }
+    });
+
+    // 3. Realistic Rayleigh Atmosphere Scattering & Celestial Rim
+    const atmosphere = createAtmosphereMesh(GLOBE_RADIUS);
+    globeGroup.add(atmosphere);
+
+    // 4. Subtle outer celestial mist ring
+    const mistGeo = new THREE.RingGeometry(GLOBE_RADIUS * 1.02, GLOBE_RADIUS * 1.35, 64);
+    const mistMat = new THREE.MeshBasicMaterial({
       color: 0xd6b36b,
       transparent: true,
-      opacity: 0.08,
-      blending: THREE.AdditiveBlending,
-      side: THREE.BackSide
+      opacity: 0.03,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending
     });
-    const atmosphereMesh = new THREE.Mesh(atmosphereGeo, atmosphereMat);
-    globeGroup.add(atmosphereMesh);
-
-    // 3. Antique Brass Armillary Rings
-    // Meridian Ring (Vertical)
-    const meridianRingGeo = new THREE.TorusGeometry(GLOBE_RADIUS * 1.08, 0.032, 16, 100);
-    const brassMat = new THREE.MeshStandardMaterial({
-      color: 0xd6b36b,
-      roughness: 0.35,
-      metalness: 0.85
-    });
-    const meridianRing = new THREE.Mesh(meridianRingGeo, brassMat);
-    meridianRing.rotation.y = Math.PI / 2;
-    globeGroup.add(meridianRing);
-
-    // Equatorial Brass Ring
-    const equatorRingGeo = new THREE.TorusGeometry(GLOBE_RADIUS * 1.12, 0.025, 16, 100);
-    const equatorRing = new THREE.Mesh(equatorRingGeo, brassMat);
-    equatorRing.rotation.x = Math.PI / 2;
-    globeGroup.add(equatorRing);
-
-    // Ecliptic Zodiac Band (tilted 23.5 degrees)
-    const eclipticRingGeo = new THREE.TorusGeometry(GLOBE_RADIUS * 1.15, 0.022, 16, 100);
-    const eclipticMat = new THREE.MeshStandardMaterial({
-      color: 0xe7cca0,
-      roughness: 0.3,
-      metalness: 0.9
-    });
-    const eclipticRing = new THREE.Mesh(eclipticRingGeo, eclipticMat);
-    eclipticRing.rotation.x = Math.PI / 2 + (23.5 * Math.PI) / 180;
-    globeGroup.add(eclipticRing);
-
-    // North & South Axis Finials (Decorative Brass Posts)
-    const finialGeo = new THREE.CylinderGeometry(0.04, 0.06, 0.45, 16);
-    const northFinial = new THREE.Mesh(finialGeo, brassMat);
-    northFinial.position.set(0, GLOBE_RADIUS * 1.12, 0);
-    globeGroup.add(northFinial);
-
-    const southFinial = northFinial.clone();
-    southFinial.position.set(0, -GLOBE_RADIUS * 1.12, 0);
-    southFinial.rotation.x = Math.PI;
-    globeGroup.add(southFinial);
+    const mistRing = new THREE.Mesh(mistGeo, mistMat);
+    mistRing.rotation.x = Math.PI / 2;
+    globeGroup.add(mistRing);
 
     // --- STORY MARKERS GROUP ---
     const markersGroup = new THREE.Group();
@@ -229,12 +272,11 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     window.addEventListener('resize', handleResize);
 
     const tick = () => {
-      const delta = clock.getDelta();
       const elapsed = clock.getElapsedTime();
 
-      // Slow celestial auto-rotation when user is idle
-      if (!isUserInteractingRef.current && !isTransitioningCameraRef.current && !isStoryPanelOpen) {
-        sphericalRef.current.theta += autoRotateSpeedRef.current;
+      // Slow celestial auto-rotation only on startup when user is idle and no story has been selected
+      if (allowAutoRotateRef.current && !isUserInteractingRef.current && !isTransitioningCameraRef.current && !isStoryPanelOpen) {
+        sphericalRef.current.theta += 0.001;
         sphericalRef.current.theta %= Math.PI * 2;
         camera.position.setFromSphericalCoords(
           sphericalRef.current.radius,
@@ -246,16 +288,15 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
 
       // Smooth camera interpolation toward target position
       if (isTransitioningCameraRef.current && cameraTargetPosRef.current) {
-        camera.position.lerp(cameraTargetPosRef.current, 0.05);
+        camera.position.lerp(cameraTargetPosRef.current, 0.06);
         camera.lookAt(0, 0, 0);
 
-        // Update spherical coords from camera position
         _vec3.copy(camera.position);
         sphericalRef.current.radius = _vec3.length();
         sphericalRef.current.phi = Math.acos(Math.max(-1, Math.min(1, _vec3.y / sphericalRef.current.radius)));
         sphericalRef.current.theta = Math.atan2(_vec3.z, _vec3.x);
 
-        if (camera.position.distanceTo(cameraTargetPosRef.current) < 0.05) {
+        if (camera.position.distanceTo(cameraTargetPosRef.current) < 0.04) {
           isTransitioningCameraRef.current = false;
         }
       }
@@ -264,13 +305,17 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       markersGroup.children.forEach((markerObj) => {
         const ring = markerObj.getObjectByName('pulseRing');
         if (ring) {
-          ring.rotation.z += 0.02;
-          const s = 1 + 0.12 * Math.sin(elapsed * 3 + markerObj.id);
+          const s = 1 + 0.15 * Math.sin(elapsed * 3.5 + markerObj.id);
           ring.scale.set(s, s, s);
+        }
+        const ripple = markerObj.getObjectByName('rippleRing');
+        if (ripple) {
+          const rs = 1 + 0.22 * Math.sin(elapsed * 4.5 + markerObj.id * 1.5);
+          ripple.scale.set(rs, rs, rs);
         }
       });
 
-      // Slowly rotate star dome for subtle observatory atmosphere
+      // Slowly rotate star dome
       starDome.rotation.y += 0.0001;
 
       renderer.render(scene, camera);
@@ -291,20 +336,29 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       starTex.dispose();
       globeGeo.dispose();
       globeMat.dispose();
-      globeTex.dispose();
-      atmosphereGeo.dispose();
-      atmosphereMat.dispose();
-      meridianRingGeo.dispose();
-      equatorRingGeo.dispose();
-      eclipticRingGeo.dispose();
-      finialGeo.dispose();
-      brassMat.dispose();
-      eclipticMat.dispose();
+      earthMap.dispose();
+      earthBump.dispose();
+      if (countryBordersMesh) {
+        countryBordersMesh.geometry.dispose();
+        if (Array.isArray(countryBordersMesh.material)) {
+          countryBordersMesh.material.forEach((m) => m.dispose());
+        } else {
+          countryBordersMesh.material.dispose();
+        }
+      }
+      atmosphere.children.forEach((c) => {
+        if (c instanceof THREE.Mesh) {
+          c.geometry?.dispose();
+          c.material?.dispose();
+        }
+      });
+      mistGeo.dispose();
+      mistMat.dispose();
       renderer.dispose();
     };
-  }, [isStoryPanelOpen]);
+  }, []);
 
-  // Update Story Markers on the globe
+  // Update Story Markers on the globe (Small glowing beacons matching reference 1 & 3)
   useEffect(() => {
     const markersGroup = markersGroupRef.current;
     if (!markersGroup) return;
@@ -324,68 +378,57 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       const pos = latLngToVector3(story.coordinates.lat, story.coordinates.lng, GLOBE_RADIUS);
       const isSelected = story.id === selectedStoryId;
       const isHighlighted = highlightedStoryIds.includes(story.id);
+      const isLensActive = highlightedStoryIds.length > 0;
+      const isUnrelated = isLensActive && !isSelected && !isHighlighted;
 
       const markerParent = new THREE.Group();
       markerParent.position.copy(pos);
-      markerParent.lookAt(pos.clone().multiplyScalar(2)); // Align perpendicular to sphere surface
+      markerParent.lookAt(pos.clone().multiplyScalar(2));
       markerParent.userData = { storyId: story.id, story };
 
-      // Base Pin Gem (Hexagonal or Spherical Beacon)
-      const beaconGeo = new THREE.SphereGeometry(isSelected ? 0.095 : 0.075, 16, 16);
-      const beaconMat = new THREE.MeshStandardMaterial({
-        color: isSelected ? 0xfff7e8 : isHighlighted ? 0xffd97d : 0xd6b36b,
-        emissive: isSelected ? 0xd6b36b : isHighlighted ? 0xa98336 : 0x4a3a18,
-        emissiveIntensity: isSelected ? 1.4 : isHighlighted ? 1.1 : 0.4,
-        roughness: 0.2,
-        metalness: 0.8
+      // Small radiant core gem (Reference 1 & 3: refined glowing point of celestial light)
+      const beaconGeo = new THREE.SphereGeometry(isHighlighted ? 0.07 : isSelected ? 0.065 : 0.045, 16, 16);
+      const beaconMat = new THREE.MeshBasicMaterial({
+        color: isHighlighted ? 0xfff9ea : isSelected ? 0xfff7d0 : 0xffd97d,
+        transparent: isUnrelated,
+        opacity: isUnrelated ? 0.20 : 1.0
       });
       const beaconMesh = new THREE.Mesh(beaconGeo, beaconMat);
       beaconMesh.name = 'beacon';
       markerParent.add(beaconMesh);
 
-      // Elevated Light Shaft / Pin
-      const pinGeo = new THREE.CylinderGeometry(0.012, 0.02, 0.12, 8);
-      const pinMat = new THREE.MeshStandardMaterial({
-        color: 0xd6b36b,
-        roughness: 0.3,
-        metalness: 0.9
-      });
-      const pinMesh = new THREE.Mesh(pinGeo, pinMat);
-      pinMesh.position.z = 0.06;
-      pinMesh.rotation.x = Math.PI / 2;
-      markerParent.add(pinMesh);
-
-      // Floating Illuminated Concentric Ring
-      const ringGeo = new THREE.RingGeometry(0.12, 0.16, 24);
+      // Fine concentric glowing halo ring
+      const ringGeo = new THREE.RingGeometry(0.08, isHighlighted ? 0.13 : 0.11, 24);
       const ringMat = new THREE.MeshBasicMaterial({
-        color: isHighlighted ? 0xffea9f : isSelected ? 0xfff7e8 : 0xd6b36b,
+        color: isHighlighted ? 0xffe280 : isSelected ? 0xfff7e8 : 0xd6b36b,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: isHighlighted ? 0.85 : isSelected ? 0.75 : 0.35,
+        opacity: isUnrelated ? 0.15 : isHighlighted ? 1.0 : isSelected ? 0.85 : 0.45,
         blending: THREE.AdditiveBlending
       });
       const pulseRing = new THREE.Mesh(ringGeo, ringMat);
       pulseRing.name = 'pulseRing';
-      pulseRing.position.z = 0.03;
+      pulseRing.position.z = 0.02;
       markerParent.add(pulseRing);
 
-      // Outer ripple ring if highlighted
+      // Outer luminous ripple ring for illuminated stories matching the Motif Lens
       if (isHighlighted) {
-        const rippleGeo = new THREE.RingGeometry(0.2, 0.24, 24);
+        const rippleGeo = new THREE.RingGeometry(0.16, 0.23, 28);
         const rippleMat = new THREE.MeshBasicMaterial({
           color: 0xffd700,
           side: THREE.DoubleSide,
           transparent: true,
-          opacity: 0.5,
+          opacity: 0.85,
           blending: THREE.AdditiveBlending
         });
         const rippleMesh = new THREE.Mesh(rippleGeo, rippleMat);
-        rippleMesh.position.z = 0.04;
+        rippleMesh.name = 'rippleRing';
+        rippleMesh.position.z = 0.025;
         markerParent.add(rippleMesh);
       }
 
-      // Invisible hit-box sphere for effortless raycasting clicks
-      const hitBoxGeo = new THREE.SphereGeometry(0.24, 8, 8);
+      // Invisible hit-box for smooth raycast selection
+      const hitBoxGeo = new THREE.SphereGeometry(isHighlighted ? 0.35 : 0.25, 8, 8);
       const hitBoxMat = new THREE.MeshBasicMaterial({ visible: false });
       const hitBox = new THREE.Mesh(hitBoxGeo, hitBoxMat);
       hitBox.userData = { storyId: story.id, story };
@@ -395,7 +438,7 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     });
   }, [selectedStoryId, highlightedStoryIds]);
 
-  // Update Golden Arcs (Connections between stories)
+  // Update Golden Arcs (Connections between stories - Matching Reference Image 3)
   useEffect(() => {
     const arcsGroup = arcsGroupRef.current;
     if (!arcsGroup) return;
@@ -411,7 +454,6 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       }
     }
 
-    // Helper to render an arc between two stories
     const renderArc = (storyAId: StoryId, storyBId: StoryId, isActive: boolean) => {
       const storyA = STORIES.find((s) => s.id === storyAId);
       const storyB = STORIES.find((s) => s.id === storyBId);
@@ -420,11 +462,10 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       const vStart = latLngToVector3(storyA.coordinates.lat, storyA.coordinates.lng, GLOBE_RADIUS);
       const vEnd = latLngToVector3(storyB.coordinates.lat, storyB.coordinates.lng, GLOBE_RADIUS);
 
-      const curve = createArcCurve(vStart, vEnd, GLOBE_RADIUS, 0.42);
-      const points = curve.getPoints(50);
+      const curve = createArcCurve(vStart, vEnd, GLOBE_RADIUS, 0.38);
 
-      // 1. Glowing tube mesh for the main thread
-      const tubeGeo = new THREE.TubeGeometry(curve, 40, isActive ? 0.024 : 0.016, 8, false);
+      // 1. Glowing central thread tube (Reference Image 3)
+      const tubeGeo = new THREE.TubeGeometry(curve, 48, isActive ? 0.022 : 0.015, 8, false);
       const tubeMat = new THREE.MeshBasicMaterial({
         color: isActive ? 0xfff7e8 : 0xd6b36b,
         transparent: true,
@@ -434,8 +475,8 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       const tubeMesh = new THREE.Mesh(tubeGeo, tubeMat);
       arcsGroup.add(tubeMesh);
 
-      // 2. Outer luminous halo tube
-      const haloTubeGeo = new THREE.TubeGeometry(curve, 40, isActive ? 0.055 : 0.038, 8, false);
+      // 2. Soft outer luminous halo tube
+      const haloTubeGeo = new THREE.TubeGeometry(curve, 48, isActive ? 0.05 : 0.035, 8, false);
       const haloTubeMat = new THREE.MeshBasicMaterial({
         color: 0xd6b36b,
         transparent: true,
@@ -445,9 +486,9 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       const haloMesh = new THREE.Mesh(haloTubeGeo, haloTubeMat);
       arcsGroup.add(haloMesh);
 
-      // 3. Stardust Nodes along the curve
-      const particleCount = 12;
-      const partGeo = new THREE.SphereGeometry(isActive ? 0.028 : 0.02, 8, 8);
+      // 3. Glowing stardust nodes along the curve
+      const particleCount = 10;
+      const partGeo = new THREE.SphereGeometry(isActive ? 0.026 : 0.018, 8, 8);
       const partMat = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         blending: THREE.AdditiveBlending
@@ -461,28 +502,64 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       }
     };
 
-    // Draw all unlocked/completed connections
+    // Draw all completed connections
     completedConnections.forEach((conn) => {
       renderArc(conn.storyA, conn.storyB, false);
     });
 
-    // Draw currently active connection highlighted
+    // Draw active animated connection
     if (activeConnection) {
       renderArc(activeConnection.from, activeConnection.to, true);
     }
   }, [completedConnections, activeConnection]);
 
-  // Pointer Interaction Handlers (Orbit Drag, Zoom, Raycast Selection)
+  // Pointer Interaction Handlers (Supporting touch drag rotate & two-finger pinch-to-zoom)
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    isUserInteractingRef.current = true;
-    lastMousePosRef.current = { x: e.clientX, y: e.clientY };
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    allowAutoRotateRef.current = false; // Never auto-rotate after user touches or clicks
+    isTransitioningCameraRef.current = false; // Immediately give user full control over rotation
+    activePointersRef.current.set(e.pointerId, { clientX: e.clientX, clientY: e.clientY });
+
+    if (activePointersRef.current.size === 1) {
+      isUserInteractingRef.current = true;
+      lastMousePosRef.current = { x: e.clientX, y: e.clientY };
+      try {
+        (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      } catch {
+        // Ignore
+      }
+    } else if (activePointersRef.current.size === 2) {
+      const pts = Array.from(activePointersRef.current.values());
+      prevPinchDistanceRef.current = Math.hypot(pts[0].clientX - pts[1].clientX, pts[0].clientY - pts[1].clientY);
+    }
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const container = mountRef.current;
     const camera = cameraRef.current;
     if (!container || !camera) return;
+
+    if (activePointersRef.current.has(e.pointerId)) {
+      activePointersRef.current.set(e.pointerId, { clientX: e.clientX, clientY: e.clientY });
+    }
+
+    // Two-finger pinch-to-zoom on touch screens
+    if (activePointersRef.current.size === 2) {
+      const pts = Array.from(activePointersRef.current.values());
+      const dist = Math.hypot(pts[0].clientX - pts[1].clientX, pts[0].clientY - pts[1].clientY);
+      if (prevPinchDistanceRef.current !== null && prevPinchDistanceRef.current > 0) {
+        const pinchDelta = (prevPinchDistanceRef.current - dist) * 0.012;
+        sphericalRef.current.radius = Math.max(3.8, Math.min(10.5, sphericalRef.current.radius + pinchDelta));
+        camera.position.setFromSphericalCoords(
+          sphericalRef.current.radius,
+          sphericalRef.current.phi,
+          sphericalRef.current.theta
+        );
+        camera.lookAt(0, 0, 0);
+        isTransitioningCameraRef.current = false;
+      }
+      prevPinchDistanceRef.current = dist;
+      return;
+    }
 
     const rect = container.getBoundingClientRect();
     _mouse.x = ((e.clientX - rect.left) / container.clientWidth) * 2 - 1;
@@ -512,11 +589,9 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
       const deltaY = e.clientY - lastMousePosRef.current.y;
       lastMousePosRef.current = { x: e.clientX, y: e.clientY };
 
-      const rotateSpeed = 0.006;
+      const rotateSpeed = 0.0055;
       sphericalRef.current.theta -= deltaX * rotateSpeed;
       sphericalRef.current.phi -= deltaY * rotateSpeed;
-
-      // Restrict phi to avoid gimbal flip
       sphericalRef.current.phi = Math.max(0.15, Math.min(Math.PI - 0.15, sphericalRef.current.phi));
 
       camera.position.setFromSphericalCoords(
@@ -530,22 +605,28 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
   };
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    isUserInteractingRef.current = false;
+    activePointersRef.current.delete(e.pointerId);
+    if (activePointersRef.current.size < 2) {
+      prevPinchDistanceRef.current = null;
+    }
+    if (activePointersRef.current.size === 0) {
+      isUserInteractingRef.current = false;
+    }
     try {
       (e.target as HTMLElement).releasePointerCapture(e.pointerId);
     } catch {
-      // Ignore if pointer capture release throws
+      // Ignore
     }
   };
 
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
     e.preventDefault();
+    allowAutoRotateRef.current = false;
     const camera = cameraRef.current;
     if (!camera) return;
 
     const zoomSpeed = 0.003;
     sphericalRef.current.radius += e.deltaY * zoomSpeed;
-    // Clamp zoom distance between 3.8 and 10.5
     sphericalRef.current.radius = Math.max(3.8, Math.min(10.5, sphericalRef.current.radius));
 
     camera.position.setFromSphericalCoords(
@@ -557,8 +638,8 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
     isTransitioningCameraRef.current = false;
   };
 
-  // Click on Story Marker
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    allowAutoRotateRef.current = false;
     const container = mountRef.current;
     const camera = cameraRef.current;
     const markersGroup = markersGroupRef.current;
@@ -593,26 +674,24 @@ export const GlobeView: React.FC<GlobeViewProps> = ({
         onClick={handleClick}
       />
 
-      {/* Atmospheric Vignette Overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-radial from-transparent via-[#0B1424]/20 to-[#0B1424]/85" />
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#0B1424] to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B1424] to-transparent" />
+      {/* Atmospheric Vignette Overlays matching reference 1 */}
+      <div className="pointer-events-none absolute inset-0 bg-radial from-transparent via-[#0B1424]/20 to-[#070C16]/90" />
 
       {/* Antique Floating Hover Tooltip */}
       {hoveredStory && (
         <div
-          className="fixed pointer-events-none z-40 transform -translate-x-1/2 -translate-y-full mb-3 px-3 py-1.5 rounded bg-[#101D33]/95 border border-[#D6B36B]/50 shadow-2xl text-center backdrop-blur-xs transition-opacity duration-150"
-          style={{ left: hoveredStory.x, top: hoveredStory.y - 12 }}
+          className="fixed pointer-events-none z-40 transform -translate-x-1/2 -translate-y-full mb-3 px-3.5 py-2 rounded-lg bg-[#0F1829]/95 border border-[#D6B36B]/60 shadow-2xl text-center backdrop-blur-xs transition-opacity duration-150"
+          style={{ left: hoveredStory.x, top: hoveredStory.y - 14 }}
         >
-          <div className="text-[11px] font-sans tracking-widest uppercase text-[#D6B36B]/90 font-medium">
+          <div className="text-[10px] font-sans tracking-widest uppercase text-[#D6B36B] font-medium">
             {hoveredStory.story.country}
           </div>
           <div className="text-sm font-serif font-semibold text-[#FFF7E8] whitespace-nowrap">
             {hoveredStory.story.title}
           </div>
           {highlightedStoryIds.includes(hoveredStory.story.id) && (
-            <div className="text-[10px] text-[#E7CCA0] mt-0.5 tracking-wider font-sans">
-              ✦ Click to weave thread
+            <div className="text-[11px] text-[#FFD97D] mt-0.5 tracking-wider font-sans font-medium">
+              ✦ Click to weave Golden Thread
             </div>
           )}
         </div>

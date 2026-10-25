@@ -8,7 +8,24 @@ export type MotifId =
   | 'memory-and-forgetting'
   | 'love-and-duty';
 
-export type StoryId = 'cinderella' | 'kongjwi' | 'yexian' | 'shakuntala';
+export type StoryId =
+  | 'cinderella'
+  | 'kongjwi'
+  | 'yexian'
+  | 'shakuntala'
+  | 'vasilisa'
+  | 'anansi'
+  | 'momotaro'
+  | 'golden-crab'
+  | 'urashima-taro'
+  | 'sedna'
+  | 'rhodopis'
+  | 'one-hand-girl'
+  | 'mufaro'
+  | 'popol-vuh-twins'
+  | 'baba-abdalla';
+
+export type GameMode = 'solo-quest' | 'shared-journey' | 'free-exploration';
 
 export type ConnectionClassification = 'cinderella-parallel' | 'thematic-parallel';
 
@@ -22,7 +39,7 @@ export interface MotifInfo {
   id: MotifId;
   name: string;
   shortDescription: string;
-  storySignificance: string; // How this motif manifests broadly
+  storySignificance: string;
 }
 
 export interface StorySource {
@@ -40,12 +57,13 @@ export interface StoryData {
   culturalTradition: string;
   coordinates: StoryCoordinates;
   summary: string;
+  shortRetelling: string; // Max 60 words for the open book page
   fullRetelling: string[];
   keyElements: string[];
   motifs: MotifId[];
-  narrativeTraditionType: 'Cinderella-Type Folktale' | 'Classical Sanskrit Drama';
+  narrativeTraditionType: 'Cinderella-Type Folktale' | 'Classical Sanskrit Drama' | 'Mythological Epic' | 'Trickster Tale' | 'Heroic Legend' | 'Folk Romance';
   sources: StorySource[];
-  motifManifestations: Record<MotifId, string>;
+  motifManifestations: Partial<Record<MotifId, string>>;
   distinctiveFeatures: string;
   quote?: string;
 }
@@ -55,9 +73,10 @@ export interface ComparisonDetail {
   storyAId: StoryId;
   storyBId: StoryId;
   sharedMotif: MotifId;
-  appearanceInA: string;
-  appearanceInB: string;
-  culturalDifference: string;
+  similarity: string; // Concise, <= 20 words
+  culturalDifference: string; // Concise, <= 20 words
+  appearanceInA?: string;
+  appearanceInB?: string;
   classification: ConnectionClassification;
   scholarlyNote: string;
 }
@@ -68,6 +87,34 @@ export interface GoldenThreadConnection {
   storyB: StoryId;
   motif: MotifId;
   unlockedAt: number;
+}
+
+export interface SoloQuestState {
+  isActive: boolean;
+  startStoryId: StoryId;
+  targetStoryId: StoryId;
+  currentStoryId: StoryId;
+  visitedStoryIds: StoryId[];
+  movesTaken: number;
+  minHops: number;
+  nonProgressMoves: number;
+  activeHint: string | null;
+  isComplete: boolean;
+}
+
+export interface SharedJourneyData {
+  id: string;
+  creatorStoryId: StoryId;
+  creatorNote: string;
+  creatorName?: string;
+  createdAt: number;
+  // Filled when Player B engages/completes
+  joinerStoryId?: StoryId;
+  joinerReflection?: string;
+  joinerName?: string;
+  isComplete?: boolean;
+  completedAt?: number;
+  pathTaken?: StoryId[];
 }
 
 export type GameStage = 'landing' | 'atlas' | 'story-view' | 'guess-motif' | 'comparison' | 'completed';

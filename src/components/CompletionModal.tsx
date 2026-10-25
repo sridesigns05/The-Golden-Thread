@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import confetti from 'canvas-confetti';
+import React, { useEffect, useState } from 'react';
 import { Sparkles, Compass, BookOpen, RotateCcw, Award } from 'lucide-react';
 import { playGoldenThreadResonance, playGentleClick } from '../utils/audio';
 
@@ -10,31 +9,79 @@ interface CompletionModalProps {
   connectionsCount: number;
 }
 
+interface Particle {
+  id: number;
+  left: string;
+  delay: string;
+  duration: string;
+  size: number;
+  color: string;
+}
+
 export const CompletionModal: React.FC<CompletionModalProps> = ({
   onClose,
   onOpenJournal,
   onResetGame,
   connectionsCount
 }) => {
+  const [particles, setParticles] = useState<Particle[]>([]);
+
   useEffect(() => {
     playGoldenThreadResonance();
 
-    // Trigger subtle golden stardust confetti
-    try {
-      confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#D6B36B', '#FFF7E8', '#E7CCA0', '#19372F']
-      });
-    } catch {
-      // Ignore if canvas-confetti fails in restricted environments
-    }
+    // Create 35 procedural golden stardust particles (zero external canvas dependencies)
+    const colors = ['#D6B36B', '#FFF7E8', '#E7CCA0', '#FFD97D', '#F1E5CC'];
+    const generated: Particle[] = Array.from({ length: 35 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 94 + 3}%`,
+      delay: `${(Math.random() * 1.5).toFixed(2)}s`,
+      duration: `${(Math.random() * 2 + 2.5).toFixed(2)}s`,
+      size: Math.floor(Math.random() * 4 + 4),
+      color: colors[Math.floor(Math.random() * colors.length)]
+    }));
+    setParticles(generated);
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B1424]/90 backdrop-blur-md animate-in fade-in duration-300">
-      <div className="relative max-w-xl w-full p-8 md:p-10 rounded-xl parchment-card border border-[#D6B36B]/60 shadow-2xl text-center space-y-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B1424]/90 backdrop-blur-md animate-in fade-in duration-300 overflow-hidden">
+      {/* Floating Golden Stardust Burst Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className="absolute bottom-0 rounded-full animate-pulse"
+            style={{
+              left: p.left,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              backgroundColor: p.color,
+              boxShadow: `0 0 10px ${p.color}`,
+              animation: `floatUp ${p.duration} ease-out ${p.delay} infinite`
+            }}
+          />
+        ))}
+      </div>
+
+      <style>{`
+        @keyframes floatUp {
+          0% {
+            transform: translateY(0) scale(0.6) rotate(0deg);
+            opacity: 0;
+          }
+          20% {
+            opacity: 0.9;
+          }
+          80% {
+            opacity: 0.7;
+          }
+          100% {
+            transform: translateY(-90vh) scale(1.2) rotate(180deg);
+            opacity: 0;
+          }
+        }
+      `}</style>
+
+      <div className="relative max-w-xl w-full p-8 md:p-10 rounded-xl parchment-card border border-[#D6B36B]/60 shadow-2xl text-center space-y-6 z-10">
         {/* Emblem */}
         <div className="w-14 h-14 mx-auto rounded-full bg-[#19372F] border-2 border-[#D6B36B] flex items-center justify-center shadow-lg">
           <Award className="w-7 h-7 text-[#D6B36B]" />
